@@ -540,7 +540,16 @@ if (window.jQuery)
             jQuery("#results-slt h3.title").hide(); 
             jQuery("#main-slider-storelocator").addClass('storeify-first-alert'); 
         }
-        jQuery(document).ready(function () { if (!map) initMap(); }); jQuery('#radius_search').on("change mousemove", function () { jQuery('#radius-value .num-range').html(jQuery(this).val()); }); jQuery(document).on("submit", "#frm-storelocator-search", function (e) {
+        jQuery(document).ready(function () 
+        { 
+            if (!map) 
+            {
+                initMap(); 
+            }  
+            jQuery('.item-thumb').hide();
+        }); 
+
+        jQuery('#radius_search').on("change mousemove", function () { jQuery('#radius-value .num-range').html(jQuery(this).val()); }); jQuery(document).on("submit", "#frm-storelocator-search", function (e) {
             e.preventDefault(); if (jQuery('.chose-search-slt').val() == 'location') {
                 if (search_mode == 1)
                     loadGeolocationCountry(); else
@@ -670,10 +679,7 @@ if (window.jQuery)
 
             } 
         }); 
-        JQuery(document).on("ready", function() {
-            console.log( "ready!" );
-            jQuery('.item-thumb').hide();
-        });
+        
         jQuery(document).on("submit", "#frm-storelocator-short-search", function (e) {
             e.preventDefault(); document.getElementById("loading_mask_loader").style.display = ''; var address = document.getElementById("address").value; var radius_search = document.getElementById("radius_search").value; if ((address == '' || address == null) && vals == "") { jQuery('#address').focus(); document.getElementById("loading_mask_loader").style.display = 'none'; return false; }
             if ((radius_search == '' || radius_search == null) && vals == "") { document.getElementById("loading_mask_loader").style.display = 'none'; return false; }
@@ -683,7 +689,12 @@ if (window.jQuery)
 
         jQuery(document).on("keydown", "#frm-storelocator-search input", function (e) { if (e.which == 13) { e.preventDefault(); jQuery("#frm-storelocator-search").trigger("submit"); } }); jQuery(document).ready(function () {
             jQuery(document).on("click", "#storeify-sl-btn-trigger-popup", function (e) {
-                e.preventDefault(); jQuery("#storeify-sl-light-modal-wrapper").addClass('show'); if (jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').length) { h = jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').height() + 540; jQuery('#map').height(h); }
+                e.preventDefault(); 
+                jQuery("#storeify-sl-light-modal-wrapper").addClass('show');
+                if (jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').length) 
+                { 
+                    h = jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').height() + 540; jQuery('#map').height(h); 
+                }
                 jQuery("#reset-search").trigger("click");
 
             }); 
