@@ -272,6 +272,7 @@ if (window.jQuery)
                         for (let i = 0; i < LocationImages.length; i++) 
                         {
                             LocationImages[i].remove();
+                            console.log(i);
                         }
                     });
             }
