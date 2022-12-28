@@ -1,1 +1,47 @@
-{"sections":{"main":{"type":"main-404","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay in the know",
+            "heading_size": "h2"
+          }
+        },
+        "email-form": {
+          "type": "email_form",
+          "settings": {
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Follow us on social media<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "email-form",
+        "paragraph"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter"
+  ]
+}
