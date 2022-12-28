@@ -547,7 +547,11 @@ if (window.jQuery)
                 initMap(); 
             }  
             console.log("spag");
-            jQuery('.item-thumb').hide();
+            const testElements = document.getElementsByClassName('item-thumb');
+            for (let i = 0; i < testElements.length; i++) 
+            {
+                testElements[i].style.display = "none";
+            }
         }); 
 
         jQuery('#radius_search').on("change mousemove", function () { jQuery('#radius-value .num-range').html(jQuery(this).val()); }); jQuery(document).on("submit", "#frm-storelocator-search", function (e) {
