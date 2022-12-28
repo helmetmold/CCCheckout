@@ -132,6 +132,7 @@ String.prototype.trim = String.prototype.trim || function ()
 if (window.jQuery) 
 {
     jQuery('.item-thumb').hide();
+    console.log("hi");
     var pluginName = 'shortcode'; $.fn[pluginName] = function (tags) 
     { 
         this.each(function () 
