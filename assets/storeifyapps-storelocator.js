@@ -128,10 +128,9 @@ String.prototype.trim = String.prototype.trim || function ()
 { 
     return this.replace(/^\s+|\s+$/g, ''); 
 }; 
-console.log("hi");
+
 if (window.jQuery) 
 {
-    jQuery('.item-thumb').hide();
     
     var pluginName = 'shortcode'; $.fn[pluginName] = function (tags) 
     { 
@@ -145,7 +144,9 @@ if (window.jQuery)
         return this; 
     }; 
 } 
-!(function () {
+
+!(function () 
+{
     var loadScript = function (url, callback) 
     {
         var script = document.createElement("script"); 
@@ -169,6 +170,7 @@ if (window.jQuery)
         }
         script.src = url; document.getElementsByTagName("head")[0].appendChild(script);
     }; 
+
     var storeifyappsJavaScript = function (jQuery) {
         var B64 = {
             alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", lookup: null, ie: /MSIE /.test(navigator.userAgent), ieo: /MSIE [67]/.test(navigator.userAgent), encode: function (a) {
@@ -186,7 +188,8 @@ if (window.jQuery)
                 for (c = a.length; ++b < c && (e[0] = B64.lookup[a.charAt(b)], e[1] = B64.lookup[a.charAt(++b)], d.push(e[0] << 2 | e[1] >> 4), e[2] = B64.lookup[a.charAt(++b)], 64 != e[2]) && (d.push((15 & e[1]) << 4 | e[2] >> 2), e[3] = B64.lookup[a.charAt(++b)], 64 != e[3]);)d.push((3 & e[2]) << 6 | e[3]); return d
             }
         }; 
-        var replacer = function (finder, element, blackList, type = 1) {
+
+    var replacer = function (finder, element, blackList, type = 1) {
             if (!finder) { return }
             var regex = (typeof finder == 'string') ? new RegExp(finder, 'g') : finder; var regex2 = (typeof finder == 'string') ? new RegExp(finder, 'g') : finder; var childNodes = element.childNodes; var len = childNodes.length; var list = typeof blackList == 'undefined' ? 'html,head,style,title,link,meta,script,object,iframe,pre,a,' : blackList; while (len--) {
                 var node = childNodes[len]; if (node.nodeType === 1 && true || (list.indexOf(node.nodeName.toLowerCase()) === -1)) { replacer(finder, node, list, type); }
@@ -599,17 +602,26 @@ if (window.jQuery)
         { 
             onMouseover(jQuery(this).parent().attr("datamarker"));
         });
-        jQuery(document).on('mouseout', '.inner-item', function () { onMouseover(jQuery(this).parent().attr("datamarker"));
+
+        jQuery(document).on('mouseout', '.inner-item', function () 
+        { 
+            onMouseover(jQuery(this).parent().attr("datamarker"));
         }); 
+
         jQuery(document).on('click', '.inner-item', function () 
-        
-        { jQuery('#main-slider-storelocator .inner-item').removeClass('inner-item-active');
-         jQuery(this).addClass('inner-item-active'); 
-         num = jQuery(this).parent().attr("datamarker"); 
-         google.maps.event.trigger(gmarkers[num], 'click');
+        { 
+            jQuery('#main-slider-storelocator .inner-item').removeClass('inner-item-active');
+            jQuery(this).addClass('inner-item-active'); 
+            num = jQuery(this).parent().attr("datamarker"); 
+            google.maps.event.trigger(gmarkers[num], 'click');
         }); 
-        jQuery('.storeify-modal-elon .storeify-close').on("click", function () { jQuery(this).parent().parent().parent().hide();
-        }); jQuery('.chose-search-slt').on("change", function () {
+
+        jQuery('.storeify-modal-elon .storeify-close').on("click", function () 
+        { 
+            jQuery(this).parent().parent().parent().hide();
+        }); 
+        
+        jQuery('.chose-search-slt').on("change", function () {
             if (jQuery(this).val() == 'location') 
             { 
                 jQuery('.input-radius-slt').parent().show(); 
@@ -630,7 +642,8 @@ if (window.jQuery)
                 jQuery('#product_search').hide(); 
                 jQuery('#store_search').show(); 
             }
-        }); jQuery(document).on('change', '.storeifyapp_stores_country_filter,.storeifyapp_stores_tags_filter', function (e) {
+        }); 
+        jQuery(document).on('change', '.storeifyapp_stores_country_filter,.storeifyapp_stores_tags_filter', function (e) {
             e.preventDefault(); jQuery('#loading_mask_loader').show(); jQuery("#storeify-liststore-result").html(''); setTimeout(function () {
                 if (jQuery('.chose-search-slt').val() == 'location') {
                     if (jQuery('#frm-storelocator-search #address').val() != '') {
@@ -642,16 +655,40 @@ if (window.jQuery)
                 if (jQuery('.chose-search-slt').val() == 'product') { if (jQuery('#frm-storelocator-search #product_search').val() != '') { searchStoresByProducts(); } else { findbyTags(); } }
                 if (jQuery('.chose-search-slt').val() == 'store') { if (jQuery('#frm-storelocator-search #store_search').val() != '') { searchStoresByName(); } else { findbyTags(); } }
             }, 100);
-        }); jQuery(document).on('click', '#getbylocal', function () { loadGeolocation(); }); jQuery(document).on('click', '.map-tab-mobile-bnt-item', function (e) { if (jQuery(this).hasClass('active') && jQuery(this).data('val') == 'map-tab-ggmap' && jQuery(this).data('zoom')) { console.log(jQuery(this).data('zoom')); map.setZoom(jQuery(this).data('zoom')); } }); jQuery(document).on("submit", "#frm-storelocator-short-search", function (e) {
+        }); 
+
+        jQuery(document).on('click', '#getbylocal', function () 
+        { 
+            loadGeolocation(); 
+        }); 
+        jQuery(document).on('click', '.map-tab-mobile-bnt-item', function (e) 
+        { 
+            if (jQuery(this).hasClass('active') && jQuery(this).data('val') == 'map-tab-ggmap' && jQuery(this).data('zoom')) 
+            { 
+                console.log(jQuery(this).data('zoom')); 
+                map.setZoom(jQuery(this).data('zoom')); 
+
+            } 
+        }); 
+        JQuery( document ).ready(function() {
+            console.log( "ready!" );
+            jQuery('.item-thumb').hide();
+        });
+        jQuery(document).on("submit", "#frm-storelocator-short-search", function (e) {
             e.preventDefault(); document.getElementById("loading_mask_loader").style.display = ''; var address = document.getElementById("address").value; var radius_search = document.getElementById("radius_search").value; if ((address == '' || address == null) && vals == "") { jQuery('#address').focus(); document.getElementById("loading_mask_loader").style.display = 'none'; return false; }
             if ((radius_search == '' || radius_search == null) && vals == "") { document.getElementById("loading_mask_loader").style.display = 'none'; return false; }
             var focus_country = { address: address }; if (priority_search != 'global') { focus_country = { address: address, componentRestrictions: { country: priority_search, } }; }
             var geocoder = new google.maps.Geocoder(); geocoder.geocode(focus_country, function (results, status) { jQuery('#results-empty').html(''); if (status == google.maps.GeocoderStatus.OK) { searchLocationsNearShort(results[0]); } else { document.getElementById("loading_mask_loader").style.display = 'none'; document.getElementById("storeify-storeloctor-contactFrm").style.display = 'block'; document.getElementById("num-rs").innerHTML = 0; jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('result')); jQuery('#results-slt .list-custo-storeify').html(''); jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['store_near'] + '<i>"' + address + '"</i></h5>'); } });
-        }); jQuery(document).on("keydown", "#frm-storelocator-search input", function (e) { if (e.which == 13) { e.preventDefault(); jQuery("#frm-storelocator-search").trigger("submit"); } }); jQuery(document).ready(function () {
+        }); 
+
+        jQuery(document).on("keydown", "#frm-storelocator-search input", function (e) { if (e.which == 13) { e.preventDefault(); jQuery("#frm-storelocator-search").trigger("submit"); } }); jQuery(document).ready(function () {
             jQuery(document).on("click", "#storeify-sl-btn-trigger-popup", function (e) {
                 e.preventDefault(); jQuery("#storeify-sl-light-modal-wrapper").addClass('show'); if (jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').length) { h = jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').height() + 540; jQuery('#map').height(h); }
                 jQuery("#reset-search").trigger("click");
-            }); jQuery(document).on("click", ".storeify-sl-light-modal-close-icon", function (e) { e.preventDefault(); jQuery("#storeify-sl-light-modal-wrapper").removeClass('show'); }); jQuery(document).on("click", "#btn-filter", function (e) {
+
+            }); 
+
+            jQuery(document).on("click", ".storeify-sl-light-modal-close-icon", function (e) { e.preventDefault(); jQuery("#storeify-sl-light-modal-wrapper").removeClass('show'); }); jQuery(document).on("click", "#btn-filter", function (e) {
                 e.preventDefault(); if (!jQuery(this).hasClass('open')) { jQuery(this).addClass('open'); jQuery(this).next().addClass('open'); h = jQuery('#filter-group').height(); h2 = jQuery('#main-slider-storelocator').height(); w = jQuery(window).width(); if (w > 720) { jQuery('#main-slider-storelocator').height(h2 - h); } } else {
                     h = jQuery('#filter-group').height(); h2 = jQuery('#main-slider-storelocator').height(); if (w > 720 && h2 < 450) { jQuery('#main-slider-storelocator').height(h2 + h); }
                     jQuery(this).removeClass('open'); jQuery('#filter-group').removeClass('open');
