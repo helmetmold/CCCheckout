@@ -422,7 +422,15 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             jQuery("#results-slt h3.title").hide(); 
             jQuery("#main-slider-storelocator").addClass('storeify-first-alert'); 
         }
-        
+        jQuery(document).ready(function () { if (!map) initMap(); }); jQuery('#radius_search').on("change mousemove", function () { jQuery('#radius-value .num-range').html(jQuery(this).val()); }); jQuery(document).on("submit", "#frm-storelocator-search", function (e) {
+            e.preventDefault(); if (jQuery('.chose-search-slt').val() == 'location') {
+                if (search_mode == 1)
+                    loadGeolocationCountry(); else
+                    searchLocation(null);
+            }
+            if (jQuery('.chose-search-slt').val() == 'product') { searchStoresByProducts(); }
+            if (jQuery('.chose-search-slt').val() == 'store') { searchStoresByName(); }
+        }); 
         jQuery(document).on('click', '#reset-search', function (e) {
             e.preventDefault();
             if (marker_search != null) marker_search.setMap(null);
@@ -475,13 +483,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         jQuery(document).on('mouseover', '.inner-item', function () 
         { onMouseover(jQuery(this).parent().attr("datamarker")); });
          jQuery(document).on('mouseout', '.inner-item', function () { onMouseover(jQuery(this).parent().attr("datamarker"));
-         }); jQuery(document).on('click', '.inner-item', function () 
-        
-        { jQuery('#main-slider-storelocator .inner-item').removeClass('inner-item-active');
-         jQuery(this).addClass('inner-item-active'); 
-         num = jQuery(this).parent().attr("datamarker"); 
-         google.maps.event.trigger(gmarkers[num], 'click');
          }); 
+         
          jQuery('.storeify-modal-elon .storeify-close').on("click", function () { jQuery(this).parent().parent().parent().hide();
          }); jQuery('.chose-search-slt').on("change", function () {
             if (jQuery(this).val() == 'location') 
