@@ -4,7 +4,9 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
         '(?:((?!\\s*?(?:\\[{name}|\\[\\/(?!{name})))[\\s\\S]*?)' +
         '(\\[\/{name}\\]))?'; if (this.el.jquery) { this.el = this.el[0]; }
     this.matchTags(); this.convertMatchesToNodes(); this.replaceNodes();
-}; Shortcode.prototype.matchTags = function () {
+}; 
+
+Shortcode.prototype.matchTags = function () {
     var html = this.el.outerHTML, instances, match, re, contents, regex, tag, options; for (var key in this.tags) {
         if (!this.tags.hasOwnProperty(key)) { return; }
         re = this.template(this.regex, { name: key }); instances = html.match(new RegExp(re, 'g')) || []; for (var i = 0, len = instances.length; i < len; i++) {
@@ -12,7 +14,9 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
             this.matches.push({ name: key, tag: tag, regex: regex, options: options, contents: contents });
         }
     }
-}; Shortcode.prototype.convertMatchesToNodes = function () {
+}; 
+
+Shortcode.prototype.convertMatchesToNodes = function () {
     var html = this.el.innerHTML, excludes, re, replacer; var blackList; var replacer = function (finder, element, blackList, nodehtml = '') {
         if (!finder) { return }
         var regex = (typeof finder == 'string') ? new RegExp(finder, 'g') : finder; var regex2 = (typeof finder == 'string') ? new RegExp(finder, 'g') : finder; var childNodes = element.childNodes; var len = childNodes.length; var list = typeof blackList == 'undefined' ? 'html,head,style,title,link,meta,script,object,iframe,pre,a,' : blackList; while (len--) {
@@ -238,7 +242,7 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
             var att = ''; if (typeof distance !== 'undefined') { att = 'datamarker="' + num + '"'; }
             var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + num + '">';
             if (thum) 
-                { html += '<div class="item-thumb"><img title="" src="' + thum + '"></div>'; } 
+                { html += '<div class="item-thumb"><span class="material-icons-outlined align-middle" style="font-size: 48px;">pin_drop</span></div>'; }
             else 
                 { html += '<div class="item-thumb"><span class="material-icons-outlined align-middle" style="font-size: 48px;">pin_drop</span></div>'; }
             html += '<div class="item-content"><label class="store-name"><strong>' + name + '</strong></label>'; html += '<div class="address"><span class="material-icons-outlined">place</span>' + address + '</div>'; if (distance) {
