@@ -546,6 +546,7 @@ if (window.jQuery)
             {
                 initMap(); 
             }  
+            console.log("spag");
             jQuery('.item-thumb').hide();
         }); 
 
