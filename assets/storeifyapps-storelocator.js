@@ -236,7 +236,7 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
         function onMouseout(markerNum) { gmarkers[markerNum].setAnimation(null); }
         function listItem(social, thum, id, name, url, address, phone, email, web, distance, tags, num, search) {
             var att = ''; if (typeof distance !== 'undefined') { att = 'datamarker="' + num + '"'; }
-            var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + "69" + '">';
+            var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + num + '">';
             if (thum) 
                 { html += '<div class="item-thumb"><span class="material-icons-outlined align-middle" style="font-size: 48px;">pin_drop</span></div>'; }
             html += '<div class="item-content"><label class="store-name"><strong>' + name + '</strong></label>'; html += '<div class="address"><span class="material-icons-outlined">place</span>' + address + '</div>'; if (distance) {
