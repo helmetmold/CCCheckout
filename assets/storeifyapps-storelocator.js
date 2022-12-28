@@ -266,10 +266,10 @@ if (window.jQuery)
                         jQuery('#' + randomID).html(html_list); 
                         jQuery("#results-slt").show(); 
                         google.maps.event.removeListener(tilesloaded); 
-                        
+
                         const testElements = document.getElementsByClassName('item-thumb');
                         console.log(testElements.length);
-                        console.log("yeet");
+                        console.log("skrrt");
                     });
             }
         }
