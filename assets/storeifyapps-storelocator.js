@@ -127,7 +127,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var properties = results.features[i].properties;
                 if (typeof properties.thumbnail !== 'undefined') 
                     { 
-                        //thum = properties.thumbnail; 
+                        thum = properties.thumbnail; 
                     }
                 params.push
                 ({ 
