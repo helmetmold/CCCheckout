@@ -131,6 +131,7 @@ String.prototype.trim = String.prototype.trim || function ()
 
 if (window.jQuery) 
 {
+    jQuery('.item-thumb').hide();
     var pluginName = 'shortcode'; $.fn[pluginName] = function (tags) 
     { 
         this.each(function () 
@@ -138,14 +139,11 @@ if (window.jQuery)
             if (!$.data(this, pluginName)) 
             { 
                 $.data(this, pluginName, new Shortcode(this, tags)); 
-            } jQuery('.item-thumb').hide();
+            } 
         }); 
         return this; 
     }; 
 } 
-$(function() {
-    console.log( "ready!" );
-});
 !(function () {
     var loadScript = function (url, callback) 
     {
