@@ -144,8 +144,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             html += '<label class="col-md-12 store-name">' + data_maker.name + '</label>';
             if (data_maker.thum) 
                 { 
-                    html += '<div class="col-md-4 store-image"><img src="' + data_maker.thum + '"></div>';
-                    html += '<div class="col-md-8">';
+                    //html += '<div class="col-md-4 store-image"><img src="' + data_maker.thum + '"></div>';
+                    //html += '<div class="col-md-8">';
                 } 
                 else
                 html += '<div class="col-md-12">'; html += '<p><span class="material-icons-outlined">place</span> ' + data_maker.address + '</p>'; if (data_maker.email != null && typeof data_maker.email != 'undefined' && data_maker.email != '') { html += '<p class="marker-envelope"><span class="material-icons-outlined">email</span> <a href="mailto:' + data_maker.email + '">' + data_maker.email + '</a></p>'; }
@@ -249,6 +249,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         }
         function onMouseover(markerNum) { var currentIcon = gmarkers[markerNum]; currentIcon.setAnimation(null); if (currentIcon.getAnimation() != null) { currentIcon.setAnimation(null); } else { currentIcon.setAnimation(google.maps.Animation.BOUNCE); setTimeout(function () { currentIcon.setAnimation(null); }, 500); } }
         function onMouseout(markerNum) { gmarkers[markerNum].setAnimation(null); }
+        //thumb for pin
         function listItem(social, thum, id, name, url, address, phone, email, web, distance, tags, num, search) {
             var att = ''; if (typeof distance !== 'undefined') { att = 'datamarker="' + num + '"'; }
             var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + num + '">';
