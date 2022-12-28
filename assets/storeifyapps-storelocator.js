@@ -111,19 +111,63 @@ Shortcode.prototype.parseCallbackResult = function (result) {
     }
     return result;
 }; 
+
 Shortcode.prototype.parseOptions = function (stringOptions) {
     var options = {}, set; if (!stringOptions) { return; }
     set = stringOptions.replace(/(\w+=)/g, '\n$1').split('\n'); set.shift(); for (var i = 0; i < set.length; i++) { var kv = set[i].split('='); options[kv[0]] = kv[1].replace(/\'|\"/g, '').trim(); }
     return options;
 }; 
+
 Shortcode.prototype.escapeTagRegExp = function (regex) 
 { return regex.replace(/[\[\]\/]/g, '\\$&'); }; Shortcode.prototype.template = function (s, d) {
     for (var p in d) { s = s.replace(new RegExp('{' + p + '}', 'g'), d[p]); }
     return s;
 }; 
-String.prototype.trim = String.prototype.trim || function () { return this.replace(/^\s+|\s+$/g, ''); }; if (window.jQuery) { var pluginName = 'shortcode'; $.fn[pluginName] = function (tags) { this.each(function () { if (!$.data(this, pluginName)) { $.data(this, pluginName, new Shortcode(this, tags)); } }); return this; }; } !(function () {
-    var loadScript = function (url, callback) {
-        var script = document.createElement("script"); script.type = "text/javascript"; if (script.readyState) { script.onreadystatechange = function () { if (script.readyState == "loaded" || script.readyState == "complete") { script.onreadystatechange = null; callback(); } }; } else { script.onload = function () { callback(); }; }
+
+String.prototype.trim = String.prototype.trim || function () 
+{ 
+    return this.replace(/^\s+|\s+$/g, ''); 
+}; 
+
+if (window.jQuery) 
+{
+    var pluginName = 'shortcode'; $.fn[pluginName] = function (tags) 
+    { 
+        this.each(function () 
+        { 
+            if (!$.data(this, pluginName)) 
+            { 
+                $.data(this, pluginName, new Shortcode(this, tags)); 
+            } jQuery('.item-thumb').hide();
+        }); 
+        return this; 
+    }; 
+} 
+$(function() {
+    console.log( "ready!" );
+});
+!(function () {
+    var loadScript = function (url, callback) 
+    {
+        var script = document.createElement("script"); 
+        script.type = "text/javascript"; 
+        if (script.readyState) 
+        { 
+            script.onreadystatechange = function () 
+            { 
+                if (script.readyState == "loaded" || script.readyState == "complete") 
+                { 
+                    script.onreadystatechange = null; callback(); 
+                } 
+            }; 
+        } 
+        else 
+        { 
+            script.onload = function () 
+            { 
+                callback(); 
+            }; 
+        }
         script.src = url; document.getElementsByTagName("head")[0].appendChild(script);
     }; 
     var storeifyappsJavaScript = function (jQuery) {
@@ -615,7 +659,7 @@ String.prototype.trim = String.prototype.trim || function () { return this.repla
                 }
             });
         });
-        jQuery('.item-thumb').hide();
+        
     };
     
      if (typeof jQuery == 'undefined' || typeof jQuery.fn.on == 'undefined') { loadScript('//code.jquery.com/jquery-3.4.1.min.js', function () { storeifyAPPS = jQuery.noConflict(true); storeifyAPPS(document).ready(function () { storeifyappsJavaScript(storeifyAPPS); }); }); } else { storeifyappsJavaScript(jQuery); }
