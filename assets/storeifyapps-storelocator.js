@@ -115,102 +115,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     jQuery("#results-slt").show(); google.maps.event.removeListener(tilesloaded); });
             }
         }
-        window.eqfeed_callback = function (results) {
-            var thum = ''; 
-            var count_marker = 0;
-            var html_list = '';
-            var params = [];
-            for (var i = 0; i < results.features.length; i++) 
-            {
-                var coords = results.features[i].geometry.coordinates;
-                var latLng = new google.maps.LatLng(coords[1], coords[0]); 
-                var properties = results.features[i].properties;
-                if (typeof properties.thumbnail !== 'undefined') 
-                    { 
-                        thum = properties.thumbnail; 
-                    }
-                params.push
-                ({ 
-                    country: properties.country, 
-                    city: properties.city, 
-                    tags: properties.tags, 
-                    web: properties.web, 
-                    email: properties.email, 
-                    phone: properties.phone, 
-                    thum: thum, 
-                    id: properties.id, 
-                    name: properties.name, 
-                    url: properties.url, 
-                    address: properties.name, 
-                    social: properties.social, 
-                    tags: properties.tags, 
-                }); 
-                if (map) {
-                        if (list_mode != 1 || (list_mode == 1 && i < limit_store)) 
-                        { 
-                            var data_maker = { 
-                                position: new google.maps.LatLng(coords[1], coords[0]), 
-                                social: properties.social, 
-                                country: properties.country, 
-                                tags: properties.tags, 
-                                web: properties.web, 
-                                email: properties.email, 
-                                phone: properties.phone, 
-                                thum: thum, 
-                                id: properties.id, 
-                                name: properties.name, 
-                                url: properties.url, 
-                                address: properties.address, 
-                                map: map, 
-                                num: i, 
-                                visible: true, 
-                            }; 
-                            bounds.extend(latLng); 
-                            count_marker++; 
-                        } 
-                        else 
-                        { 
-                            var data_maker = { 
-                                position: new google.maps.LatLng(coords[1], coords[0]), social: properties.social, country: properties.country, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, map: map, num: i, visible: false, }; }
-                        var marker = createMarker(data_maker, map, infowindow); gmarkers.push(marker);
-                    }
-            }
-            if (map) {
-                if (count_marker > 1) { jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('results')); } else { jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('result')); }
-                document.getElementById("num-rs").innerHTML = count_marker; if (list_mode == 2 || limit_store == 0) { jQuery("#results-slt h3.title").hide(); jQuery("#main-slider-storelocator").addClass('storeify-first-alert'); }
-                if (list_mode == 2 || limit_store == 0) { jQuery("#results-slt h3.title").hide(); jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); }
-                if (center_lat == 0 && center_lng == 0) { map.fitBounds(bounds); } else { map.setZoom(initial_zoom); map.setCenter(new google.maps.LatLng(center_lat, center_lng)); }
-                document.getElementById("loading_mask_loader").style.display = 'none'; if (find_location == 1)
-                    setTimeout(function loadLocationInit() { loadGeolocationInit(); }, 1000);
-            }
-            if (shortcode_use == 1) {
-                var listCountry = new Shortcode(document.querySelector('body'), {
-                    storeifyStorelocator: function () {
-                        var country = this.options.country; var city = this.options.city; var class_text = 'storeify-list-country'; if (city) { class_text = 'storeify-list-city'; }
-                        var htmlCountry = '<div class="' + class_text + '">'; jQuery.each(params, function (index, value) {
-                            if (country && value.country == country) {
-                                htmlCountry += '<div class="storeify-item-city">'; htmlCountry += '<div class="storelocator-title storeify-item-info"><a href="' + value.url + '">' + value.name + '</a></div>'; if (value.address != null) { htmlCountry += '<div class="item-address storeify-item-info"><span class="material-icons-outlined">place</span><p>' + value.address + '</p></div>'; }
-                                if (value.email != null && typeof value.email != 'undefined' && value.email != '') { htmlCountry += '<div class="item-envelope storeify-item-info"><span class="material-icons-outlined">email</span>'; htmlCountry += '<a href="mailto:' + value.email + '" class="phone-email">' + value.email + '</a></div>'; }
-                                if (value.phone != null && typeof value.phone != 'undefined' && value.phone != '') { htmlCountry += '<div class="item-phone storeify-item-info"><span class="material-icons-outlined">phone</span>'; htmlCountry += '<a href="tel:' + value.phone + '" class="phone-no">' + value.phone + '</a></div>'; }
-                                if (value.web != null && typeof value.web != 'undefined' && value.web != '') { htmlCountry += '<div class="item-link storeify-item-info"><span class="material-icons-outlined">link</span>'; htmlCountry += value.web + '</div>'; }
-                                if (value.tags.length > 0) { var tag_arr = value.tags; var tag_html = ''; jQuery.each(tag_arr, function (i, val) { tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + val + '</span>'; }); htmlCountry += '<div class="item-tags storeify-item-info"><span class="material-icons-outlined">label</span> ' + tag_html + '</div>'; }
-                                if (value.social != null && typeof value.social != 'undefined' && value.social != '') { htmlCountry += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + value.social + '</div>'; }
-                                htmlCountry += '</div>';
-                            }
-                            if (city && value.city == city) {
-                                htmlCountry += '<div class="storeify-item-city">'; htmlCountry += '<div class="storelocator-title storeify-item-info"><a href="' + value.url + '">' + value.name + '</a></div>'; if (value.address != null) { htmlCountry += '<div class="item-address storeify-item-info"><span class="material-icons-outlined">place</span><p>' + value.address + '</p></div>'; }
-                                if (value.email != null && typeof value.email != 'undefined' && value.email != '') { htmlCountry += '<div class="item-envelope storeify-item-info"><span class="material-icons-outlined">email</span>'; htmlCountry += '<a href="mailto:' + value.email + '" class="phone-email">' + value.email + '</a></div>'; }
-                                if (value.phone != null && typeof value.phone != 'undefined' && value.phone != '') { htmlCountry += '<div class="item-phone storeify-item-info"><span class="material-icons-outlined">phone</span>'; htmlCountry += '<a href="tel:' + value.phone + '" class="phone-no">' + value.phone + '</a></div>'; }
-                                if (value.web != null && typeof value.web != 'undefined' && value.web != '') { htmlCountry += '<div class="item-link storeify-item-info"><span class="material-icons-outlined">link</span>'; htmlCountry += value.web + '</div>'; }
-                                if (value.tags.length > 0) { var tag_arr = value.tags; var tag_html = ''; jQuery.each(tag_arr, function (i, val) { tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + val + '</span>'; }); htmlCountry += '<div class="item-tags storeify-item-info"><span class="material-icons-outlined">label</span> ' + tag_html + '</div>'; }
-                                if (value.social != null && typeof value.social != 'undefined' && value.social != '') { htmlCountry += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + value.social + '</div>'; }
-                                htmlCountry += '</div>';
-                            }
-                        }); htmlCountry += '</div>'; return htmlCountry;
-                    }
-                });
-            }
-        }
+        
         function createMarker(data_maker, map, infowindow) 
         {
             var html = ''; 
@@ -400,10 +305,39 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             document.getElementById("num-rs").innerHTML = count_marker; jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); if (center_lat == 0 && center_lng == 0) { map.fitBounds(bounds); } else { map.setZoom(initial_zoom); map.setCenter(new google.maps.LatLng(center_lat, center_lng)); }
             if (list_mode == 2 || limit_store == 0) { jQuery("#results-slt h3.title").hide(); jQuery("#main-slider-storelocator").addClass('storeify-first-alert'); }
             jQuery("#results-slt").show(); jQuery('#' + randomID).html(html_list); document.getElementById("loading_mask_loader").style.display = 'none';
-        }); jQuery(document).on('mouseover', '.inner-item', function () { onMouseover(jQuery(this).parent().attr("datamarker")); }); jQuery(document).on('mouseout', '.inner-item', function () { onMouseover(jQuery(this).parent().attr("datamarker")); }); jQuery(document).on('click', '.inner-item', function () { jQuery('#main-slider-storelocator .inner-item').removeClass('inner-item-active'); jQuery(this).addClass('inner-item-active'); num = jQuery(this).parent().attr("datamarker"); google.maps.event.trigger(gmarkers[num], 'click'); }); jQuery('.storeify-modal-elon .storeify-close').on("click", function () { jQuery(this).parent().parent().parent().hide(); }); jQuery('.chose-search-slt').on("change", function () {
-            if (jQuery(this).val() == 'location') { jQuery('.input-radius-slt').parent().show(); jQuery('.gr-search-slt').show(); jQuery('#product_search').hide(); jQuery('#store_search').hide(); }
-            if (jQuery(this).val() == 'product') { jQuery('.input-radius-slt').parent().hide(); jQuery('#store_search').hide(); jQuery('.gr-search-slt').hide();; jQuery('#product_search').show(); }
-            if (jQuery(this).val() == 'store') { jQuery('.input-radius-slt').parent().hide(); jQuery('.gr-search-slt').hide(); jQuery('#product_search').hide(); jQuery('#store_search').show(); }
+        }); 
+        jQuery(document).on('mouseover', '.inner-item', function () 
+        { onMouseover(jQuery(this).parent().attr("datamarker")); });
+         jQuery(document).on('mouseout', '.inner-item', function () { onMouseover(jQuery(this).parent().attr("datamarker"));
+         }); jQuery(document).on('click', '.inner-item', function () 
+        
+        { jQuery('#main-slider-storelocator .inner-item').removeClass('inner-item-active');
+         jQuery(this).addClass('inner-item-active'); 
+         num = jQuery(this).parent().attr("datamarker"); 
+         google.maps.event.trigger(gmarkers[num], 'click');
+         }); 
+         jQuery('.storeify-modal-elon .storeify-close').on("click", function () { jQuery(this).parent().parent().parent().hide();
+         }); jQuery('.chose-search-slt').on("change", function () {
+            if (jQuery(this).val() == 'location') 
+            { 
+                jQuery('.input-radius-slt').parent().show(); 
+                jQuery('.gr-search-slt').show(); 
+                jQuery('#product_search').hide(); 
+                jQuery('#store_search').hide(); }
+            if (jQuery(this).val() == 'product') 
+            {
+                jQuery('.input-radius-slt').parent().hide(); 
+                jQuery('#store_search').hide(); 
+                jQuery('.gr-search-slt').hide();
+                jQuery('#product_search').show();
+            }
+            if (jQuery(this).val() == 'store') 
+            { 
+                jQuery('.input-radius-slt').parent().hide(); 
+                jQuery('.gr-search-slt').hide(); 
+                jQuery('#product_search').hide(); 
+                jQuery('#store_search').show(); 
+            }
         }); jQuery(document).on('change', '.storeifyapp_stores_country_filter,.storeifyapp_stores_tags_filter', function (e) {
             e.preventDefault(); jQuery('#loading_mask_loader').show(); jQuery("#storeify-liststore-result").html(''); setTimeout(function () {
                 if (jQuery('.chose-search-slt').val() == 'location') {
