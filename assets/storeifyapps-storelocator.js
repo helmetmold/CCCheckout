@@ -35,12 +35,27 @@ Shortcode.prototype.convertMatchesToNodes = function () {
     }; for (var i = 0, len = this.matches.length; i < len; i++) { match = this.matches[i]; node = this.el.querySelector('.sc-node-' + match.name); if (node) { fn = this.tags[match.name].bind(match); done = replacer.bind(match); result = fn(done); if (result !== undefined) { done(result); } } }
 }; Shortcode.prototype.parseCallbackResult = function (result) {
     var container, fragment, children; switch (typeof result) {
-        case 'function': result = document.createTextNode(result()); break; case 'string': container = document.createElement('div'); fragment = document.createDocumentFragment(); container.innerHTML = result; children = container.childNodes; if (children.length) {
-            for (var i = 0, len = children.length; i < len; i++) { fragment.appendChild(children[i].cloneNode(true)); }
+        case 'function': result = document.createTextNode(result()); break; case 'string': container = document.createElement('div');
+        fragment = document.createDocumentFragment();
+        container.innerHTML = result;
+        children = container.childNodes;
+        if (children.length) 
+        {
+            for (var i = 0, len = children.length; i < len; i++) 
+                { fragment.appendChild(children[i].cloneNode(true));}
             result = fragment;
-        } else { result = document.createTextNode(result); }
-            break; case 'object': if (!result.nodeType) { result = JSON.stringify(result); result = document.createTextNode(result); }
-            break; case 'default': break;
+        } 
+        else 
+        { 
+            result = document.createTextNode(result);
+        }
+        break; 
+        case 'object': if (!result.nodeType) 
+        { 
+            result = JSON.stringify(result);
+            result = document.createTextNode(result); 
+        }
+        break; case 'default': break;
     }
     return result;
 }; Shortcode.prototype.parseOptions = function (stringOptions) {
@@ -85,19 +100,80 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         }; var html_reponse_short = B64.decode(html_render_short); var storelocator_products_response = JSON.parse(B64.decode(products_render)); var storelocator_tags_response = JSON.parse(B64.decode(tags_render)); var storelocator_country = JSON.parse(B64.decode(array_country)); var html_reponse = B64.decode(html_render); var html_list = JSON.parse(B64.decode(html_list_render)); var gmarkers = []; var gmarker_show = []; var markers = []; var marker_search = null; var map; var infowindow; var bounds; var randomID = 'main-slider-storelocator'; function initMap() {
             var script = document.createElement('script'); script.src = window.geoson_url; document.getElementsByTagName('head')[0].appendChild(script); if (document.getElementById("loading_mask_loader")) { document.getElementById("loading_mask_loader").style.display = 'block'; }
             if (document.getElementById("map") && !document.getElementById("storeify-detail-store")) {
-                locationDiv = document.getElementById("location"); input = document.getElementById('address'); var styledMapType = new google.maps.StyledMapType(JSON.parse(B64.decode(map_style_render))); map = new google.maps.Map(document.getElementById("map"), { center: new google.maps.LatLng(center_lat, center_lng), zoom: initial_zoom, mapTypeId: google.maps.MapTypeId.ROADMAP, mapTypeControl: false, streetViewControl: false, mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU } }); map.mapTypes.set('styled_map', styledMapType); map.setMapTypeId('styled_map'); infowindow = new google.maps.InfoWindow(); bounds = new google.maps.LatLngBounds(); var searchBox = new google.maps.places.SearchBox(input); var tags_input = []; if (priority_search != 'global') { const options = { componentRestrictions: { country: priority_search }, }; const autocomplete = new google.maps.places.Autocomplete(input, options); }
+                locationDiv = document.getElementById("location"); input = document.getElementById('address');
+                var styledMapType = new google.maps.StyledMapType(JSON.parse(B64.decode(map_style_render)));
+                map = new google.maps.Map(document.getElementById("map"), { center: new google.maps.LatLng(center_lat, center_lng), zoom: initial_zoom, mapTypeId: google.maps.MapTypeId.ROADMAP, mapTypeControl: false, streetViewControl: false, mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU } }); map.mapTypes.set('styled_map', styledMapType); map.setMapTypeId('styled_map'); infowindow = new google.maps.InfoWindow(); bounds = new google.maps.LatLngBounds(); var searchBox = new google.maps.places.SearchBox(input); var tags_input = []; if (priority_search != 'global') { const options = { componentRestrictions: { country: priority_search }, }; const autocomplete = new google.maps.places.Autocomplete(input, options); }
                 jQuery.each(jQuery('input.storeifyapp_stores_tags_filter:checked'), function () { tags_input.push(jQuery(this).val()); }); var filter_country = 'all'; if (jQuery('input.storeifyapp_stores_country_filter').length) { filter_country = jQuery('input.storeifyapp_stores_country_filter:checked').val(); }
-                if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') { filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); }
-                if (locationDiv) locationDiv.innerHTML = '<div id="' + randomID + '" class="list-item-3"></div>'; var tilesloaded = google.maps.event.addListener(map, "tilesloaded", function () { jQuery('#' + randomID).html(html_list); jQuery("#results-slt").show(); google.maps.event.removeListener(tilesloaded); });
+                if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') 
+                    { 
+                        filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); 
+                    }
+                if (locationDiv) 
+                    locationDiv.innerHTML = '<div id="' + randomID + '" class="list-item-3"></div>';
+                var tilesloaded = google.maps.event.addListener(map, "tilesloaded", function () 
+                    { jQuery('#' + randomID).html(html_list); 
+                    jQuery("#results-slt").show(); google.maps.event.removeListener(tilesloaded); });
             }
         }
         window.eqfeed_callback = function (results) {
-            var thum = ''; var count_marker = 0; var html_list = ''; var params = []; for (var i = 0; i < results.features.length; i++) {
-                var coords = results.features[i].geometry.coordinates; var latLng = new google.maps.LatLng(coords[1], coords[0]); var properties = results.features[i].properties; if (typeof properties.thumbnail !== 'undefined') { thum = properties.thumbnail; }
-                params.push({ country: properties.country, city: properties.city, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, social: properties.social, tags: properties.tags, }); if (map) {
-                    if (list_mode != 1 || (list_mode == 1 && i < limit_store)) { var data_maker = { position: new google.maps.LatLng(coords[1], coords[0]), social: properties.social, country: properties.country, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, map: map, num: i, visible: true, }; bounds.extend(latLng); count_marker++; } else { var data_maker = { position: new google.maps.LatLng(coords[1], coords[0]), social: properties.social, country: properties.country, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, map: map, num: i, visible: false, }; }
-                    var marker = createMarker(data_maker, map, infowindow); gmarkers.push(marker);
-                }
+            var thum = ''; 
+            var count_marker = 0;
+            var html_list = '';
+            var params = [];
+            for (var i = 0; i < results.features.length; i++) 
+            {
+                var coords = results.features[i].geometry.coordinates;
+                var latLng = new google.maps.LatLng(coords[1], coords[0]); 
+                var properties = results.features[i].properties;
+                if (typeof properties.thumbnail !== 'undefined') 
+                    { 
+                        //thum = properties.thumbnail; 
+                    }
+                params.push
+                ({ 
+                    country: properties.country, 
+                    city: properties.city, 
+                    tags: properties.tags, 
+                    web: properties.web, 
+                    email: properties.email, 
+                    phone: properties.phone, 
+                    thum: thum, 
+                    id: properties.id, 
+                    name: properties.name, 
+                    url: properties.url, 
+                    address: properties.address, 
+                    social: properties.social, 
+                    tags: properties.tags, 
+                }); 
+                if (map) {
+                        if (list_mode != 1 || (list_mode == 1 && i < limit_store)) 
+                        { 
+                            var data_maker = { 
+                                position: new google.maps.LatLng(coords[1], coords[0]), 
+                                social: properties.social, 
+                                country: properties.country, 
+                                tags: properties.tags, 
+                                web: properties.web, 
+                                email: properties.email, 
+                                phone: properties.phone, 
+                                thum: thum, 
+                                id: properties.id, 
+                                name: properties.name, 
+                                url: properties.url, 
+                                address: properties.address, 
+                                map: map, 
+                                num: i, 
+                                visible: true, 
+                            }; 
+                            bounds.extend(latLng); 
+                            count_marker++; 
+                        } 
+                        else 
+                        { 
+                            var data_maker = { 
+                                position: new google.maps.LatLng(coords[1], coords[0]), social: properties.social, country: properties.country, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, map: map, num: i, visible: false, }; }
+                        var marker = createMarker(data_maker, map, infowindow); gmarkers.push(marker);
+                    }
             }
             if (map) {
                 if (count_marker > 1) { jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('results')); } else { jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('result')); }
