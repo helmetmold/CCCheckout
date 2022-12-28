@@ -670,7 +670,7 @@ if (window.jQuery)
 
             } 
         }); 
-        JQuery( document ).ready(function() {
+        JQuery(document).on("ready", function() {
             console.log( "ready!" );
             jQuery('.item-thumb').hide();
         });
