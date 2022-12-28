@@ -267,9 +267,12 @@ if (window.jQuery)
                         jQuery("#results-slt").show(); 
                         google.maps.event.removeListener(tilesloaded); 
 
-                        const testElements = document.getElementsByClassName('item-thumb');
-                        console.log(testElements.length);
-                        console.log("skrrt");
+                        const LocationImages = document.getElementsByClassName('item-thumb');
+                        
+                        for (let i = 0; i < LocationImages.length; i++) 
+                        {
+                            LocationImages[i].remove();
+                        }
                     });
             }
         }
