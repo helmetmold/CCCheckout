@@ -615,7 +615,7 @@ String.prototype.trim = String.prototype.trim || function () { return this.repla
                 }
             });
         });
-        jQuery('#item-thumb').hide();
+        jQuery('.item-thumb').hide();
     };
     
      if (typeof jQuery == 'undefined' || typeof jQuery.fn.on == 'undefined') { loadScript('//code.jquery.com/jquery-3.4.1.min.js', function () { storeifyAPPS = jQuery.noConflict(true); storeifyAPPS(document).ready(function () { storeifyappsJavaScript(storeifyAPPS); }); }); } else { storeifyappsJavaScript(jQuery); }
