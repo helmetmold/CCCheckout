@@ -546,7 +546,7 @@ if (window.jQuery)
             {
                 initMap(); 
             }  
-            console.log("spag");
+            console.log("spooog");
             const testElements = document.getElementsByClassName('item-thumb');
             for (let i = 0; i < testElements.length; i++) 
             {
