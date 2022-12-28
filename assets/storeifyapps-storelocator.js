@@ -141,7 +141,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     id: properties.id, 
                     name: properties.name, 
                     url: properties.url, 
-                    address: properties.address, 
+                    address: properties.name, 
                     social: properties.social, 
                     tags: properties.tags, 
                 }); 
@@ -316,7 +316,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 document.getElementById("num-rs").innerHTML = markerNodes.length; jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); var html_list = ''; var marker_first; var marker_count = 0; for (var i = 0; i < gmarkers.length; i++) {
                     marker = gmarkers[i]; var id = marker.id; if (markerNodes.includes(id)) {
                         thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
-                        var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; var num = marker.num; marker.setVisible(true); marker_first = marker; marker_count++; bounds.extend(marker.getPosition()); html_list += listItem(social, thum, id, name, url, address, phone, email, web, null, tags, num);
+                        var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; 
+                        var num = marker.num; marker.setVisible(true); marker_first = marker; marker_count++; bounds.extend(marker.getPosition()); html_list += listItem(social, thum, id, name, url, address, phone, email, web, null, tags, num);
                     } else { marker.setVisible(false); }
                 }
                 map.fitBounds(bounds); var zoom = map.getZoom(); zoom = Math.min(zoom, 12); if (marker_count == 1) { map.setCenter(marker_first.getPosition()); map.setZoom(search_result_zoom); } else { map.setZoom(zoom); }
