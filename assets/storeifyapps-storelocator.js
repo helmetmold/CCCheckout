@@ -548,6 +548,7 @@ if (window.jQuery)
             }  
             console.log("spooog");
             const testElements = document.getElementsByClassName('item-thumb');
+            console.log(testElements.length);
             for (let i = 0; i < testElements.length; i++) 
             {
                 testElements[i].style.display = "none";
