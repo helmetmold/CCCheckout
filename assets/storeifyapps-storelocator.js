@@ -144,7 +144,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             html += '<label class="col-md-12 store-name">' + data_maker.name + '</label>';
             if (data_maker.thum) 
                 { 
-                    //html += '<div class="col-md-4 store-image"><img src="' + data_maker.thum + '"></div>';
+                    html += '<div class="col-md-4 store-image"><img src="' + data_maker.thum + '"></div>';
                     html += '<div class="col-md-8">';
                 } 
                 else
@@ -251,11 +251,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         function onMouseout(markerNum) { gmarkers[markerNum].setAnimation(null); }
         function listItem(social, thum, id, name, url, address, phone, email, web, distance, tags, num, search) {
             var att = ''; if (typeof distance !== 'undefined') { att = 'datamarker="' + num + '"'; }
-            var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + num + '">';
-            if (thum) 
-                { html += '<div class="item-thumb"><img title="" src="' + thum + '"></div>'; } 
-            else 
-                { html += '<div class="item-thumb"><span class="material-icons-outlined align-middle" style="font-size: 48px;">pin_drop</span></div>'; }
+            //var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + num + '">';
+            //if (thum) 
+                //{ html += '<div class="item-thumb"><img title="" src="' + thum + '"></div>'; } 
+            //else 
+                //{ html += '<div class="item-thumb"><span class="material-icons-outlined align-middle" style="font-size: 48px;">pin_drop</span></div>'; }
             html += '<div class="item-content"><label class="store-name"><strong>' + name + '</strong></label>'; html += '<div class="address"><span class="material-icons-outlined">place</span>' + address + '</div>'; if (distance) {
                 var radius_unit_text = ' Km'; if (radius_unit != 1)
                     radius_unit_text = ' mi'; html += '<div class="item-road"><span class="material-icons-outlined">settings_ethernet</span>'; html += distance.toFixed(2) + radius_unit_text + '<br/></div>';
