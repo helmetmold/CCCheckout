@@ -234,7 +234,8 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
-  </head>
+  {% include 'storeifyapps-storelocator-header' %}
+</head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -291,5 +292,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  </body>
+  {% include 'storeifyapps-storelocator-footer' %}
+</body>
 </html>
