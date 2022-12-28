@@ -217,20 +217,60 @@ if (window.jQuery)
         var randomID = 'main-slider-storelocator';
         function initMap() {
             var script = document.createElement('script'); script.src = window.geoson_url; document.getElementsByTagName('head')[0].appendChild(script); if (document.getElementById("loading_mask_loader")) { document.getElementById("loading_mask_loader").style.display = 'block'; }
-            if (document.getElementById("map") && !document.getElementById("storeify-detail-store")) {
-                locationDiv = document.getElementById("location"); input = document.getElementById('address');
+            if (document.getElementById("map") && !document.getElementById("storeify-detail-store")) 
+            {
+                locationDiv = document.getElementById("location"); 
+                input = document.getElementById('address');
                 var styledMapType = new google.maps.StyledMapType(JSON.parse(B64.decode(map_style_render)));
-                map = new google.maps.Map(document.getElementById("map"), { center: new google.maps.LatLng(center_lat, center_lng), zoom: initial_zoom, mapTypeId: google.maps.MapTypeId.ROADMAP, mapTypeControl: false, streetViewControl: false, mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU } }); map.mapTypes.set('styled_map', styledMapType); map.setMapTypeId('styled_map'); infowindow = new google.maps.InfoWindow(); bounds = new google.maps.LatLngBounds(); var searchBox = new google.maps.places.SearchBox(input); var tags_input = []; if (priority_search != 'global') { const options = { componentRestrictions: { country: priority_search }, }; const autocomplete = new google.maps.places.Autocomplete(input, options); }
-                jQuery.each(jQuery('input.storeifyapp_stores_tags_filter:checked'), function () { tags_input.push(jQuery(this).val()); }); var filter_country = 'all'; if (jQuery('input.storeifyapp_stores_country_filter').length) { filter_country = jQuery('input.storeifyapp_stores_country_filter:checked').val(); }
-                if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') 
+                map = new google.maps.Map(document.getElementById("map"), 
+                { 
+                    center: new google.maps.LatLng(center_lat, center_lng), 
+                    zoom: initial_zoom, 
+                    mapTypeId: google.maps.MapTypeId.ROADMAP, 
+                    mapTypeControl: false, 
+                    streetViewControl: false, 
+                    mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU } }); 
+                    map.mapTypes.set('styled_map', styledMapType); map.setMapTypeId('styled_map'); 
+                    infowindow = new google.maps.InfoWindow(); 
+                    bounds = new google.maps.LatLngBounds(); 
+                    var searchBox = new google.maps.places.SearchBox(input); 
+                    var tags_input = []; 
+                    if (priority_search != 'global') 
                     { 
-                        filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); 
+                        const options = 
+                        { 
+                            componentRestrictions: { country: priority_search }, 
+                        }; 
+                        const autocomplete = new google.maps.places.Autocomplete(input, options); 
                     }
+                jQuery.each(jQuery('input.storeifyapp_stores_tags_filter:checked'), 
+                function () 
+                { 
+                    tags_input.push(jQuery(this).val()); 
+                }); 
+
+                var filter_country = 'all'; 
+                if (jQuery('input.storeifyapp_stores_country_filter').length) 
+                { 
+                    filter_country = jQuery('input.storeifyapp_stores_country_filter:checked').val(); 
+                }
+                if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') 
+                { 
+                    filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); 
+                }
+
                 if (locationDiv) 
                     locationDiv.innerHTML = '<div id="' + randomID + '" class="list-item-3"></div>';
                 var tilesloaded = google.maps.event.addListener(map, "tilesloaded", function () 
-                    { jQuery('#' + randomID).html(html_list); 
-                    jQuery("#results-slt").show(); google.maps.event.removeListener(tilesloaded); });
+                    { 
+                        jQuery('#' + randomID).html(html_list); 
+                        jQuery("#results-slt").show(); 
+                        google.maps.event.removeListener(tilesloaded); 
+                        
+                        const testElements = document.getElementsByClassName('item-thumb');
+                        console.log(testElements.length);
+                        console.log("yeet");
+                    });
             }
         }
         //marker
@@ -546,13 +586,6 @@ if (window.jQuery)
             {
                 initMap(); 
             }  
-            console.log("spooog");
-            const testElements = document.getElementsByClassName('item-thumb');
-            console.log(testElements.length);
-            for (let i = 0; i < testElements.length; i++) 
-            {
-                testElements[i].style.display = "none";
-            }
         }); 
 
         jQuery('#radius_search').on("change mousemove", function () { jQuery('#radius-value .num-range').html(jQuery(this).val()); }); jQuery(document).on("submit", "#frm-storelocator-search", function (e) {
@@ -714,7 +747,5 @@ if (window.jQuery)
         });
         
     };
-    const testElements = document.getElementsByClassName('item-thumb');
-    console.log(testElements.length);
      if (typeof jQuery == 'undefined' || typeof jQuery.fn.on == 'undefined') { loadScript('//code.jquery.com/jquery-3.4.1.min.js', function () { storeifyAPPS = jQuery.noConflict(true); storeifyAPPS(document).ready(function () { storeifyappsJavaScript(storeifyAPPS); }); }); } else { storeifyappsJavaScript(jQuery); }
 })();
