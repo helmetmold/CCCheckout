@@ -268,7 +268,7 @@ if (window.jQuery)
                         google.maps.event.removeListener(tilesloaded); 
 
                         const LocationImages = document.getElementsByClassName('item-thumb');
-                        for (let i = 0; i < LocationImages.count; i++) 
+                        for (let i = 0; i < LocationImages.length; i++) 
                         {
                             LocationImages[i].remove();
                             console.log("agian");
