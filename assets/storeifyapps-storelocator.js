@@ -268,7 +268,6 @@ if (window.jQuery)
                         google.maps.event.removeListener(tilesloaded); 
 
                         const LocationImages = document.getElementsByClassName('item-thumb');
-                        console.log(LocationImages.count);
                         for (let i = 0; i < LocationImages.length; i++) 
                         {
                             LocationImages[i].remove();
