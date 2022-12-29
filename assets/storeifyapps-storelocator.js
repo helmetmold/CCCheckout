@@ -270,10 +270,10 @@ if (window.jQuery)
                         //insert here
                         const LocationImages = document.getElementsByClassName('item-thumb');
                         console.log(LocationImages.length);
-                        LocationImages.forEach(removeThumbimage);
-                        function removeThumbimage(thumbImage) 
+                        for (let i = 0; i < LocationImages.length; i++) 
                         {
-                            thumbImage.style.display = "none";
+                            LocationImages[i].style.display = "none";
+                            console.log("loader");
                         }
                     });
             }
