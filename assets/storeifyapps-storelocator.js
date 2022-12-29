@@ -752,6 +752,7 @@ if (window.jQuery)
             jQuery(this).addClass('inner-item-active'); 
             num = jQuery(this).parent().attr("datamarker"); 
             google.maps.event.trigger(gmarkers[num], 'click');
+            console.log("click");
         }); 
 
         jQuery('.storeify-modal-elon .storeify-close').on("click", function () 
