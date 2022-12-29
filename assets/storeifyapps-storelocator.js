@@ -273,7 +273,6 @@ if (window.jQuery)
                         for (let i = 0; i < LocationImages.length; i++) 
                         {
                             LocationImages[i].style.display = "none";
-                            console.log("loader");
                         }
                     });
             }
