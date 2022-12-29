@@ -353,8 +353,21 @@ if (window.jQuery)
                      map.setZoom(initial_zoom); 
                      map.setCenter(new google.maps.LatLng(center_lat, center_lng)); 
                 }
-                document.getElementById("loading_mask_loader").style.display = 'none'; if (find_location == 1)
-                    setTimeout(function loadLocationInit() { loadGeolocationInit(); }, 1000);
+                document.getElementById("loading_mask_loader").style.display = 'none'; 
+                if (find_location == 1)
+                {
+                    setTimeout(function loadLocationInit() 
+                    { 
+                        loadGeolocationInit(); 
+                        const LocationImages = document.getElementsByClassName('item-thumb');
+                        for (let i = 0; i < LocationImages.length; i++) 
+                        {
+                            LocationImages[i].remove();
+                            console.log("loader");
+                        }
+                    }, 1000);
+                }
+                    
             }
             if (shortcode_use == 1) {
                 var listCountry = new Shortcode(document.querySelector('body'), {
