@@ -752,7 +752,10 @@ if (window.jQuery)
             jQuery(this).addClass('inner-item-active'); 
             num = jQuery(this).parent().attr("datamarker"); 
             google.maps.event.trigger(gmarkers[num], 'click');
-            jQuery('#main-slider-storelocator .inner-item').addClass('expanded');
+            jQuery(this)
+            .append('my DOM manupulation skills dont seem like a big deal when using jquery')
+            .css('color', 'red').addClass('myclass');
+
         }); 
 
         jQuery('.storeify-modal-elon .storeify-close').on("click", function () 
