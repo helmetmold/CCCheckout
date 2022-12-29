@@ -268,13 +268,14 @@ if (window.jQuery)
                         google.maps.event.removeListener(tilesloaded); 
 
                         //insert here
+                        const LocationImages = document.getElementsByClassName('item-thumb');
+                        console.log(LocationImages.length);
+                        for (let i = 0; i < LocationImages.length; i++) 
+                        {
+                            LocationImages[i].remove();
+                            console.log("loader");
+                        }
                     });
-                const LocationImages = document.getElementsByClassName('item-thumb');
-                for (let i = 0; i < LocationImages.length; i++) 
-                {
-                    LocationImages[i].remove();
-                    console.log("loader");
-                }
             }
         }
         //marker
