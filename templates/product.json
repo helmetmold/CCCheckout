@@ -59,6 +59,11 @@
             "text": "Size chart",
             "page": ""
           }
+        },
+        "609af2cc-9d2a-4fa0-84fa-b552ec72ae0f": {
+          "type": "shopify:\/\/apps\/sellup-upsell-add-ons\/blocks\/onpage_offers\/001ec440-29ea-4cbf-9265-4963fa825261",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -71,13 +76,15 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "popup"
+        "popup",
+        "609af2cc-9d2a-4fa0-84fa-b552ec72ae0f"
       ],
       "settings": {
         "enable_sticky_info": false,
         "media_position": "left",
         "gallery_layout": "stacked",
         "media_size": "medium",
+        "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
