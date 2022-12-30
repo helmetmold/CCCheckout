@@ -1,42 +1,26 @@
 [
   {
-    "id": 1147140,
+    "id": 1148316,
     "name": "Katy Flagship",
-    "thumbnail": "https:\/\/sl.storeify.app\/images\/base\/store-1672192192.png",
+    "thumbnail": "https:\/\/sl.storeify.app\/images\/base\/store-1672444591.png",
     "url": "\/a\/store-locator\/katy-flagship.html",
-    "address": "906 Avenue A, Katy, TX, 77493, United States",
-    "phone": "(713) 417-9025",
-    "email": null,
-    "web": null,
-    "tags": [
-
-    ],
-    "distance": null,
-    "lat": "29.7875637",
-    "lng": "-95.8206460",
-    "social": "",
-    "country": "United States",
-    "city": "Katy"
-  },
-  {
-    "id": 1147141,
-    "name": "Cunae International School",
-    "thumbnail": "https:\/\/sl.storeify.app\/images\/base\/store-1672194237.png",
-    "url": "\/a\/store-locator\/cunae-international-school.html",
-    "address": "5655 Creekside Forest, The Woodlands, TX, 77389, United States",
+    "address": "5501 3rd Street, Katy, TX, 77493, USA",
     "phone": null,
     "email": null,
     "web": null,
     "tags": [
-      "Filmmaking",
       "Animation",
-      "Youtubers"
+      "Filmmaking",
+      "Youtube",
+      "AI",
+      "Minecraft",
+      "Roblox"
     ],
     "distance": null,
-    "lat": "30.1399061",
-    "lng": "-95.5075975",
+    "lat": "29.7881633",
+    "lng": "-95.8199365",
     "social": "",
-    "country": "United States",
-    "city": "The Woodlands"
+    "country": "USA",
+    "city": "Katy"
   }
 ]
