@@ -127,7 +127,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 }
 
 .bootstrap-storeifyapps {
-    max-width: 2000px;
+    max-width: 2000px !important;
 }
 
 .bootstrap-storeifyapps html {
