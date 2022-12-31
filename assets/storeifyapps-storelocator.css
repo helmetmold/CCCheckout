@@ -2095,7 +2095,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 
 @media(min-width:1200px) {
     .bootstrap-storeifyapps .container {
-        width: 1170px
+        width: 100%
     }
 }
 
