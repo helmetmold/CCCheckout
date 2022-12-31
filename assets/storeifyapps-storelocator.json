@@ -60,5 +60,24 @@
     "social": "",
     "country": "United States",
     "city": "The Woodlands"
+  },
+  {
+    "id": 1148319,
+    "name": "Circle C - Veritas Academy",
+    "thumbnail": "",
+    "url": "\/a\/store-locator\/circle-c-veritas-academy.html",
+    "address": "3401 Escarpment Blvd, Austin, TX, 78739, United States",
+    "phone": "+1 08323707774",
+    "email": "kaiseiforman@gmail.com",
+    "web": null,
+    "tags": [
+
+    ],
+    "distance": null,
+    "lat": "30.1925944",
+    "lng": "-97.8881215",
+    "social": "",
+    "country": "United States",
+    "city": "Austin"
   }
 ]
