@@ -1517,7 +1517,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
     line-height: 1.42857143;
     color: #333;
     background-color: #fff;
-    max-width: 100vw;
+    max-width: 100vw !important;
 }
 
 .bootstrap-storeifyapps input,
