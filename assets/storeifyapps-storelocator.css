@@ -1507,7 +1507,8 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 
 .bootstrap-storeifyapps html {
     font-size: 10px;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
 }
 
 .bootstrap-storeifyapps body {
@@ -1515,8 +1516,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;
-    width: 100%;
+    background-color: #fff
 }
 
 .bootstrap-storeifyapps input,
@@ -8719,7 +8719,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 }
 
 .bootstrap-storeifyapps {
-    max-width: 100%;
+    max-width: 100;
     margin: 0 auto;
     width: 100%
 }
