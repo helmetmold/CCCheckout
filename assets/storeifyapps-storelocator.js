@@ -100,7 +100,6 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
                      var InnerItem = document.getElementsByClassName('inner-item');
                      for (let i = 0; i < InnerItem.length; i++) 
                      {
-                         console.log("inner"+i);
                          InnerItem[i].appendChild(document.createElement("div"));
                      }
                      console.log("test");
