@@ -101,7 +101,7 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
                     var div = document.createElement("div");
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
-                        InnerItem[i].appendChild(div);
+                        InnerItem[i].appendChild(document.createElement("div"));
                     }
                     console.log("test");
                 });
