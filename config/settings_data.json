@@ -1,19 +1,19 @@
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
-    "colors_accent_1": "#37b9eb",
+    "colors_accent_1": "#000000",
     "gradient_accent_1": "",
     "colors_accent_2": "#2346b6",
     "gradient_accent_2": "",
     "colors_text": "#121212",
     "colors_outline_button_labels": "#121212",
     "colors_background_1": "#ffffff",
-    "gradient_background_1": "",
+    "gradient_background_1": "radial-gradient(rgba(179, 164, 255, 1), rgba(255, 255, 255, 1) 79%, rgba(255, 255, 255, 1) 97%)",
     "colors_background_2": "#ffffff",
     "gradient_background_2": "",
-    "type_header_font": "raleway_n4",
+    "type_header_font": "monotype_century_old_style_n5",
     "heading_scale": 130,
-    "type_body_font": "raleway_n4",
+    "type_body_font": "monotype_news_gothic_n4",
     "body_scale": 100,
     "page_width": 1600,
     "spacing_sections": 0,
@@ -146,17 +146,16 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/Creator_Camp_Logo.png",
-          "logo_width": 250,
+          "logo_width": 60,
           "logo_position": "top-center",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
-          "show_line_separator": true,
-          "enable_sticky_header": false,
+          "show_line_separator": false,
+          "enable_sticky_header": true,
           "mobile_logo_position": "center",
           "margin_bottom": 0,
-          "padding_top": 28,
-          "padding_bottom": 28
+          "padding_top": 36,
+          "padding_bottom": 16
         }
       },
       "footer": {
