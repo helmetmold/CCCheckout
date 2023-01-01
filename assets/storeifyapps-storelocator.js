@@ -98,14 +98,15 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
                         LocationImages[i].style.display = "none";
                     }
                     var InnerItem = document.getElementsByClassName('inner-item');
-                    InnerItem.style.width = "100px";
-                    InnerItem.style.height = "100px";
-                    InnerItem.style.background = "red";
-                    InnerItem.style.color = "white";
-                    InnerItem.innerHTML = "Hello";
+                    var div = document.createElement("div");
+                    div.style.width = "100px";
+                    div.style.height = "100px";
+                    div.style.background = "red";
+                    div.style.color = "white";
+                    div.innerHTML = "Hello";
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
-                        InnerItem[i].appendChild(document.createElement("div"));
+                        InnerItem[i].appendChild(div);
                     }
                     console.log("test");
                 });
