@@ -92,17 +92,22 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
                     google.maps.event.removeListener(tilesloaded); 
 
                     const LocationImages = document.getElementsByClassName('item-thumb');
-                     console.log(LocationImages.length);
-                     for (let i = 0; i < LocationImages.length; i++) 
-                     {
-                         LocationImages[i].style.display = "none";
-                     }
-                     var InnerItem = document.getElementsByClassName('inner-item');
-                     for (let i = 0; i < InnerItem.length; i++) 
-                     {
-                         InnerItem[i].appendChild(document.createElement("div"));
-                     }
-                     console.log("test");
+                    console.log(LocationImages.length);
+                    for (let i = 0; i < LocationImages.length; i++) 
+                    {
+                        LocationImages[i].style.display = "none";
+                    }
+                    var InnerItem = document.getElementsByClassName('inner-item');
+                    InnerItem.style.width = "100px";
+                    InnerItem.style.height = "100px";
+                    InnerItem.style.background = "red";
+                    InnerItem.style.color = "white";
+                    InnerItem.innerHTML = "Hello";
+                    for (let i = 0; i < InnerItem.length; i++) 
+                    {
+                        InnerItem[i].appendChild(document.createElement("div"));
+                    }
+                    console.log("test");
                 });
             }
         }
