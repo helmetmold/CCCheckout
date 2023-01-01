@@ -9612,8 +9612,7 @@ a.linkdetailstore {
 .storelocator-layout-2 {
     background: #fff;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 20px
+    border-radius: 0px
 }
 
 .storelocator-layout-2 #main-slider-storelocator {
