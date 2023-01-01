@@ -10121,3 +10121,7 @@ button#submit-search {
 .bootstrap-storeifyapps a {
     text-decoration: auto
 }
+
+.storeify-stl-header{
+    width: 33% !important;
+}
