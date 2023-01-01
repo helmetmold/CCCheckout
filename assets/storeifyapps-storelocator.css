@@ -126,9 +126,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
     }
 }
 
-.bootstrap-storeifyapps {
-    max-width: 100% !important;
-}
+.bootstrap-storeifyapps {}
 
 .bootstrap-storeifyapps html {
     font-family: sans-serif;
