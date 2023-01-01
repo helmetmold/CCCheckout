@@ -102,10 +102,10 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
                         var div = document.createElement("div");
-                        div.innerHTML = "my <b>new</b> skill - <large>DOM maniuplation!</large>";
+                        div.setAttribute('class', 'myclass');
                         InnerItem[i].appendChild(div);
                     }
-                    console.log("test");
+                    
                 });
             }
         }
