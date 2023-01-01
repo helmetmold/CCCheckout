@@ -146,16 +146,17 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo_width": 60,
+          "logo": "shopify:\/\/shop_images\/Creator_Camp_Logo.png",
+          "logo_width": 250,
           "logo_position": "top-center",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
-          "show_line_separator": false,
-          "enable_sticky_header": true,
+          "show_line_separator": true,
+          "enable_sticky_header": false,
           "mobile_logo_position": "center",
           "margin_bottom": 0,
-          "padding_top": 36,
-          "padding_bottom": 16
+          "padding_top": 28,
+          "padding_bottom": 28
         }
       },
       "footer": {
@@ -225,15 +226,7 @@
     },
     "content_for_index": [
 
-    ],
-    "blocks": {
-      "3066834073402364550": {
-        "type": "shopify:\/\/apps\/sellup-upsell-add-ons\/blocks\/global_sellup\/001ec440-29ea-4cbf-9265-4963fa825261",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "presets": {
     "Default": {
