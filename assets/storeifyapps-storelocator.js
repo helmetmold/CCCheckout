@@ -99,7 +99,6 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
                     }
                     var InnerItem = document.getElementsByClassName('inner-item');
                     var div = document.createElement("div");
-                    div.setAttribute('class', 'CampBox');
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
                         InnerItem[i].appendChild(div);
