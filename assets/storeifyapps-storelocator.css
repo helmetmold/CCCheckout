@@ -9807,7 +9807,7 @@ button#submit-search {
 
     .storeify-sear-box,
     .storeify-header-inner {
-        width: 33.33333333%;
+        width: 33.33333333% !important;
         overflow: hidden;
         padding: 20px;
         border: 1px solid #ddd;
