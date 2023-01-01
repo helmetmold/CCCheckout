@@ -9807,11 +9807,11 @@ button#submit-search {
 
     .storeify-sear-box,
     .storeify-header-inner {
-        width: 33% !important;
+        width: 100%;
         overflow: hidden;
         padding: 20px;
         border: 1px solid #ddd;
-        border-radius: 5px;
+        border-radius: 5px
     }
 
     .search-radius-box {
