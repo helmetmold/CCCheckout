@@ -98,10 +98,11 @@ var search_result_zoom = 2; var limit_store = 10000; var list_mode = 0; var sear
                         LocationImages[i].style.display = "none";
                     }
                     var InnerItem = document.getElementsByClassName('inner-item');
-                    var div = document.createElement("div");
+                    
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
-                        InnerItem[i].appendChild(document.createElement("div"));
+                        var div = document.createElement("div");
+                        InnerItem[i].appendChild(div);
                     }
                     console.log("test");
                 });
