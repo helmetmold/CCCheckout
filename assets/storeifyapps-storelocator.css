@@ -8720,7 +8720,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 }
 
 .bootstrap-storeifyapps {
-    max-width: 1200px;
+    max-width: 100% !important;
     margin: 0 auto;
     width: 100%
 }
