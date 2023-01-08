@@ -149,7 +149,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var div = document.createElement("div");
                         div.setAttribute('class', 'myclass');
 
-                        InnerItem[i].appendChild(div);  
+                        
 
                         function handleResponse() 
                         {
@@ -160,8 +160,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.open('GET', '/?sections=featured-collection', true);
                         request.send();
 
-                        InnerItem.innerHTML = request.response;
+                        div.innerHTML = request.response;
                         
+                        InnerItem[i].appendChild(div);  
 
                     }
 
