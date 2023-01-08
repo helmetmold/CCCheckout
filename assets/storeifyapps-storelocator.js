@@ -161,7 +161,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                               'Accept': 'application/json',
                             },
                             body: JSON.stringify({query: `{
-                              product(id: "gid://shopify/Product/8061808771371") {
+                              product(id: "https://creator-camp.myshopify.com/products/animation-camp-1") {
                                 id
                                 title
                                 handle
