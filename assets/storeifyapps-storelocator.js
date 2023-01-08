@@ -151,8 +151,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         console.log(request);
 
                         request.upload();
-                        
-                        //$("body").html(request);
 
                     }
 
