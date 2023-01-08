@@ -150,7 +150,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.send();
                         console.log(request);
 
-                        request.upload();
+                        
 
                     }
 
