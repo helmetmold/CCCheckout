@@ -154,28 +154,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-                        fetch('/api/graphql', 
-                        {
-                            method: 'POST',
-                            headers: {
-                              'Content-Type': 'application/json',
-                              'Accept': 'application/json',
-                            },
-                            body: JSON.stringify({query: `{
-                              collections(first: 2) {
-                                edges {
-                                  node {
-                                    id
-                                    handle
-                                    title
-                                    updatedAt
-                                  }
-                                }
-                              }
-                            }`}),
-                          })
-                          .then(response => response.json())
-                          .then(data => console.log(data))
+                        shopify.rest.Product.find({
+                            session: session,
+                            id: 632910392,
+                          });
 
 
                     }
