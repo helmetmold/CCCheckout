@@ -137,7 +137,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         console.log("run");
                         
-                        shopify.rest.CustomCollection.count({
+                        product.CustomCollection.count({
                             session: session,
                           });
 
