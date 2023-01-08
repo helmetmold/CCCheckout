@@ -163,8 +163,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.addEventListener('load', handleResponse);
                         request.open('GET', '/?sections=header,footer', true);
                         request.send();
+                        console.log(request);
                         
-                        
+
                     }
 
                 });
