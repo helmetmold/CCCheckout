@@ -145,7 +145,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                           const request = new XMLHttpRequest();
                           request.addEventListener('load', handleResponse);
                           request.open('GET', '/?sections=header,footer', true);
-                          console.log(request.send());
+                          console.log(request);
                     }
 
                 });
