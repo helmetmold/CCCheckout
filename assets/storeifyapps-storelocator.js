@@ -160,9 +160,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.open('GET', '/?sections=featured-collection', true);
                         request.send();
 
-                        //div.setContent(request.response);
+                        div.setContent = request.response;
                         
-                        div.innerText(request.response);
+                        div.innerText = request.response;
 
                         InnerItem[i].appendChild(div);  
                         
