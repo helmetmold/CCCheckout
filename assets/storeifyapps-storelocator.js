@@ -137,10 +137,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         console.log("run");                  
 
-                        Shopify.rest.Collection.products({
-                            session:session,
-                            id:2345234
-                        })
+                        console.log(Shopify.shop);
                     }
 
                 });
