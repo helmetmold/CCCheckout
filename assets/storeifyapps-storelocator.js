@@ -149,11 +149,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var div = document.createElement("div");
                         div.setAttribute('class', 'myclass');
 
-                        InnerItem[i].appendChild(div);
-
-                        console.log("run");                  
-
-                        console.log(Shopify);
+                        InnerItem[i].appendChild(div);  
 
                         function handleResponse() 
                         {
@@ -165,8 +161,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.send();
 
                         InnerItem.innerHTML = request.response;
-
-                        console.log(request);
                         
 
                     }
