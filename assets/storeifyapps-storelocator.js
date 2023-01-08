@@ -148,45 +148,18 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     {
                         var div = document.createElement("div");
                         div.setAttribute('class', 'myclass');
-                        function handleResponse() 
-                        {
-                            JSON.parse(this.responseText);
-                        }
-                        const request = new XMLHttpRequest();
-                        request.addEventListener('load', handleResponse);
-                        request.open('GET', '/?sections=featured-collection', true);
-                        console.log(request); 
-                        
-                        
-
-                        div.innerHTML = xml_to_string(request);
 
                         InnerItem[i].appendChild(div);
 
                         console.log("run");                  
 
-                        console.log(Shopify.shop);
+                        console.log(Shopify);
 
                         
 
                     }
 
                 });
-            }
-        }
-        function xml_to_string(xml_node)
-        {
-            if (xml_node.xml)
-                return xml_node.xml;
-            else if (XMLSerializer)
-            {
-                var xml_serializer = new XMLSerializer();
-                return xml_serializer.serializeToString(xml_node);
-            }
-            else
-            {
-                alert("ERROR: Extremely old browser");
-                return "";
             }
         }
         window.eqfeed_callback = function (results) {
