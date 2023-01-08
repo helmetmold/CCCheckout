@@ -163,6 +163,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.addEventListener('load', handleResponse);
                         request.open('GET', '/?sections=featured-collection', true);
                         request.send();
+
+                        InnerItem.innerHTML = request.response;
+
                         console.log(request);
                         
 
