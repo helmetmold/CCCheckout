@@ -162,7 +162,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                               'Accept': 'application/json',
                             },
                             body: JSON.stringify({query: `{
-                              collections(first: 10) {
+                              collections(first: 2) {
                                 edges {
                                   node {
                                     id
