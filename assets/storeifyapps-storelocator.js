@@ -160,11 +160,79 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             }
         }
         window.eqfeed_callback = function (results) {
-            var thum = ''; var count_marker = 0; var html_list = ''; var params = []; for (var i = 0; i < results.features.length; i++) {
-                var coords = results.features[i].geometry.coordinates; var latLng = new google.maps.LatLng(coords[1], coords[0]); var properties = results.features[i].properties; if (typeof properties.thumbnail !== 'undefined') { thum = properties.thumbnail; }
-                params.push({ country: properties.country, city: properties.city, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, social: properties.social, tags: properties.tags, }); if (map) {
-                    if (list_mode != 1 || (list_mode == 1 && i < limit_store)) { var data_maker = { position: new google.maps.LatLng(coords[1], coords[0]), social: properties.social, country: properties.country, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, map: map, num: i, visible: true, }; bounds.extend(latLng); count_marker++; } else { var data_maker = { position: new google.maps.LatLng(coords[1], coords[0]), social: properties.social, country: properties.country, tags: properties.tags, web: properties.web, email: properties.email, phone: properties.phone, thum: thum, id: properties.id, name: properties.name, url: properties.url, address: properties.address, map: map, num: i, visible: false, }; }
-                    var marker = createMarker(data_maker, map, infowindow); gmarkers.push(marker);
+            var thum = ''; 
+            var count_marker = 0; 
+            var html_list = ''; 
+            var params = []; 
+            for (var i = 0; i < results.features.length; i++) 
+            {
+                var coords = results.features[i].geometry.coordinates; 
+                var latLng = new google.maps.LatLng(coords[1], coords[0]); 
+                var properties = results.features[i].properties; 
+                if (typeof properties.thumbnail !== 'undefined') 
+                { 
+                    thum = properties.thumbnail; 
+                }
+                params.push(
+                    { 
+                        country: properties.country, 
+                        city: properties.city, 
+                        tags: properties.tags, 
+                        web: properties.web, 
+                        email: properties.email, 
+                        phone: properties.phone, 
+                        thum: thum, 
+                        id: properties.id, 
+                        name: properties.name, 
+                        url: properties.url, 
+                        address: properties.address, 
+                        social: properties.social, 
+                        tags: properties.tags, }); 
+                    if (map) 
+                    {
+                        if (list_mode != 1 || (list_mode == 1 && i < limit_store)) 
+                        { 
+                            var data_maker = 
+                            { 
+                                position: new google.maps.LatLng(coords[1], coords[0]), 
+                                social: properties.social, 
+                                country: properties.country, 
+                                tags: properties.tags, 
+                                web: properties.web, 
+                                email: properties.email, 
+                                phone: properties.phone, 
+                                thum: thum, id: properties.id, 
+                                name: properties.name, 
+                                url: properties.url, 
+                                address: properties.address, 
+                                map: map, 
+                                num: i, 
+                                visible: true, 
+                            }; 
+                            bounds.extend(latLng); 
+                            count_marker++; 
+                        } 
+                        else 
+                        { 
+                            var data_maker = 
+                            { 
+                                position: new google.maps.LatLng(coords[1], coords[0]),
+                                 social: properties.social, 
+                                 country: properties.country, 
+                                 tags: properties.tags, web: properties.web, 
+                                 email: properties.email, 
+                                 phone: properties.phone, 
+                                 thum: thum, id: properties.id, 
+                                 name: properties.name, 
+                                 url: properties.url, 
+                                 address: properties.address, 
+                                 map: map, 
+                                 num: i, 
+                                 visible: false, 
+                            }; 
+                        }
+                    var marker = createMarker(data_maker, map, infowindow); 
+                    gmarkers.push(marker);
                 }
             }
             if (map) {
