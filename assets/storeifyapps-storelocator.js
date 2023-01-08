@@ -1,5 +1,10 @@
 src="https://cdn.shopify.com/s/libs/shopify_app.js"
 
+ShopifyApp.init({
+    apiKey: '0e28918716bb0ff60fd944003da4b1fd',
+    password: 'e85a4dcc7dcee41cfa30cb96c418aac4'
+  });
+
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
