@@ -96,7 +96,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var c, b = -1, d = [], e = [, ,]; if (!B64.lookup) { for (c = B64.alphabet.length, B64.lookup = {}; ++b < c;)B64.lookup[B64.alphabet.charAt(b)] = b; b = -1 }
                 for (c = a.length; ++b < c && (e[0] = B64.lookup[a.charAt(b)], e[1] = B64.lookup[a.charAt(++b)], d.push(e[0] << 2 | e[1] >> 4), e[2] = B64.lookup[a.charAt(++b)], 64 != e[2]) && (d.push((15 & e[1]) << 4 | e[2] >> 2), e[3] = B64.lookup[a.charAt(++b)], 64 != e[3]);)d.push((3 & e[2]) << 6 | e[3]); return d
             }
-        }; var replacer = function (finder, element, blackList, type = 1) {
+        }; 
+        var replacer = function (finder, element, blackList, type = 1) {
             if (!finder) { return }
             var regex = (typeof finder == 'string') ? new RegExp(finder, 'g') : finder; var regex2 = (typeof finder == 'string') ? new RegExp(finder, 'g') : finder; var childNodes = element.childNodes; var len = childNodes.length; var list = typeof blackList == 'undefined' ? 'html,head,style,title,link,meta,script,object,iframe,pre,a,' : blackList; while (len--) {
                 var node = childNodes[len]; if (node.nodeType === 1 && true || (list.indexOf(node.nodeName.toLowerCase()) === -1)) { replacer(finder, node, list, type); }
@@ -108,7 +109,21 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     return frag;
                 })(); var parent = node.parentNode; parent.insertBefore(frag, node); parent.removeChild(node);
             }
-        }; var html_reponse_short = B64.decode(html_render_short); var storelocator_products_response = JSON.parse(B64.decode(products_render)); var storelocator_tags_response = JSON.parse(B64.decode(tags_render)); var storelocator_country = JSON.parse(B64.decode(array_country)); var html_reponse = B64.decode(html_render); var html_list = JSON.parse(B64.decode(html_list_render)); var gmarkers = []; var gmarker_show = []; var markers = []; var marker_search = null; var map; var infowindow; var bounds; var randomID = 'main-slider-storelocator'; 
+        }; 
+        var html_reponse_short = B64.decode(html_render_short); 
+        var storelocator_products_response = JSON.parse(B64.decode(products_render)); 
+        var storelocator_tags_response = JSON.parse(B64.decode(tags_render)); 
+        var storelocator_country = JSON.parse(B64.decode(array_country)); 
+        var html_reponse = B64.decode(html_render); 
+        var html_list = JSON.parse(B64.decode(html_list_render)); 
+        var gmarkers = []; 
+        var gmarker_show = []; 
+        var markers = []; 
+        var marker_search = null; 
+        var map; 
+        var infowindow; 
+        var bounds; 
+        var randomID = 'main-slider-storelocator'; 
         function initMap() {
             var script = document.createElement('script'); script.src = window.geoson_url; document.getElementsByTagName('head')[0].appendChild(script); if (document.getElementById("loading_mask_loader")) { document.getElementById("loading_mask_loader").style.display = 'block'; }
             if (document.getElementById("map") && !document.getElementById("storeify-detail-store")) {
@@ -133,13 +148,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     {
                         var div = document.createElement("div");
                         div.setAttribute('class', 'myclass');
-                        
-                        InnerItem[i].appendChild(div);
-
-                        console.log("run");                  
-
-                        console.log(Shopify.shop);
-
                         function handleResponse() 
                         {
                             JSON.parse(this.responseText);
@@ -152,9 +160,34 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         
 
+                        div.innerHTML = xml_to_string(request);
+
+                        InnerItem[i].appendChild(div);
+
+                        console.log("run");                  
+
+                        console.log(Shopify.shop);
+
+                        
+
                     }
 
                 });
+            }
+        }
+        function xml_to_string(xml_node)
+        {
+            if (xml_node.xml)
+                return xml_node.xml;
+            else if (XMLSerializer)
+            {
+                var xml_serializer = new XMLSerializer();
+                return xml_serializer.serializeToString(xml_node);
+            }
+            else
+            {
+                alert("ERROR: Extremely old browser");
+                return "";
             }
         }
         window.eqfeed_callback = function (results) {
