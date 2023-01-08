@@ -149,27 +149,33 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var div = document.createElement("div");
                         div.setAttribute('class', 'myclass');
 
-                        
 
-                        function handleResponse() 
-                        {
-                            JSON.parse(this.responseText);
-                        }
-                        const request = new XMLHttpRequest();
-                        request.addEventListener('load', handleResponse);
-                        request.open('GET', '/?sections=featured-collection', true);
-                        request.send();
 
-                        console.log(request);
-                        console.log(request.responseText)
-
-                        div.setContent += request.responseText;
-                        
-                        div.innerText = request.responseText;
 
                         InnerItem[i].appendChild(div);  
                         
-
+                        fetch('/api/graphql', 
+                        {
+                            method: 'POST',
+                            headers: {
+                              'Content-Type': 'application/json',
+                              'Accept': 'application/json',
+                            },
+                            body: JSON.stringify({query: `{
+                              collections(first: 10) {
+                                edges {
+                                  node {
+                                    id
+                                    handle
+                                    title
+                                    updatedAt
+                                  }
+                                }
+                              }
+                            }`}),
+                          })
+                          .then(response => response.json())
+                          .then(data => console.log(data))
 
 
                     }
