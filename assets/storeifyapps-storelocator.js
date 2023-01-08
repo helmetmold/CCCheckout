@@ -162,7 +162,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         div.setContent += request.responseText;
                         
-                        div.innerText = "Ello Geez";
+                        div.innerText = request.responseText;
 
                         InnerItem[i].appendChild(div);  
                         
