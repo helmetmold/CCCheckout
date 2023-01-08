@@ -154,10 +154,36 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-                        shopify.rest.Product.find({
-                            session: session,
-                            id: 632910392,
-                          });
+                        fetch('/api/graphql', {
+                            method: 'POST',
+                            headers: {
+                              'Content-Type': 'application/json',
+                              'Accept': 'application/json',
+                            },
+                            body: JSON.stringify({query: `{
+                              product(id: "gid://shopify/Product/8061808771371") {
+                                id
+                                title
+                                handle
+                                description
+                                priceRange {
+                                  minVariantPrice {
+                                    amount
+                                    currencyCode
+                                  }
+                                }
+                                images(first: 1) {
+                                  edges {
+                                    node {
+                                      src
+                                    }
+                                  }
+                                }
+                              }
+                            }`}),
+                          })
+                          .then(response => response.json())
+                          .then(data => console.log(data))
 
 
                     }
