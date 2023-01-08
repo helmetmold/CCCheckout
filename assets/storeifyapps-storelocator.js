@@ -161,7 +161,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         }
                         const request = new XMLHttpRequest();
                         request.addEventListener('load', handleResponse);
-                        request.open('GET', '/?sections=header,footer', true);
+                        request.open('GET', '/?sections=featured-collection', true);
                         request.send();
                         console.log(request);
                         
