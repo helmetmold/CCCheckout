@@ -160,9 +160,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.open('GET', '/?sections=featured-collection', true);
                         request.send();
 
-                        div.innerHTML = request.response;
-                        
+                        div.setContent(request.response);
+
                         InnerItem[i].appendChild(div);  
+
+
 
                     }
 
@@ -256,8 +258,14 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             if (shortcode_use == 1) {
                 var listCountry = new Shortcode(document.querySelector('body'), {
                     storeifyStorelocator: function () {
-                        var country = this.options.country; var city = this.options.city; var class_text = 'storeify-list-country'; if (city) { class_text = 'storeify-list-city'; }
-                        var htmlCountry = '<div class="' + class_text + '">'; jQuery.each(params, function (index, value) {
+                        var country = this.options.country; var city = this.options.city; 
+                        var class_text = 'storeify-list-country'; 
+                        if (city) 
+                        { 
+                            class_text = 'storeify-list-city'; 
+                        }
+                        var htmlCountry = '<div class="' + class_text + '">'; 
+                        jQuery.each(params, function (index, value) {
                             if (country && value.country == country) {
                                 htmlCountry += '<div class="storeify-item-city">'; htmlCountry += '<div class="storelocator-title storeify-item-info"><a href="' + value.url + '">' + value.name + '</a></div>'; if (value.address != null) { htmlCountry += '<div class="item-address storeify-item-info"><span class="material-icons-outlined">place</span><p>' + value.address + '</p></div>'; }
                                 if (value.email != null && typeof value.email != 'undefined' && value.email != '') { htmlCountry += '<div class="item-envelope storeify-item-info"><span class="material-icons-outlined">email</span>'; htmlCountry += '<a href="mailto:' + value.email + '" class="phone-email">' + value.email + '</a></div>'; }
@@ -276,27 +284,66 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 if (value.social != null && typeof value.social != 'undefined' && value.social != '') { htmlCountry += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + value.social + '</div>'; }
                                 htmlCountry += '</div>';
                             }
-                        }); htmlCountry += '</div>'; return htmlCountry;
+                        }); 
+                        htmlCountry += '</div>'; 
+                        return htmlCountry;
                     }
                 });
             }
         }
         function createMarker(data_maker, map, infowindow) {
-            var html = ''; html += '<div class="store-marker" style="max-width:400px">'; html += '<div class="address-info"><div class="table-store-marker">'; html += '<div class="row">'; html += '<label class="col-md-12 store-name">' + data_maker.name + '</label>'; if (data_maker.thum) { html += '<div class="col-md-4 store-image"><img src="' + data_maker.thum + '"></div>'; html += '<div class="col-md-8">'; } else
-                html += '<div class="col-md-12">'; html += '<p><span class="material-icons-outlined">place</span> ' + data_maker.address + '</p>'; if (data_maker.email != null && typeof data_maker.email != 'undefined' && data_maker.email != '') { html += '<p class="marker-envelope"><span class="material-icons-outlined">email</span> <a href="mailto:' + data_maker.email + '">' + data_maker.email + '</a></p>'; }
+            var html = ''; 
+            html += '<div class="store-marker" style="max-width:400px">'; 
+            html += '<div class="address-info"><div class="table-store-marker">'; 
+            html += '<div class="row">'; 
+            html += '<label class="col-md-12 store-name">' + data_maker.name + '</label>'; 
+            if (data_maker.thum) 
+            { 
+                html += '<div class="col-md-4 store-image"><img src="' + data_maker.thum + '"></div>'; 
+                html += '<div class="col-md-8">'; 
+            } else
+                html += '<div class="col-md-12">'; 
+                html += '<p><span class="material-icons-outlined">place</span> ' + data_maker.address + '</p>'; 
+                if (data_maker.email != null && typeof data_maker.email != 'undefined' && data_maker.email != '') 
+                { 
+                    html += '<p class="marker-envelope"><span class="material-icons-outlined">email</span> <a href="mailto:' + data_maker.email + '">' + data_maker.email + '</a></p>'; 
+                }
             if (data_maker.phone != null && typeof data_maker.phone != 'undefined' && data_maker.phone != '') { html += '<p class="marker-phone"><span class="material-icons-outlined">phone</span> <a href="tel:' + data_maker.phone + '">' + data_maker.phone + '</a></p>'; }
             if (data_maker.web != null && typeof data_maker.web != 'undefined' && data_maker.web != '') { html += '<p class="marker-link"><span class="material-icons-outlined">link</span> ' + data_maker.web + '</p>'; }
             if (data_maker.tags.length > 0) { var tag_arr = data_maker.tags; var tag_html = ''; jQuery.each(tag_arr, function (key, value) { tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + value + '</span>'; }); html += '<p><span class="material-icons-outlined">label</span> ' + tag_html + '</p>'; }
             if (data_maker.social != null && typeof data_maker.social != 'undefined' && data_maker.social != '') { html += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + data_maker.social + '</div>'; }
-            if (data_maker.url != null) { html += '<a class="linkdetailstore" href="' + data_maker.url + '">' + trans['link_detail'] + ' <span class="material-icons-outlined">trending_flat</span></a>'; }
+            if (data_maker.url != null) 
+            { 
+                html += '<a class="linkdetailstore" href="' + data_maker.url + '">' + trans['link_detail'] + ' <span class="material-icons-outlined">trending_flat</span></a>'; }
             html += '<a class="getdirectionstore" href="https://maps.google.com/?daddr=' + data_maker.address + '&saddr=" target="_blank">' + trans['getdirection'] + ' <span class="material-icons-outlined">trending_flat</span></a></div></div>'; html += '<div id="' + data_maker.id + '"></div>'; html += '</div></div></div></div>'; var marker = new google.maps.Marker(data_maker); if (window.icon_marker != '') { var icon = { url: window.icon_marker, scaledSize: new google.maps.Size(40, 40), }; marker.setIcon(icon); }
             else { var icon = { url: 'https://sl.storeify.app/images/frontend/default-mark-icon.png', scaledSize: new google.maps.Size(40, 40), }; marker.setIcon(icon); }
             google.maps.event.addListener(marker, 'click', function (evt) {
-                if (jQuery('.chose-search-slt').val() == 'location') { address = jQuery('#address').val(); html = html.replace("saddr=", "saddr=" + address); }
+                if (jQuery('.chose-search-slt').val() == 'location') 
+                { address = jQuery('#address').val();
+                    html = html.replace("saddr=", "saddr=" + address); 
+                }
                 showInfoWindow(evt, this, map, infowindow, html);
             }); return marker;
         }
-        function showInfoWindow(evt, marker, map, infowindow, html) { map.panTo(marker.getPosition()); if (marker.getVisible() && (marker.getMap() != null)) { infowindow.setContent(html); infowindow.open(map, marker); } else { infowindow.setContent(html); infowindow.setPosition(marker.getPosition()); infowindow.open(map); google.maps.event.addListenerOnce(map, 'idle', function () { infowindow.setContent(html); infowindow.open(map, marker); }); } }
+        function showInfoWindow(evt, marker, map, infowindow, html) 
+        { 
+            map.panTo(marker.getPosition()); 
+            if (marker.getVisible() && (marker.getMap() != null)) 
+            { 
+                infowindow.setContent(html); 
+                infowindow.open(map, marker); 
+            } 
+            else 
+            { 
+                infowindow.setContent(html); 
+                infowindow.setPosition(marker.getPosition()); 
+                infowindow.open(map); 
+                google.maps.event.addListenerOnce(map, 'idle', function () 
+                { 
+                    infowindow.setContent(html); 
+                    infowindow.open(map, marker); 
+                }); 
+            } }
         function degreesToRadians(degrees) { return degrees * Math.PI / 180; }
         function getDistanceBetweenPoints(lat1, lng1, lat2, lng2) {
             let R = 6378137; let dLat = degreesToRadians(lat2 - lat1); let dLong = degreesToRadians(lng2 - lng1); let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
