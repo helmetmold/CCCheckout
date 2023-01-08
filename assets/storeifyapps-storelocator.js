@@ -156,8 +156,13 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.addEventListener('load', handleResponse);
                         request.open('GET', '/?sections=featured-collection', true);
                         request.send();
-                        console.log(request);
-
+                        
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                               // Typical action to be performed when the document is ready:
+                               document.getElementById("demo").innerHTML = xhttp.responseText;
+                            }
+                        };
                         
 
                         div.innerHTML = xml_to_string(request);
