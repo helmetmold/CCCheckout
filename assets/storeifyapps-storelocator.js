@@ -136,6 +136,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         InnerItem[i].appendChild(div);
 
                         console.log("run");
+                        
+                        shopify.rest.CustomCollection.count({
+                            session: session,
+                          });
 
                         ShopifyApp.Collections.list().then(function(collections) {
                             collections.forEach(function(collection) {
