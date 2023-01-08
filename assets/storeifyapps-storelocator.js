@@ -139,14 +139,15 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         console.log(Shopify.shop);
 
-                        function handleResponse() {
+                        function handleResponse() 
+                        {
                             JSON.parse(this.responseText);
-                          }
-                          const request = new XMLHttpRequest();
-                          request.addEventListener('load', handleResponse);
-                          request.open('GET', '/?sections=featured-collection', true);
-                          request.send();
-                          console.log(request);
+                        }
+                        const request = new XMLHttpRequest();
+                        request.addEventListener('load', handleResponse);
+                        request.open('GET', '/?sections=featured-collection', true);
+                        request.send();
+                        console.log(request);
                     }
 
                 });
