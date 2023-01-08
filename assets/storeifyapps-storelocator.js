@@ -1,10 +1,3 @@
-src="https://cdn.shopify.com/s/libs/shopify_app.js"
-
-ShopifyApp.init({
-    apiKey: '0e28918716bb0ff60fd944003da4b1fd',
-    password: 'e85a4dcc7dcee41cfa30cb96c418aac4'
-  });
-
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
@@ -144,11 +137,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         console.log("run");                  
 
-                        ShopifyApp.CustomCollection.list().then(function(collections) {
-                            collections.forEach(function(collection) {
-                              console.log(collection.id); // Logs the id of each collection
-                            });
-                          });
+                        
                     }
 
                 });
@@ -285,15 +274,88 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             }).fail(function () { window.location.href = '/'; }); return true;
         }
         function searchStoresByProducts() {
-            if (marker_search != null) marker_search.setMap(null); if (infowindow) infowindow.close(); bounds = new google.maps.LatLngBounds(); document.getElementById("loading_mask_loader").style.display = ''; jQuery('.content-results-slt').removeClass('content-results-first'); var search_text = document.getElementById("product_search").value; var tags = []; jQuery.each(jQuery('input.storeifyapp_stores_tags_filter:checked'), function () { tags.push(jQuery(this).val()); }); var filter_country = jQuery('input.storeifyapp_stores_country_filter:checked').val(); if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') { filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); }
-            var data = { name: search_text, shop: Shopify.shop, tags: tags.join(','), country: filter_country, v: 2 }; var searchUrl = '/a/store-locator/searchproduct'; jQuery.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('input[name="_token"]').val() } }); jQuery.ajax({ url: searchUrl, type: "GET", data: data, cache: false, dataType: "json", }).done(function (data) {
-                var markerNodes = data.data; if (markerNodes.length == 0) { document.getElementById("loading_mask_loader").style.display = 'none'; document.getElementById("results-slt").style.display = 'none'; var query_search = document.getElementById("product_search").value; jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['no_store_product'] + ' <i>"' + query_search + '"</i></h5>'); return; }
-                document.getElementById("results-slt").style.display = 'block'; var thum = ''; if (markerNodes.length > 1) { jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('results')); } else { jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('result')); }
-                document.getElementById("num-rs").innerHTML = markerNodes.length; jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); var html_list = ''; var marker_first; var marker_count = 0; for (var i = 0; i < gmarkers.length; i++) {
-                    marker = gmarkers[i]; var id = marker.id; if (markerNodes.includes(id)) {
+            if (marker_search != null) marker_search.setMap(null);
+            if (infowindow) 
+                infowindow.close(); 
+            bounds = new google.maps.LatLngBounds(); 
+            document.getElementById("loading_mask_loader").style.display = '';
+            jQuery('.content-results-slt').removeClass('content-results-first'); 
+            var search_text = document.getElementById("product_search").value; 
+            var tags = []; 
+            jQuery.each(jQuery('input.storeifyapp_stores_tags_filter:checked'), function () 
+            { 
+                tags.push(jQuery(this).val()); 
+            }); 
+            var filter_country = jQuery('input.storeifyapp_stores_country_filter:checked').val(); 
+            if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') 
+            { 
+                filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); 
+            }
+            var data = 
+            { 
+                name: search_text, 
+                shop: Shopify.shop, 
+                tags: tags.join(','), 
+                country: filter_country, 
+                v: 2 
+            }; 
+            var searchUrl = '/a/store-locator/searchproduct';
+            jQuery.ajaxSetup(
+                { 
+                    headers: { 'X-CSRF-TOKEN': jQuery('input[name="_token"]').val() } 
+                }); 
+                jQuery.ajax(
+                    { 
+                        url: searchUrl, type: "GET", data: data, cache: false, dataType: "json", 
+                    }).done(function (data) 
+                    {
+                        var markerNodes = data.data; 
+                        if (markerNodes.length == 0) 
+                        { 
+                            document.getElementById("loading_mask_loader").style.display = 'none';
+                            document.getElementById("results-slt").style.display = 'none'; 
+                            var query_search = document.getElementById("product_search").value; 
+                            jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['no_store_product'] + ' <i>"' + query_search + '"</i></h5>'); 
+                            return; 
+                        }
+                document.getElementById("results-slt").style.display = 'block'; 
+                var thum = '';
+                if (markerNodes.length > 1) 
+                { 
+                    jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('results')); 
+                } 
+                else 
+                { 
+                    jQuery("#storeify-text-result").text(jQuery("#storeify-text-result").data('result')); 
+                }
+                document.getElementById("num-rs").innerHTML = markerNodes.length; 
+                jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); 
+                var html_list = ''; 
+                var marker_first; 
+                var marker_count = 0; 
+                for (var i = 0; i < gmarkers.length; i++) 
+                {
+                    marker = gmarkers[i]; var id = marker.id; if (markerNodes.includes(id)) 
+                    {
                         thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
-                        var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; var num = marker.num; marker.setVisible(true); marker_first = marker; marker_count++; bounds.extend(marker.getPosition()); html_list += listItem(social, thum, id, name, url, address, phone, email, web, null, tags, num);
-                    } else { marker.setVisible(false); }
+                        var name = marker.name; var url = marker.url; 
+                        var address = marker.address; 
+                        var phone = marker.phone; 
+                        var email = marker.email; 
+                        var web = marker.web; 
+                        var tags = marker.tags; 
+                        var social = marker.social; 
+                        var num = marker.num; 
+                        marker.setVisible(true); 
+                        marker_first = marker; 
+                        marker_count++; 
+                        bounds.extend(marker.getPosition()); 
+                        html_list += listItem(social, thum, id, name, url, address, phone, email, web, null, tags, num);
+                    } 
+                    else
+                    { 
+                        marker.setVisible(false); 
+                    }
                 }
                 map.fitBounds(bounds); var zoom = map.getZoom(); zoom = Math.min(zoom, 12); if (marker_count == 1) { map.setCenter(marker_first.getPosition()); map.setZoom(search_result_zoom); } else { map.setZoom(zoom); }
                 jQuery(".map-tab-mobile-bnt-item").attr("data-zoom", zoom); jQuery('#' + randomID).html(html_list); document.getElementById("loading_mask_loader").style.display = 'none';
