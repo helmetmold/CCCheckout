@@ -135,13 +135,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         div.setAttribute('class', 'myclass');
                         InnerItem[i].appendChild(div);
 
-                        console.log("run");
-                        
-                        product.CustomCollection.count({
-                            session: session,
-                          });
+                        console.log("run");                  
 
-                        ShopifyApp.Collections.list().then(function(collections) {
+                        ShopifyApp.CustomCollection.list().then(function(collections) {
                             collections.forEach(function(collection) {
                               console.log(collection.id); // Logs the id of each collection
                             });
