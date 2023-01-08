@@ -161,8 +161,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         request.send();
 
                         div.setContent(request.response);
+                        
+                        div.innerText(request.response);
 
                         InnerItem[i].appendChild(div);  
+                        
 
 
 
