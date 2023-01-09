@@ -147,6 +147,14 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         apiKey: '0e28918716bb0ff60fd944003da4b1fd',
                         password: 'e85a4dcc7dcee41cfa30cb96c418aac4'
                       });
+                    
+                    Shopify.get('/admin/products.json', { limit: 10, fields: 'id,title' }, function(err, data) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log(data); // This will output the list of products
+                    }
+                    });
 
                     var InnerItem = document.getElementsByClassName('inner-item');
                     
