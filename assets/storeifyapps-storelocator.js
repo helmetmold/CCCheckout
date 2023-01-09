@@ -160,7 +160,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var div = document.createElement("button");
                         div.setAttribute('class', 'myclass');
                         
-                        jQuery.getJSON('/collections/katy/products.json', function(collections) {
+                        jQuery.getJSON('/collections/katy/products.json', function(collections) 
+                        {
                             for (let i = 0; i < collections.products.length; i++) 
                             {
                                 console.log(collections.products[i].title);
@@ -168,7 +169,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                             div.innerText = collections.products[0].title;
 
-                          } );
+                        });
                     }
                 });
             }
