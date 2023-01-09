@@ -156,7 +156,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
-                        var div = document.createElement("button");
+                        var div = document.createElement("div");
                         div.setAttribute('class', 'myclass');
                         InnerItem[i].appendChild(div);  
                         
