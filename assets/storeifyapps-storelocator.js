@@ -154,6 +154,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
+                        console.log(getcart());
+
                         function getcart()
                         {
                             var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
