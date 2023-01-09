@@ -172,7 +172,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                             
                           } );
-                        InnerItem[i].appendChild(div);  
+                        //InnerItem[i].appendChild(div);  
                         
 
                     }
