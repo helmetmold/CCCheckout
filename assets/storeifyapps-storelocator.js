@@ -154,16 +154,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-                        console.log(getcart());
-
-                        function getcart()
-                        {
-                            var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
-                            .then(response => response.json())
-                            .then(data => { return data });
-                        }
-                        
-
+                        Shopify.init({
+                            apiKey: 'YOUR_API_KEY',
+                            password: 'YOUR_API_PASSWORD'
+                          });
                         
 
                     }
