@@ -154,11 +154,15 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-                        var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
-                        .then(response => response.json())
-                        .then(data => { return data });
+                        function getcart()
+                        {
+                            var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
+                            .then(response => response.json())
+                            .then(data => { return data });
+                        }
+                        
 
-                        console.log(cartContents);
+                        
 
                     }
 
