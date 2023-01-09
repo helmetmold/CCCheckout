@@ -158,7 +158,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         .then(response => response.json())
                         .then(data => { return data });
 
-                        console.log(window.shopify);
+                        console.log(cartContents);
 
                     }
 
