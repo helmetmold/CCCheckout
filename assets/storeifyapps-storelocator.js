@@ -1,4 +1,4 @@
-import Shopify from 'https://cdn.shopify.com/s/libs/shopify-api/v1.0/shopify-api.min.js';
+
 
 var search_result_zoom = 2; 
 var limit_store = 10000; 
