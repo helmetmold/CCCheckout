@@ -167,8 +167,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 console.log(collections.products[i].title);
                             }
 
-                            div.innerText = collections.products[0];
+                            div.innerText = collections.products[0].title;
                             
+
                             
                           } );
 
