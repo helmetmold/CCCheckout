@@ -1,3 +1,6 @@
+import '@shopify/shopify-api/adapters/node';
+import '@shopify/shopify-api/adapters/cf-worker';
+
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
@@ -154,36 +157,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-                        fetch('/api/graphql', {
-                            method: 'POST',
-                            headers: {
-                              'Content-Type': 'application/json',
-                              'Accept': 'application/json',
-                            },
-                            body: JSON.stringify({query: `{
-                              product(id: "https://creator-camp.myshopify.com/products/animation-camp-1") {
-                                id
-                                title
-                                handle
-                                description
-                                priceRange {
-                                  minVariantPrice {
-                                    amount
-                                    currencyCode
-                                  }
-                                }
-                                images(first: 1) {
-                                  edges {
-                                    node {
-                                      src
-                                    }
-                                  }
-                                }
-                              }
-                            }`}),
-                          })
-                          .then(response => response.json())
-                          .then(data => console.log(data))
 
 
                     }
