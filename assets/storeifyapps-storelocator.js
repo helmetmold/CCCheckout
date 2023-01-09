@@ -1,5 +1,3 @@
-console.log(google.maps);
-
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
