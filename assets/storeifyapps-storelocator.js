@@ -154,7 +154,28 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                     var InnerItem = document.getElementsByClassName('inner-item');
                     
-                    
+                    for (let i = 0; i < InnerItem.length; i++) 
+                    {
+                        var div = document.createElement("button");
+                        div.setAttribute('class', 'myclass');
+                        
+                        
+                        
+                        jQuery.getJSON('/collections/katy/products.json', function(collections) {
+                            for (let i = 0; i < collections.products.length; i++) 
+                            {
+                                console.log(collections.products[i].title);
+                            }
+
+                            div.innerText = collections.products[0].title;
+                            
+
+                            
+                          } );
+                        //InnerItem[i].appendChild(div);  
+                        
+
+                    }
 
                 });
             }
