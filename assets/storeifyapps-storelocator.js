@@ -158,6 +158,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     {
                         var div = document.createElement("button");
                         div.setAttribute('class', 'myclass');
+
+                        div.innerText = "bing bong";
                         
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
                             for (let i = 0; i < collections.products.length; i++) 
@@ -165,7 +167,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 console.log(collections.products[i].title);
                             }
 
-                            div.innerText = collections.products[0].title;
+                            
                           } );
 
                         InnerItem[i].appendChild(div);  
