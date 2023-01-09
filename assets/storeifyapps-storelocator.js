@@ -156,9 +156,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
-                        var div = document.createElement("div");
+                        var div = document.createElement("button");
                         div.setAttribute('class', 'myclass');
-                        InnerItem[i].appendChild(div);  
+                        
                         
                         
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
@@ -172,7 +172,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                             
                           } );
-
+                        InnerItem[i].appendChild(div);  
                         
 
                     }
