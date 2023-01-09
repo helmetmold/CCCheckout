@@ -1,6 +1,3 @@
-import '@shopify/shopify-api/adapters/node';
-import '@shopify/shopify-api/adapters/cf-worker';
-
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
@@ -156,7 +153,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         InnerItem[i].appendChild(div);  
                         
                         
-                        console.log(shopifyApi);
 
                     }
 
