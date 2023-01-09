@@ -165,7 +165,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 console.log(collections.products[i].title);
                             }
 
-                            div.innerText = collections.products[0].title
+                            div.innerText = collections.products[0].title;
                           } );
 
                         InnerItem[i].appendChild(div);  
