@@ -1,5 +1,4 @@
-import '@shopify/shopify-api/adapters/node';
-import '@shopify/shopify-api/adapters/cf-worker';
+
 
 var search_result_zoom = 2; 
 var limit_store = 10000; 
