@@ -165,7 +165,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         
                         jQuery.getJSON('/collections/katy?view=json', function(collections) {
                             var product = collections.products;
-                            console.log(product);
+                            for (let i = 0; i < product.length; i++) 
+                            {
+                                console.log(product[i].name);
+                            }
                             
                           } );
                         
