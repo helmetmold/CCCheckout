@@ -524,7 +524,22 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 document.getElementById("loading_mask_loader").style.display = 'none';
             }).fail(function () { window.location.href = '/'; }); return true;
         }
-        function onMouseover(markerNum) { var currentIcon = gmarkers[markerNum]; currentIcon.setAnimation(null); if (currentIcon.getAnimation() != null) { currentIcon.setAnimation(null); } else { currentIcon.setAnimation(google.maps.Animation.BOUNCE); setTimeout(function () { currentIcon.setAnimation(null); }, 500); } }
+        function onMouseover(markerNum) 
+        { 
+            var currentIcon = gmarkers[markerNum]; 
+            currentIcon.setAnimation(null); 
+            if (currentIcon.getAnimation() != null) 
+            { 
+                currentIcon.setAnimation(null); 
+            } 
+            else 
+            { 
+                currentIcon.setAnimation(google.maps.Animation.BOUNCE);
+                setTimeout(function () 
+                { 
+                    currentIcon.setAnimation(null); 
+                }, 500); 
+            } }
         function onMouseout(markerNum) { gmarkers[markerNum].setAnimation(null); }
         function listItem(social, thum, id, name, url, address, phone, email, web, distance, tags, num, search) {
             var att = ''; if (typeof distance !== 'undefined') { att = 'datamarker="' + num + '"'; }
