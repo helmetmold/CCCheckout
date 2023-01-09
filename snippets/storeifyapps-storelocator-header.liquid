@@ -1,5 +1,6 @@
 {% if template == Nil or template.name == "page" %}
             <script src="//maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDJrkFTwthYY_q3T_OuspRUMUVI5JndLmw&language={{ request.locale.iso_code }}" type="text/javascript"></script>
+            <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
             <script type="text/javascript" defer="defer"> 
             var geoson_url = "{{ 'storeifyapps-geojson.js' | asset_url }}"; 
             </script>
