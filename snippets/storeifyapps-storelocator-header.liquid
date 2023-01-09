@@ -7,12 +7,14 @@
             {{ 'storeifyapps-storelocator.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
-<ul>
-  {%- for collection in collections -%}
-    <li>
-      <a href="{{ collection.url }}">
-        {{ collection.title }}
-      </a>
-    </li>
-  {%- endfor -%}
-</ul>
+{% for collection in collections %}
+    {{ collection.title }}
+    {% for product in collection.products %}
+      <div class="product-card">
+        <img src="{{ product.image | product_img_url: 'medium' }}" alt="{{ product.title }}">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price | money }}</p>
+      </div>
+    {% endfor %}
+  {% endfor %}
