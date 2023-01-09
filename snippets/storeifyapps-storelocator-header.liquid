@@ -1,5 +1,6 @@
 {% if template == Nil or template.name == "page" %}
             <script src="//maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDJrkFTwthYY_q3T_OuspRUMUVI5JndLmw&language={{ request.locale.iso_code }}" type="text/javascript"></script>
+            <script src="https://cdn.shopify.com/s/libs/shopify-api/v1.0/shopify-api.min.js"></script>
             <script type="text/javascript" defer="defer"> var geoson_url = "{{ 'storeifyapps-geojson.js' | asset_url }}"; </script>
             {{ 'storeifyapps-storelocator.css' | asset_url | stylesheet_tag }}
             {% endif %}
