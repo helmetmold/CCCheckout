@@ -170,6 +170,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                             div.innerText = collections.products[0].title;
                             
+                            console.log("checking");
 
                             
                           } );
