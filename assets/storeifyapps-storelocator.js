@@ -154,10 +154,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-                        Shopify.init({
-                            apiKey: 'YOUR_API_KEY',
-                            password: 'YOUR_API_PASSWORD'
-                          });
+                        
                         
 
                     }
