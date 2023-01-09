@@ -164,11 +164,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         InnerItem[i].appendChild(div);  
                         
                         jQuery.getJSON('/collections/katy?view=json', function(collections) {
-                            var product = collections.products;
+                            var products = collections.products;
                             console.log(products);
-                            for (let i = 0; i < product.length; i++) 
+                            for (let i = 0; i < products.length; i++) 
                             {
-                                console.log(product[i].name);
+                                console.log(products[i].name);
                             }
                             
                           } );
