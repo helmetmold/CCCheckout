@@ -1,8 +1,5 @@
 {% if template == Nil or template.name == "page" %}
 <script src="{{ 'storeifyapps-storelocator.js' | asset_url }}" defer="defer"></script>
-<link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
-<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
 <a href="#" id="storeify-sl-btn-trigger-popup" data-target="#storeify-sl-light-modal-wrapper" style="background: #333333 !important;">
