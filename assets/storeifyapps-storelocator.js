@@ -8,7 +8,6 @@ const shopify = shopifyApi({
   apiSecretKey: 'APISecretFromPartnersDashboard',
   scopes: ['read_products'],
   hostName: 'ngrok-tunnel-address',
-  ...
 });
 
 var search_result_zoom = 2; 
@@ -167,7 +166,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-
+                        var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
+                        .then(response => response.json())
+                        .then(data => { return data });
 
                     }
 
