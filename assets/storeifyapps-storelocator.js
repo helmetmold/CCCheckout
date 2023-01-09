@@ -1,3 +1,5 @@
+const Shopify = require("shopify-api-node");
+
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
@@ -148,8 +150,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     {
                         var div = document.createElement("div");
                         div.setAttribute('class', 'myclass');
-
-
 
 
                         InnerItem[i].appendChild(div);  
