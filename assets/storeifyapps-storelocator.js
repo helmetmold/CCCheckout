@@ -1,3 +1,4 @@
+const { shopifyApi } = require("@shopify/shopify-api");
 
 
 var search_result_zoom = 2; 
@@ -155,10 +156,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         InnerItem[i].appendChild(div);  
                         
                         
-                        Shopify.init({
-                            apiKey: 'YOUR_API_KEY',
-                            password: 'YOUR_API_PASSWORD'
-                          });
+                        console.log(shopifyApi);
 
                     }
 
