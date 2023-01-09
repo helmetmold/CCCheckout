@@ -7,14 +7,3 @@
             </script>
             {{ 'storeifyapps-storelocator.css' | asset_url | stylesheet_tag }}
 {% endif %}
-
-{% for collection in collections %}
-    {{ collection.title }}
-    {% for product in collection.products %}
-      <div class="product-card">
-        <h3>{{ product.title }}</h3>
-        <p>{{ product.description }}</p>
-        <p>{{ product.price | money }}</p>
-      </div>
-    {% endfor %}
-  {% endfor %}
