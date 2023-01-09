@@ -158,7 +158,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     {
                         var div = document.createElement("button");
                         div.setAttribute('class', 'myclass');
-
+                        InnerItem[i].appendChild(div);  
                         
                         
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
@@ -168,7 +168,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             }
 
                             div.innerText = collections.products[0];
-                            InnerItem[i].appendChild(div);  
+                            
                             
                           } );
 
