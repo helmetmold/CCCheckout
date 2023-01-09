@@ -163,7 +163,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         InnerItem[i].appendChild(div);  
                         
-                        jQuery.getJSON('/collections/katy/products', function(collections) {
+                        jQuery.getJSON('/collections/katy/products.json', function(collections) {
                             console.log(collections.products);
                             
                           } );
