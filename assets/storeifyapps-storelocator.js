@@ -168,13 +168,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                                 InnerItem[i].appendChild(div);  
                             }
-                            
-                            buttontext = collections.products[0].title;
                         
-                            var buttons = document.getElementsByClassName("myclass");
-                            for (let index = 0; index < buttons.length; index++) {
-                                buttons[index].innerText = collections.products[0].title;
-                            }
+                            
                             
                           } );
                         
