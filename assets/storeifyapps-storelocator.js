@@ -171,11 +171,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             console.log("checking");
                             buttontext = collections.products[0].title;
                         
-                            InnerItem[i].appendChild(div);  
+                            
                             
                           } );
                         
-                        
+                        InnerItem[i].appendChild(div);  
 
                     }
                 });
