@@ -160,20 +160,20 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var div = document.createElement("button");
                         div.setAttribute('class', 'myclass');
                         
-                        
+                        var buttontext = "hey";
                         
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
                             for (let i = 0; i < collections.products.length; i++) 
                             {
                                 console.log(collections.products[i].title);
                             }
-
-                            div.innerText = collections.products[0].title;
                             
                             console.log("checking");
-
+                            buttontext = collections.products[0].title;
                             
                           } );
+                        div.innerText = buttontext;
+                        
                         InnerItem[i].appendChild(div);  
                         
 
