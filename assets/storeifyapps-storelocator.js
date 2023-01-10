@@ -164,7 +164,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                                 div.setAttribute('class', 'myclass');
 
-                                div.innerText = collections.products.title[i];
+                                div.innerText = collections.products[i].title;
 
                                 InnerItem[i].appendChild(div);  
                             }
