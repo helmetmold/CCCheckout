@@ -170,10 +170,12 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 console.log(collections.products[i].title);
                             }
                             
-                            console.log("checking");
                             buttontext = collections.products[0].title;
                         
-                            
+                            var buttons = document.getElementsByClassName("myclass");
+                            for (let index = 0; index < buttons.length; index++) {
+                                buttons.innerText = collections.products[0].title;
+                            }
                             
                           } );
                         
