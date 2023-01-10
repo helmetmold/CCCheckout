@@ -174,7 +174,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         
                             var buttons = document.getElementsByClassName("myclass");
                             for (let index = 0; index < buttons.length; index++) {
-                                buttons.innerText = collections.products[0].title;
+                                buttons[index].innerText = collections.products[0].title;
                                 console.log("happens");
                             }
                             
