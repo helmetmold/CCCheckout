@@ -170,11 +170,13 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             
                             console.log("checking");
                             buttontext = collections.products[0].title;
+
+                            div.innerText = buttontext;
+                        
+                            InnerItem[i].appendChild(div);  
                             
                           } );
-                        div.innerText = buttontext;
                         
-                        InnerItem[i].appendChild(div);  
                         
 
                     }
