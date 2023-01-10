@@ -166,6 +166,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                                 div.innerText = collections.products[i].title;
 
+                                console.log(collections.products[i].title);
+
                                 InnerItem[i].appendChild(div);  
                             }
                         
