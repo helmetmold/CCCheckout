@@ -162,6 +162,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         
                         var buttontext = "hey";
                         
+                        div.innerText = buttontext;
+
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
                             for (let i = 0; i < collections.products.length; i++) 
                             {
