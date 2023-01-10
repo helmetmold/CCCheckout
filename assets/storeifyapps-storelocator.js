@@ -159,10 +159,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     {
                         var div = document.createElement("button");
                         div.setAttribute('class', 'myclass');
-                        
-                        var buttontext = "hey";
-                        
-                        div.innerText = buttontext;
 
                         InnerItem[i].appendChild(div);  
 
