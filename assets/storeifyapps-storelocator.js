@@ -157,15 +157,16 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
-                        var div = document.createElement("button");
-                        div.setAttribute('class', 'myclass');
-
-                        InnerItem[i].appendChild(div);  
-
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
                             for (let i = 0; i < collections.products.length; i++) 
                             {
-                                console.log(collections.products[i].title);
+                                var div = document.createElement("button");
+
+                                div.setAttribute('class', 'myclass');
+
+                                div.innerText = collections.products.title[i];
+
+                                InnerItem[i].appendChild(div);  
                             }
                             
                             buttontext = collections.products[0].title;
