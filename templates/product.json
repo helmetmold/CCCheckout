@@ -59,11 +59,6 @@
             "text": "Size chart",
             "page": ""
           }
-        },
-        "609af2cc-9d2a-4fa0-84fa-b552ec72ae0f": {
-          "type": "shopify:\/\/apps\/sellup-upsell-add-ons\/blocks\/onpage_offers\/001ec440-29ea-4cbf-9265-4963fa825261",
-          "settings": {
-          }
         }
       },
       "block_order": [
@@ -76,8 +71,7 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "popup",
-        "609af2cc-9d2a-4fa0-84fa-b552ec72ae0f"
+        "popup"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -559,6 +553,22 @@
         "padding_top": 44,
         "padding_bottom": 8
       }
+    },
+    "1673417658fcf37786": {
+      "type": "apps",
+      "blocks": {
+        "41e77d71-35c3-42f9-b25c-6e78cbcd62f8": {
+          "type": "shopify:\/\/apps\/monk-cart-upsell-free-gift\/blocks\/embedded-product-page-any\/e949adb6-87ca-4b97-8f31-0e51bf507f2d",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "41e77d71-35c3-42f9-b25c-6e78cbcd62f8"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -573,6 +583,7 @@
     "product-recommendations",
     "multicolumn-6",
     "multicolumn-7",
-    "newsletter"
+    "newsletter",
+    "1673417658fcf37786"
   ]
 }
