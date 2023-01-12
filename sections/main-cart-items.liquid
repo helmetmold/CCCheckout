@@ -101,7 +101,7 @@
                       </div>
                     {%- else -%}
                       <div class="product-option">
-                        {{ item.original_price | money }}
+                        <span class='upsellfunnel-cart-item-price' data-key='{{item.key}}'>{{ item.original_price | money }}</span>
                       </div>
                     {%- endif -%}
 
@@ -170,7 +170,7 @@
                           </dt>
                           <dd>
                             <s class="cart-item__old-price price price--end">
-                              {{ item.original_line_price | money }}
+                              <span class='upsellfunnel-cart-item-line-price' data-key='{{item.key}}'>{{ item.original_line_price | money }}</span>
                             </s>
                           </dd>
                           <dt class="visually-hidden">
@@ -182,7 +182,7 @@
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          {{ item.original_line_price | money }}
+                          <span class='upsellfunnel-cart-item-line-price' data-key='{{item.key}}'>{{ item.original_line_price | money }}</span>
                         </span>
                       {%- endif -%}
 
@@ -273,7 +273,7 @@
                           </dt>
                           <dd>
                             <s class="cart-item__old-price price price--end">
-                              {{ item.original_line_price | money }}
+                              <span class='upsellfunnel-cart-item-line-price' data-key='{{item.key}}'>{{ item.original_line_price | money }}</span>
                             </s>
                           </dd>
                           <dt class="visually-hidden">
@@ -285,7 +285,7 @@
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          {{ item.original_line_price | money }}
+                          <span class='upsellfunnel-cart-item-line-price' data-key='{{item.key}}'>{{ item.original_line_price | money }}</span>
                         </span>
                       {%- endif -%}
 
