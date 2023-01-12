@@ -230,7 +230,7 @@
     "blocks": {
       "11360718970158082676": {
         "type": "shopify:\/\/apps\/cross-sell-pro\/blocks\/crosssell\/a1de75bd-abc2-408f-b8be-5bce11f6a502",
-        "disabled": true,
+        "disabled": false,
         "settings": {
         }
       }
