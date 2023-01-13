@@ -1,4 +1,4 @@
-let waitForPressResolve;
+var waitForPressResolve;
 
 function waitForPress() {
   return new Promise(resolve => waitForPressResolve = resolve);
