@@ -26,8 +26,6 @@
     }
   {%- endstyle -%}
 
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
@@ -1509,6 +1507,10 @@
           "default": "counter"
         },
         {
+          "type": "header",
+          "content": "t:sections.main-product.blocks.complementary_products.settings.product_card.heading"
+        },
+        {
           "type": "select",
           "id": "image_ratio",
           "options": [
@@ -1528,7 +1530,7 @@
           "type": "checkbox",
           "id": "enable_quick_add",
           "label": "t:sections.main-product.blocks.complementary_products.settings.enable_quick_add.label",
-          "default": true
+          "default": false
         }
       ]
     },
