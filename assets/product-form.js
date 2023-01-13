@@ -1,26 +1,3 @@
-var waitForPressResolve;
-
-function waitForPress() {
-  return new Promise(resolve => waitForPressResolve = resolve);
-}
-
-function btnResolver() {
-  if (waitForPressResolve) waitForPressResolve();
-}
-
-async function doIt() 
-{
-  var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
-  CloseButton[0].addEventListener('click', btnResolver);
-  for (let c = 1; c < 10; c += 1) {
-    console.log(c + " yeet");
-    await waitForPress();
-  }
-  btn.removeEventListener('click', btnResolver);
-  console.log('Finished');
-  alert("pause");
-}
-
 if (!customElements.get('product-form')) {
   customElements.define('product-form', class ProductForm extends HTMLElement {
     constructor() {
@@ -87,11 +64,6 @@ if (!customElements.get('product-form')) {
             this.cart.renderContents(response);
           }
         })
-        .then(() =>
-        {
-          doIt();
-        }
-        )
         .catch((e) => {
           console.error(e);
         })
