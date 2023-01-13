@@ -738,8 +738,9 @@
     </modal-dialog>
   {%- endfor -%}
   <div class="hidden-camp-upsell">
+    {% assign someProduct = all_products.katy-flagship-tech-camps %}
     {% render 'card-product', 
-    card_product: product,
+    card_product: someProduct,
     show_quick_add: true,
     %}
   </div>
