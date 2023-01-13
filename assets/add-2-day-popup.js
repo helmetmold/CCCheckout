@@ -2,7 +2,7 @@ var SubmitCartButton = document.getElementsByClassName('product-form__submit');
 
 for (let index = 0; index < SubmitCartButton.length; index++) 
   {
-    SubmitCartButton.addEventListener("click", OpenUpsellPopUp);
+    SubmitCartButton[index].addEventListener("click", OpenUpsellPopUp);
   }
 
 
