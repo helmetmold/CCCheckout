@@ -99,6 +99,14 @@ const promise = new Promise((resolve, reject) => {
   CloseButton[0].addEventListener('click', resolve);
 })
 
+function onConfirm () {
+  console.log("confirm");
+}
+
+function onCancel () {
+  console.log("cancel");
+}
+
 async function waitClick () {
   return await promise
     .then((ev) => {
@@ -107,10 +115,4 @@ async function waitClick () {
     .catch(() => onCancel())
 }
 
-function onConfirm () {
-  console.log("confirm");
-}
 
-function onCancel () {
-  console.log("cancel");
-}
