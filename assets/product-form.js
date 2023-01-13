@@ -66,7 +66,7 @@ if (!customElements.get('product-form')) {
         })
         .then(() =>
         {
-          waitClick();
+          doIt();
         }
         )
         .catch((e) => {
@@ -93,12 +93,25 @@ if (!customElements.get('product-form')) {
   });
 }
 
-var buttonpressed = false;
+let waitForPressResolve;
 
 var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
 
+function btnResolver() {
+  if (waitForPressResolve) waitForPressResolve();
+}
 
-async function waitClick()
+function waitForPress() {
+  return new Promise(resolve => waitForPressResolve = resolve);
+}
+
+async function doIt() 
 {
-  alert("waiting");
+  CloseButton.addEventListener('click', btnResolver);
+  for (let c = 1; c < 10; c += 1) {
+    console.log(c);
+    await waitForPress();
+  }
+  btn.removeEventListener('click', btnResolver);
+  console.log('Finished');
 }
