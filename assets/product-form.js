@@ -110,3 +110,7 @@ async function waitClick () {
 function onConfirm () {
   console.log("confirm");
 }
+
+function onCancel () {
+  console.log("cancel");
+}
