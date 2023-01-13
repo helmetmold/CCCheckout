@@ -13,7 +13,7 @@ async function doIt()
   var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
   CloseButton[0].addEventListener('click', btnResolver);
   for (let c = 1; c < 10; c += 1) {
-    console.log(c);
+    console.log(c + " yeet");
     await waitForPress();
   }
   btn.removeEventListener('click', btnResolver);
