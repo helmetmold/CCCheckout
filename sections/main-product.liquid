@@ -414,10 +414,14 @@
                     >
                     <div class="product-form__buttons">
                       <button
-                        type="submit"
+                        type="button"
                         name="add"
                         class="product-form__submit button button--full-width 
-                          button--primary"
+                        {% if block.settings.show_dynamic_checkout %}
+                          button--secondary
+                        {% else %}
+                          button--primary
+                        {% endif %}"
                         {% if product.selected_or_first_available_variant.available == false %}
                           disabled
                         {% endif %}
