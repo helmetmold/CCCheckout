@@ -381,6 +381,13 @@
                   </div>
                 </div>
               </noscript>
+            <div>
+              {% render 'card-product', 
+              card_product: product,
+              show_vendor: section.settings.show_vendor,
+              show_quick_add: section.settings.enable_quick_add
+              %}
+            </div>
             {%- when 'buy_buttons' -%}
               <div {{ block.shopify_attributes }}>
                 <product-form class="product-form">
