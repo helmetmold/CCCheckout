@@ -78,71 +78,9 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn-5": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-2": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-3": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-4": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-1",
-        "column-2",
-        "column-3",
-        "column-4"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "half",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 20
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -156,12 +94,6 @@
         "columns_mobile": "1",
         "padding_top": 0,
         "padding_bottom": 44
-      }
-    },
-    "1673417658fcf37786": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
       }
     },
     "76be2106-ca61-4205-84c9-32d04ec19f20": {
@@ -194,9 +126,7 @@
   },
   "order": [
     "main",
-    "multicolumn-5",
     "product-recommendations",
-    "1673417658fcf37786",
     "76be2106-ca61-4205-84c9-32d04ec19f20"
   ]
 }
