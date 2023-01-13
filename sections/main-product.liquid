@@ -415,7 +415,6 @@
                     <div class="product-form__buttons">
                       <button
                         type="submit"
-                        onclick="addToCart({{product.id}})"
                         name="add"
                         class="product-form__submit button button--full-width 
                         {% if block.settings.show_dynamic_checkout %}
@@ -452,25 +451,6 @@
                     </div>
                   {%- endform -%}
                 </product-form>
-                <script>
-                  function addToCart(productId) {
-                    client.product.fetch(productId)
-                    .then(function (product) {
-                      var options = {};
-                      options.variantId = product.variants[0].id;
-                      options.quantity = 1;
-                      options.properties = {};
-                      return client.cart.createLineItemsFromVariants([options])
-                    })
-                    .then(function (cart) {
-                      console.log(cart);
-                      // Show a message or redirect to the cart page if desired
-                    })
-                    .catch(function (error) {
-                      console.error(error);
-                    });
-                  }
-                </script>
 
                 {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
