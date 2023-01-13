@@ -64,9 +64,11 @@ if (!customElements.get('product-form')) {
             this.cart.renderContents(response);
           }
         })
-        .then((ev) => {
-          console.log(ev)
-        })
+        .then(() =>
+        {
+          waitClick();
+        }
+        )
         .catch((e) => {
           console.error(e);
         })
@@ -96,4 +98,13 @@ var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
 const promise = new Promise((resolve, reject) => {
   CloseButton[0].addEventListener('click', resolve);
 })
+
+async function waitClick () {
+  return await promise
+    .then((ev) => {
+      onConfirm();
+      return true;
+    })
+    .catch(() => onCancel())
+}
 
