@@ -415,6 +415,7 @@
                     <div class="product-form__buttons">
                       <button
                         type="button"
+                        onclick="addToCart({{product.id}})"
                         name="add"
                         class="product-form__submit button button--full-width 
                         {% if block.settings.show_dynamic_checkout %}
@@ -451,6 +452,11 @@
                     </div>
                   {%- endform -%}
                 </product-form>
+                <script>
+                  function addToCart(productId) {
+                    console.log("yeeeeet");
+                  }
+                </script>
 
                 {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
