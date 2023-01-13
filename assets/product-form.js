@@ -1,5 +1,3 @@
-var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
-
 let waitForPressResolve;
 
 function btnResolver() {
@@ -12,7 +10,8 @@ function waitForPress() {
 
 async function doIt() 
 {
-  CloseButton.addEventListener('click', btnResolver);
+  var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
+  CloseButton[0].addEventListener('click', btnResolver);
   for (let c = 1; c < 10; c += 1) {
     console.log(c);
     await waitForPress();
