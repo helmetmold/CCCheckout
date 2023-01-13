@@ -732,10 +732,10 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
-  <div>
+  <div class="hidden-camp-upsell">
     {% render 'card-product', 
     card_product: product,
-    show_quick_add: true
+    show_quick_add: true,
     %}
   </div>
   {%- if product.media.size > 0 -%}
