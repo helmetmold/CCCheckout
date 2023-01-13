@@ -49,7 +49,7 @@ if (!customElements.get('product-form')) {
           }
           else if (!this.cart) 
           {
-            window.location = window.routes.cart_url;
+            //window.location = window.routes.cart_url;
             return;
           }
 
