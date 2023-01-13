@@ -98,7 +98,7 @@ var buttonpressed = false;
 var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
 
 
-function waitClick()
+async function waitClick()
 {
   alert("waiting");
 }
