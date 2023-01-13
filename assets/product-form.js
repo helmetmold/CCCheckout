@@ -12,7 +12,7 @@ if (!customElements.get('product-form')) {
     }
 
     onSubmitHandler(evt) {
-      console.log("click");
+      alert("click");
       evt.preventDefault();
       if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
