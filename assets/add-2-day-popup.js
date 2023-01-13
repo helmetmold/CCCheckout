@@ -9,16 +9,8 @@ for (let index = 0; index < SubmitCartButton.length; index++)
 
 function OpenUpsellPopUp() 
 {
-  console.log("onmouseover");
-  for (let index = 0; index < SubmitCartButton.length; index++) 
-  {
-    var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
-    for (let index = 0; index < ProductQuickAddButton.length; index++) {
-      ProductQuickAddButton[index].click;
-      
-    }
-    
-  }
+  var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
+  ProductQuickAddButton[0].click();
 }
 
 
