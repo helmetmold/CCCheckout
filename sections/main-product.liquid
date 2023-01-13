@@ -25,7 +25,7 @@
       }
     }
   {%- endstyle -%}
-
+  <script src="{{ 'add-2-day-popup.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
@@ -732,7 +732,12 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
-
+  <div class="hidden-camp-upsell">
+    {% render 'card-product', 
+    card_product: product,
+    show_quick_add: true,
+    %}
+  </div>
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
