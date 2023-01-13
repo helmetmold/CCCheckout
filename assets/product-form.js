@@ -14,6 +14,7 @@ async function doIt()
   CloseButton[0].addEventListener('click', btnResolver);
   for (let c = 1; c < 10; c += 1) {
     console.log(c);
+    alert("pause");
     await waitForPress();
   }
   btn.removeEventListener('click', btnResolver);
