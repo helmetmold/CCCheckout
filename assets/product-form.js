@@ -1,5 +1,26 @@
 var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
 
+let waitForPressResolve;
+
+function btnResolver() {
+  if (waitForPressResolve) waitForPressResolve();
+}
+
+function waitForPress() {
+  return new Promise(resolve => waitForPressResolve = resolve);
+}
+
+async function doIt() 
+{
+  CloseButton.addEventListener('click', btnResolver);
+  for (let c = 1; c < 10; c += 1) {
+    console.log(c);
+    await waitForPress();
+  }
+  btn.removeEventListener('click', btnResolver);
+  console.log('Finished');
+}
+
 if (!customElements.get('product-form')) {
   customElements.define('product-form', class ProductForm extends HTMLElement {
     constructor() {
@@ -95,23 +116,4 @@ if (!customElements.get('product-form')) {
   });
 }
 
-let waitForPressResolve;
 
-function btnResolver() {
-  if (waitForPressResolve) waitForPressResolve();
-}
-
-function waitForPress() {
-  return new Promise(resolve => waitForPressResolve = resolve);
-}
-
-async function doIt() 
-{
-  CloseButton.addEventListener('click', btnResolver);
-  for (let c = 1; c < 10; c += 1) {
-    console.log(c);
-    await waitForPress();
-  }
-  btn.removeEventListener('click', btnResolver);
-  console.log('Finished');
-}
