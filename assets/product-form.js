@@ -1,11 +1,11 @@
 let waitForPressResolve;
 
-function btnResolver() {
-  if (waitForPressResolve) waitForPressResolve();
-}
-
 function waitForPress() {
   return new Promise(resolve => waitForPressResolve = resolve);
+}
+
+function btnResolver() {
+  if (waitForPressResolve) waitForPressResolve();
 }
 
 async function doIt() 
