@@ -103,8 +103,10 @@ async function waitClick () {
   return await promise
     .then((ev) => {
       onConfirm();
-      return true;
     })
     .catch(() => onCancel())
 }
 
+function onConfirm () {
+  console.log("confirm");
+}
