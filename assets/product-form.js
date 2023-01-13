@@ -93,26 +93,12 @@ if (!customElements.get('product-form')) {
   });
 }
 
+var buttonpressed = false;
+
 var CloseButton = document.getElementsByClassName('quick-add-modal__toggle');
 
-const promise = new Promise((resolve, reject) => {
-  CloseButton[0].addEventListener('click', resolve);
-})
 
-function onConfirm () {
-  console.log("confirm");
+function waitClick()
+{
+  alert("waiting");
 }
-
-function onCancel () {
-  console.log("cancel");
-}
-
-async function waitClick () {
-  return await promise
-    .then((ev) => {
-      onConfirm();
-    })
-    .catch(() => onCancel())
-}
-
-
