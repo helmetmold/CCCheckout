@@ -2,6 +2,7 @@ var SubmitCartButton = document.getElementsByClassName('product-form__submit');
 
 function OpenUpsellPopUp() 
 {
+  console.log("onmouseover");
   for (let index = 0; index < SubmitCartButton.length; index++) 
   {
     var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
