@@ -350,7 +350,13 @@
                   </variant-selects>
                 {%- endif -%}
               {%- endunless -%}
-
+            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}">
+              {% render 'card-product',
+                card_product: product,
+                show_quick_add: section.settings.enable_quick_add,
+                section_id: section.id,
+              %}
+            </li>
               <noscript class="product-form__noscript-wrapper-{{ section.id }}">
                 <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
                   <label class="form__label" for="Variants-{{ section.id }}">
