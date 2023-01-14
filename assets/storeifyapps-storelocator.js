@@ -169,6 +169,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.onclick = function () {
                             window.open(properties.url);
                         }
+                        var properties = results.features[i].properties; 
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp);  
 
