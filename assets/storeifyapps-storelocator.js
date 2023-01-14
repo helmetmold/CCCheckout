@@ -165,23 +165,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
                         InnerItem[i].appendChild(ThreeDayCamp);
-                        InnerItem[i].appendChild(TwoDayCamp);  
-
-                        /*
-                        jQuery.getJSON('/collections/katy/products.json', function(collections) {
-                            for (let i = 0; i < collections.products.length; i++) 
-                            {
-                                var div = document.createElement("button");
-                                div.setAttribute('class', 'myclass');
-                                div.innerText = collections.products[i].title;
-                                console.log(collections.products[i].title);
-                                InnerItem[i].appendChild(div);  
-                            }
-                        
-                            
-                          } );
-                        */
-                        
+                        InnerItem[i].appendChild(TwoDayCamp);     
 
                     }
                 });
