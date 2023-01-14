@@ -590,19 +590,55 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             } }
         function onMouseout(markerNum) { gmarkers[markerNum].setAnimation(null); }
         function listItem(social, thum, id, name, url, address, phone, email, web, distance, tags, num, search) {
-            var att = ''; if (typeof distance !== 'undefined') { att = 'datamarker="' + num + '"'; }
-            var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + num + '">'; if (thum) { html += '<div class="item-thumb"><img title="" src="' + thum + '"></div>'; } else { html += '<div class="item-thumb"><span class="material-icons-outlined align-middle" style="font-size: 48px;">pin_drop</span></div>'; }
-            html += '<div class="item-content"><label class="store-name"><strong>' + name + '</strong></label>'; html += '<div class="address"><span class="material-icons-outlined">place</span>' + address + '</div>'; if (distance) {
-                var radius_unit_text = ' Km'; if (radius_unit != 1)
-                    radius_unit_text = ' mi'; html += '<div class="item-road"><span class="material-icons-outlined">settings_ethernet</span>'; html += distance.toFixed(2) + radius_unit_text + '<br/></div>';
+            var att = ''; 
+            if (typeof distance !== 'undefined') 
+            { 
+                att = 'datamarker="' + num + '"'; 
+            }
+            var html = '<div class="item thumbnail" ' + att + '><div class="inner-item" id="store_id_' + num + '">'; 
+            if (thum) 
+            { 
+                html += '<div class="item-thumb"><img title="" src="' + thum + '"></div>'; 
+            } 
+            else 
+            { 
+                html += '<div class="item-thumb"><span class="material-icons-outlined align-middle" style="font-size: 48px;">pin_drop</span></div>'; 
+            }
+            html += '<div class="item-content"><label class="store-name"><strong>' + name + '</strong></label>'; 
+            html += '<div class="address"><span class="material-icons-outlined">place</span>' + address + '</div>'; 
+            if (distance) 
+            {
+                var radius_unit_text = ' Km'; 
+                if (radius_unit != 1)
+                    radius_unit_text = ' mi'; 
+                    html += '<div class="item-road"><span class="material-icons-outlined">settings_ethernet</span>'; 
+                    html += distance.toFixed(2) + radius_unit_text + '<br/></div>';
             }
             if (email != null && typeof email != 'undefined' && email != '') { html += '<div class="item-envelope"><span class="material-icons-outlined">email</span>'; html += '<a href="mailto:' + email + '" class="phone-email">' + email + '</a><br/></div>'; }
             if (phone != null && typeof phone != 'undefined' && phone != '') { html += '<div class="item-phone"><span class="material-icons-outlined">phone</span>'; html += '<a href="tel:' + phone + '" class="phone-no">' + phone + '</a><br/></div>'; }
             if (web != null && typeof web != 'undefined' && web != '') { html += '<div class="item-link"><span class="material-icons-outlined">link</span>'; html += web + '<br/></div>'; }
-            if (tags.length > 0) { var tag_arr = tags; var tag_html = ''; jQuery.each(tag_arr, function (key, value) { tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + value + '</span>'; }); html += '<span class="material-icons-outlined">label</span> ' + tag_html + '<br/>'; }
-            if (social != null && typeof social != 'undefined' && social != '') { html += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + social + '</div>'; }
-            if (url != null) { html += '<a class="linkdetailstore" href="' + url + '">' + trans['link_detail'] + ' <span class="material-icons-outlined">trending_flat</span></a>'; }
-            html += '<a class="getdirectionstore" href="https://maps.google.com/?daddr=' + address + '&saddr=' + search + '" target="_blank">' + trans['getdirection'] + ' <span class="material-icons-outlined">trending_flat</span></a></div></div>'; html += '</div></div>'; return html;
+            if (tags.length > 0) 
+            { 
+                var tag_arr = tags;
+                var tag_html = '';
+                jQuery.each(tag_arr, function (key, value) 
+                { 
+                    tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + value + '</span>'; });
+                    html += '<span class="material-icons-outlined">label</span> ' + tag_html + '<br/>'; 
+                    
+                }
+            if (social != null && typeof social != 'undefined' && social != '') 
+            { 
+                html += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + social + '</div>'; 
+            }
+            if (url != null) 
+            { 
+                html += '<a class="linkdetailstore" href="' + url + '">' + trans['link_detail'] + ' <span class="material-icons-outlined">trending_flat</span></a>'; 
+            }
+                html += '<a class="getdirectionstore" href="https://maps.google.com/?daddr=' + address + '&saddr=' + search + '" target="_blank">' + trans['getdirection'] + ' <span class="material-icons-outlined">trending_flat</span></a></div></div>'; 
+                html += '</div></div>'; 
+                console.log(url);
+                return html;
         }
         function loadGeolocation() 
         { 
@@ -658,7 +694,17 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 marker = gmarkers[i]; check_country = 0; if (filter_country == 'all' || filter_country == marker.country) { check_country = 1; }
                 if (checkTag(tags_check, marker.tags) && check_country == 1) {
                     thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
-                    var id = marker.id; var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; var num = marker.num; bounds.extend(marker.getPosition()); marker.setVisible(true); marker_first = marker; marker_count++; html_list += listItem(social, thum, id, name, url, address, phone, email, web, null, tags, num);
+                    var id = marker.id; 
+                    var name = marker.name; 
+                    var url = marker.url; 
+                    var address = marker.address; 
+                    var phone = marker.phone; 
+                    var email = marker.email; 
+                    var web = marker.web; 
+                    var tags = marker.tags; 
+                    var social = marker.social; 
+                    var num = marker.num; 
+                    bounds.extend(marker.getPosition()); marker.setVisible(true); marker_first = marker; marker_count++; html_list += listItem(social, thum, id, name, url, address, phone, email, web, null, tags, num);
                 } else { marker.setVisible(false); }
             }
             map.fitBounds(bounds); document.getElementById("loading_mask_loader").style.display = 'none'; document.getElementById("num-rs").innerHTML = marker_count; jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); if (marker_count > 0) {
