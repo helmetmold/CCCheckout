@@ -1,3 +1,4 @@
+import locationdata from './storeifyapps-storelocator.json';
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
@@ -200,7 +201,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             window.open();
                         }
 
-                        fetch('/storeifyapps-storelocator.json')
+                        fetch('storeifyapps-storelocator.json')
                         .then(response => response.json())
                         .then(data => {
                             console.log(data.id);
