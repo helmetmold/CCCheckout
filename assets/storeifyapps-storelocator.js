@@ -219,6 +219,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var coords = results.features[i].geometry.coordinates; 
                 var latLng = new google.maps.LatLng(coords[1], coords[0]); 
                 var properties = results.features[i].properties; 
+                console.log(results.features[i].properties.url);
                 if (typeof properties.thumbnail !== 'undefined') 
                 { 
                     thum = properties.thumbnail; 
@@ -251,7 +252,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 web: properties.web, 
                                 email: properties.email, 
                                 phone: properties.phone, 
-                                thum: thum, id: properties.id, 
+                                thum: thum, 
+                                id: properties.id, 
                                 name: properties.name, 
                                 url: properties.url, 
                                 address: properties.address, 
@@ -335,7 +337,12 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                     htmlCountry += '<div class="item-phone storeify-item-info"><span class="material-icons-outlined">phone</span>'; 
                                     htmlCountry += '<a href="tel:' + value.phone + '" class="phone-no">' + value.phone + '</a></div>'; }
                                 if (value.web != null && typeof value.web != 'undefined' && value.web != '') { htmlCountry += '<div class="item-link storeify-item-info"><span class="material-icons-outlined">link</span>'; htmlCountry += value.web + '</div>'; }
-                                if (value.tags.length > 0) { var tag_arr = value.tags; var tag_html = ''; jQuery.each(tag_arr, function (i, val) { tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + val + '</span>'; }); htmlCountry += '<div class="item-tags storeify-item-info"><span class="material-icons-outlined">label</span> ' + tag_html + '</div>'; }
+                                if (value.tags.length > 0) { var tag_arr = value.tags; var tag_html = ''; 
+                                jQuery.each(tag_arr, function (i, val) 
+                                { 
+                                    tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + val + '</span>'; 
+                                }); 
+                                htmlCountry += '<div class="item-tags storeify-item-info"><span class="material-icons-outlined">label</span> ' + tag_html + '</div>'; }
                                 if (value.social != null && typeof value.social != 'undefined' && value.social != '') { htmlCountry += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + value.social + '</div>'; }
                                 htmlCountry += '</div>';
                             }
