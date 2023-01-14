@@ -219,7 +219,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var coords = results.features[i].geometry.coordinates; 
                 var latLng = new google.maps.LatLng(coords[1], coords[0]); 
                 var properties = results.features[i].properties; 
-                console.log(results.features[i].properties.url);
+                console.log(results.features[i].properties.web);
                 if (typeof properties.thumbnail !== 'undefined') 
                 { 
                     thum = properties.thumbnail; 
