@@ -371,7 +371,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     html = html.replace("saddr=", "saddr=" + address); 
                 }
 
-                console.log(data_maker);
+                console.log(data_maker.url);
 
                 showInfoWindow(evt, this, map, infowindow, html);
             }); return marker;
