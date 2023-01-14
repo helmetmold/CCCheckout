@@ -416,7 +416,12 @@
                       <button
                         type="submit"
                         name="add"
-                        class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+                        class="product-form__submit button button--full-width 
+                        {% if block.settings.show_dynamic_checkout %}
+                          button--secondary
+                        {% else %}
+                          button--primary
+                        {% endif %}"
                         {% if product.selected_or_first_available_variant.available == false %}
                           disabled
                         {% endif %}
@@ -733,8 +738,9 @@
     </modal-dialog>
   {%- endfor -%}
   <div class="hidden-camp-upsell">
+    {% assign someProduct = all_products.katy-flagship-tech-camps %}
     {% render 'card-product', 
-    card_product: product,
+    card_product: someProduct,
     show_quick_add: true,
     %}
   </div>

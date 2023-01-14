@@ -35,18 +35,21 @@ if (!customElements.get('product-form')) {
       fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
-          if (response.status) {
-            this.handleErrorMessage(response.description);
+          if (response.status) 
+          {
+          this.handleErrorMessage(response.description);
 
-            const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
-            if (!soldOutMessage) return;
-            this.submitButton.setAttribute('aria-disabled', true);
-            this.submitButton.querySelector('span').classList.add('hidden');
-            soldOutMessage.classList.remove('hidden');
-            this.error = true;
-            return;
-          } else if (!this.cart) {
-            window.location = window.routes.cart_url;
+          const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
+          if (!soldOutMessage) return;
+          this.submitButton.setAttribute('aria-disabled', true);
+          this.submitButton.querySelector('span').classList.add('hidden');
+          soldOutMessage.classList.remove('hidden');
+          this.error = true;
+          return;
+          }
+          else if (!this.cart) 
+          {
+            //window.location = window.routes.cart_url;
             return;
           }
 
@@ -71,7 +74,6 @@ if (!customElements.get('product-form')) {
           this.querySelector('.loading-overlay__spinner').classList.add('hidden');
         });
     }
-
     handleErrorMessage(errorMessage = false) {
       this.errorMessageWrapper = this.errorMessageWrapper || this.querySelector('.product-form__error-message-wrapper');
       if (!this.errorMessageWrapper) return;
@@ -85,3 +87,5 @@ if (!customElements.get('product-form')) {
     }
   });
 }
+
+
