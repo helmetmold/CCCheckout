@@ -200,7 +200,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             window.open();
                         }
 
-                        fetch('assets/storeifyapps-storelocator.json')
+                        fetch('/storeifyapps-storelocator.json')
                         .then(response => response.json())
                         .then(data => {
                             console.log(data.id);
