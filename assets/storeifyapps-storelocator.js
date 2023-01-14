@@ -200,12 +200,14 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             window.open();
                         }
 
-                        for (var s = 0; s < gmarkers.length; s++) 
-                        {
-                            marker = gmarkers[s]; 
-                            var id = marker.id; 
-                            console.log(marker.url);
-                        }
+                        fetch('assets/storeifyapps-storelocator.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data.id);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
 
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp);     
