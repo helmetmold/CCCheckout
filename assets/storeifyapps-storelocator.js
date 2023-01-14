@@ -199,15 +199,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         {
                             window.open();
                         }
-
-                        fetch('./storeifyapps-storelocator.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log(data.id);
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
                     
 
                         InnerItem[i].appendChild(ThreeDayCamp);
