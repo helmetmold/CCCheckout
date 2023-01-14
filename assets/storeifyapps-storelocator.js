@@ -157,23 +157,26 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     
                     for (let i = 0; i < InnerItem.length; i++) 
                     {
+                        var ThreeDayCamp = document.createElement("button");
+                        var TwoDayCamp = document.createElement("button");
+                        ThreeDayCamp.setAttribute('class', 'CampTypeButton');
+                        ThreeDayCamp.innerText = "3-day Creative Camps";
+                        TwoDayCamp.innerText = "3-day Creative Camps";
+                        InnerItem[i].appendChild(div);  
+                        /*
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
                             for (let i = 0; i < collections.products.length; i++) 
                             {
                                 var div = document.createElement("button");
-
                                 div.setAttribute('class', 'myclass');
-
                                 div.innerText = collections.products[i].title;
-
                                 console.log(collections.products[i].title);
-
                                 InnerItem[i].appendChild(div);  
                             }
                         
                             
                           } );
-                        
+                        */
                         
 
                     }
@@ -556,7 +559,35 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             if (url != null) { html += '<a class="linkdetailstore" href="' + url + '">' + trans['link_detail'] + ' <span class="material-icons-outlined">trending_flat</span></a>'; }
             html += '<a class="getdirectionstore" href="https://maps.google.com/?daddr=' + address + '&saddr=' + search + '" target="_blank">' + trans['getdirection'] + ' <span class="material-icons-outlined">trending_flat</span></a></div></div>'; html += '</div></div>'; return html;
         }
-        function loadGeolocation() { if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(function (position) { var geocoder = new google.maps.Geocoder(); var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); geocoder.geocode({ 'latLng': latlng }, function (results, status) { if (status == google.maps.GeocoderStatus.OK) { if (results[1]) { document.getElementById('address').value = results[1].formatted_address; } else { jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['no_result'] + '</h5>'); } } else { jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['geocoder_failed'] + '</h5>'); } }.bind(this)); }.bind(this), function (error) { }.bind(this)); } }
+        function loadGeolocation() 
+        { 
+            if (navigator.geolocation) 
+            { 
+                navigator.geolocation.getCurrentPosition(function (position) 
+                {
+                     var geocoder = new google.maps.Geocoder(); 
+                     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); 
+                     geocoder.geocode({ 'latLng': latlng }, function (results, status) 
+                     { 
+                        if (status == google.maps.GeocoderStatus.OK) 
+                        { 
+                            if (results[1]) 
+                            { 
+                                document.getElementById('address').value = results[1].formatted_address; 
+                            } 
+                            else 
+                            { 
+                                jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['no_result'] + '</h5>'); 
+                            } 
+                        } 
+                        else 
+                        { 
+                            jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['geocoder_failed'] + '</h5>'); 
+                        } 
+                    }.bind(this)); 
+                }.bind(this), function (error) { }.bind(this)); 
+            } 
+        }
         function loadGeolocationInit() { if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(function (position) { var geocoder = new google.maps.Geocoder(); var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); geocoder.geocode({ 'latLng': latlng }, function (results, status) { if (status == google.maps.GeocoderStatus.OK) { if (results[1]) { document.getElementById('address').value = results[1].formatted_address; jQuery('#submit-search').trigger("click"); } else { jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['no_result'] + '</h5>'); } } else { jQuery('#results-empty').html('<h5 class="alert alert-danger">' + trans['geocoder_failed'] + '</h5>'); } }.bind(this)); }.bind(this), function (error) { }.bind(this)); } }
         function loadGeolocationCountry() { navigator.geolocation.getCurrentPosition(function (position) { var geocoder = new google.maps.Geocoder(); var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); geocoder.geocode({ 'latLng': latlng }, function (results, status) { if (status == google.maps.GeocoderStatus.OK) { if (results[0]) { var loc = getCountry(results); searchLocation(loc); } } }); }); searchLocation(null); }
         function getCountry(results) {
@@ -610,7 +641,25 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             document.getElementById("num-rs").innerHTML = count_marker; jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); if (center_lat == 0 && center_lng == 0) { map.fitBounds(bounds); } else { map.setZoom(initial_zoom); map.setCenter(new google.maps.LatLng(center_lat, center_lng)); }
             if (list_mode == 2 || limit_store == 0) { jQuery("#results-slt h3.title").hide(); jQuery("#main-slider-storelocator").addClass('storeify-first-alert'); }
             jQuery("#results-slt").show(); jQuery('#' + randomID).html(html_list); document.getElementById("loading_mask_loader").style.display = 'none';
-        }); jQuery(document).on('mouseover', '.inner-item', function () { onMouseover(jQuery(this).parent().attr("datamarker")); }); jQuery(document).on('mouseout', '.inner-item', function () { onMouseover(jQuery(this).parent().attr("datamarker")); }); jQuery(document).on('click', '.inner-item', function () { jQuery('#main-slider-storelocator .inner-item').removeClass('inner-item-active'); jQuery(this).addClass('inner-item-active'); num = jQuery(this).parent().attr("datamarker"); google.maps.event.trigger(gmarkers[num], 'click'); }); jQuery('.storeify-modal-elon .storeify-close').on("click", function () { jQuery(this).parent().parent().parent().hide(); }); jQuery('.chose-search-slt').on("change", function () {
+        }); 
+        jQuery(document).on('mouseover', '.inner-item', function () 
+        { 
+            onMouseover(jQuery(this).parent().attr("datamarker")); 
+        }); 
+        jQuery(document).on('mouseout', '.inner-item', function () 
+        { 
+            onMouseover(jQuery(this).parent().attr("datamarker")); 
+        }); 
+        jQuery(document).on('click', '.inner-item', function () 
+        { 
+            jQuery('#main-slider-storelocator .inner-item').removeClass('inner-item-active'); 
+            jQuery(this).addClass('inner-item-active'); 
+            num = jQuery(this).parent().attr("datamarker"); 
+            google.maps.event.trigger(gmarkers[num], 'click'); 
+            //create two button
+            //
+        }); 
+        jQuery('.storeify-modal-elon .storeify-close').on("click", function () { jQuery(this).parent().parent().parent().hide(); }); jQuery('.chose-search-slt').on("change", function () {
             if (jQuery(this).val() == 'location') { jQuery('.input-radius-slt').parent().show(); jQuery('.gr-search-slt').show(); jQuery('#product_search').hide(); jQuery('#store_search').hide(); }
             if (jQuery(this).val() == 'product') { jQuery('.input-radius-slt').parent().hide(); jQuery('#store_search').hide(); jQuery('.gr-search-slt').hide();; jQuery('#product_search').show(); }
             if (jQuery(this).val() == 'store') { jQuery('.input-radius-slt').parent().hide(); jQuery('.gr-search-slt').hide(); jQuery('#product_search').hide(); jQuery('#store_search').show(); }
@@ -635,8 +684,15 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             jQuery(document).on("click", "#storeify-sl-btn-trigger-popup", function (e) {
                 e.preventDefault(); jQuery("#storeify-sl-light-modal-wrapper").addClass('show'); if (jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').length) { h = jQuery("#storeify-sl-light-modal-wrapper").find('.storeify-sear-box').height() + 540; jQuery('#map').height(h); }
                 jQuery("#reset-search").trigger("click");
-            }); jQuery(document).on("click", ".storeify-sl-light-modal-close-icon", function (e) { e.preventDefault(); jQuery("#storeify-sl-light-modal-wrapper").removeClass('show'); }); jQuery(document).on("click", "#btn-filter", function (e) {
-                e.preventDefault(); if (!jQuery(this).hasClass('open')) { jQuery(this).addClass('open'); jQuery(this).next().addClass('open'); h = jQuery('#filter-group').height(); h2 = jQuery('#main-slider-storelocator').height(); w = jQuery(window).width(); if (w > 720) { jQuery('#main-slider-storelocator').height(h2 - h); } } else {
+            }); 
+            jQuery(document).on("click", ".storeify-sl-light-modal-close-icon", function (e) 
+            { 
+                e.preventDefault(); 
+                jQuery("#storeify-sl-light-modal-wrapper").removeClass('show');
+             }); 
+             jQuery(document).on("click", "#btn-filter", function (e) {
+                e.preventDefault(); if (!jQuery(this).hasClass('open')) 
+                { jQuery(this).addClass('open'); jQuery(this).next().addClass('open'); h = jQuery('#filter-group').height(); h2 = jQuery('#main-slider-storelocator').height(); w = jQuery(window).width(); if (w > 720) { jQuery('#main-slider-storelocator').height(h2 - h); } } else {
                     h = jQuery('#filter-group').height(); h2 = jQuery('#main-slider-storelocator').height(); if (w > 720 && h2 < 450) { jQuery('#main-slider-storelocator').height(h2 + h); }
                     jQuery(this).removeClass('open'); jQuery('#filter-group').removeClass('open');
                 }
