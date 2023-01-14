@@ -200,7 +200,12 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             window.open();
                         }
 
-                        console.log(storelocator_tags_response);
+                        for (var i = 0; i < gmarkers.length; i++) 
+                        {
+                            marker = gmarkers[i]; 
+                            var id = marker.id; 
+                            console.log(marker.url);
+                        }
 
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp);     
@@ -525,7 +530,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var marker_count = 0; 
                 for (var i = 0; i < gmarkers.length; i++) 
                 {
-                    marker = gmarkers[i]; var id = marker.id; if (markerNodes.includes(id)) 
+                    marker = gmarkers[i]; 
+                    var id = marker.id; 
+                    if (markerNodes.includes(id)) 
                     {
                         thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
                         var name = marker.name; var url = marker.url; 
