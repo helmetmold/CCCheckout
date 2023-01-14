@@ -209,6 +209,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         .catch(error => {
                             console.error('Error:', error);
                         });
+                        
+                        console.Consolelog(locationdata);
 
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp);     
