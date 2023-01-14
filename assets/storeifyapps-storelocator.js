@@ -164,20 +164,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
-
-                        window.eqfeed_callback = function (results) {
-                            var properties = results.features[i].properties; 
-                            ThreeDayCamp.onclick = function () 
-                            {
-                                window.open(properties.url);
-                            }
-                            
-                            TwoDayCamp.onclick = function () 
-                            {
-                                window.open(properties.url);
-                            }
-                        }
-                        
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp);  
 
@@ -275,6 +261,15 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         }
                     var marker = createMarker(data_maker, map, infowindow); 
                     gmarkers.push(marker);
+                    ThreeDayCamp.onclick = function () 
+                        {
+                            window.open(properties.url);
+                        }
+                            
+                    TwoDayCamp.onclick = function () 
+                        {
+                            window.open(properties.url);
+                        }
                 }
             }
             if (map) {
