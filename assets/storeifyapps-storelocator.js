@@ -124,6 +124,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         var infowindow; 
         var bounds; 
         var randomID = 'main-slider-storelocator'; 
+
         function initMap() {
             var script = document.createElement('script');
             script.src = window.geoson_url;
@@ -136,9 +137,39 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 locationDiv = document.getElementById("location"); 
                 input = document.getElementById('address'); 
                 var styledMapType = new google.maps.StyledMapType(JSON.parse(B64.decode(map_style_render))); 
-                map = new google.maps.Map(document.getElementById("map"), { center: new google.maps.LatLng(center_lat, center_lng), zoom: initial_zoom, mapTypeId: google.maps.MapTypeId.ROADMAP, mapTypeControl: false, streetViewControl: false, mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU } }); map.mapTypes.set('styled_map', styledMapType); map.setMapTypeId('styled_map'); infowindow = new google.maps.InfoWindow(); bounds = new google.maps.LatLngBounds(); var searchBox = new google.maps.places.SearchBox(input); var tags_input = []; if (priority_search != 'global') { const options = { componentRestrictions: { country: priority_search }, }; const autocomplete = new google.maps.places.Autocomplete(input, options); }
-                jQuery.each(jQuery('input.storeifyapp_stores_tags_filter:checked'), function () { tags_input.push(jQuery(this).val()); }); var filter_country = 'all'; if (jQuery('input.storeifyapp_stores_country_filter').length) { filter_country = jQuery('input.storeifyapp_stores_country_filter:checked').val(); }
-                if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') { filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); }
+                map = new google.maps.Map(document.getElementById("map"), 
+                { 
+                    center: new google.maps.LatLng(center_lat, center_lng), 
+                    zoom: initial_zoom, 
+                    mapTypeId: google.maps.MapTypeId.ROADMAP, 
+                    mapTypeControl: false, 
+                    streetViewControl: false, 
+                    mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU } 
+                }); 
+                map.mapTypes.set('styled_map', styledMapType); 
+                map.setMapTypeId('styled_map'); 
+                infowindow = new google.maps.InfoWindow(); 
+                bounds = new google.maps.LatLngBounds(); 
+                var searchBox = new google.maps.places.SearchBox(input); 
+                var tags_input = []; 
+                if (priority_search != 'global') 
+                { 
+                    const options = { 
+                        componentRestrictions: { country: priority_search }, }; 
+                        const autocomplete = new google.maps.places.Autocomplete(input, options); 
+                }
+                jQuery.each(jQuery('input.storeifyapp_stores_tags_filter:checked'), function () {
+                     tags_input.push(jQuery(this).val()); 
+                    }); 
+                    var filter_country = 'all'; 
+                    if (jQuery('input.storeifyapp_stores_country_filter').length) 
+                    { 
+                        filter_country = jQuery('input.storeifyapp_stores_country_filter:checked').val(); 
+                    }
+                if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') 
+                { 
+                    filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); 
+                }
                 if (locationDiv) locationDiv.innerHTML = '<div id="' + randomID + '" class="list-item-3"></div>'; 
                 var tilesloaded = google.maps.event.addListener(map, "tilesloaded", function () 
                 { 
@@ -166,8 +197,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         
                         ThreeDayCamp.onclick = function () 
                         {
-                            window.open("https://creator-camp.myshopify.com/products/katy-flagship-camps");
+                            window.open();
                         }
+
+                        console.log(storelocator_tags_response);
 
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp);     
