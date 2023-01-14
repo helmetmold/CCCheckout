@@ -535,6 +535,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
                         var name = marker.name;
                         var url = marker.url; 
+                        console.log(url);
                         var address = marker.address; 
                         var phone = marker.phone; 
                         var email = marker.email; 
