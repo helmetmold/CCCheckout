@@ -252,7 +252,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     var campButton = document.getElementsByClassName('CampTypeButton');
 
                     for (let index = 0; index < campButton.length; index++) {
-                        campButton.href = "https://creator-camp.myshopify.com/products/katy-flagship-camps";
+                        console.log(campButton[index]);
                         
                     }
                 }
