@@ -134,7 +134,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             {
                 document.getElementById("loading_mask_loader").style.display = 'block'; 
             }
-            if (document.getElementById("map") && !document.getElementById("storeify-detail-store")) {
+            if (document.getElementById("map") && !document.getElementById("storeify-detail-store")) 
+            {
                 locationDiv = document.getElementById("location"); 
                 input = document.getElementById('address'); 
                 var styledMapType = new google.maps.StyledMapType(JSON.parse(B64.decode(map_style_render))); 
@@ -336,7 +337,12 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 { 
                                     htmlCountry += '<div class="item-phone storeify-item-info"><span class="material-icons-outlined">phone</span>'; 
                                     htmlCountry += '<a href="tel:' + value.phone + '" class="phone-no">' + value.phone + '</a></div>'; }
-                                if (value.web != null && typeof value.web != 'undefined' && value.web != '') { htmlCountry += '<div class="item-link storeify-item-info"><span class="material-icons-outlined">link</span>'; htmlCountry += value.web + '</div>'; }
+                                if (value.web != null && typeof value.web != 'undefined' && value.web != '') 
+                                { 
+                                    htmlCountry += '<div class="item-link storeify-item-info"><span class="material-icons-outlined">link</span>'; 
+                                    htmlCountry += value.web + '</div>'; 
+                                    console.log(value.web);
+                                }
                                 if (value.tags.length > 0) { var tag_arr = value.tags; var tag_html = ''; 
                                 jQuery.each(tag_arr, function (i, val) 
                                 { 
