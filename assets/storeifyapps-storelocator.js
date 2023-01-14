@@ -341,7 +341,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                                 { 
                                     htmlCountry += '<div class="item-link storeify-item-info"><span class="material-icons-outlined">link</span>'; 
                                     htmlCountry += value.web + '</div>'; 
-                                    console.log(value.web);
                                 }
                                 if (value.tags.length > 0) { var tag_arr = value.tags; var tag_html = ''; 
                                 jQuery.each(tag_arr, function (i, val) 
@@ -576,11 +575,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
                         var name = marker.name;
                         var url = marker.url; 
-                        console.log(url);
                         var address = marker.address; 
                         var phone = marker.phone; 
                         var email = marker.email; 
-                        var web = marker.web; 
+                        var web = marker.web;
+                        console.log(web);
                         var tags = marker.tags; 
                         var social = marker.social; 
                         var num = marker.num; 
