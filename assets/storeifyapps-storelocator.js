@@ -371,7 +371,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             if (data_maker.social != null && typeof data_maker.social != 'undefined' && data_maker.social != '') { html += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + data_maker.social + '</div>'; }
             if (data_maker.url != null) 
             { 
-                html += '<a class="linkdetailstore" href="' + data_maker.url + '">' + trans['link_detail'] + ' <span class="material-icons-outlined">trending_flat</span></a>'; }
+            html += '<a class="linkdetailstore" href="' + data_maker.url + '">' + trans['link_detail'] + ' <span class="material-icons-outlined">trending_flat</span></a>'; }
             html += '<a class="getdirectionstore" href="https://maps.google.com/?daddr=' + data_maker.address + '&saddr=" target="_blank">' + trans['getdirection'] + ' <span class="material-icons-outlined">trending_flat</span></a></div></div>'; html += '<div id="' + data_maker.id + '"></div>'; html += '</div></div></div></div>'; var marker = new google.maps.Marker(data_maker); if (window.icon_marker != '') { var icon = { url: window.icon_marker, scaledSize: new google.maps.Size(40, 40), }; marker.setIcon(icon); }
             else { var icon = { url: 'https://sl.storeify.app/images/frontend/default-mark-icon.png', scaledSize: new google.maps.Size(40, 40), }; marker.setIcon(icon); }
             google.maps.event.addListener(marker, 'click', function (evt) {
@@ -379,6 +379,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 { address = jQuery('#address').val();
                     html = html.replace("saddr=", "saddr=" + address); 
                 }
+
+                console.log(data_maker);
+
                 showInfoWindow(evt, this, map, infowindow, html);
             }); return marker;
         }
