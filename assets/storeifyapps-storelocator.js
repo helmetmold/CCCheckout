@@ -160,9 +160,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var ThreeDayCamp = document.createElement("button");
                         var TwoDayCamp = document.createElement("button");
                         ThreeDayCamp.setAttribute('class', 'CampTypeButton');
+                        TwoDayCamp.setAttribute('class', 'CampTypeButton');
                         ThreeDayCamp.innerText = "3-day Creative Camps";
-                        TwoDayCamp.innerText = "3-day Creative Camps";
-                        InnerItem[i].appendChild(div);  
+                        TwoDayCamp.innerText = "2-day Creative Camps";
+                        InnerItem[i].appendChild(ThreeDayCamp);
+                        InnerItem[i].appendChild(TwoDayCamp);  
                         /*
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
                             for (let i = 0; i < collections.products.length; i++) 
