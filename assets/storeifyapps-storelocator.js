@@ -306,9 +306,12 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             }
             if (shortcode_use == 1) {
                 var listCountry = new Shortcode(document.querySelector('body'), {
-                    storeifyStorelocator: function () {
-                        var country = this.options.country; var city = this.options.city; 
+                    storeifyStorelocator: function () 
+                    {
+                        var country = this.options.country; 
+                        var city = this.options.city; 
                         var class_text = 'storeify-list-country'; 
+                        console.log(this.options.url);
                         if (city) 
                         { 
                             class_text = 'storeify-list-city'; 
@@ -316,9 +319,21 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var htmlCountry = '<div class="' + class_text + '">'; 
                         jQuery.each(params, function (index, value) {
                             if (country && value.country == country) {
-                                htmlCountry += '<div class="storeify-item-city">'; htmlCountry += '<div class="storelocator-title storeify-item-info"><a href="' + value.url + '">' + value.name + '</a></div>'; if (value.address != null) { htmlCountry += '<div class="item-address storeify-item-info"><span class="material-icons-outlined">place</span><p>' + value.address + '</p></div>'; }
-                                if (value.email != null && typeof value.email != 'undefined' && value.email != '') { htmlCountry += '<div class="item-envelope storeify-item-info"><span class="material-icons-outlined">email</span>'; htmlCountry += '<a href="mailto:' + value.email + '" class="phone-email">' + value.email + '</a></div>'; }
-                                if (value.phone != null && typeof value.phone != 'undefined' && value.phone != '') { htmlCountry += '<div class="item-phone storeify-item-info"><span class="material-icons-outlined">phone</span>'; htmlCountry += '<a href="tel:' + value.phone + '" class="phone-no">' + value.phone + '</a></div>'; }
+                                htmlCountry += '<div class="storeify-item-city">'; 
+                                htmlCountry += '<div class="storelocator-title storeify-item-info"><a href="' + value.url + '">' + value.name + '</a></div>'; 
+                                if (value.address != null) 
+                                { 
+                                    htmlCountry += '<div class="item-address storeify-item-info"><span class="material-icons-outlined">place</span><p>' + value.address + '</p></div>'; 
+                                }
+                                if (value.email != null && typeof value.email != 'undefined' && value.email != '') 
+                                { 
+                                    htmlCountry += '<div class="item-envelope storeify-item-info"><span class="material-icons-outlined">email</span>'; 
+                                    htmlCountry += '<a href="mailto:' + value.email + '" class="phone-email">' + value.email + '</a></div>'; 
+                                }
+                                if (value.phone != null && typeof value.phone != 'undefined' && value.phone != '') 
+                                { 
+                                    htmlCountry += '<div class="item-phone storeify-item-info"><span class="material-icons-outlined">phone</span>'; 
+                                    htmlCountry += '<a href="tel:' + value.phone + '" class="phone-no">' + value.phone + '</a></div>'; }
                                 if (value.web != null && typeof value.web != 'undefined' && value.web != '') { htmlCountry += '<div class="item-link storeify-item-info"><span class="material-icons-outlined">link</span>'; htmlCountry += value.web + '</div>'; }
                                 if (value.tags.length > 0) { var tag_arr = value.tags; var tag_html = ''; jQuery.each(tag_arr, function (i, val) { tag_html += '<span class="tag-item"><i class="fa fa-check" aria-hidden="true"></i> ' + val + '</span>'; }); htmlCountry += '<div class="item-tags storeify-item-info"><span class="material-icons-outlined">label</span> ' + tag_html + '</div>'; }
                                 if (value.social != null && typeof value.social != 'undefined' && value.social != '') { htmlCountry += '<div class="storeify-storelocator-social-maker"><span class="material-icons-outlined">share</span> ' + value.social + '</div>'; }
@@ -443,7 +458,20 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 marker = gmarkers[i]; var distance = checkDistanceBetweenPoints(center.lat(), center.lng(), marker.position.lat(), marker.position.lng(), radius, dv); check_country = 0; if (filter_country == 'all' || filter_country == marker.country) { check_country = 1; }
                 if (distance > -1 && checkTag(tags_check, marker.tags) && check_country == 1) {
                     thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
-                    var id = marker.id; var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; var num = marker.num; array_poin[i] = { social: social, thum: thum, id: id, name: name, url: url, address: address, phone: phone, email: email, web: web, distance: distance, tags: tags, marker_count: marker_count, num: num }; marker.setVisible(true); marker_count++;
+                    var id = marker.id; 
+                    var name = marker.name; 
+                    var url = marker.url; 
+                    var address = marker.address; 
+                    var phone = marker.phone; 
+                    var email = marker.email; 
+                    var web = marker.web; 
+                    var tags = marker.tags; 
+                    var social = marker.social; 
+                    var num = marker.num; 
+                    array_poin[i] = { 
+                        social: social, 
+                        thum: thum, 
+                        id: id, name: name, url: url, address: address, phone: phone, email: email, web: web, distance: distance, tags: tags, marker_count: marker_count, num: num }; marker.setVisible(true); marker_count++;
                 } else { marker.setVisible(false); }
             }
             document.getElementById("storeify-storeloctor-contactFrm").style.display = 'block'; document.getElementById("loading_mask_loader").style.display = 'none'; if (marker_count > 0) {
