@@ -262,17 +262,15 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     var marker = createMarker(data_maker, map, infowindow); 
                     gmarkers.push(marker);
 
-                    
+                    var campButton = document.getElementsByClassName('CampTypeButton');
 
-                    ThreeDayCamp.onclick = function () 
+                    for (let index = 0; index < campButton.length; index++) {
+                        campButton[index].onclick = function () 
                         {
                             window.open(properties.url);
                         }
-                            
-                    TwoDayCamp.onclick = function () 
-                        {
-                            window.open(properties.url);
-                        }
+                        
+                    }
                 }
             }
             if (map) {
