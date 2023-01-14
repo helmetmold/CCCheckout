@@ -251,7 +251,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     for (let index = 0; index < campButton.length; index++) {
                         campButton[index].onclick = function () 
                         {
-                            window.open(properties.url);
+                            window.open("https://creator-camp.myshopify.com/products/katy-flagship-camps");
                         }
                         
                     }
