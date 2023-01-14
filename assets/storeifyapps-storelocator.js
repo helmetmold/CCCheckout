@@ -163,7 +163,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.setAttribute('class', 'CampTypeButton');
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
-                        ThreeDayCamp.element.onclick = function () {
+                        ThreeDayCamp.onclick = function () {
+                            window.open(properties.url);
+                        }
+                        TwoDayCamp.onclick = function () {
                             window.open(properties.url);
                         }
                         InnerItem[i].appendChild(ThreeDayCamp);
