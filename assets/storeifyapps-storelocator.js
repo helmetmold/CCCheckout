@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b69cd7a997da5902240b2b0822b9660cfc7b74de
 var search_result_zoom = 2; 
 var limit_store = 10000; 
 var list_mode = 0; 
@@ -827,6 +830,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             });
         });
     }; if (typeof jQuery == 'undefined' || typeof jQuery.fn.on == 'undefined') { loadScript('//code.jquery.com/jquery-3.4.1.min.js', function () { storeifyAPPS = jQuery.noConflict(true); storeifyAPPS(document).ready(function () { storeifyappsJavaScript(storeifyAPPS); }); }); } else { storeifyappsJavaScript(jQuery); }
+<<<<<<< HEAD
+=======
 =======
 var search_result_zoom = 2; 
 var limit_store = 10000; 
@@ -1657,4 +1662,5 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         });
     }; if (typeof jQuery == 'undefined' || typeof jQuery.fn.on == 'undefined') { loadScript('//code.jquery.com/jquery-3.4.1.min.js', function () { storeifyAPPS = jQuery.noConflict(true); storeifyAPPS(document).ready(function () { storeifyappsJavaScript(storeifyAPPS); }); }); } else { storeifyappsJavaScript(jQuery); }
 >>>>>>> 179559345dde3c6c3a41a0009fee2409239f80d7
+>>>>>>> b69cd7a997da5902240b2b0822b9660cfc7b74de
 })();
