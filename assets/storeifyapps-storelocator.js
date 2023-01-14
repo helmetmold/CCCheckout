@@ -261,6 +261,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         }
                     var marker = createMarker(data_maker, map, infowindow); 
                     gmarkers.push(marker);
+
+                    
+
                     ThreeDayCamp.onclick = function () 
                         {
                             window.open(properties.url);
