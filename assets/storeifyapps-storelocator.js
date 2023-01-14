@@ -163,7 +163,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.setAttribute('class', 'CampTypeButton');
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
-                        
+                        ThreeDayCamp.href = "https://creator-camp.myshopify.com/products/katy-flagship-camps";
+
+
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp);     
 
