@@ -169,9 +169,13 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.onclick = function () {
                             window.open(properties.url);
                         }
-                        var properties = results.features[i].properties; 
-                        InnerItem[i].appendChild(ThreeDayCamp);
-                        InnerItem[i].appendChild(TwoDayCamp);  
+                        
+                        window.eqfeed_callback = function (results) {
+                            var properties = results.features[i].properties; 
+                            InnerItem[i].appendChild(ThreeDayCamp);
+                            InnerItem[i].appendChild(TwoDayCamp);  
+                        }
+                        
 
 
                         /*
