@@ -200,9 +200,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                             window.open();
                         }
 
-                        for (var i = 0; i < gmarkers.length; i++) 
+                        for (var s = 0; s < gmarkers.length; s++) 
                         {
-                            marker = gmarkers[i]; 
+                            marker = gmarkers[s]; 
                             var id = marker.id; 
                             console.log(marker.url);
                         }
