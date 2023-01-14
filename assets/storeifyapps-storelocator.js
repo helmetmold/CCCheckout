@@ -220,7 +220,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var coords = results.features[i].geometry.coordinates; 
                 var latLng = new google.maps.LatLng(coords[1], coords[0]); 
                 var properties = results.features[i].properties; 
-                console.log(properties.url);
+                console.log(properties.web);
                 if (typeof properties.thumbnail !== 'undefined') 
                 { 
                     thum = properties.thumbnail; 
@@ -290,7 +290,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     var campButton = document.getElementsByClassName('CampTypeButton');
 
                     for (let index = 0; index < campButton.length; index++) {
-                        console.log("get");
                         campButton[index].onclick = function () 
                         {
                             window.open("https://creator-camp.myshopify.com/products/katy-flagship-camps");
@@ -314,7 +313,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var country = this.options.country; 
                         var city = this.options.city; 
                         var class_text = 'storeify-list-country'; 
-                        console.log(this.options.url);
                         if (city) 
                         { 
                             class_text = 'storeify-list-city'; 
