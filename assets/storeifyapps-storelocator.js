@@ -163,20 +163,23 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.setAttribute('class', 'CampTypeButton');
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
-                        ThreeDayCamp.onclick = function () {
-                            window.open(properties.url);
-                        }
-                        TwoDayCamp.onclick = function () {
-                            window.open(properties.url);
-                        }
-                        
-                        window.eqfeed_callback = function (results) {
-                            var properties = results.features[i].properties; 
-                            InnerItem[i].appendChild(ThreeDayCamp);
-                            InnerItem[i].appendChild(TwoDayCamp);  
-                        }
                         
 
+                        window.eqfeed_callback = function (results) {
+                            var properties = results.features[i].properties; 
+                            ThreeDayCamp.onclick = function () 
+                            {
+                                window.open(properties.url);
+                            }
+                            
+                            TwoDayCamp.onclick = function () 
+                            {
+                                window.open(properties.url);
+                            }
+                        }
+                        
+                        InnerItem[i].appendChild(ThreeDayCamp);
+                        InnerItem[i].appendChild(TwoDayCamp);  
 
                         /*
                         jQuery.getJSON('/collections/katy/products.json', function(collections) {
