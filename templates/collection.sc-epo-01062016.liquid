@@ -1,0 +1,31 @@
+{% comment %} Added by SolverCircle for Extra Product Options App {% endcomment %}
+
+{% layout none %}
+{% paginate collection.products by 25 %}
+{% assign resultTotal = collection.products_count %}
+
+{% capture output %}
+{
+    "TotalProduct" : "{{resultTotal}}",
+    {% if customer %} 
+        "CustomerID" : "{{customer.id}}",
+    {% endif %}
+    "Items":
+        [
+            {% for product in collection.products %}					
+                {% if product.metafields.ExtraProductOptions.IsHidden == 1 %}
+                {% else %}
+                  {% assign thumbURL = product.images[0] | product_img_url: 'thumb' %}
+                    {
+                          "id":"{{product.id}}"
+                          ,"title": {{product.title | json }}						  
+                          ,"image" : {{thumbURL | json }}
+                    }
+                  {% unless forloop.last %},{% endunless %}
+                {% endif %}
+            {% endfor %}
+        ]
+}
+{% endcapture %}
+{% endpaginate %}
+{{ output | strip_newlines }}

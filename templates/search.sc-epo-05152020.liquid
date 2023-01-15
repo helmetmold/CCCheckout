@@ -1,0 +1,54 @@
+{% comment %} Added by SolverCircle for Product Badge Tab {% endcomment %}
+
+{% layout none %}
+{% assign resultTotal = search.results_count %}
+{% paginate search.results by resultTotal %}
+{% capture output %}
+{
+    "TotalProduct" : "{{resultTotal}}",
+	{% if customer %} 
+	"CustomerID" : "{{customer.id}}",
+	{% endif %}
+     "Items":
+        [
+            {% for product in search.results %}					
+                  {% assign thumbURL = product.images[0] | product_img_url: 'thumb' %}
+                    {
+                          "id":"{{product.id}}"
+                          ,"title": {{product.title | json }}						  
+                          ,"image" : {"src":{{thumbURL | json }}}
+													,"handle"	: "{{ product.handle | url_encode }}"
+													,"published_at"	: "{{ product.published_at  | date: "%F"  }}"
+													,"variants": 
+														[ {% for variant in product.variants %}
+															{
+																"id": {{ variant.id }}
+																,"available" : {{ variant.available }}
+																,"title": {{ variant.title | json }}
+																,"price": {{ variant.price }}
+																{% if variant.compare_at_price%}
+																,"compare_at_price": {{ variant.compare_at_price }} 
+																{% endif %}
+																{% if variant.inventory_quantity%}
+																,"inventory_quantity": {{ variant.inventory_quantity }} 
+																{% endif %}
+																{% if variant.inventory_management and variant.inventory_management != blank%}
+																,"inventory_management": "{{ variant.inventory_management }}"
+																{% endif %}
+																{% if variant.sku and variant.sku != blank%}
+																,"sku": "{{ variant.sku }}"
+																{% endif %} 
+															}
+															{% unless forloop.last %},{% endunless %}
+															{% endfor %}
+														]
+													,"collections": [ {% for collection in product.collections %} {{ collection.id }}{% unless forloop.last %},{% endunless %} {% endfor %} ] 
+                    }
+                  {% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        ]
+	
+}
+{% endcapture %}
+{% endpaginate %}
+{{ output | strip_newlines }}

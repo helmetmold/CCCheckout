@@ -1,0 +1,18 @@
+{% layout none %}
+{% capture output %}
+{% assign str = cart | json | split: "" | reverse | join: "" | remove_first: "}" | split: "" | reverse | join: "" %}
+{{ str }}, "adpi": {
+{% for item in cart.items %}
+{% assign cids = item.product.collections | map: 'id' | join: ',' %}
+{% assign encids = item.product.collections | map: 'id' | join: '!' | append: shop.metafields.QBGroups.QBDVK | md5 %}
+
+"adpi_{{item.id}}": {"cids": [{{cids}}],"cidsvk":"{{encids}}"}
+{% if cart.items.last.key != item.key %}
+,
+{% endif %}
+{% endfor %}
+
+}
+}
+{% endcapture %}
+{{ output | strip_newlines }}
