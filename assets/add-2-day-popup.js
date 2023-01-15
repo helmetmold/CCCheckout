@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 83da658629b93c0f538e15fa7424034396a6e27b
 var SubmitCartButton = document.getElementsByClassName('product-form__submit');
 
 for (let index = 0; index < SubmitCartButton.length; index++) 
@@ -14,6 +17,8 @@ function OpenUpsellPopUp()
 }
 
 
+<<<<<<< HEAD
+=======
 =======
 var SubmitCartButton = document.getElementsByClassName('product-form__submit');
 
@@ -31,3 +36,4 @@ function OpenUpsellPopUp()
 
 
 >>>>>>> 46cf08426229b9878d5809417e84b1aaee2e1f19
+>>>>>>> 83da658629b93c0f538e15fa7424034396a6e27b
