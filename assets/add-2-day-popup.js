@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 025afc8d951aa1cd2017336d21015217a41b908d
 var SubmitCartButton = document.getElementsByClassName('product-form__submit');
 
 for (let index = 0; index < SubmitCartButton.length; index++) 
@@ -14,6 +17,9 @@ function OpenUpsellPopUp()
 }
 
 
+<<<<<<< HEAD
+//get new cart button when made
+=======
 //get new cart button when made
 =======
 <<<<<<< HEAD
@@ -66,3 +72,4 @@ function OpenUpsellPopUp()
 >>>>>>> 2a437a232f17e786e6cf1f413aa5693f4d116559
 >>>>>>> 08e066ba998841a11e197df47bd442bb4ec8763f
 >>>>>>> 2d0e07c44df525bb72ceeeac3deb9d08908efeb4
+>>>>>>> 025afc8d951aa1cd2017336d21015217a41b908d
