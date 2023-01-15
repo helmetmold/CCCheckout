@@ -226,7 +226,15 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "16209783699164308855": {
+        "type": "shopify:\/\/apps\/product-options-and-customizer\/blocks\/main\/6a41f087-b345-45a6-a4d0-742f906f07a3",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
