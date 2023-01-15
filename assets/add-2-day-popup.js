@@ -7,6 +7,7 @@ for (let index = 0; index < SubmitCartButton.length; index++)
 
 function OpenUpsellPopUp() 
 {
+  console.log("open upsell");
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
   ProductQuickAddButton[0].click();
 }
