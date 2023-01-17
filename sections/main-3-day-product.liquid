@@ -384,22 +384,35 @@
 
             <div>
               <label for="3-day-lunch"> Which Lunch </label>
-                <select id="3-day-lunch" form="{{product_form_id}}" name="properties[Lunch]" >
-                <option selected="selected" disabled>Pick a lunch option</option>  
-                <option value="Regular">Regular</option>
-                <option value="Vegetarian" >Vegetarian</option>
+                <select id="3-day-lunch" form="{{product_form_id}}" name="properties[Lunch]" onchange="updateProduct()">
+                  <option selected="selected" disabled>Pick a lunch option</option>  
+                  <option value="Regular">Regular</option>
+                  <option value="Vegetarian" >Vegetarian</option>
                 </select>
-                <div>
-                  {% assign additional_cost = 0 %}
-                  {% if product.properties.Lunch == "Regular" %}
-                    {% assign additional_cost = 29.99 %}
-                  {% endif %}
-                  {% if product.properties.Lunch == "Vegetarian" %}
-                    {% assign additional_cost = 29.99 %}
-                  {% endif %}
-                  {% assign final_price = product.price | plus: additional_cost %}
-                  <p>Price: {{ final_price | money }}</p>
-                </div>
+                <form id="{{product_form_id}}" action="/cart/add" method="post">
+                  <input type="hidden" id="selected_product" name="id" value="">
+                  <button type="submit">Add to Cart</button>
+                </form>
+
+                <script>
+                  function updateProduct() {
+                    var lunchOption = document.getElementById("3-day-lunch").value;
+                    var productId;
+                    if (lunchOption === "Regular") {
+                      productId = "123456"; // replace with the ID of the regular lunch option product
+                    } else if (lunchOption === "Vegetarian") {
+                      productId = "789012"; // replace with the ID of the vegetarian lunch option product
+                    }
+                    if(productId){
+                      document.getElementById("selected_product").value = productId;
+                      document.getElementById("add_product_form").submit();
+                    }else{
+                      // handle the error
+                      alert("The product you selected is not available, please select another option");
+                    }
+                  }
+
+                </script>
             </div>
 
             {%- when 'buy_buttons' -%}
