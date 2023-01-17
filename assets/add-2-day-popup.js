@@ -10,6 +10,7 @@ for (let index = 0; index < SubmitCartButton.length; index++)
 function OpenUpsellPopUp() 
 {
   var LunchChoice = document.getElementById("3-day-lunch").value;
+  console.log(LunchChoice);
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
   if (LunchChoice == "Regular") {
     var LunchButton = document.getElementsByClassName('btn-add-on');
