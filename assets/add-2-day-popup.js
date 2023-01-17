@@ -11,11 +11,11 @@ function OpenUpsellPopUp()
 {
   console.log("open upsell");
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
-  if (x == "Regular") {
+  if (LunchChoice == "Regular") {
     var LunchButton = document.getElementsByClassName('btn-add-on');
     LunchButton[0].click();
   }
-  else if (x == "Vegetarian") {
+  else if (LunchChoice == "Vegetarian") {
     var LunchButton = document.getElementsByClassName('btn-add-on');
     LunchButton[0].click();
   }
