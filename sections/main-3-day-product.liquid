@@ -398,8 +398,13 @@
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $(document).on('click','.product-form__submit',function(){
-                            var quantity = $(".3-day-lunch option:selected");
-                            alert(quantity);
+                          var lunchOption = document.getElementById("3-day-lunch").value;
+                          if (lunchOption === "Regular") 
+                          {
+                            productId = "123456"; // replace with the ID of the regular lunch option product
+                          } else if (lunchOption === "Vegetarian") {
+                            productId = "789012"; // replace with the ID of the vegetarian lunch option product
+                          alert(quantity);
                             var id="15426278195309";
                             $.ajax({
                                 type: 'POST',
