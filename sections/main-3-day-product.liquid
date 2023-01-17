@@ -394,12 +394,13 @@
                   $(document).ready(function () {
                     $(document).on('click','.add_to_cart',function(){
                         var lunchOption = document.getElementById("3-day-lunch").value;
-                        console.log(lunchOption);
-                        var id;
+                        
+                        var id = "8062562959659";
                         if (lunchOption === "Regular") {
-                          id = "8062562959659"; // replace with the ID of the Regular product
-                        } else if (lunchOption === "Vegetarian") {
-                          id = "8062562959659"; // replace with the ID of the Vegetarian product
+                          console.log(lunchOption);
+                        } 
+                        else if (lunchOption === "Vegetarian") {
+                          console.log(lunchOption);
                         }
                         $.ajax({
                             type: 'POST',
