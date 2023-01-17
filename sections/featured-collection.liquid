@@ -73,6 +73,11 @@
               <input type="submit" value="Add to cart" class="btn" style="display: none;"/>
 
             </form>
+            <script>
+              document.querySelector("form").addEventListener("submit", function(event) {
+                  event.preventDefault();
+              });
+            </script>
           </li>
         {%- else -%}
           {%- for i in (1..4) -%}
