@@ -391,31 +391,6 @@
                   <option value="Regular">Regular</option>
                   <option value="Vegetarian" >Vegetarian</option>
                 </select>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                <script>
-                  $(document).ready(function () {
-                    $(document).on('click','.product-form__submit',function(){
-                        var lunchOption = document.getElementById("3-day-lunch").value;
-                        var quantity = 1;
-                        var id = "8062562959659";
-                        if (lunchOption === "Regular") {
-                          console.log(lunchOption);
-                        } 
-                        else if (lunchOption === "Vegetarian") {
-                          console.log(lunchOption);
-                        }
-                        $.ajax({
-                            type: 'POST',
-                            url: '/cart/add.js',
-                            dataType: 'json',
-                            data: {id:id,quantity:quantity},
-                            success: function(){
-                                location.href="/cart";
-                            }
-                        });
-                    })
-                });    
-                </script>
             </div>
 
             {%- when 'buy_buttons' -%}
