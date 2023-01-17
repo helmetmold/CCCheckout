@@ -389,6 +389,17 @@
                 <option value="Regular">Regular</option>
                 <option value="Vegetarian" >Vegetarian</option>
                 </select>
+                <div>
+                  {% assign additional_cost = 0 %}
+                  {% if product.properties.Lunch == "Regular" %}
+                    {% assign additional_cost = 29.99 %}
+                  {% endif %}
+                  {% if product.properties.Lunch == "Vegetarian" %}
+                    {% assign additional_cost = 29.99 %}
+                  {% endif %}
+                  {% assign final_price = product.price | plus: additional_cost %}
+                  <p>Price: {{ final_price | money }}</p>
+                </div>
             </div>
 
             {%- when 'buy_buttons' -%}
