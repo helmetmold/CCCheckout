@@ -399,21 +399,21 @@
                     $(document).ready(function () {
                         $(document).on('click','.product-form__submit',function(){
                           var lunchOption = document.getElementById("3-day-lunch").value;
+                          var productId = "8062562959659";
+                          var variantid;
                           if (lunchOption === "Regular") 
                           {
-                            productId = "123456"; // replace with the ID of the regular lunch option product
-                            alert(productId);
+                            variantid = "44256198656299";
                           } 
                           else if (lunchOption === "Vegetarian") 
                           {
-                            productId = "789012"; // replace with the ID of the vegetarian lunch option product
-                            alert(productId);
+                            variantid = "44256198689067";
                           }
                             $.ajax({
                                 type: 'POST',
                                 url: '/cart/add.js',
                                 dataType: 'json',
-                                data: {id:productId,quantity:1},
+                                data: {id:productId,quantity:1,variants:{id:variantid}},
                                 success: function(){
                                     location.href="/cart";
                                 }
