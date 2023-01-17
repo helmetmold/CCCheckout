@@ -75,6 +75,15 @@
           {%- endfor -%}
         {%- endfor -%}
       </ul>
+      <form method="post" action="/cart/add">
+
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+        {{product.variants.first.id}}
+        <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+
+        <input type="submit" value="Add to cart" class="btn" />
+
+      </form>
       {%- if show_mobile_slider or show_desktop_slider -%}
         <div class="slider-buttons no-js-hidden">
           <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="Slider-{{ section.id }}">{% render 'icon-caret' %}</button>
