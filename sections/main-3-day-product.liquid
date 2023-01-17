@@ -384,6 +384,7 @@
 
             <div>
               <label for="3-day-lunch"> Which Lunch </label>
+              {% assign someProduct = all_products.lunch-2-day %}
                 <select id="3-day-lunch" form="{{product_form_id}}" name="properties[Lunch]">
                   <option selected="selected" disabled>Pick a lunch option</option>  
                   <option value="Regular">Regular</option>
