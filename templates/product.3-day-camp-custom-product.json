@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "main-3-day-product",
       "blocks": {
         "vendor": {
           "type": "text",
