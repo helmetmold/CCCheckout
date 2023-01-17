@@ -402,9 +402,16 @@
                       productId = "8062562959659"; // replace with the ID of the Vegetarian product
                       Shopify.addItem(productId, 1);
                     }
-                    Shopify.getCart(function(cart) {
-                      alert('There are now ' + cart.item_count + ' items in your cart.');
+                    $.ajax({
+                        type: 'POST', 
+                        url: '/cart/add.js',
+                        dataType: 'json', 
+                        data: {id:id,quantity:quantity},
+                        success: function(){
+                              location.href="/cart";
+                        }
                     });
+
                   }
                 </script>
             </div>
