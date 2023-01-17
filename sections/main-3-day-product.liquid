@@ -409,12 +409,11 @@
                             productId = "789012"; // replace with the ID of the vegetarian lunch option product
                             alert(productId);
                           }
-                            var id="15426278195309";
                             $.ajax({
                                 type: 'POST',
                                 url: '/cart/add.js',
                                 dataType: 'json',
-                                data: {id:id,quantity:quantity},
+                                data: {id:productId,quantity:1},
                                 success: function(){
                                     location.href="/cart";
                                 }
