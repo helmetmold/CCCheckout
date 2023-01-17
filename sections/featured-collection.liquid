@@ -70,11 +70,11 @@
 
               <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
               <input min="1" type="number" id="quantity" name="quantity" value="1" style="display: none;"/>
-              <input type="submit" value="Add to cart" class="btn" />
+              <input type="submit" value="Add to cart" class="btn-add-on" />
 
             </form>
             <script>
-              document.querySelector("form").addEventListener("submit", function(event) {
+              document.querySelector(".btn-add-on").addEventListener("submit", function(event) {
                   event.preventDefault();
                   alert("stop");
               });
