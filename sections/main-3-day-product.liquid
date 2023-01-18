@@ -362,7 +362,15 @@
                       form="{{ product_form_id }}"
                     >
                       {%- for variant in product.variants -%}
-                        <option {% if variant == product.selected_or_first_available_variant %} selected="selected"{% endif %}{% if variant.available == false %}disabled{% endif %}value="{{ variant.id }}">
+                        <option
+                          {% if variant == product.selected_or_first_available_variant %}
+                            selected="selected"
+                          {% endif %}
+                          {% if variant.available == false %}
+                            disabled
+                          {% endif %}
+                          value="{{ variant.id }}"
+                        >
                           {{ variant.title }}
                           - {{ variant.price | money | strip_html }}
                           {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
@@ -383,9 +391,15 @@
                   <option value="Regular">Regular</option>
                   <option value="Vegetarian" >Vegetarian</option>
                 </select>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                  $(document).ready(function () {
+                    $(document).on('click','.product-form__submit',function(){
+                        console.log("add options");
+                    })
+                });    
+                </script>
             </div>
-
-            
 
             {%- when 'buy_buttons' -%}
               <div {{ block.shopify_attributes }}>
@@ -854,7 +868,7 @@
     },
     {
       "type": "text",
-      "name": "t:sections.main-3-day-product.blocks.text.name",
+      "name": "t:sections.main-product.blocks.text.name",
       "settings": [
         {
           "type": "text",
