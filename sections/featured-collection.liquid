@@ -66,7 +66,13 @@
               show_quick_add: section.settings.enable_quick_add,
               section_id: section.id,
             %}
+            <form method="post" action="/cart/add">
 
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <input min="1" type="number" id="quantity" name="quantity" value="1" />
+              <input type="submit" value="Add to cart" class="btn-add-on" />
+
+            </form>
           </li>
         {%- else -%}
           {%- for i in (1..4) -%}
