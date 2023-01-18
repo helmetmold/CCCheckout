@@ -1,6 +1,6 @@
 $(document ).ready()
 {
-
+  /*
   var SubmitCartButton = document.getElementsByClassName('product-form__submit');
   SubmitCartButton[0].addEventListener("click", OpenUpsellPopUp);
   
@@ -23,7 +23,7 @@ $(document ).ready()
       LunchButton[0].click();
     }
   
-  }
+  }*/
 }
 
 
