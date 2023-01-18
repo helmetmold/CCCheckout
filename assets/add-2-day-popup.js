@@ -1,5 +1,4 @@
-$(document ).ready()
-{
+
   /*
   var SubmitCartButton = document.getElementsByClassName('product-form__submit');
   SubmitCartButton[0].addEventListener("click", OpenUpsellPopUp);
@@ -24,7 +23,7 @@ $(document ).ready()
     }
   
   }*/
-}
+
 
 
 //get new cart button when made
