@@ -385,14 +385,12 @@
             <div>
               {%- for tags in product.tags -%}
                 {% if tags == "Lunch" %}
-                <div>
                   <label class="product-form__input" for="3-day-lunch"> Lunch Options </label>
                     <select id="3-day-lunch" form="{{product_form_id}}" name="properties[Lunch]">
                       <option selected="selected" disabled>Pick a lunch option</option>  
                       <option value="Regular">Regular</option>
                       <option value="Vegetarian" >Vegetarian</option>
                     </select>
-                </div>
                 {% endif %}
                 {% if tags == "ipads" %}
                   <label class="product-form__input" for="3-day-lunch"> iPad Rental </label>
