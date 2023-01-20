@@ -385,28 +385,34 @@
             <div>
               {%- for tags in product.tags -%}
                 {% if tags == "Lunch" %}
+                <div>
                   <label class="product-form__input" for="3-day-lunch"> Lunch Options </label>
                     <select id="3-day-lunch" form="{{product_form_id}}" name="properties[Lunch]">
                       <option selected="selected" disabled>Pick a lunch option</option>  
                       <option value="Regular">Regular</option>
                       <option value="Vegetarian" >Vegetarian</option>
                     </select>
+                </div>
                 {% endif %}
                 {% if tags == "ipads" %}
+                <div>
                   <label class="product-form__input" for="3-day-lunch"> iPad Rental </label>
                     <select id="3-day-lunch" form="{{product_form_id}}" name="properties[iPad Rental]">
                       <option selected="selected" disabled>Pick a lunch option</option>  
                       <option value="Regular">Regular</option>
                       <option value="Vegetarian" >Vegetarian</option>
                     </select>
+                </div>
                 {% endif %}
                 {% if tags == "Pickup" %}
+                <div>
                   <label class="product-form__input" for="3-day-lunch"> Pick-up/drop-off options </label>
                     <select id="3-day-lunch" form="{{product_form_id}}" name="properties[Pick-up/Drop-off options">
                       <option selected="selected" disabled>Pick a lunch option</option>  
                       <option value="Regular">Regular</option>
                       <option value="Vegetarian" >Vegetarian</option>
                     </select>
+                </div>
                 {% endif %}
               {%- endfor -%}
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
