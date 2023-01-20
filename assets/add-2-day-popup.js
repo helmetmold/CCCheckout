@@ -1,3 +1,7 @@
+window.onbeforeunload = function(){
+  return 'Are you sure you want to leave?';
+};
+
 var SubmitCartButton = document.getElementsByClassName('product-form__submit');
 
 for (let index = 0; index < SubmitCartButton.length; index++) 
@@ -20,7 +24,8 @@ function AddExtras()
   {
     if (extras[index].value == "Regular") 
     {
-      console.log("Regular Lunch")
+
+      console.log("Regular Lunch");
     } 
     else if (extras[index].value == "Vegetarian") 
     {
