@@ -7,7 +7,6 @@ for (let index = 0; index < SubmitCartButton.length; index++)
 
 function OpenUpsellPopUp() 
 {
-  console.log("BRUH");
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
   AddExtras();
   ProductQuickAddButton[0].click();
@@ -21,7 +20,7 @@ function AddExtras()
     console.log(extras[index]);
     if (extras[index].value == "Regular") 
     {
-      console.lof("log");
+      console.log("log");
       var product = document.getElementById("Lunch (3-day)");
       product.click();
     } 
