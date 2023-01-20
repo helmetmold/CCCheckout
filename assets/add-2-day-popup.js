@@ -10,6 +10,7 @@ function OpenUpsellPopUp()
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
   AddExtras();
   ProductQuickAddButton[0].click();
+  ProductQuickAddButton[1].click();
 }
 
 function AddExtras() 
@@ -20,7 +21,7 @@ function AddExtras()
     if (extras[index].value == "Regular") 
     {
       var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
-      ProductQuickAddButton[1].click();
+      
     } 
     else if (extras[index].value == "Vegetarian") 
     {
