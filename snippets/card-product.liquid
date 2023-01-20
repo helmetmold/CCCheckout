@@ -293,12 +293,6 @@
               </quick-add-modal>
             {%- endif -%}
           </div>
-          <form method="post" action="/cart/add" class="AddToCart">
-          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-          <input type="hidden" name="return_to" value="back" />
-          <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-          <input type="submit" value="Add to Cart" class="btn" />
-          </form>
         {%- endif -%}
         <div class="card__badge {{ settings.badge_position }}">
           {%- if card_product.available == false -%}
@@ -367,4 +361,10 @@
     </div>
   </div>
 {%- endif -%}
+<form method="post" action="/cart/add" class="AddToCart">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input type="hidden" name="return_to" value="back" />
+          <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+          <input type="submit" value="Add to Cart" class="btn" />
+</form>
 
