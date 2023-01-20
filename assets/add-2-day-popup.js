@@ -18,14 +18,15 @@ function AddExtras()
   var extras = document.getElementsByClassName('Extras');
   for (let index = 0; index < extras.length; index++) 
   {
-    var product;
     if (extras[index].value == "Regular") 
     {
-      product = document.getElementById("Lunch (3-day)");
+      var product = document.getElementById("Lunch (3-day)");
+      product.click();
     } 
     else if (extras[index].value == "Vegetarian") 
     {
-      console.log("Vegetarian Lunch");
+      var product = document.getElementById("Lunch (3-day)");
+      product.click();
     }
     else if (extras[index].value == "Standard iPad rental") 
     {
