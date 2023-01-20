@@ -17,10 +17,33 @@ function AddExtras()
   var extras = document.getElementsByClassname("Extras");
   for (let index = 0; index < extras.length; index++) 
   {
-    if (extras[index].value === "Regular") {
+    if (extras[index].value == "Regular") 
+    {
       console.log("Regular Lunch")
-    } else if (select.value === "Vegetarian") {
+    } 
+    else if (extras[index].value == "Vegetarian") 
+    {
       console.log("Vegetarian Lunch");
+    }
+    else if (extras[index].value == "Standard iPad rental") 
+    {
+      console.log("Standard iPad rental");
+    }
+    else if (extras[index].value == "iPad rental with insurance") 
+    {
+      console.log("iPad rental with insurance");
+    }
+    else if (extras[index].value == "Early Drop-Off") 
+    {
+      console.log("Early Drop-Off");
+    }
+    else if (extras[index].value == "Late Pick-up") 
+    {
+      console.log("Late Pick-up");
+    }
+    else if (extras[index].value == "Early Drop-Off and Late Pick-up") 
+    {
+      console.log("Early Drop-Off and Late Pick-up");
     }
   }
   
