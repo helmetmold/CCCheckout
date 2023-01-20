@@ -18,6 +18,7 @@ function AddExtras()
   var extras = document.getElementsByClassName('Extras');
   for (let index = 0; index < extras.length; index++) 
   {
+    console.log(extras[index]);
     if (extras[index].value == "Regular") 
     {
       console.lof("log");
