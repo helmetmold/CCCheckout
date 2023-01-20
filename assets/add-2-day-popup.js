@@ -17,12 +17,9 @@ function AddExtras()
   var extras = document.getElementsByClassName('Extras');
   for (let index = 0; index < extras.length; index++) 
   {
-    console.log(extras[index]);
     if (extras[index].value == "Regular") 
     {
-      console.log("log");
       var product = document.getElementById("Lunch (3-day)");
-      console.log(product);
       product.click();
     } 
     else if (extras[index].value == "Vegetarian") 
