@@ -383,14 +383,39 @@
               </noscript>
 
             <div>
-              {% assign someProduct = all_products.lunch.title %}
-              {{someProduct}}
-              <label for="3-day-lunch"> Which Lunch </label>
-                <select id="3-day-lunch" form="{{product_form_id}}" name="properties[Lunch]">
-                  <option selected="selected" disabled>Pick a lunch option</option>  
-                  <option value="Regular">Regular</option>
-                  <option value="Vegetarian" >Vegetarian</option>
-                </select>
+              {%- for tags in product.tags -%}
+                {% if tags == "Lunch" %}
+                <div>
+                  <label class="product-form__input" for="3-day-lunch"> Lunch Options </label>
+                    <select class="Extras" form="{{product_form_id}}" name="properties[Lunch]">
+                      <option selected="selected" disabled>Pick a lunch option</option>  
+                      <option value="Regular">Regular</option>
+                      <option value="Vegetarian" >Vegetarian</option>
+                    </select>
+                </div>
+                {% endif %}
+                {% if tags == "ipads" %}
+                <div>
+                  <label class="product-form__input" for="iPad-Rental"> iPad Rental </label>
+                    <select form="{{product_form_id}}" name="properties[iPad Rental]">
+                      <option class="Extras" selected="selected" disabled>Choose iPad Rental options</option>  
+                      <option value="Standard iPad rental">Standard iPad rental</option>
+                      <option value="iPad rental with insurance" >iPad rental with insurance</option>
+                    </select>
+                </div>
+                {% endif %}
+                {% if tags == "Pickup" %}
+                <div>
+                  <label class="product-form__input" for="Pick-up-and-drop-off"> Pick-up/drop-off options </label>
+                    <select class="Extras" form="{{product_form_id}}" name="properties[Pick-up/Drop-off options">
+                      <option  selected="selected" disabled>Choose Pick-up/drop-off option</option>  
+                      <option value="Early Drop-Off">Early Drop-Off</option>
+                      <option value="Late Pick-up" >Late Pick-up</option>
+                      <option value="Early Drop-Off and Late Pick-up" >Early Drop-Off and Late Pick-up</option>
+                    </select>
+                </div>
+                {% endif %}
+              {%- endfor -%}
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
                   $(document).ready(function () {
