@@ -9,6 +9,7 @@ function OpenUpsellPopUp()
 {
   console.log("BRUH");
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
+  AddExtras();
   ProductQuickAddButton[0].click();
 }
 
