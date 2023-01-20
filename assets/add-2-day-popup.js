@@ -18,10 +18,10 @@ function AddExtras()
   var extras = document.getElementsByClassName('Extras');
   for (let index = 0; index < extras.length; index++) 
   {
+    var product;
     if (extras[index].value == "Regular") 
     {
-
-      console.log("Regular Lunch");
+      product = document.getElementById("Lunch (3-day)");
     } 
     else if (extras[index].value == "Vegetarian") 
     {
