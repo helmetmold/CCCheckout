@@ -20,6 +20,7 @@ function AddExtras()
   {
     if (extras[index].value == "Regular") 
     {
+      console.lof("log");
       var product = document.getElementById("Lunch (3-day)");
       product.click();
     } 
