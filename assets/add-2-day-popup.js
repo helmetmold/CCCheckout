@@ -19,8 +19,7 @@ function AddExtras()
   {
     if (extras[index].value == "Regular") 
     {
-      var product = document.getElementById("Lunch (3-day)");
-      product.click();
+      ProductQuickAddButton[1].click();
     } 
     else if (extras[index].value == "Vegetarian") 
     {
