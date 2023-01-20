@@ -22,6 +22,7 @@ function AddExtras()
     {
       console.log("log");
       var product = document.getElementById("Lunch (3-day)");
+      console.log(product);
       product.click();
     } 
     else if (extras[index].value == "Vegetarian") 
