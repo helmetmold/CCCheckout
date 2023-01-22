@@ -9,7 +9,7 @@ function OpenUpsellPopUp()
 {
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
   AddExtras();
-  //ProductQuickAddButton[0].click();
+  ProductQuickAddButton[0].click();
 }
 
 function AddExtras() 
