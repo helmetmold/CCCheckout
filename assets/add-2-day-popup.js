@@ -18,7 +18,7 @@ function AddExtras()
   var extras = document.getElementsByClassName('Extras');
   for (let index = 0; index < extras.length; index++) 
   {
-    console.log("legit");
+    
     if (extras[index].value == "Regular") 
     {
 
@@ -51,4 +51,23 @@ function AddExtras()
   }
   
 }
-//get new cart button when made
+
+function addItemToCart(variant_id, qty, frequency, unit_type) {
+  data = {
+    "id": variant_id,
+    "quantity": qty,
+    "properties": {
+      "shipping_interval_frequency": frequency,
+      "shipping_interval_unit_type": unit_type
+    }
+  }
+  jQuery.ajax({
+    type: 'POST',
+    url: '/cart/add.js',
+    data: data,
+    dataType: 'json',
+    success: function() { 
+      window.location.href = '/cart'; 
+    }
+  });
+}
