@@ -21,10 +21,15 @@ function AddExtras()
     console.log("legit");
     if (extras[index].value == "Regular") 
     {
-      jQuery.post('/cart/add.js', {
-        quantity: 1,
-        id: 8062562959659
-      });
+      JQuery.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data : { id: 8062562959659, quantity: 1 },
+        dataType: 'json',
+        success: function(data) { 
+              alert(data);
+        }         
+      });  
       
     } 
     else if (extras[index].value == "Vegetarian") 
