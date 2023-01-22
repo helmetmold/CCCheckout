@@ -20,7 +20,10 @@ function AddExtras()
   {
     if (extras[index].value == "Regular") 
     {
-      var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
+      jQuery.post('/cart/add.js', {
+        quantity: 1,
+        id: 8062562959659
+      });
       
     } 
     else if (extras[index].value == "Vegetarian") 
