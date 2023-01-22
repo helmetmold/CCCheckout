@@ -10,6 +10,16 @@
             <div>
                 Price: {{item.final_price | money}}
             </div>
+            <div>
+                Quantity: 
+                <a href="">
+                    Minus
+                </a>
+                {{item.quantity}}
+                <a href="">
+                    Plus
+                </a>
+            </div>
         {% endfor %%}
     </div>
 </div>
