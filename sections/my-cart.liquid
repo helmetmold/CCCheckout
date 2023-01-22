@@ -12,13 +12,16 @@
             </div>
             <div>
                 Quantity: 
-                <a href="{{routes.cart_change_url}}">
+                <a href="{{routes.cart_change_url}}?id={{item.key}}&quantity={{item.quantity | minus: 1}}">
                     Minus
                 </a>
                 {{item.quantity}}
-                <a href="{{routes.cart_change_url}}">
+                <a href="{{routes.cart_change_url}}?id={{item.key}}&quantity={{item.quantity | plus: 1}}">
                     Plus
                 </a>
+            </div>
+            <div>
+                Total: {{item.final_line_price | money}}
             </div>
         {% endfor %%}
     </div>
