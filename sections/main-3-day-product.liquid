@@ -929,6 +929,11 @@
             name="updates[]" 
             value="{{ item.quantity }}" 
             type="number" />
+          
+          <input data-ajax-cart-quantity-input="{{ item_index }}"
+            name="updates[]" 
+            value="{{ item.quantity }}" 
+            type="number" />
 
           <!-- data-ajax-cart-request-button ajaxifies the "Plus one" button -->
           <a data-ajax-cart-request-button 
@@ -955,7 +960,7 @@
     when the cart and the surrounding HTML get updated -->
     <div data-ajax-cart-static-element class="my-cart__app-container"></div>
 
-    <button type="submit" name="checkout">
+    <button type="submit">
       Checkout — {{ cart.total_price | money_with_currency }}
     </button> 
   </div>
