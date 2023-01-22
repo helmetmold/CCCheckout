@@ -21,11 +21,14 @@ function AddExtras()
     console.log("legit");
     if (extras[index].value == "Regular") 
     {
-      $.ajax({
+      JQuery.ajax({
         type: 'POST',
         url: '/cart/add.js',
         data : { id: 8062562959659, quantity: 1 },
-        dataType: 'json'     
+        dataType: 'json',
+        success: function(data) { 
+              console.log("success");
+        }         
       });  
       
     } 
