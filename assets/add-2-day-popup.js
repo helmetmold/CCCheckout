@@ -25,10 +25,7 @@ function AddExtras()
         type: 'POST',
         url: '/cart/add.js',
         data : { id: 8062562959659, quantity: 1 },
-        dataType: 'json',
-        success: function(data) { 
-              alert(data);
-        }         
+        dataType: 'json'     
       });  
       
     } 
