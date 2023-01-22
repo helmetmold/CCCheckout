@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .my-container
 {
     display: flex;
@@ -12,4 +13,20 @@
 {
     flex: 0 0 300px;
     padding: 15px;
+=======
+.my-container
+{
+    display: flex;
+}
+
+.my-container__content
+{
+    flex: 1 1 auto;
+}
+
+.my-container__cart
+{
+    flex: 0 0 300px;
+    padding: 15px;
+>>>>>>> a0c5ff9c73064bb8d7c3b6d71b489fac61dca2e6
 }

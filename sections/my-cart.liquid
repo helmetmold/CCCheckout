@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="my-cart" data-ajax-cart-section>
     <h2> Cart </h2>
     <div claa="my-cart_items">
@@ -37,4 +38,45 @@
 {% stylesheet  %}
 {% endstylesheet %}
 {%  javascript  %} 
+=======
+<div class="my-cart" data-ajax-cart-section>
+    <h2> Cart </h2>
+    <div claa="my-cart_items">
+        {% for item in cart.items %}
+            <hr />
+            </div>
+                <a href="{{item.url}}">
+                    {{item.title}}
+                </a>
+            </div>
+            <div>
+                Price: {{item.final_price | money}}
+            </div>
+            <div>
+                Quantity: 
+                <a href="{{routes.cart_change_url}}?id={{item.key}}&quantity={{item.quantity | minus: 1}}">
+                    Minus
+                </a>
+                {{item.quantity}}
+                <a href="{{routes.cart_change_url}}?id={{item.key}}&quantity={{item.quantity | plus: 1}}">
+                    Plus
+                </a>
+            </div>
+            <div>
+                Total: {{item.final_line_price | money}}
+            </div>
+        {% endfor %%}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name":"My cart",
+        "settings" : []
+    }
+{% endschema %}
+{% stylesheet  %}
+{% endstylesheet %}
+{%  javascript  %} 
+>>>>>>> a0c5ff9c73064bb8d7c3b6d71b489fac61dca2e6
 {% endjavascript %}
