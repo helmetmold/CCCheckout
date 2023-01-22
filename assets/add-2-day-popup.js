@@ -21,7 +21,7 @@ function AddExtras()
     console.log("legit");
     if (extras[index].value == "Regular") 
     {
-      JQuery.ajax({
+      $.ajax({
         type: 'POST',
         url: '/cart/add.js',
         data : { id: 8062562959659, quantity: 1 },
