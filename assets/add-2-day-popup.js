@@ -21,7 +21,7 @@ function AddExtras()
     
     if (extras[index].value == "Regular") 
     {
-
+      addItemToCart(44404689371435, 1)
     } 
     else if (extras[index].value == "Vegetarian") 
     {
@@ -55,11 +55,7 @@ function AddExtras()
 function addItemToCart(variant_id, qty, frequency, unit_type) {
   data = {
     "id": variant_id,
-    "quantity": qty,
-    "properties": {
-      "shipping_interval_frequency": frequency,
-      "shipping_interval_unit_type": unit_type
-    }
+    "quantity": qty
   }
   jQuery.ajax({
     type: 'POST',
