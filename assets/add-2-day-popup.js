@@ -10,7 +10,6 @@ function OpenUpsellPopUp()
   var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
   AddExtras();
   ProductQuickAddButton[0].click();
-  ProductQuickAddButton[1].click();
 }
 
 function AddExtras() 
