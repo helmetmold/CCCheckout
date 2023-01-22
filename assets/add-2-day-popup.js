@@ -52,7 +52,7 @@ function AddExtras()
   
 }
 
-function addItemToCart(variant_id, qty, frequency, unit_type) {
+function addItemToCart(variant_id, qty) {
   data = {
     "id": variant_id,
     "quantity": qty
@@ -63,7 +63,7 @@ function addItemToCart(variant_id, qty, frequency, unit_type) {
     data: data,
     dataType: 'json',
     success: function() { 
-      window.location.href = '/cart'; 
+      console.log("added");
     }
   });
 }
