@@ -313,12 +313,6 @@
     {%- endif -%}
   {% include 'storeifyapps-storelocator-footer' %}
   {% render 'ajaxify-cart' %}
-  <script type="application/json" data-ajax-cart-initial-state >
-  {{ cart | json }}
-  </script>
-  <script type="module">
-    import '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
-  </script>
 </body>
 </html>
  
