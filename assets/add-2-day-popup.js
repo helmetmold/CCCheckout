@@ -7,10 +7,7 @@ for (let index = 0; index < SubmitCartButton.length; index++)
 
 function OpenUpsellPopUp() 
 {
-  var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
   AddExtras();
-  ProductQuickAddButton[0].click();
-  ProductQuickAddButton[1].click();
 }
 
 function AddExtras() 
@@ -18,10 +15,10 @@ function AddExtras()
   var extras = document.getElementsByClassName('Extras');
   for (let index = 0; index < extras.length; index++) 
   {
+    
     if (extras[index].value == "Regular") 
     {
-      var ProductQuickAddButton = document.getElementsByClassName('quick-add__submit');
-      
+      addItemToCart(44404689371435, 1)
     } 
     else if (extras[index].value == "Vegetarian") 
     {
@@ -51,4 +48,19 @@ function AddExtras()
   }
   
 }
-//get new cart button when made
+
+function addItemToCart(variant_id, qty) {
+  data = {
+    "id": variant_id,
+    "quantity": qty
+  }
+  jQuery.ajax({
+    type: 'POST',
+    url: '/cart/add.js',
+    data: data,
+    dataType: 'json',
+    success: function() { 
+      console.log("added");
+    }
+  });
+}
