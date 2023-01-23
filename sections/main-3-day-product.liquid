@@ -446,7 +446,8 @@
                 }
 
 
-                (function makeAjaxRequest() {
+                function makeAjaxRequest() 
+                {
                   $.post('?add-to-cart=' + arrayProductIds[i], function() {
 
                     // success, so start next request
@@ -459,7 +460,7 @@
                       makeAjaxRequest();
                     }
                   });
-                })();
+                }();
 
                 function AddExtras() 
                 {
