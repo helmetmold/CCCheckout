@@ -444,21 +444,18 @@
                 }
 
 
-                function addItemToCart(variant_id, qty) {
-                  data = {
-                    "id": variant_id,
-                    "quantity": qty
-                  }
-                  jQuery.ajax({
-                    type: 'POST',
-                    url: '/cart/add.js',
-                    data: data,
-                    dataType: 'json',
-                    success: function() { 
-                      console.log("added");
+                (function makeAjaxRequest() {
+                  $.post('?add-to-cart=' + arrayProductIds[i], function() {
+
+                    // success, so start next request
+                    i++;
+                    if (i === arrayProductIds.length){
+                      // all products have been added
+                    }else{
+                      makeAjaxRequest();
                     }
                   });
-                }
+                })();
 
                 function AddExtras() 
                 {
