@@ -430,16 +430,21 @@
                 var arrayProductIds = [];
                 var i = 0;
                 var x = 0;
-                  $(document).ready(function () 
-                  {
-                    $(document).on('click','.product-form__submit',function()
+                  $(document).ready
+                  (
+                    function () 
                     {
-                        arrayProductIds = [];
-                        arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
-                        AddExtras();
-                        makeAjaxRequest();
-                    })
-                  });    
+                      $(document).on
+                      ('click','.product-form__submit',function()
+                        {
+                          arrayProductIds = [];
+                          arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
+                          AddExtras();
+                          makeAjaxRequest();
+                        }
+                      )
+                    }
+                  );    
 
                 function clickupsell()
                 {
