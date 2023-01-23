@@ -452,13 +452,11 @@
                 {
                   console.log(arrayProductIds);
                   
-                  data = {
+                  data = 
+                  {
                     "id": variant_id,
-                    "quantity": qty,
-                    "properties": {
-                      "shipping_interval_frequency": frequency,
-                      "shipping_interval_unit_type": unit_type
-                    }
+                    "quantity": 1
+                  }
 
                   jQuery.ajax({
                     type: 'POST',
