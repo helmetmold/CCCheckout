@@ -26,8 +26,7 @@
     }
   {%- endstyle -%}
   <script src="{{ 'add-2-day-popup.js' | asset_url }}" defer="defer"></script>
-  <script>(function () 
-    { if ((!document.documentElement.innerHTML.match(/asyncLoad/) || (document.documentElement.innerHTML.includes && document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240'))) && (!window.bcpo || !bcpo.disabled) && window.bcpo_data && bcpo_data.virtual_options && bcpo_data.virtual_options.length) { return; } var script = document.createElement('script'); script.defer = true; script.src = "{{ 'product-form.js' | asset_url }}"; document.head.appendChild(script); })();</script>
+  <script>(function () { if ((!document.documentElement.innerHTML.match(/asyncLoad/) || (document.documentElement.innerHTML.includes && document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240'))) && (!window.bcpo || !bcpo.disabled) && window.bcpo_data && bcpo_data.virtual_options && bcpo_data.virtual_options.length) { return; } var script = document.createElement('script'); script.defer = true; script.src = "{{ 'product-form.js' | asset_url }}"; document.head.appendChild(script); })();</script>
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
   {% endif %}
@@ -386,7 +385,7 @@
             
             
             Dropdowns
-
+            
 
             {% endcomment %}
             <div>
@@ -432,8 +431,6 @@
                 });    
                 </script>
             </div>
-            
-            
 
             {%- when 'buy_buttons' -%}
               <div {{ block.shopify_attributes }}>
