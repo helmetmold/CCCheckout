@@ -426,9 +426,26 @@
                 <script>
                   $(document).ready(function () {
                     $(document).on('click','.product-form__submit',function(){
-                        OpenUpsellPopup();
+                        addItemToCart("{{ product.selected_or_first_available_variant.id }}",1);
                     })
                 });    
+
+
+                function addItemToCart(variant_id, qty) {
+                  data = {
+                    "id": variant_id,
+                    "quantity": qty
+                  }
+                  jQuery.ajax({
+                    type: 'POST',
+                    url: '/cart/add.js',
+                    data: data,
+                    dataType: 'json',
+                    success: function() { 
+                      console.log("added");
+                    }
+                  });
+                }
                 </script>
             </div>
 
