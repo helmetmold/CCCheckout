@@ -426,9 +426,13 @@
               {%- endfor -%}
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
+
+                var arrayProductIds = new Array();
+                var i = 0;
+                
                   $(document).ready(function () {
                     $(document).on('click','.product-form__submit',function(){
-                        addItemToCart("{{ product.selected_or_first_available_variant.id }}",1);
+                        arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
                         AddExtras();
                     })
                 });    
@@ -447,7 +451,9 @@
                     i++;
                     if (i === arrayProductIds.length){
                       // all products have been added
-                    }else{
+                    }
+                    else
+                    {
                       makeAjaxRequest();
                     }
                   });
