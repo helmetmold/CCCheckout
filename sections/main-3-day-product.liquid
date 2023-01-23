@@ -464,21 +464,22 @@
 
                   x++;
 
-                  jQuery.ajax({
-                    type: 'POST',
-                    url: '/cart/add.js',
-                    data: data,
-                    dataType: 'json',
-                    success: function() 
-                    { 
-                      if(x!=i)
-                      {
-                        makeAjaxRequest();
-                        console.log(arrayProductIds[x]);
+                  jQuery.ajax(
+                    {
+                      type: 'POST',
+                      url: '/cart/add.js',
+                      data: data,
+                      dataType: 'json',
+                      success: function() 
+                      { 
+                        if(x!=i)
+                        {
+                          makeAjaxRequest();
+                          console.log(arrayProductIds[x]);
+                        }
+                        
                       }
-                      
-                    })
-                };
+                    });
 
                 function AddExtras() 
                 {
