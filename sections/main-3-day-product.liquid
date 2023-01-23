@@ -429,6 +429,7 @@
 
                 var arrayProductIds = [];
                 var i = 0;
+                var x = 0;
                   $(document).ready(function () 
                   {
                     $(document).on('click','.product-form__submit',function()
@@ -461,7 +462,9 @@
                     url: '/cart/add.js',
                     data: data,
                     dataType: 'json',
-                    success: function() { 
+                    success: function() 
+                    { 
+                      if(i==x)
                       makeAjaxRequest();
                   }
                 };
