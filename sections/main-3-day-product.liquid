@@ -429,12 +429,14 @@
 
                 var arrayProductIds = [];
                 var i = 0;
-                  $(document).ready(function () {
-                    $(document).on('click','.product-form__submit',function(){
+                  $(document).ready(function () 
+                  {
+                    $(document).on('click','.product-form__submit',function()
+                    {
                         arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
                         AddExtras();
                     })
-                });    
+                  });    
 
                 function clickupsell()
                 {
@@ -459,7 +461,7 @@
                       makeAjaxRequest();
                     }
                   });
-                }();
+                };
 
                 function AddExtras() 
                 {
