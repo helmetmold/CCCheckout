@@ -226,15 +226,7 @@
     },
     "content_for_index": [
 
-    ],
-    "blocks": {
-      "1984534506411008366": {
-        "type": "shopify:\/\/apps\/kaktus-bot-add-to-cart\/blocks\/app-embeded\/ec21afbf-38af-430f-b440-b90dea69c0f9",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "presets": {
     "Default": {
