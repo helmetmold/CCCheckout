@@ -466,8 +466,11 @@
                     dataType: 'json',
                     success: function() 
                     { 
-                      if(i==x)
-                      makeAjaxRequest();
+                      if(i!=x)
+                      {
+                        makeAjaxRequest();
+                      }
+                      
                   }
                 };
 
