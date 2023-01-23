@@ -426,9 +426,72 @@
                 <script>
                   $(document).ready(function () {
                     $(document).on('click','.product-form__submit',function(){
-                        console.log("add options");
+                        
+                        clickupsell();
+                        addItemToCart("{{ product.selected_or_first_available_variant.id }}",1);
+                        AddExtras();
                     })
                 });    
+                function clickupsell()
+                {
+                  var quickAddButtons = document.getElementsByClassName("quick-add__submit");
+                  quickAddButtons[0].click();
+                }
+
+
+                function addItemToCart(variant_id, qty) {
+                  data = {
+                    "id": variant_id,
+                    "quantity": qty
+                  }
+                  jQuery.ajax({
+                    type: 'POST',
+                    url: '/cart/add.js',
+                    data: data,
+                    dataType: 'json',
+                    success: function() { 
+                      console.log("added");
+                    }
+                  });
+                }
+
+                function AddExtras() 
+                {
+                  var extras = document.getElementsByClassName('Extras');
+                  for (let index = 0; index < extras.length; index++) 
+                  {
+                    console.log(extras);
+                    if (extras[index].value == "Regular") 
+                    {
+                      addItemToCart(44404689371435, 1)
+                    } 
+                    else if (extras[index].value == "Vegetarian") 
+                    {
+                      addItemToCart(44404689404203, 1)
+                    }
+                    else if (extras[index].value == "Standard iPad rental") 
+                    {
+                      addItemToCart(44405919351083, 1)
+                    }
+                    else if (extras[index].value == "iPad rental with insurance") 
+                    {
+                      addItemToCart(44405919383851, 1)
+                    }
+                    else if (extras[index].value == "Early Drop-Off") 
+                    {
+                      addItemToCart(44405930361131, 1)
+                    }
+                    else if (extras[index].value == "Late Pick-up") 
+                    {
+                      addItemToCart(44405930393899, 1)
+                    }
+                    else if (extras[index].value == "Early Drop-Off and Late Pick-up") 
+                    {
+                      addItemToCart(44405930426667, 1)
+                    }
+                  }
+                  
+                }
                 </script>
             </div>
 
