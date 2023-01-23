@@ -440,28 +440,6 @@
                     })
                   });    
 
-                  function addBundleToCart(e) {
-                    var data = new Array();
-                    var ids = arrayProductIds;
-                    console.log(ids);
-                    var frequency = $(this).data(‘frequency’);
-                    var unit = $(this).data(‘unit’);
-                    for (var i=0; i < ids.length; i++){
-                      if (frequency[i] == 0) {
-                        data.push({
-                          “quantity”: 1,
-                          “id”: ids[i],
-                        });
-                      } else {
-                        data.push({
-                          “quantity”: 1,
-                          “id”: ids[i],
-                          “properties[shipping_interval_frequency]”: frequency[i],
-                          “properties[shipping_interval_unit_type]”: unit,
-                        });
-                      }
-                    }
-
                 function clickupsell()
                 {
                   
@@ -474,17 +452,21 @@
                 {
                   console.log(arrayProductIds);
                   
+                  data = {
+                    "id": variant_id,
+                    "quantity": qty,
+                    "properties": {
+                      "shipping_interval_frequency": frequency,
+                      "shipping_interval_unit_type": unit_type
+                    }
+
                   jQuery.ajax({
                     type: 'POST',
                     url: '/cart/add.js',
                     data: data,
                     dataType: 'json',
                     success: function() { 
-                      
-                      data = {
-                        "id": qty1,
-                    "quantity": quantity1,
-                    
+                      makeAjaxRequest();
                   }
                 };
 
