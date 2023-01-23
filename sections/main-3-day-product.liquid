@@ -437,7 +437,6 @@
                         arrayProductIds = [];
                         arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
                         AddExtras();
-                        x=i;
                         makeAjaxRequest();
                     })
                   });    
@@ -454,11 +453,11 @@
                 {                
                   data = 
                   {
-                    "id": arrayProductIds[i],
+                    "id": arrayProductIds[x],
                     "quantity": 1
                   }
 
-                  i++
+                  x++;
 
                   jQuery.ajax({
                     type: 'POST',
