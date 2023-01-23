@@ -433,9 +433,11 @@
                   $(document).ready(function () {
                     $(document).on('click','.product-form__submit',function(){
                         arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
+
                         AddExtras();
                     })
                 });    
+
                 function clickupsell()
                 {
                   
@@ -467,7 +469,8 @@
                     console.log(extras);
                     if (extras[index].value == "Regular") 
                     {
-                      addItemToCart(44404689371435, 1)
+                      arrayProductIds.push(44404689371435);
+                      i++;
                     } 
                     if (extras[index].value == "Vegetarian") 
                     {
