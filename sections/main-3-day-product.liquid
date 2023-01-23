@@ -426,7 +426,7 @@
                 <script>
                   $(document).ready(function () {
                     $(document).on('click','.product-form__submit',function(){
-                        $().click();
+                        $('quick-add__submit').click();
                         addItemToCart("{{ product.selected_or_first_available_variant.id }}",1);
                         AddExtras();
                     })
