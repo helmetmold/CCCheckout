@@ -1,14 +1,5 @@
 {
   "sections": {
-    "7ff9e33d-fc20-420d-81f3-4727fdbbbd06": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "background-1",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "main": {
       "type": "main-3-day-product",
       "blocks": {
@@ -100,7 +91,6 @@
     }
   },
   "order": [
-    "7ff9e33d-fc20-420d-81f3-4727fdbbbd06",
     "main",
     "product-recommendations"
   ]
