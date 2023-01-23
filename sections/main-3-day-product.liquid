@@ -426,11 +426,17 @@
                 <script>
                   $(document).ready(function () {
                     $(document).on('click','.product-form__submit',function(){
-                        $('quick-add__submit').click();
+                        
+                        clickupsell();
                         addItemToCart("{{ product.selected_or_first_available_variant.id }}",1);
                         AddExtras();
                     })
                 });    
+                function clickupsell()
+                {
+
+                }
+
 
                 function addItemToCart(variant_id, qty) {
                   data = {
