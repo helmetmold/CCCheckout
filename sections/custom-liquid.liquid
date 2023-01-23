@@ -61,6 +61,9 @@
         </div>
       </div>
     {%- endfor -%}
+    <script type="application/json">
+          {{ product.variants | json }}
+    </script>
     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
     <label for="quantity">Qty: </label>
 	  <input min="1" type="number" id="quantity" name="quantity" value="1" />
