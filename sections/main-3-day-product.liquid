@@ -439,7 +439,7 @@
                           arrayProductIds = [];
                           x = 0;
                           AddExtras();
-                          console.log();
+                          console.log(arrayProductIds);
                           makeAjaxRequest();
                         }
                       )
@@ -456,6 +456,7 @@
                 function makeAjaxRequest() 
                 {             
                   data = arrayProductIds;
+                  console.log(x);
                   x++;
 
                   jQuery.ajax
