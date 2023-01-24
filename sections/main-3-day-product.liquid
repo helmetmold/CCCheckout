@@ -468,11 +468,10 @@
                       dataType: 'json',
                       success: function() 
                       { 
-                        if(x == arrayProductIds.length)
+                        if(x != arrayProductIds.length)
                         {
                           makeAjaxRequest();
                         }
-                        
                       }
                     });
                 }
