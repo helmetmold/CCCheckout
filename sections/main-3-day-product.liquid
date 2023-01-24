@@ -420,7 +420,7 @@
                       <option value="Early Drop-Off and Late Pick-up" >Early Drop-Off and Late Pick-up</option>
                     </select>
                 </div>
-                <button id="abc">Click me</button>
+                <button id="abcd">Click me</button>
                 {% endif %}
                 Hello
               {%- endfor -%}
@@ -434,7 +434,7 @@
                     function () 
                     {
                       $(document).on
-                      ('click','#abcd',function()
+                      ('click','.product-form__submit',function()
                         {
                           arrayProductIds = [];
                           x = 0;
