@@ -522,9 +522,12 @@
                     }
                     if (extras[index].value == "Late Pick-up") 
                     {
-                      
                       arrayProductIds.push(44405930393899);
                       CampProduct.properties.push("'Pick-up/Drop-off options:':'Late Pick-up'");
+
+                      var LatePickUp = {"id": 44405930393899, "quantity": 1};
+                      arrayProductIds.push(LatePickUp);
+                      CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up";
                     }
                     if (extras[index].value == "Early Drop-Off and Late Pick-up") 
                     {
