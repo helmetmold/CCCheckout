@@ -476,7 +476,7 @@
                 }
                 function AddExtras() 
                 {
-                  var data = {"id": "{{ product.selected_or_first_available_variant.id }}", "quantity": 1, properties: {}};
+                  var CampProduct = {"id": "{{ product.selected_or_first_available_variant.id }}", "quantity": 1, properties: {}};
                   var extras = document.getElementsByClassName('Extras');
                   for (let index = 0; index < extras.length; index++) 
                   {
@@ -485,11 +485,13 @@
                       
                       var RegularLunch = {"id": 44404689371435, "quantity": 1, properties: {}};
                       arrayProductIds.push(RegularLunch);
-                      data.properties.push('Lunch':'Regular');
+                      CampProduct.properties.push('Lunch':'Regular');
                     } 
                     if (extras[index].value == "Vegetarian") 
                     {
-                      arrayProductIds.push(44404689404203);
+                      var VegetarianLunch = {"id": 44404689404203, "quantity": 1, properties: {}};
+                      arrayProductIds.push(VegetarianLunch);
+                      CampProduct.properties.push('Lunch':'Vegetarian');
                     }
                     if (extras[index].value == "Standard iPad rental") 
                     {
