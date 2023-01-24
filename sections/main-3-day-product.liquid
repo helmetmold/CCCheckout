@@ -477,12 +477,14 @@
                 }
                 function AddExtras() 
                 {
+                  data = {"id": "{{ product.selected_or_first_available_variant.id }}", "quantity": 1, properties: {}};
                   var extras = document.getElementsByClassName('Extras');
                   for (let index = 0; index < extras.length; index++) 
                   {
                     if (extras[index].value == "Regular") 
                     {
                       arrayProductIds.push(44404689371435);
+                      data.properties
                     } 
                     if (extras[index].value == "Vegetarian") 
                     {
@@ -508,7 +510,10 @@
                     {
                       arrayProductIds.push(44405930426667);
                     }
+
+                    
                   }
+                  
                   
                 }
                 </script>
