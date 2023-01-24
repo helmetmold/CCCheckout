@@ -429,7 +429,7 @@
 
                 var arrayProductIds = [];
                 var x;
-                  $(document).ready
+                $(document).ready
                   (
                     function () 
                     {
@@ -447,7 +447,6 @@
 
                 function clickupsell()
                 {
-                  
                   var quickAddButtons = document.getElementsByClassName("quick-add__submit");
                   quickAddButtons[0].click();
                 }
@@ -459,7 +458,8 @@
                   console.log(arrayProductIds);
                   x++;
 
-                  jQuery.ajax(
+                  jQuery.ajax
+                  (
                     {
                       type: 'POST',
                       url: '/cart/add.js',
@@ -472,7 +472,8 @@
                           makeAjaxRequest();
                         }
                       }
-                    });
+                    }
+                  );
                 }
 
                 function AddExtras() 
@@ -492,40 +493,40 @@
                     {
                       var RegularLunch = {"id": 44404689371435, "quantity": 1};
                       arrayProductIds.push(RegularLunch);
-                      CampProduct.properties.push('Lunch':'Regular');
+                      CampProduct.properties.push("'Lunch':'Regular'");
                     } 
                     if (extras[index].value == "Vegetarian") 
                     {
                       var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
                       arrayProductIds.push(VegetarianLunch);
-                      CampProduct.properties.push('Lunch':'Vegetarian');
+                      CampProduct.properties.push("'Lunch':'Vegetarian'");
                     }
                     if (extras[index].value == "Standard iPad rental") 
                     {
                       var StandardiPad = {"id": 44405919351083, "quantity": 1};
                       arrayProductIds.push(StandardiPad);
-                      CampProduct.properties.push('iPad Rental':'Standard iPad rental');
+                      CampProduct.properties.push("'iPad Rental':'Standard iPad rental'");
                     }
                     if (extras[index].value == "iPad rental with insurance") 
                     {
                       var InsurediPad = {"id": 44405919383851, "quantity": 1};
                       arrayProductIds.push(InsurediPad);
-                      CampProduct.properties.push('iPad Rental':'iPad rental w/ insurance');
+                      CampProduct.properties.push("'iPad Rental':'iPad rental w/ insurance'");
                     }
                     if (extras[index].value == "Early Drop-Off") 
                     {
                       arrayProductIds.push(44405930361131);
-                      CampProduct.properties.push('Pick-up/Drop-off options:':'Early Drop-Off');
+                      CampProduct.properties.push("'Pick-up/Drop-off options:':'Early Drop-Off'");
                     }
                     if (extras[index].value == "Late Pick-up") 
                     {
                       arrayProductIds.push(44405930393899);
-                      CampProduct.properties.push('Pick-up/Drop-off options:':'Late Pick-up');
+                      CampProduct.properties.push("'Pick-up/Drop-off options:':'Late Pick-up'");
                     }
                     if (extras[index].value == "Early Drop-Off and Late Pick-up") 
                     {
                       arrayProductIds.push(44405930426667);
-                      CampProduct.properties.push('Pick-up/Drop-off options:':'Early Drop-Off and Late Pick-up');
+                      CampProduct.properties.push("'Pick-up/Drop-off options:':'Early Drop-Off and Late Pick-up'");
                     }
                     arrayProductIds.push(CampProduct);
                   }
