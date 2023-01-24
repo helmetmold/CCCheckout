@@ -455,9 +455,9 @@
 
 
                 function makeAjaxRequest() 
-                {
-                  console.log(arrayProductIds[x]);                
+                {             
                   data = {"id": arrayProductIds[x], "quantity": 1};
+                  console.log(x + "iteration");
                   x++;
 
                   jQuery.ajax(
@@ -471,7 +471,6 @@
                         if(x == arrayProductIds.length)
                         {
                           makeAjaxRequest();
-                          console.log(arrayProductIds[x]);
                         }
                         
                       }
