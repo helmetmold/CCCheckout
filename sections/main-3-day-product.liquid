@@ -428,8 +428,7 @@
                 <script>
 
                 var arrayProductIds = [];
-                var i = 0;
-                var x = 0;
+                var x;
                   $(document).ready
                   (
                     function () 
@@ -438,6 +437,7 @@
                       ('click','.product-form__submit',function()
                         {
                           arrayProductIds = [];
+                          x = 0;
                           arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
                           AddExtras();
                           makeAjaxRequest();
@@ -472,7 +472,7 @@
                       dataType: 'json',
                       success: function() 
                       { 
-                        if(x!=i)
+                        if()
                         {
                           makeAjaxRequest();
                           console.log(arrayProductIds[x]);
@@ -486,41 +486,34 @@
                   var extras = document.getElementsByClassName('Extras');
                   for (let index = 0; index < extras.length; index++) 
                   {
-                    console.log(extras);
                     if (extras[index].value == "Regular") 
                     {
                       arrayProductIds.push(44404689371435);
-                      i++;
                     } 
                     if (extras[index].value == "Vegetarian") 
                     {
                       arrayProductIds.push(44404689404203);
-                      i++;
                     }
                     if (extras[index].value == "Standard iPad rental") 
                     {
                       arrayProductIds.push(44405919351083);
-                      i++;
                     }
                     if (extras[index].value == "iPad rental with insurance") 
                     {
                       arrayProductIds.push(44405919383851);
-                      i++;
                     }
                     if (extras[index].value == "Early Drop-Off") 
                     {
                       arrayProductIds.push(44405930361131);
-                      i++;
+
                     }
                     if (extras[index].value == "Late Pick-up") 
                     {
                       arrayProductIds.push(44405930393899);
-                      i++;
                     }
                     if (extras[index].value == "Early Drop-Off and Late Pick-up") 
                     {
                       arrayProductIds.push(44405930426667);
-                      i++;
                     }
                   }
                   
