@@ -436,7 +436,7 @@
                       $(document).on
                       ('click','#abcd',function()
                         {
-                          arrayProductIds = [];
+                          arrayProductIds = {};
                           x = 0;
                           AddExtras();
                           makeAjaxRequest();
@@ -455,7 +455,7 @@
 
                 function makeAjaxRequest() 
                 {             
-                  data = {"id": arrayProductIds[x], "quantity": 1, properties: {'Some prop': 'Some value'}};
+                  data = arrayProductIds;
                   console.log(arrayProductIds);
                   x++;
 
