@@ -457,12 +457,7 @@
                 function makeAjaxRequest() 
                 {
                   console.log(arrayProductIds[x]);                
-                  data = 
-                  {
-                    "id": arrayProductIds[x],
-                    "quantity": 1
-                  }
-
+                  data = {"id": arrayProductIds[x], "quantity": 1};
                   x++;
 
                   jQuery.ajax(
@@ -506,7 +501,6 @@
                     if (extras[index].value == "Early Drop-Off") 
                     {
                       arrayProductIds.push(44405930361131);
-
                     }
                     if (extras[index].value == "Late Pick-up") 
                     {
