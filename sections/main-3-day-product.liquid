@@ -456,7 +456,10 @@
 
                 function makeAjaxRequest() 
                 {             
-                  data = {"id": arrayProductIds[x], "quantity": 1};
+                  data = {"id": arrayProductIds[x], "quantity": 1, properties: 
+                  {
+                    'Some prop': 'Some value'
+                  }};
                   console.log(arrayProductIds);
                   x++;
 
