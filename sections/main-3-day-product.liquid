@@ -438,7 +438,6 @@
                         {
                           arrayProductIds = [];
                           x = 0;
-                          arrayProductIds.push("{{ product.selected_or_first_available_variant.id }}");
                           AddExtras();
                           makeAjaxRequest();
                         }
@@ -477,7 +476,7 @@
                 }
                 function AddExtras() 
                 {
-                  var data = {"id": arrayProductIds[0], "quantity": 1, properties: {}};
+                  var data = {"id": "{{ product.selected_or_first_available_variant.id }}", "quantity": 1, properties: {}};
                   var extras = document.getElementsByClassName('Extras');
                   for (let index = 0; index < extras.length; index++) 
                   {
