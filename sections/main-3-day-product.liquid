@@ -474,33 +474,41 @@
                       }
                     });
                 }
+
                 function AddExtras() 
                 {
-                  var CampProduct = {"id": "{{ product.selected_or_first_available_variant.id }}", "quantity": 1, properties: {}};
+                  var CampProduct = 
+                  {
+                  "id": "{{ product.selected_or_first_available_variant.id }}", 
+                  "quantity": 1, 
+                  "properties": {}
+                  };
+
                   var extras = document.getElementsByClassName('Extras');
+
                   for (let index = 0; index < extras.length; index++) 
                   {
                     if (extras[index].value == "Regular") 
                     {
-                      var RegularLunch = {"id": 44404689371435, "quantity": 1, properties: {}};
+                      var RegularLunch = {"id": 44404689371435, "quantity": 1};
                       arrayProductIds.push(RegularLunch);
                       CampProduct.properties.push('Lunch':'Regular');
                     } 
                     if (extras[index].value == "Vegetarian") 
                     {
-                      var VegetarianLunch = {"id": 44404689404203, "quantity": 1, properties: {}};
+                      var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
                       arrayProductIds.push(VegetarianLunch);
                       CampProduct.properties.push('Lunch':'Vegetarian');
                     }
                     if (extras[index].value == "Standard iPad rental") 
                     {
-                      var StandardiPad = {"id": 44405919351083, "quantity": 1, properties: {}};
+                      var StandardiPad = {"id": 44405919351083, "quantity": 1};
                       arrayProductIds.push(StandardiPad);
                       CampProduct.properties.push('iPad Rental':'Standard iPad rental');
                     }
                     if (extras[index].value == "iPad rental with insurance") 
                     {
-                      var InsurediPad = {"id": 44405919383851, "quantity": 1, properties: {}};
+                      var InsurediPad = {"id": 44405919383851, "quantity": 1};
                       arrayProductIds.push(InsurediPad);
                       CampProduct.properties.push('iPad Rental':'iPad rental w/ insurance');
                     }
