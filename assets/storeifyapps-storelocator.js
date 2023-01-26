@@ -205,7 +205,16 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var expression = /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
                         var matches = urls.match(expression);
                         
-                        console.log(matches);
+                        console.log(matches[0]);
+
+                        for(match in matches)
+                        {
+                            var result = {};
+                            result['link'] = matches[match];
+                            result['startsAt'] = input.indexOf(matches[match]);
+                            result['endsAt'] = 
+                                input.indexOf(matches[match]) + matches[match].length;
+                        }
 
                         ThreeDayCamp.onclick = function () 
                         {
