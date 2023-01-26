@@ -197,7 +197,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
-                        console.log(gmarkers); 
+                        marker = gmarkers[0];
+                        console.log(marker.id); 
 
                         ThreeDayCamp.onclick = function () 
                         {
@@ -443,7 +444,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
             if (jQuery('.storeifyapp_stores_countrys_filter_list').data('tag') == 'select') { filter_country = jQuery('select.storeifyapp_stores_country_filter').val(); }
             var check_country = 0; var data = { lat: center.lat(), lng: center.lng(), radius: radius, shop: Shopify.shop, tags: tags_check.join(',') }; var marker_count = 0; var marker_first; var dv = 1; if (radius_unit == 1) { dv = 0.001; } else { dv = 0.00062137; }
             var array_poin = []; for (var i = 0; i < gmarkers.length; i++) {
-                marker = gmarkers[i]; var distance = checkDistanceBetweenPoints(center.lat(), center.lng(), marker.position.lat(), marker.position.lng(), radius, dv); check_country = 0; if (filter_country == 'all' || filter_country == marker.country) { check_country = 1; }
+                marker = gmarkers[i];
+                var distance = checkDistanceBetweenPoints(center.lat(), center.lng(), marker.position.lat(), marker.position.lng(), radius, dv); check_country = 0; if (filter_country == 'all' || filter_country == marker.country) { check_country = 1; }
                 if (distance > -1 && checkTag(tags_check, marker.tags) && check_country == 1) {
                     thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
                     var id = marker.id; var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; var num = marker.num; array_poin[i] = { social: social, thum: thum, id: id, name: name, url: url, address: address, phone: phone, email: email, web: web, distance: distance, tags: tags, marker_count: marker_count, num: num }; marker.setVisible(true); marker_first = marker; marker_count++; bounds.extend(marker.getPosition());
@@ -460,7 +462,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         function searchLocationsNearShort(resultGeo) {
             if (marker_search != null) marker_search.setMap(null); var center = resultGeo.geometry.location; if (infowindow) infowindow.close(); var radius = document.getElementById('radius_search').value; var searchUrl = '/a/store-locator/all/ajax'; var tags_check = []; var filter_country = 'all'; var check_country = 0; var data = { lat: center.lat(), lng: center.lng(), radius: radius, shop: Shopify.shop, tags: tags_check.join(',') }; var marker_count = 0; var dv = 1; if (radius_unit == 1) { dv = 0.001; } else { dv = 0.00062137; }
             var array_poin = []; for (var i = 0; i < gmarkers.length; i++) {
-                marker = gmarkers[i]; var distance = checkDistanceBetweenPoints(center.lat(), center.lng(), marker.position.lat(), marker.position.lng(), radius, dv); check_country = 0; if (filter_country == 'all' || filter_country == marker.country) { check_country = 1; }
+                marker = gmarkers[i]; 
+                var distance = checkDistanceBetweenPoints(center.lat(), center.lng(), marker.position.lat(), marker.position.lng(), radius, dv); check_country = 0; if (filter_country == 'all' || filter_country == marker.country) { check_country = 1; }
                 if (distance > -1 && checkTag(tags_check, marker.tags) && check_country == 1) {
                     thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
                     var id = marker.id; 
