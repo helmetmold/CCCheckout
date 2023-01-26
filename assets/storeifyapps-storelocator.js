@@ -198,9 +198,9 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
-                        location = gmarkers[i];
+                        locationdata = gmarkers[i];
 
-                        var urls = urlify(location.social);
+                        var urls = urlify(locationdata.social);
 
                         console.log(urls);
 
@@ -216,14 +216,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         
 
                     }
-                    function urlify(text) {
-                        var urlRegex = /(https?:\/\/[^\s]+)/g;
-                        return text.replace(urlRegex, function(url) {
-                          return '<a href="' + url + '">' + url + '</a>';
-                        })
-                        // or alternatively
-                        // return text.replace(urlRegex, '<a href="$1">$1</a>')
-                      }
             
                 });
             }
