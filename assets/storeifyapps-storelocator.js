@@ -199,25 +199,27 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
                         locationdata = gmarkers[i];
-
                         var urls = locationdata.social;
 
-                        var expression = /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
-                        var matches = urls.match(expression);
-                        
-                        console.log(matches);
-
-                        ThreeDayCamp.onclick = function () 
+                        if(urls != null)
                         {
-                            window.open(matches);
+                            var expression = /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
+                            var matches = urls.match(expression);
+                            
+                            console.log(matches);
+
+                            ThreeDayCamp.onclick = function () 
+                            {
+                                window.open(matches[0]);
+                            }
+
+                            TwoDayCamp.onclick = function () 
+                            {
+                                window.open(matches[1]);
+                            }
                         }
 
-                        TwoDayCamp.onclick = function () 
-                        {
-                            window.open(matches);
-                        }
                         
-
                         InnerItem[i].appendChild(ThreeDayCamp);
                         InnerItem[i].appendChild(TwoDayCamp); 
                         
