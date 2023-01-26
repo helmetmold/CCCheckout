@@ -127,7 +127,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         var infowindow; 
         var bounds; 
         var randomID = 'main-slider-storelocator'; 
-        fetch("./storeifyapps-storelocator.json")
+        fetch("/storeifyapps-storelocator.json")
         .then(response => {
         return response.json();
         })
