@@ -403,8 +403,8 @@
                 {% if tags == "ipads" %}
                 <div>
                   <label class="product-form__input" for="iPad-Rental"> iPad Rental </label>
-                    <select form="{{product_form_id}}" name="properties[iPad Rental]">
-                      <option class="Extras" selected="selected" disabled>Choose iPad Rental options</option>  
+                    <select class="Extras" form="{{product_form_id}}" name="properties[iPad Rental]">
+                      <option selected="selected" disabled>Choose iPad Rental options</option>  
                       <option value="Standard iPad rental">Standard iPad rental</option>
                       <option value="iPad rental with insurance" >iPad rental with insurance</option>
                     </select>
@@ -413,25 +413,40 @@
                 {% if tags == "Pickup" %}
                 <div>
                   <label class="product-form__input" for="Pick-up-and-drop-off"> Pick-up/drop-off options </label>
-                    <select class="Extras" form="{{product_form_id}}" name="properties[Pick-up/Drop-off options">
+                    <select class="Extras" form="{{product_form_id}}" name="properties[Pick-up/Drop-off options]">
                       <option  selected="selected" disabled>Choose Pick-up/drop-off option</option>  
                       <option value="Early Drop-Off">Early Drop-Off</option>
                       <option value="Late Pick-up" >Late Pick-up</option>
                       <option value="Early Drop-Off and Late Pick-up" >Early Drop-Off and Late Pick-up</option>
                     </select>
                 </div>
+                <button id="abcd">Click me</button>
                 {% endif %}
+                Hello
               {%- endfor -%}
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
-                  $(document).ready(function () {
-                    $(document).on('click','.product-form__submit',function(){
-                        
-                        clickupsell();
-                        addItemToCart("{{ product.selected_or_first_available_variant.id }}",1);
-                        AddExtras();
-                    })
-                });    
+
+                var arrayProductIds = [];
+                var x;
+                $(document).ready
+                  (
+                    function () 
+                    {
+                      $(document).on
+                      ('click','#abcd',function()
+                        {
+                          arrayProductIds = [];
+                          x = 0;
+                          AddExtras();
+                          clickupsell();
+                          console.log(arrayProductIds);
+                          makeAjaxRequest();
+                        }
+                      )
+                    }
+                  );    
+
                 function clickupsell()
                 {
                   var quickAddButtons = document.getElementsByClassName("quick-add__submit");
@@ -439,58 +454,88 @@
                 }
 
 
-                function addItemToCart(variant_id, qty) {
-                  data = {
-                    "id": variant_id,
-                    "quantity": qty
-                  }
-                  jQuery.ajax({
-                    type: 'POST',
-                    url: '/cart/add.js',
-                    data: data,
-                    dataType: 'json',
-                    success: function() { 
-                      console.log("added");
+                function makeAjaxRequest() 
+                {             
+                  data = arrayProductIds[x];
+                  console.log(x);
+                  x++;
+
+                  jQuery.ajax
+                  (
+                    {
+                      type: 'POST',
+                      url: '/cart/add.js',
+                      data: data,
+                      dataType: 'json',
+                      success: function() 
+                      { 
+                        if(x < arrayProductIds.length)
+                        {
+                          makeAjaxRequest();
+                        }
+                      }
                     }
-                  });
+                  );
                 }
 
                 function AddExtras() 
                 {
+                  var CampProduct = 
+                  {
+                  "id": "{{ product.selected_or_first_available_variant.id }}", 
+                  "quantity": 1, 
+                  "properties": {}
+                  };
+
                   var extras = document.getElementsByClassName('Extras');
+
                   for (let index = 0; index < extras.length; index++) 
                   {
-                    console.log(extras);
                     if (extras[index].value == "Regular") 
                     {
-                      addItemToCart(44404689371435, 1)
+                      var RegularLunch = {"id": 44404689371435, "quantity": 1};
+                      arrayProductIds.push(RegularLunch);
+                      CampProduct.properties["Lunch"] = "Regular";
                     } 
-                    else if (extras[index].value == "Vegetarian") 
+                    if (extras[index].value == "Vegetarian") 
                     {
-                      addItemToCart(44404689404203, 1)
+                      var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
+                      arrayProductIds.push(VegetarianLunch);
+                      CampProduct.properties["Lunch"] = "Vegetarian";
                     }
-                    else if (extras[index].value == "Standard iPad rental") 
+                    if (extras[index].value == "Standard iPad rental") 
                     {
-                      addItemToCart(44405919351083, 1)
+                      var StandardiPad = {"id": 44405919351083, "quantity": 1};
+                      arrayProductIds.push(StandardiPad);
+                      CampProduct.properties["iPad Rental"] = "Standard iPad rental";
                     }
-                    else if (extras[index].value == "iPad rental with insurance") 
+                    if (extras[index].value == "iPad rental with insurance") 
                     {
-                      addItemToCart(44405919383851, 1)
+                      var InsurediPad = {"id": 44405919383851, "quantity": 1};
+                      arrayProductIds.push(InsurediPad);
+                      CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance";
                     }
-                    else if (extras[index].value == "Early Drop-Off") 
+                    if (extras[index].value == "Early Drop-Off")  
                     {
-                      addItemToCart(44405930361131, 1)
+                      var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
+                      arrayProductIds.push(EarlyDropOff);
+                      CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off";
                     }
-                    else if (extras[index].value == "Late Pick-up") 
+                    if (extras[index].value == "Late Pick-up") 
                     {
-                      addItemToCart(44405930393899, 1)
+                      var LatePickUp = {"id": 44405930393899, "quantity": 1};
+                      arrayProductIds.push(LatePickUp);
+                      CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up";
                     }
-                    else if (extras[index].value == "Early Drop-Off and Late Pick-up") 
+                    if (extras[index].value == "Early Drop-Off and Late Pick-up") 
                     {
-                      addItemToCart(44405930426667, 1)
+                      var LateAndEarly = {"id": 44405930426667, "quantity": 1};
+                      arrayProductIds.push(LateAndEarly);
+                      CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up";
                     }
+                    
                   }
-                  
+                  arrayProductIds.push(CampProduct);
                 }
                 </script>
             </div>
@@ -657,7 +702,8 @@
                         {%- assign number_of_slides = recommendations.products_count | plus: 0.0 | divided_by: block.settings.products_per_page | ceil -%}
                         <div id="Slider-{{ block.id }}" class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere" role="list"{% if number_of_slides > 1 %} aria-label="{{ 'general.slider.name' | t }}"{% endif %}>
                           {%- for i in (1..number_of_slides) -%}
-                            <div id="Slide-{{ block.id }}-{{ forloop.index }}" class="complementary-slide complementary-slide--{{ settings.card_style }} grid__item slider__slide slideshow__slide" tabindex="-1" role="group"{% if number_of_slides > 1 %} aria-roledescription="{{ 'sections.slideshow.slide' | t }}" aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"{% endif %}>
+                            <div id="Slide-{{ block.id }}-{{ forloop.index }}" class="complementary-slide complementary-slide--{{ settings.card_style }} grid__item slider__slide slideshow__slide" tabindex="-1" role="group"
+                            {% if number_of_slides > 1 %} aria-roledescription="{{ 'sections.slideshow.slide' | t }}" aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"{% endif %}>
                               <ul class="list-unstyled" role="list">
                                 {%- for product in recommendations.products limit: block.settings.products_per_page offset: continue -%}
                                   <li>

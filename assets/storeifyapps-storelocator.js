@@ -196,15 +196,17 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.setAttribute('class', 'CampTypeButton');
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
-                        
+
                         ThreeDayCamp.onclick = function () 
                         {
                             window.open();
                         }
-                    
+                        
 
                         InnerItem[i].appendChild(ThreeDayCamp);
-                        InnerItem[i].appendChild(TwoDayCamp);     
+                        InnerItem[i].appendChild(TwoDayCamp); 
+                        
+                        
 
                     }
                 });
