@@ -197,7 +197,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
-                        console.log(markers[0].tags);
+                        console.log(markers[0]);
 
                         ThreeDayCamp.onclick = function () 
                         {
