@@ -98,12 +98,36 @@ Shortcode.prototype.convertMatchesToNodes = function() {
 
   for (var i = 0, len = this.matches.length; i < len; i++) {
 
+<<<<<<< HEAD
+                    var InnerItem = document.getElementsByClassName('inner-item');
+                    
+                    for (let i = 0; i < InnerItem.length; i++) 
+                    {
+                        var ThreeDayCamp = document.createElement("button");
+                        var TwoDayCamp = document.createElement("button");
+                        ThreeDayCamp.setAttribute('class', 'CampTypeButton');
+                        TwoDayCamp.setAttribute('class', 'CampTypeButton');
+                        ThreeDayCamp.innerText = "3-day Creative Camps";
+                        TwoDayCamp.innerText = "2-day Tech Camps";
+
+                        ThreeDayCamp.onclick = function () 
+                        {
+                            window.open();
+                        }
+                        
+
+                        InnerItem[i].appendChild(ThreeDayCamp);
+                        InnerItem[i].appendChild(TwoDayCamp); 
+                        
+                        
+=======
     var nodehtml ='<span class="sc-node sc-node-' + this.matches[i].name+'" data-sc-tag="'+this.matches[i].tag+'"></span>';
     replacer(this.matches[i].regex,this.el,blackList,nodehtml);
   }
 
 //   this.el.innerHTML = html;
 };
+>>>>>>> 85b70942f2a2e8b1b65b2ada73075151a090bce6
 
 Shortcode.prototype.replaceNodes = function() {
   var self = this, html, match, result, done, node, fn, replacer,
