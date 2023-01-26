@@ -199,7 +199,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
                         marker = gmarkers[0];
-                        console.log(marker.3dayProduct); 
+                        console.log(marker.tags); 
 
                         ThreeDayCamp.onclick = function () 
                         {
