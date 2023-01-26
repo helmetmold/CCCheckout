@@ -197,7 +197,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
 
-                        console.log(storelocator_tags_response);
+                        window.eqfeed_callback = function (results)
+                        {
+                            console.log(results.features[0].properties);
+                        }
 
                         ThreeDayCamp.onclick = function () 
                         {
