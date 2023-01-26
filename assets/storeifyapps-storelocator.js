@@ -209,7 +209,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                         ThreeDayCamp.onclick = function () 
                         {
-                            //window.open();
+                            window.open(matches[0]);
                         }
                         
 
