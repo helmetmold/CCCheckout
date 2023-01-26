@@ -211,6 +211,11 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         {
                             window.open(matches[0]);
                         }
+
+                        TwoDayCamp.onclick = function () 
+                        {
+                            window.open(matches[1]);
+                        }
                         
 
                         InnerItem[i].appendChild(ThreeDayCamp);
