@@ -210,12 +210,12 @@ Shortcode.prototype.convertMatchesToNodes = function () {
 
                             ThreeDayCamp.onclick = function () 
                             {
-                                window.open(matches[1].substring(0, string.length-1));
+                                window.open(matches[1].substring(0, matches[1].length-1));
                             }
 
                             TwoDayCamp.onclick = function () 
                             {
-                                window.open(matches[0].substring(0, string.length-1));
+                                window.open(matches[0].substring(0, matches[0].length-1));
                             }
                         }
 
