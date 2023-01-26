@@ -207,17 +207,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         
                         console.log(matches);
 
-                        for(match in matches)
-                        {
-                            var result = {};
-                            result['link'] = matches[match];
-                            result['startsAt'] = input.indexOf(matches[match]);
-                            result['endsAt'] = 
-                            matches.indexOf(matches[match]) + matches[match].length;
-
-                            console.log(result);
-                        }
-
                         ThreeDayCamp.onclick = function () 
                         {
                             //window.open();
