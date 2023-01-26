@@ -125,6 +125,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
         var infowindow; 
         var bounds; 
         var randomID = 'main-slider-storelocator'; 
+        var json = require('./storeifyapps-storelocator.json');
 
         function initMap() {
             var script = document.createElement('script');
@@ -197,9 +198,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
 
-                        fetch('/storeifyapps-storelocator.json')
-                        .then((response) => response.json())
-                        .then((json) => console.log(json));
+                        console.log(json);
 
                         ThreeDayCamp.onclick = function () 
                         {
