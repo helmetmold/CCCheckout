@@ -200,6 +200,10 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         
                         location = gmarkers[i];
 
+                        var urls = urlify[location.social];
+
+                        console.log(urls);
+
                         ThreeDayCamp.onclick = function () 
                         {
                             window.open();
@@ -215,6 +219,16 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 });
             }
         }
+
+        function urlify(text) {
+            var urlRegex = /(https?:\/\/[^\s]+)/g;
+            return text.replace(urlRegex, function(url) {
+              return '<a href="' + url + '">' + url + '</a>';
+            })
+            // or alternatively
+            // return text.replace(urlRegex, '<a href="$1">$1</a>')
+          }
+
         window.eqfeed_callback = function (results) {
             var thum = ''; 
             var count_marker = 0; 
