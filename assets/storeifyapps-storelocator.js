@@ -104,7 +104,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var node = childNodes[len]; if (node.nodeType === 1 && true || (list.indexOf(node.nodeName.toLowerCase()) === -1)) { replacer(finder, node, list, type); }
                 if (node.nodeType !== 3 || !regex.test(node.data)) { continue; }
                 var frag = (function () {
-                    var wrap = document.createElement('span'); var frag = document.createDocumentFragment(); var sliderId = regex2.exec(node.data)[1]; if (type == 1)
+                    var wrap = document.createElement('span'); var frag = document.createDocumentFragment(); 
+                    var sliderId = regex2.exec(node.data)[1]; if (type == 1)
                         wrap.innerHTML = '<div class="storeifyapps-storelocator-shortcode" id="storeifyapps-storelocator-shortcode"></div>'; else
                         wrap.innerHTML = '<div class="storeifyapps-storelocator-short"></div>'; while (wrap.firstChild) { frag.appendChild(wrap.firstChild); }
                     return frag;
@@ -198,7 +199,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         TwoDayCamp.innerText = "2-day Tech Camps";
                         
                         marker = gmarkers[0];
-                        console.log(marker.id); 
+                        console.log(marker.3dayProduct); 
 
                         ThreeDayCamp.onclick = function () 
                         {
@@ -448,7 +449,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                 var distance = checkDistanceBetweenPoints(center.lat(), center.lng(), marker.position.lat(), marker.position.lng(), radius, dv); check_country = 0; if (filter_country == 'all' || filter_country == marker.country) { check_country = 1; }
                 if (distance > -1 && checkTag(tags_check, marker.tags) && check_country == 1) {
                     thum = null; if (typeof marker.thum !== 'undefined') { thum = marker.thum; }
-                    var id = marker.id; var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; var num = marker.num; array_poin[i] = { social: social, thum: thum, id: id, name: name, url: url, address: address, phone: phone, email: email, web: web, distance: distance, tags: tags, marker_count: marker_count, num: num }; marker.setVisible(true); marker_first = marker; marker_count++; bounds.extend(marker.getPosition());
+                    var id = marker.id; 
+                    var name = marker.name; var url = marker.url; var address = marker.address; var phone = marker.phone; var email = marker.email; var web = marker.web; var tags = marker.tags; var social = marker.social; var num = marker.num; array_poin[i] = { social: social, thum: thum, id: id, name: name, url: url, address: address, phone: phone, email: email, web: web, distance: distance, tags: tags, marker_count: marker_count, num: num }; marker.setVisible(true); marker_first = marker; marker_count++; bounds.extend(marker.getPosition());
                 } else { marker.setVisible(false); }
             }
             map.fitBounds(bounds); document.getElementById("num-rs").innerHTML = marker_count; jQuery("#main-slider-storelocator").removeClass('storeify-first-alert'); if (marker_count > 0) {
