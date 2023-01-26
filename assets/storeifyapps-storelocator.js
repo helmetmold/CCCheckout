@@ -205,16 +205,16 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         var expression = /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
                         var matches = urls.match(expression);
                         
-                        console.log(matches[0]);
+                        console.log(matches);
 
                         ThreeDayCamp.onclick = function () 
                         {
-                            window.open(matches[0]);
+                            window.open(matches);
                         }
 
                         TwoDayCamp.onclick = function () 
                         {
-                            window.open(matches[1]);
+                            window.open(matches);
                         }
                         
 
