@@ -199,12 +199,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         ThreeDayCamp.innerText = "3-day Creative Camps";
                         TwoDayCamp.innerText = "2-day Tech Camps";
 
-                        fetch("/storeifyapps-storelocator.json")
-                        .then(response => {
-                        return response.json();
-                        })
-                        .then(data => console.log(data));
-
                         ThreeDayCamp.onclick = function () 
                         {
 
