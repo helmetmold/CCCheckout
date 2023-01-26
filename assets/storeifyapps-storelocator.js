@@ -201,7 +201,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                         locationdata = gmarkers[i];
                         var urls = locationdata.social;
 
-                        if(urls != null)
+                        if(urls != "")
                         {
                             var expression = /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
                             var matches = urls.match(expression);
