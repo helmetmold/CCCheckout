@@ -514,6 +514,45 @@ if (window.jQuery) {
             jQuery("#" + randomID).html(html_list);
             jQuery("#results-slt").show();
             google.maps.event.removeListener(tilesloaded);
+
+            const LocationImages =
+              document.getElementsByClassName("item-thumb");
+
+            for (let i = 0; i < LocationImages.length; i++) {
+              LocationImages[i].style.display = "none";
+            }
+
+            var InnerItem = document.getElementsByClassName("inner-item");
+
+            for (let i = 0; i < InnerItem.length; i++) {
+              var ThreeDayCamp = document.createElement("button");
+              var TwoDayCamp = document.createElement("button");
+              ThreeDayCamp.setAttribute("class", "CampTypeButton");
+              TwoDayCamp.setAttribute("class", "CampTypeButton");
+              ThreeDayCamp.innerText = "3-day Creative Camps";
+              TwoDayCamp.innerText = "2-day Tech Camps";
+
+              locationdata = gmarkers[i];
+              var urls = locationdata.social;
+
+              if (urls != "") {
+                var expression =
+                  /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
+                var matches = urls.match(expression);
+
+                console.log(matches);
+
+                ThreeDayCamp.onclick = function () {
+                  window.open(matches[1].substring(0, matches[1].length - 1));
+                };
+
+                TwoDayCamp.onclick = function () {
+                  window.open(matches[0].substring(0, matches[0].length - 1));
+                };
+              }
+              InnerItem[i].appendChild(ThreeDayCamp);
+              InnerItem[i].appendChild(TwoDayCamp);
+            }
           }
         );
       }
