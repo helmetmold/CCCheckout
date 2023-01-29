@@ -76,6 +76,25 @@
     "city": "Austin"
   },
   {
+    "id": 1181020,
+    "name": "Montrose - St. Stephen's Episcopal School",
+    "thumbnail": "https:\/\/sl.storeify.app\/images\/base\/store-1674965050.png",
+    "url": "\/a\/store-locator\/montrose-st-stephens-episcopal-school.html",
+    "address": "1805 W Alabama St, Houston, TX, 77098, United States",
+    "phone": null,
+    "email": null,
+    "web": null,
+    "tags": [
+
+    ],
+    "distance": null,
+    "lat": "29.7383901",
+    "lng": "-95.4048848",
+    "social": "",
+    "country": "United States",
+    "city": "Houston"
+  },
+  {
     "id": 1148316,
     "name": "Katy - Flagship",
     "thumbnail": "\/images\/base\/store-1672444591.png",
