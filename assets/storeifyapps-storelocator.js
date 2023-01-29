@@ -180,7 +180,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
                     jQuery("#results-slt").show(); 
                     google.maps.event.removeListener(tilesloaded); 
                     const LocationImages = document.getElementsByClassName('item-thumb');
-                    console.log(LocationImages.length);
                     
                     for (let i = 0; i < LocationImages.length; i++) 
                     {
