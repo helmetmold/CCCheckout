@@ -1,0 +1,8 @@
+{%- comment -%} Simplee Storefront Widget - Cart Page - Version 0.1 {%- endcomment -%}
+{%- comment -%} For questions visit http://support.simplee.best  {%- endcomment -%}
+
+{% unless item.selling_plan_allocation == nil  %}
+  <span class="simplee-selling-plan-details cart__option cart__option--single" data-simplee-item-key="{{item.key}}">
+    Subscription: {{item.selling_plan_allocation.selling_plan.name}}
+  </span>
+{% endunless %}
