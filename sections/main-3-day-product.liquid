@@ -909,14 +909,16 @@
   </div>
   <div id="test">
     {% for tag in product.tags %}
-      {% capture sliced_string %}
-      {{ tag | slice: 0 }}
-      {% endcapture %}
-      {% if sliced_string == "_" %}
-        {{ tag }}
-      {% endif %}
+    {% capture first_letter %}
+    {{ tag.name | slice: 0, 1 }}
+    {% endcapture %}
+    {% if first_letter == "_" %}
+      {% assign first_underscore_tag = tag.name %}
+      {% break %}
+    {% endif %}
     {% endfor %}
-    {{product.tags | where: "name", "_Katy1"}}
+    {{first_underscore_tag}}
+    
   </div>
   
   {%- if product.media.size > 0 -%}
