@@ -361,10 +361,4 @@
     </div>
   </div>
 {%- endif -%}
-<form method="post" action="/cart/add" class="AddToCart">
-          <input type="hidden" name="id" value="{{ card_product.variants.first.id }}" />
-          <input type="hidden" name="return_to" value="back" />
-          <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-          <input type="submit" value="Add to Cart" class="btn" id="{{ card_product.title}}" />
-</form>
 
