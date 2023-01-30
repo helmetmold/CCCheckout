@@ -901,6 +901,9 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
+    
+  </div>
+  <div id="test">
     {% for tag in product.tags %}
       {% assign first_letter = tag | slice: 0 %}
       {% if first_letter == "_" %}
@@ -916,9 +919,6 @@
       show_quick_add: true,
       %}
     {% endfor %}
-  </div>
-  <div id="test">
-    
 
   </div>
   
