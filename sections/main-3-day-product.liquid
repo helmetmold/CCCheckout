@@ -910,10 +910,6 @@
   <div id="test">
     {% for tag in product.tags %}
     {{ tag.name | slice: 0, 1 }}
-    {% if first_letter == "_" %}
-      {% assign first_underscore_tag = tag.name %}
-      {% break %}
-    {% endif %}
     {% endfor %}
     {{first_underscore_tag}}
     Hello
