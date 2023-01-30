@@ -1,6 +1,9 @@
 @import "//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 @import "//use.fontawesome.com/releases/v5.3.1/css/all.css";
 @import "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+#storeifyapps-storelocator-index {
+  height: 100% !important;
+}
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
   position: fixed;
