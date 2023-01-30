@@ -911,7 +911,19 @@
         {% break %}
       {% endif %}
       {% endfor %}
-    {{ first_underscore_tag }}
+    {% for productcamp in collections.all.products %}   
+      {% if productcamp.tags contains first_underscore_tag %} 
+        {{productcamp}}
+        {% if productcamp.tags contains "2 Day Camp" %} 
+        {% render 'card-product', 
+        card_product: productcamp,
+        show_quick_add: true,
+        %}
+        {%  break  %}
+      {% endif %}
+    {% endif %}
+    {% endfor %}
+
     {% assign featured_and_sale_products = shop.products | where: "tags", first_underscore_tag %}
     {{featured_and_sale_products}}
     {% for campproduct in featured_and_sale_products %}
