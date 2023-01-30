@@ -3165,6 +3165,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
+    height: 100% !important;
   }
   .bootstrap-storeifyapps .form-inline .form-control {
     display: inline-block;
