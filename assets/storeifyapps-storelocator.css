@@ -56,7 +56,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 }
 .storeify-sl-light-modal-content {
   background: 0 0;
-  width: 100vw;
+  width: 1200px;
   margin: 20px auto;
   position: relative;
   max-height: 100%;
@@ -8343,7 +8343,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
     0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .bootstrap-storeifyapps {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   width: 100%;
 }
