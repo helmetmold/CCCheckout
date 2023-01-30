@@ -8769,6 +8769,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 }
 .storelocator-search {
   margin-bottom: 30px;
+  height: 100%;
 }
 .storelocator-search * {
   box-sizing: border-box;
