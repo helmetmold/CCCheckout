@@ -911,7 +911,7 @@
         {% break %}
       {% endif %}
       {% endfor %}
-    {% assign featured_and_sale_products = shop.products | where: "tags", "{{first_underscore_tag}}" | where: "tags", "Tech Camp" %}
+    {% assign featured_and_sale_products = shop.products | where: "tags", first_underscore_tag | where: "tags", "Tech Camp" %}
     {{featured_and_sale_products}}
     {% for campproduct in featured_and_sale_products %}
       {% render 'card-product', 
