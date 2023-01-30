@@ -909,6 +909,7 @@
   </div>
   <div id="test">
     {% assign underscore_tags = product.tags | where: "name", "_" %}
+    {{underscore_tags}}
   </div>
   
   {%- if product.media.size > 0 -%}
