@@ -488,7 +488,7 @@
                   };
 
                   var extras = document.getElementsByClassName('Extras');
-
+                  
                   for (let index = 0; index < extras.length; index++) 
                   {
                     if (extras[index].value == "Regular") 
@@ -901,12 +901,17 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
-    {% assign someProduct = all_products.katy-flagship-tech-camps %}
+    {% assign first_underscore_tag = product.tags | where: "name", "_" | first %}
+    {% assign featured_and_sale_products = shop.products | where: "tags", "{{first_underscore_tag}}" | where: "tags", "Tech Camp" %}
     {% render 'card-product', 
     card_product: someProduct,
     show_quick_add: true,
     %}
   </div>
+  <script type="text/javascript">
+    console.log({{first_underscore_tag}});
+    console.log({{featured_and_sale_products}});
+  </script>
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
