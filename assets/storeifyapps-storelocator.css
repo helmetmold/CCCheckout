@@ -8769,7 +8769,6 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 }
 .storelocator-search {
   margin-bottom: 30px;
-  height: 100% !important;
 }
 .storelocator-search * {
   box-sizing: border-box;
@@ -9094,6 +9093,7 @@ a.linkdetailstore {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  height: 100% !important;
 }
 .storelocator-layout-2 #main-slider-storelocator {
   overflow-y: scroll;
