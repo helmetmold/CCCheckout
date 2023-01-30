@@ -3160,12 +3160,14 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   margin-bottom: 10px;
   color: #737373;
 }
+.form-inline {
+  height: 100% !important;
+}
 @media (min-width: 768px) {
   .bootstrap-storeifyapps .form-inline .form-group {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
-    height: 100% !important;
   }
   .bootstrap-storeifyapps .form-inline .form-control {
     display: inline-block;
