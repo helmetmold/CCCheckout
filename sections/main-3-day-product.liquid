@@ -908,10 +908,8 @@
     show_quick_add: true,
     %}
   </div>
-  <script type="text/javascript">
-    console.log({{first_underscore_tag}});
-    console.log({{featured_and_sale_products}});
-  </script>
+  {{ first_underscore_tag }}
+  {{ featured_and_sale_products }}
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
