@@ -912,7 +912,6 @@
       {% capture sliced_string %}
       {{ tag | slice: 0 }}
       {% endcapture %}
-      {{sliced_string}}
       {% if sliced_string == "_" %}
         {{ tag }}
       {% endif %}
