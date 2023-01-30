@@ -911,6 +911,7 @@
         {% break %}
       {% endif %}
       {% endfor %}
+    {{ first_underscore_tag }}
     {% assign featured_and_sale_products = shop.products | where: "tags", first_underscore_tag %}
     {{featured_and_sale_products}}
     {% for campproduct in featured_and_sale_products %}
