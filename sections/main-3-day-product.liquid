@@ -901,20 +901,24 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
+    {% for tag in product.tags %}
+      {% assign first_letter = tag | slice: 0 %}
+      {% if first_letter == "_" %}
+        {% assign first_underscore_tag = tag %}
+        {% break %}
+      {% endif %}
+      {% endfor %}
     {% assign featured_and_sale_products = shop.products | where: "tags", "{{first_underscore_tag}}" | where: "tags", "Tech Camp" %}
-    {% render 'card-product', 
-    card_product: someProduct,
-    show_quick_add: true,
-    %}
+    {% for campproduct in featured_and_sale_products %}
+      {% render 'card-product', 
+      card_product: campproduct,
+      show_quick_add: true,
+      %}
+    {% endfor %}
   </div>
   <div id="test">
-    {% for tag in product.tags %}
-    {% assign first_letter = tag | slice: 0 %}
-    {% if first_letter == "_" %}
-      {% assign first_underscore_tag = tag %}
-      {% break %}
-    {% endif %}
-    {% endfor %}
+    
+
   </div>
   
   {%- if product.media.size > 0 -%}
