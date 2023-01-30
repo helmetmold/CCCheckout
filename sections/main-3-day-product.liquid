@@ -909,13 +909,12 @@
   </div>
   <div id="test">
     {% for tag in product.tags %}
-      {% assign goodtag = tag %}
       {% capture sliced_string %}
-      {{ string_to_slice | slice: 0 }}
+      {{ tag | slice: 0 }}
       {% endcapture %}
       {{sliced_string}}
       {% if sliced_string == "_" %}
-        {{ goodtag }}
+        {{ tag }}
       {% endif %}
     {% endfor %}
     {{product.tags | where: "name", "_Katy1"}}
