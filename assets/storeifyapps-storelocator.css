@@ -8563,10 +8563,10 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   color: inherit;
 }
 #storeify-detail-store #map {
-  height: 600px;
+  height: 100%;
 }
 #street_view {
-  height: 600px;
+  height: 100%;
   display: none;
 }
 .store-detail-content-layout-2 {
