@@ -913,6 +913,7 @@
       {% capture sliced_string %}
       {{ string_to_slice | slice: 0 }}
       {% endcapture %}
+      {{sliced_string}}
       {% if sliced_string == "_" %}
         {{ goodtag }}
       {% endif %}
