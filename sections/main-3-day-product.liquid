@@ -908,9 +908,11 @@
     %}
   </div>
   <div id="test">
-    {% assign underscore_tags = product.tags | where: "name", "_" %}
-    {{underscore_tags}}
-    Hello
+    {% assign underscore_tags = product.tags | filter: "_" %}
+    {% if underscore_tags.size > 0 %}
+      {% assign first_underscore_tag = underscore_tags.first %}
+      <p>{{first_underscore_tag.name}}</p>
+    {% endif %}
   </div>
   
   {%- if product.media.size > 0 -%}
