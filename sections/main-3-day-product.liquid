@@ -908,11 +908,13 @@
     %}
   </div>
   <div id="test">
-    {% assign underscore_tags = product.tags | filter: "_" %}
-    {% if underscore_tags.size > 0 %}
-      {% assign first_underscore_tag = underscore_tags.first %}
-      <p>{{first_underscore_tag.name}}</p>
-    {% endif %}
+    {% for tag in product.tags %}
+      {% assign goodtag = tag %}
+      {{ tag | slice: 0 }}
+      {% if tag == "_" %}
+        {{ goodtag }}
+      {% endif %}
+    {% endfor %}
     {{product.tags | where: "name", "_Katy1"}}
   </div>
   
