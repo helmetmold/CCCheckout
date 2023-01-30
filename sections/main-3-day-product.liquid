@@ -913,6 +913,7 @@
       {% assign first_underscore_tag = underscore_tags.first %}
       <p>{{first_underscore_tag.name}}</p>
     {% endif %}
+    {{product.tags}}
   </div>
   
   {%- if product.media.size > 0 -%}
