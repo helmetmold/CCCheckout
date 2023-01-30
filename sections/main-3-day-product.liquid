@@ -910,8 +910,10 @@
   <div id="test">
     {% for tag in product.tags %}
       {% assign goodtag = tag %}
-      {{ tag | slice: 0 }}
-      {% if tag == "_" %}
+      {% capture sliced_string %}
+      {{ string_to_slice | slice: 0 }}
+      {% endcapture %}
+      {% if sliced_string == "_" %}
         {{ goodtag }}
       {% endif %}
     {% endfor %}
