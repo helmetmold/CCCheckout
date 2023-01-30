@@ -9095,7 +9095,7 @@ a.linkdetailstore {
 }
 .storelocator-layout-2 #main-slider-storelocator {
   overflow-y: scroll;
-  height: 470px;
+  height: 100%;
   width: 100%;
   float: left;
   margin-bottom: 0;
