@@ -910,8 +910,9 @@
   <div id="test">
     {% for tag in product.tags %}
     {% capture first_letter %}
-    {{ tag | slice: 0, 1 }}
+    {{ tag | slice: 0 }}
     {% endcapture %}
+    {{ tag | slice: 0 }}
     {% if first_letter == "_" %}
       {{first_letter}}
       {% assign first_underscore_tag = tag %}
