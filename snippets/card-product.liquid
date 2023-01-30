@@ -111,7 +111,11 @@
                 class="full-unstyled-link"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
               >
-                {{ card_product.title | escape }}
+              {% if product.metafields.quick_add.popup %}
+              Add a 2-day camp {{ card_product.title | escape }}
+              {% else %}
+              {{ card_product.title | escape }}
+              {% endif %}
               </a>
             </h3>
           </div>
