@@ -901,7 +901,6 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
-    {% assign first_underscore_tag = product.tags | where: "name", "_" | first %}
     {% assign featured_and_sale_products = shop.products | where: "tags", "{{first_underscore_tag}}" | where: "tags", "Tech Camp" %}
     {% render 'card-product', 
     card_product: someProduct,
@@ -909,8 +908,7 @@
     %}
   </div>
   <div id="test">
-    {{ first_underscore_tag }}
-    {{ featured_and_sale_products }}
+    {% assign underscore_tags = product.tags | where: "name", "_" %}
   </div>
   
   {%- if product.media.size > 0 -%}
