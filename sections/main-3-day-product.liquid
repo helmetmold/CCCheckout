@@ -912,7 +912,7 @@
     {% capture first_letter %}
     {{ tag | slice: 0 }}
     {% endcapture %}
-    {% if first_letter == "_ " %}
+    {% if first_letter == "_" %}
       {{tag}}
       {% assign first_underscore_tag = tag %}
       {% break %}
