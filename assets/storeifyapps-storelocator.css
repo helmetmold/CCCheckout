@@ -1691,6 +1691,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .bootstrap-storeifyapps .row {
   margin-left: -15px;
   margin-right: -15px;
+  height: 100%;
 }
 .bootstrap-storeifyapps .col-xs-1,
 .bootstrap-storeifyapps .col-sm-1,
