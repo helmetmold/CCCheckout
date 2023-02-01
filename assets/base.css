@@ -4,7 +4,6 @@
 .oneHundredViewHieght {
   height: 100vh !important;
   position: relative;
-  overflow: hidden;
 }
 .color-background-1 {
   --color-foreground: var(--color-base-text);
