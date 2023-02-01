@@ -2,7 +2,7 @@
 
 :root,
 .oneHundredViewHieght {
-  height: 100vw !important;
+  height: 100vh !important;
   position: relative;
 }
 .color-background-1 {
