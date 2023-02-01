@@ -6,7 +6,7 @@
   margin: 0 !important;
 }
 #MainContent {
-  height: 100% !important;
+  height: inherit !important;
 }
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
