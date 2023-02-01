@@ -9111,7 +9111,7 @@ a.linkdetailstore {
   height: 100% !important;
 }
 .storelocator-layout-2 #main-slider-storelocator {
-  height: 100% !important;
+  height: 75vh !important;
   overflow-y: auto;
   width: 100%;
   float: left;
