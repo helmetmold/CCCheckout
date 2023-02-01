@@ -134,8 +134,16 @@ Shortcode.prototype.convertMatchesToNodes = function () {
   }
   var header = document.getElementsByClassName("section-header");
   for (let index = 0; index < header.length; index++) {
-    const list = header[index].classList;
-    if (!list.includes("shopify-section")) header[index].style.display = "none";
+    const Classlist = header[index].classList;
+    var IsElementHeader = false;
+    for (let index2 = 0; index2 < Classlist.length; index2++) {
+      if (Classlist[index2] == "shopify-section") {
+        IsElementHeader = true;
+      }
+    }
+    if (IsElementHeader == false) {
+      header[index].style.display = "none";
+    }
   }
 };
 Shortcode.prototype.replaceNodes = function () {
