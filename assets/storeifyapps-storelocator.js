@@ -143,6 +143,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
     }
     if (IsElementHeader == false) {
       header[index].style.display = "none";
+      header[index].parentElement.style.display = "none";
     }
   }
 };
