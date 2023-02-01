@@ -8770,6 +8770,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   display: block;
   width: 100%;
   float: left;
+  height: 100% !important;
 }
 .table > tbody > tr:first-child > th,
 .table > tbody > tr:first-child > td {
