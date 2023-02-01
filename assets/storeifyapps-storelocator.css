@@ -9125,6 +9125,7 @@ a.linkdetailstore {
 }
 #results-slt.results-slt-layout-2 {
   height: 100%;
+  overflow-y: scroll;
 }
 .list-item-3:not(.owl-carousel) .item.thumbnail {
   width: 96%;
