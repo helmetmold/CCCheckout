@@ -1,3 +1,4 @@
+document.body.className += "onepage";
 var search_result_zoom = 2;
 var limit_store = 10000;
 var list_mode = 0;
@@ -146,7 +147,6 @@ Shortcode.prototype.convertMatchesToNodes = function () {
       header[index].parentElement.style.display = "none";
     }
   }
-  document.body.className += "onepage";
 };
 Shortcode.prototype.replaceNodes = function () {
   var self = this,
