@@ -134,7 +134,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
   }
   var header = document.getElementsByClassName("section-header");
   for (let index = 0; index < header.length; index++) {
-    header[index].parentElement.style.display = "none";
+    //header[index].parentElement.style.display = "none";
   }
 };
 Shortcode.prototype.replaceNodes = function () {
