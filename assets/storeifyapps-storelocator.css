@@ -9114,6 +9114,7 @@ a.linkdetailstore {
   width: 100%;
   float: left;
   margin-bottom: 0;
+  display: flex;
 }
 .storelocator-layout-2 #main-slider-storelocator.storeify-first-alert {
   overflow-y: hidden;
@@ -9126,8 +9127,6 @@ a.linkdetailstore {
 #results-slt.results-slt-layout-2 {
   height: 100%;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
 }
 .list-item-3:not(.owl-carousel) .item.thumbnail {
   width: 96%;
