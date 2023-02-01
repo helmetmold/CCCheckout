@@ -8753,7 +8753,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 #storeify-detail-store .vertical li.walk.active {
   background-position: center -139px;
 }
-#storeify-detail-store .vertical li.bicycle.active {
+results-slt #storeify-detail-store .vertical li.bicycle.active {
   background-position: center -180px;
 }
 #frm-storelocator-search {
@@ -9106,7 +9106,7 @@ a.linkdetailstore {
   height: 100% !important;
 }
 .storelocator-layout-2 #main-slider-storelocator {
-  height: 300px;
+  height: 70%;
   overflow-y: scroll;
   width: 100%;
   float: left;
