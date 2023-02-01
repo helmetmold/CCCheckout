@@ -9123,9 +9123,10 @@ a.linkdetailstore {
   margin-top: 20px;
   padding-left: 10px;
 }
-#results-slt.results-slt-layout-2
-  .list-item-3:not(.owl-carousel)
-  .item.thumbnail {
+#results-slt.results-slt-layout-2 {
+  height: 100%;
+}
+.list-item-3:not(.owl-carousel) .item.thumbnail {
   width: 96%;
   float: left;
 }
