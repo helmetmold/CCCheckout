@@ -1,4 +1,3 @@
-document.body.className += "onepage";
 var search_result_zoom = 2;
 var limit_store = 10000;
 var list_mode = 0;
@@ -23,6 +22,7 @@ var array_country =
 var find_location = 0;
 var app_url_config = "https://sl.storeify.app";
 var shortcode_use = 1;
+document.body.className += "onepage";
 var Shortcode = function (el, tags) {
   if (!el) {
     return;
