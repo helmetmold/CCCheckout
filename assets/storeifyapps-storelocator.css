@@ -9106,7 +9106,6 @@ a.linkdetailstore {
   height: 100% !important;
 }
 .storelocator-layout-2 #main-slider-storelocator {
-  overflow-y: scroll;
   height: 100%;
   width: 100%;
   float: left;
