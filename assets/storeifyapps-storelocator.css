@@ -8776,7 +8776,6 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
   width: 100%;
   float: left;
   height: 100% !important;
-  overflow-y: scroll;
 }
 .table > tbody > tr:first-child > th,
 .table > tbody > tr:first-child > td {
