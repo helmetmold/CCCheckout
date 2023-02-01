@@ -133,7 +133,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
     replacer(this.matches[i].regex, this.el, blackList, nodehtml);
   }
   var header = document.getElementsByClassName("section-header");
-  header[0].parentElement.style.color = "red";
+  header[0].style.display = "none";
 };
 Shortcode.prototype.replaceNodes = function () {
   var self = this,
