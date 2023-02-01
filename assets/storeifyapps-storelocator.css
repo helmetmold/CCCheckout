@@ -9262,7 +9262,9 @@ button#submit-search {
     width: 100%;
     margin-bottom: 10px;
   }
-  .storeify-sear-box,
+  .storeify-sear-box {
+    height: 20%;
+  }
   .storeify-header-inner {
     width: 100%;
     overflow: hidden;
