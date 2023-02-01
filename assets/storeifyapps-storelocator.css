@@ -8768,7 +8768,7 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
   height: 100% !important;
 }
 #map {
-  height: 100% !important;
+  height: 100%;
 }
 .storelocator-search,
 #frm-storelocator-search,
