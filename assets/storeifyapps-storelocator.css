@@ -9110,7 +9110,7 @@ a.linkdetailstore {
   height: 100% !important;
 }
 .storelocator-layout-2 #main-slider-storelocator {
-  height: 70%;
+  height: 100%;
   overflow-y: scroll;
   width: 100%;
   float: left;
