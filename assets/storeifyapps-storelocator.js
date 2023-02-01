@@ -22,7 +22,6 @@ var array_country =
 var find_location = 0;
 var app_url_config = "https://sl.storeify.app";
 var shortcode_use = 1;
-document.body.className += "onepage";
 var Shortcode = function (el, tags) {
   if (!el) {
     return;
