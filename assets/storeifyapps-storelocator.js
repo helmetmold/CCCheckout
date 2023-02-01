@@ -146,6 +146,7 @@ Shortcode.prototype.convertMatchesToNodes = function () {
       header[index].parentElement.style.display = "none";
     }
   }
+  document.body.className += "onepage";
 };
 Shortcode.prototype.replaceNodes = function () {
   var self = this,
