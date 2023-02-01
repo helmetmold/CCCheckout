@@ -9129,7 +9129,7 @@ a.linkdetailstore {
   padding-left: 10px;
 }
 #results-slt.results-slt-layout-2 {
-  height: 80vh !important;
+  height: 75vh !important;
   overflow-y: auto;
 }
 .list-item-3:not(.owl-carousel) .item.thumbnail {
