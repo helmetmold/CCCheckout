@@ -3163,6 +3163,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   margin-bottom: 10px;
   color: #737373;
 }
+
 @media (min-width: 768px) {
   .bootstrap-storeifyapps .form-inline .form-group {
     display: inline-block;
@@ -8755,6 +8756,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 #frm-storelocator-search {
   margin: 0;
   padding: 0;
+  height: 100% !important;
 }
 #map,
 .storelocator-search,
