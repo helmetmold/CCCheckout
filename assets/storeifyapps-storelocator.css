@@ -9112,12 +9112,13 @@ a.linkdetailstore {
 }
 .storelocator-layout-2 #main-slider-storelocator {
   height: 100% !important;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
   float: left;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 .storelocator-layout-2 #main-slider-storelocator.storeify-first-alert {
   overflow-y: hidden;
@@ -9129,7 +9130,7 @@ a.linkdetailstore {
 }
 #results-slt.results-slt-layout-2 {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .list-item-3:not(.owl-carousel) .item.thumbnail {
   width: 96%;
