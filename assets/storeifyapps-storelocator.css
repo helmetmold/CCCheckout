@@ -5,6 +5,9 @@
 #storeifyapps-storelocator-index {
   margin: 0 !important;
 }
+#MainContent {
+  height: 100% !important;
+}
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
   position: fixed;
