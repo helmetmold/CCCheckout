@@ -4,6 +4,7 @@
                     type="text/javascript" 
                     defer="defer"> 
                     var geoson_url = "{{ 'storeifyapps-geojson.js' | asset_url }}"; 
+                    document.body.classList.add("home");
                     </script>
                     {{ 'storeifyapps-storelocator.css' | asset_url | stylesheet_tag }}
                     {% endif %}
