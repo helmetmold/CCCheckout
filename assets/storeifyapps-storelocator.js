@@ -134,7 +134,8 @@ Shortcode.prototype.convertMatchesToNodes = function () {
   }
   var header = document.getElementsByClassName("section-header");
   for (let index = 0; index < header.length; index++) {
-    header[index].style.display = "none";
+    const list = header[index].classList;
+    if (!list.includes("shopify-section")) header[index].style.display = "none";
   }
 };
 Shortcode.prototype.replaceNodes = function () {
