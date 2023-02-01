@@ -8932,6 +8932,7 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
   }
   #results-slt .list-item-3:not(.owl-carousel) .item.thumbnail {
     width: 100% !important;
+    color: red;
   }
 }
 @media screen and (max-width: 480px) {
