@@ -2,9 +2,6 @@
 @import "//use.fontawesome.com/releases/v5.3.1/css/all.css";
 @import "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 
-.onepage {
-  height: 100vw;
-}
 #storeifyapps-storelocator-index {
   margin: 0 !important;
 }
@@ -8774,6 +8771,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   display: block;
   width: 100%;
   float: left;
+  height: 100%;
 }
 .table > tbody > tr:first-child > th,
 .table > tbody > tr:first-child > td {
