@@ -8780,8 +8780,6 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .search-map,
 .results-slt {
   height: 100% !important;
-  overflow-y: scroll !important;
-  display: block;
   width: 100%;
   float: left;
 }
