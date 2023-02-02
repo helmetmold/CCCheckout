@@ -1,0 +1,342 @@
+/* Simplee Storefront Widget - CSS - Version 0.1
+   For questions visit http://support.simplee.best */
+
+.simplee-defaultwidget__color-button-background{
+    background-color:#FAFAFA;
+    border-radius: 11px;
+}
+.simplee-defaultwidget__color-button-text{
+    color:#000;
+}
+.simplee-defaultwidget__button_wrapper input[type="radio"]:checked + .simplee-defaultwidget__color-text-primary{
+    background-color:#1473E6;
+    color:#fff;
+}
+.simplee-defaultwidget__button_wrapper input[type="radio"]:checked + .simplee-defaultwidget__color-text-primary svg path{
+    fill:#fff;
+}
+.simplee-defaultwidget__purchase-options{
+    font-size:16px !important;
+    color: #000000;
+    font-weight:600;
+  margin-bottom:0;
+}
+.simplee-defaultwidget__button_wrapper input[type="radio"] {
+  display:none;
+}
+.simplee-defaultwidget {
+    padding: 10px 0px;
+}.simplee-defaultwidget__button_wrapper label {
+      cursor: pointer;
+      padding: 10px 10px;
+      font-size: 16px;
+      color: #000;
+      font-weight: 600;
+      display: flex;
+      align-items:center;
+      width: 20rem;
+      height: 3rem;
+    }.simplee-defaultwidget__button_wrapper label span{
+        width: auto;
+    line-height: 0;
+    margin-right: 15px;
+}
+.simplee-defaultwidget__button_wrapper{
+    margin-bottom:13px;
+    display: flex;
+}
+
+
+/* checkbox css */
+.simplee-defaultwidget__checkbox input {
+    display: none;
+}
+.simplee-defaultwidget__checkbox-wrapper, .simplee-defaultwidget__label{
+     display: flex;
+     align-items: center;
+   margin-bottom: 10px;
+}
+.simplee-defaultwidget__checkbox label {
+    display: block;
+    margin: 0;
+    padding-left: 30px;
+    font-size: 16px;
+    position: relative;
+    color: #000;
+    cursor: pointer;
+}
+
+.simplee-defaultwidget__checkbox input[type="radio"]:checked + label.simplee-defaultwidget__radio::before{
+   background-color:#1473E6;
+    border-color:#1473E6;
+}
+.simplee-defaultwidget__checkbox input[type="radio"]:checked + label.simplee-defaultwidget__radio::after{
+    border-color:#fff;
+}
+.simplee-defaultwidget__checkbox label.simplee-defaultwidget__radio::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #707070;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+}
+.simplee-defaultwidget__checkbox label.simplee-defaultwidget__radio::after {
+    content: "";
+    width: 7px;
+    height: 11px;
+    border: 3px solid #142bff;
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    transform: translateY(-50%) rotate(45deg);
+    border-left: none;
+    border-top: none;
+    visibility: hidden;
+    border-radius: 1px;
+}
+.simplee-defaultwidget__checkbox input[type="radio"]:checked + label.simplee-defaultwidget__radio::after{
+    visibility: visible;
+}
+.simplee-defaultwidget__info svg{
+    margin-left:8px;
+}
+.simplee-defaultwidget__info{
+    position:relative;
+}
+.simplee-defaultwidget__tooltipText {
+    background-color: #B2AEAE;
+    position: absolute;
+    bottom: 23px;
+    left: -65px;
+    padding: 4px 7px;
+    border-radius: 0;
+    display:none;
+    width: 163px;
+
+}
+.simplee-defaultwidget__tooltipText p{
+    font-size: 12px;
+   color: #fff;
+  font-style:italic;
+}
+.simplee-defaultwidget__tooltipText h6{
+    color:#fff;
+    margin-bottom:0;
+  font-size:12px;
+}
+.simplee-defaultwidget__labelinfo p{
+    margin-bottom:10px;
+}
+.simplee-defaultwidget__tooltipText::after {
+    content: "";
+    border-width: 5px;
+    border-style: solid;
+    border-color: #B2AEAE transparent transparent transparent;
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    margin-left: 5%;
+}
+.simplee-defaultwidget__info:hover .simplee-defaultwidget__tooltipText {
+   display:block;
+}
+.simplee-defaultwidget__hr{
+    border-left: 1px solid #70707040;
+}
+.simplee-defaultwidget__labelinfo{
+        left: 22px;
+    bottom: auto;
+    top: -118px;
+   z-index: 999;
+      width: 228px;
+}
+.simplee-defaultwidget__labelinfo::after{
+    border-color: transparent #B2AEAE transparent transparent;
+    top: 50%;
+    left: -21px;
+
+}
+.simplee-defaultwidget__options {
+    padding: 15px 0;
+}
+
+.simplee-defaultwidget__close, .simplee-defaultwidget__labelinfo .simplee-defaultwidget__purchase-options{
+    display:none;
+}
+@media (max-width: 767px){
+  .simplee-defaultwidget__labelinfo{
+       position: unset;
+    width:100%;
+        background-color: #fff;
+            padding: 6px 10px 10px 14px;
+  }
+  .simplee-defaultwidget__info-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 1;
+       padding: 0 22px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  .simplee-defaultwidget__info-wrapper.active{
+    display:flex;
+    align-items:center;
+  }
+  .simplee-defaultwidget__labelinfo h6, .simplee-defaultwidget__labelinfo p{
+    color:#000;
+  }
+  .simplee-defaultwidget__close svg {
+    width: 12px;
+  }
+  .simplee-defaultwidget__close {
+    text-align: right;
+    margin-bottom: 0;
+  }
+  .simplee-defaultwidget__mobile_info .simplee-defaultwidget__purchase-options{
+    margin-bottom:10px;
+  }
+  .simplee-defaultwidget__labelinfo::after{
+    display:none;
+  }
+  .simplee-defaultwidget__close, .simplee-defaultwidget__labelinfo .simplee-defaultwidget__purchase-options{
+    display:block;
+  }
+}
+/* Styles specific to themes */
+.simplee_express_msl {
+    margin:10px 0px;
+}
+.simplee_msl_box {
+    border: 1px solid currentColor;
+    padding: 15px 30px;
+    display: inline-flex;
+    margin: 10px 0px;
+}
+.simplee-widget__description {
+    margin-top: 20px;
+    color: #333232;
+}
+.price--subscription .price__badge--subscription {
+    display: flex;
+}
+.price_badge_debut--subscription{
+   color: var(--color-bg);
+    border-color: var(--color-sale-text) !important;
+    background-color: var(--color-sale-text) !important;
+}
+.price__badge--subscription {
+    margin-left: 10px;
+    align-self: center;
+    text-align: center;
+    font-size: 0.5em;
+    line-height: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-text);
+    border-radius: 2px;
+    padding: 0.2rem 0.5rem;
+}
+        span.price__per-delivery {
+            font-size: .8rem;
+            font-weight: 400;
+            display: flex;
+        }
+    span.price__badge-express--subscription.price__badge--sale {
+    border: 1px solid;
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}.price_badge_brooklyn--subscription.product-single__price.on-sale {
+    font-size: 0.8rem;
+}
+.badge--simple-subscription{
+  width: 100% !important;
+}
+.price_each--simple{
+  color: #333333;
+}
+
+.simplee-properties .line-item-property__field span {
+    padding: 0 10px;
+}
+.simplee-properties .line-item-property__field label {
+    font-weight: 600;
+}
+.simplee-properties .line-item-property__field {
+    align-items: center;
+}
+.simplee-properties .line-item-property__field input#checkbox {
+    margin-left: 10px;
+}
+.simplee-properties .line-item-property__field input[type="radio" i] + label {
+  font-weight: normal;
+}
+.sm-error{
+    color: red;
+}
+.simplee-properties .line-item-property__field span {
+    display: block;
+    padding: 5px 0;
+    margin-bottom: 15px;
+}
+.simplee-properties .memberships_options p {
+    margin-top: 13px;
+}
+.simplee-properties .memberships_options {
+    align-items: flex-start;
+}
+.simplee-properties .line-item-property__field.chkbox {
+    margin: 0;
+}
+.line-item__chkbox{
+    margin-bottom: 20px;
+}
+.line-item__chkbox span {
+    padding: 10px;
+}
+.plan_name {
+    display: flex;
+    width: 66%;
+}
+.plan_price {
+    text-align: right;
+    font-size: 13px;
+    width: 34%;
+    color: #000;
+}
+.simplee-defaultwidget .simplee-defaultwidget__checkbox-wrapper, .simplee-defaultwidget__label{
+        margin-bottom: 19px;
+}
+.simplee-properties input:not([type='checkbox']), .simplee-properties select, .simplee-properties textarea {
+    width: 100%;
+    min-height: 35px;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 3px;
+}  
+.simplee-properties .line-item-property__field.chkbox label {
+    padding-left: 10px;
+} 
+.simplee-properties .line-item-property__field.chkbox input {
+    min-height: auto;
+}
+.sm-error:empty {
+    display: none;
+}
+.simplee-cart-message {
+ 	width: 100%;
+  	border: 2px solid green;
+  	border-radius: 10px;
+  	text-align: center;
+  	color: black;
+  	background-color:#e4f3cf;
+  	padding: 20px;
+  	margin:10px 0px;
+}

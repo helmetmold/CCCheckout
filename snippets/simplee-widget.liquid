@@ -1,0 +1,93 @@
+{%- comment -%} 
+
+Simplee Memberships Storefront Widget
+Version: 1.2 - Added support for trials and one-time payments, and limited when widget will load to Simplee products only
+For questions visit https://support.simplee.best
+
+{%- endcomment -%}
+
+{%- liquid
+
+    assign widget_metafields = shop.metafields.simplee
+    assign simplee_config = shop.metafields.simplee.memberships.config
+    assign simplee_settings = shop.metafields.simplee.memberships.settings
+    assign selling_plan_count = product.selling_plan_groups[0].selling_plans | size
+
+%}
+
+{% if product.selling_plan_groups.size > 0 and simplee_config["active_products"] contains product.id %}
+
+
+{%  if selling_plan_count > 1 or simplee_settings["show_widget"] %}
+    <div class="simplee-defaultwidget">
+      <div class="simplee-defaultwidget__wrapper">
+        <div class="simplee-defaultwidget__options">
+            <div class="simplee-defaultwidget__options_grid" id="simplee-defaultwidget__options_grid">
+                <div class="simplee-defaultwidget__bill">
+                  <div class="simplee-defaultwidget__time-wrapper">
+                    <div class="simplee-defaultwidget__label">
+                      <h5 class="simplee-defaultwidget__purchase-options">
+                        {% if widget_metafields["widget_heading_text"] %}
+                            {% echo widget_metafields["widget_heading_text"] %}
+                        {% else %}
+                        Membership Length:
+                        {% endif %}
+                      </h5>
+                    </div>
+                    <div class="simplee-defaultwidget__checkbox" id="simplee-defaultwidget__options_delivery_chks">
+                    {% for group in product.selling_plan_groups %}
+                        {% assign gindex =  forloop.first %}
+                        {% for plan in group.selling_plans %}
+                            {% assign pindex =  forloop.first %}
+                          <div class="simplee-defaultwidget__checkbox-wrapper" data-value="Membership Length">
+                            <span name="plan_name" class="plan_name"><input type="radio" name="selling_plan" id="sellingPlan-{{- plan.id -}}" value="{{ plan.id }}" form="product-form-{{ simplee_id }}" {%- if gindex and pindex -%} checked {%- endif -%}><label for="sellingPlan-{{- plan.id -}}" class="simplee-defaultwidget__radio">
+                              {{ plan.name }}
+                            </label>
+                            {% if plan.description != '' %}
+                            <div class="simplee-defaultwidget__info">
+                              <svg width="12" height="12" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <g>
+                                  <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.833,256-256S397.167,0,256,0z M245.333,426.667c-17.646,0-32-14.354-32-32s14.354-32,32-32c17.646,0,32,14.354,32,32S262.979,426.667,245.333,426.667z M277.333,296.542v34.125c0,5.896-4.771,10.667-10.667,10.667H224c-5.896,0-10.667-4.771-10.667-10.667v-53.333c0-23.521,19.146-42.667,42.667-42.667s42.667-19.146,42.667-42.667S279.521,149.333,256,149.333S213.333,168.479,213.333,192v10.667c0,5.896-4.771,10.667-10.667,10.667H160c-5.896,0-10.667-4.771-10.667-10.667V192c0-58.813,47.854-106.667,106.667-106.667S362.667,133.188,362.667,192C362.667,243.188,326.604,286.563,277.333,296.542z" fill="#CECECED8"></path>
+                                </g>
+                              </svg>
+                              <div class="simplee-defaultwidget__tooltipText"><p>{{ plan.description }}</p></div>
+                            </div>
+                            {% endif %}
+                            </span>
+                            <span name="plan_price" class="plan_price">
+                              	{% if plan.price_adjustments[0].order_count == nil %}
+                                	{{ plan.price_adjustments[0].value | money }} / RENEWAL
+                              	{% elsif plan.price_adjustments[1].value == 0 %}
+                              		{{ plan.price_adjustments[0].value | money }}
+                              	{% else %}
+                              		{% if plan.price_adjustments[0].value == 0 %}
+                              			Free
+                              		{% else %}
+                              			{{ plan.price_adjustments[0].value | money }}
+                              		{% endif %} 
+                              		 for {{ plan.price_adjustments[0].order_count }} {% if plan.price_adjustments[0].order_count == 1 %}order{% else %}orders{% endif %}
+                              	{% endif %}
+                            </span>  	
+                          </div>
+                        {% endfor %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% style %}
+      .simplee-defaultwidget__checkbox input[type=radio]:checked+label.simplee-defaultwidget__radio::before {
+          background-color: {{ widget_metafields["widget_active_bg"] }};
+          border-color: {{ widget_metafields["widget_active_bg"] }};
+      }
+      .simplee-defaultwidget__checkbox input[type=radio]:checked+label.simplee-defaultwidget__radio::after {
+          border-color: {{ widget_metafields["widget_active_text"] }};
+      }
+    {% endstyle %}
+    {% else %}<input type="hidden" name="selling_plan" value="{{ product.selling_plan_groups[0].selling_plans[0].id }}" form="product-form-{{ simplee_id }}">{% endif %}
+    {% echo product.metafields.simplee.questions %}
+ {% endif %}

@@ -1,0 +1,234 @@
+                    {%- comment -%} 
+
+Simplee Memberships Rules Parser
+Version: 1.1 - Added support for multiple active customer tags
+For questions visit https://support.simplee.best
+
+{%- endcomment -%}
+
+{% liquid
+  assign sm_config = shop.metafields.simplee.memberships.config
+  assign sm_show_content = true
+  assign continue_loop = true
+
+if sm_config["active"]
+  assign sm_page = request.page_type
+  assign sm_rules = shop.metafields.simplee.memberships.rules
+  if customer
+    assign sm_active_tag = ""
+    for tag in customer.tags
+      if sm_config["active_tags"] contains tag
+        if sm_active_tag == ""
+            assign sm_active_tag = tag
+        else
+            assign sm_active_tag = sm_active_tag | append: ","
+            assign sm_active_tag = sm_active_tag | append: tag
+        endif
+      endif
+    endfor
+    assign customer_tags = sm_active_tag | split: ","
+  endif
+
+  case sm_page
+
+    when 'page'
+      for rule in sm_rules
+        assign rule_tags = rule["tags"] | split:','
+        if continue_loop
+          if rule["type"] == "all_pages"
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                assign sm_show_content = true
+                assign continue_loop = false
+              endif
+            endfor
+          elsif rule["type"] == "page" and rule["id"] contains page.id
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                assign sm_show_content = true
+                assign continue_loop = false
+              endif
+            endfor
+          endif
+        endif
+      endfor
+
+    when 'product'
+      for rule in sm_rules
+        assign rule_tags = rule["tags"] | split:','
+        if continue_loop
+          if rule["type"] == "all_products"
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                assign sm_show_content = true
+                assign continue_loop = false
+              endif
+            endfor
+          elsif rule["type"] == "product" and rule["id"] contains product.id
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                assign sm_show_content = true
+                assign continue_loop = false
+              endif
+            endfor
+          elsif rule["type"] == "collection"
+            for collection in product.collections
+              if rule["id"] contains collection.id
+                assign sm_show_content = false
+                for customer_tag in customer_tags
+                  if rule_tags contains customer_tag
+                    assign sm_show_content = true
+                    assign continue_loop = false
+                  endif
+                endfor
+              endif
+            endfor
+          endif
+        endif
+      endfor
+
+    when 'article'
+      for rule in sm_rules
+        assign rule_tags = rule["tags"] | split:','
+        if continue_loop
+          if rule["type"] == "article" and rule["id"] contains article.id
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+                if rule_tags contains customer_tag
+                    assign sm_show_content = true
+                    assign continue_loop = false
+                endif
+            endfor
+          elsif rule["type"] == "all_blogs"
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+                if rule_tags contains customer_tag
+                    assign sm_show_content = true
+                    assign continue_loop = false
+                endif
+            endfor
+          elsif rule["type"] == "blog"
+            if rule["id"] contains blog.id
+              assign sm_show_content = false
+              for customer_tag in customer_tags
+                if rule_tags contains customer_tag
+                    assign sm_show_content = true
+                    assign continue_loop = false
+                endif
+              endfor
+            endif
+          endif
+        endif
+      endfor
+
+    when 'collection'
+      for rule in sm_rules
+        if continue_loop
+          assign rule_tags = rule["tags"] | split:','
+          if rule["type"] == "collection" and rule["id"] contains collection.id
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                  assign sm_show_content = true
+                  assign continue_loop = false
+              endif
+            endfor
+          elsif rule["type"] == "all_products"
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                  assign sm_show_content = true
+                  assign continue_loop = false
+              endif
+            endfor
+          endif
+        endif
+      endfor
+
+    when 'list-collections'
+      for rule in sm_rules
+        if continue_loop
+          assign rule_tags = rule["tags"] | split:','
+          if rule["type"] == "all_products"
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                  assign sm_show_content = true
+                  assign continue_loop = false
+              endif
+            endfor
+          endif
+        endif
+      endfor
+
+    when 'blog'
+      for rule in sm_rules
+        if continue_loop
+          assign rule_tags = rule["tags"] | split:','
+          if rule["type"] == "all_blogs"
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+                if rule_tags contains customer_tag
+                    assign sm_show_content = true
+                    assign continue_loop = false
+                endif
+              endfor
+          elsif rule["type"] == "blog" and rule["id"] contains blog.id
+            assign sm_show_content = false
+            for customer_tag in customer_tags
+                if rule_tags contains customer_tag
+                    assign sm_show_content = true
+                    assign continue_loop = false
+                endif
+              endfor
+          endif
+        endif
+      endfor
+
+  endcase
+
+  case simplee-memberships
+
+    when 'cart'
+      assign sm_show_cart = true
+      for rule in sm_rules
+        if continue_loop
+          assign rule_tags = rule["tags"] | split:','
+          if rule["type"] == "cart"
+            assign sm_show_cart = false
+            for customer_tag in customer_tags
+                if rule_tags contains customer_tag
+                    assign sm_show_cart = true
+                    assign continue_loop = false
+                endif
+            endfor
+          endif
+        endif
+      endfor
+
+    when 'prices'
+      assign sm_show_price = true
+      for rule in sm_rules
+        if continue_loop
+          assign rule_tags = rule["tags"] | split:','
+          if rule["type"] == "prices"
+            assign sm_show_price = false
+            for customer_tag in customer_tags
+              if rule_tags contains customer_tag
+                  assign sm_show_price = true
+                  assign continue_loop = false
+              endif
+            endfor
+          endif
+        endif
+      endfor
+
+  endcase
+endif
+%}
+
+            
