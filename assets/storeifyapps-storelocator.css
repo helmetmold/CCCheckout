@@ -9231,6 +9231,9 @@ button#submit-search {
 .storeifystorelocator-seach-action-mobile,
 .input-radius-slt-mobile,
 .input-radius-choose-mobile,
+.map-tab-result {
+  height: 100% !important;
+}
 .map-tab-mobile-bnt {
   display: none;
 }
