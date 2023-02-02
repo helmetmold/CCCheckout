@@ -8759,7 +8759,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 #storeify-detail-store .vertical li.walk.active {
   background-position: center -139px;
 }
-results-slt #storeify-detail-store .vertical li.bicycle.active {
+.results-slt #storeify-detail-store .vertical li.bicycle.active {
   background-position: center -180px;
 }
 #frm-storelocator-search {
