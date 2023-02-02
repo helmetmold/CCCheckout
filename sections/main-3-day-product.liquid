@@ -422,7 +422,6 @@
                 </div>
                 <button id="abcd">Click me</button>
                 {% endif %}
-                Hello
               {%- endfor -%}
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
@@ -439,8 +438,6 @@
                           arrayProductIds = [];
                           x = 0;
                           AddExtras();
-                          clickupsell();
-                          console.log(arrayProductIds);
                           makeAjaxRequest();
                         }
                       )
@@ -469,9 +466,14 @@
                       dataType: 'json',
                       success: function() 
                       { 
+                        console.log(arrayProductIds.length);
                         if(x < arrayProductIds.length)
                         {
                           makeAjaxRequest();
+                        }
+                        else
+                        {
+                          clickupsell();
                         }
                       }
                     }
@@ -488,7 +490,7 @@
                   };
 
                   var extras = document.getElementsByClassName('Extras');
-
+                  
                   for (let index = 0; index < extras.length; index++) 
                   {
                     if (extras[index].value == "Regular") 
@@ -901,12 +903,38 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
-    {% assign someProduct = all_products.katy-flagship-tech-camps %}
-    {% render 'card-product', 
-    card_product: someProduct,
-    show_quick_add: true,
-    %}
+    
   </div>
+  <div id="test">
+    {% for tag in product.tags %}
+      {% assign first_letter = tag | slice: 0 %}
+      {% if first_letter == "_" %}
+        {% assign first_underscore_tag = tag %}
+        {% break %}
+      {% endif %}
+      {% endfor %}
+    {% for productcamp in collections.all.products %}   
+      {% if productcamp.tags contains first_underscore_tag %} 
+        {% if productcamp.tags contains "Tech Camp" %} 
+        {% render 'card-product', 
+        card_product: productcamp,
+        show_quick_add: true,
+        %}
+      {% endif %}
+    {% endif %}
+    {% endfor %}
+
+    {% assign featured_and_sale_products = shop.products | where: "tags", first_underscore_tag %}
+    {{featured_and_sale_products}}
+    {% for campproduct in featured_and_sale_products %}
+      {% render 'card-product', 
+      card_product: campproduct,
+      show_quick_add: true,
+      %}
+    {% endfor %}
+
+  </div>
+  
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
