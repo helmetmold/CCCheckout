@@ -8776,6 +8776,7 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
 .content-search-slt,
 .search-map,
 .results-slt {
+  height: 100% !important;
   overflow-y: scroll !important;
   display: block;
   width: 100%;
