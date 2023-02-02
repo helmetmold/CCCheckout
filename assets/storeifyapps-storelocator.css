@@ -9233,7 +9233,7 @@ button#submit-search {
 .input-radius-slt-mobile,
 .input-radius-choose-mobile,
 .map-tab-result {
-  height: 100% !important;
+  height: 80% !important;
   position: relative;
 }
 .map-tab-mobile-bnt {
@@ -9285,7 +9285,7 @@ button#submit-search {
     margin-bottom: 10px;
   }
   .storeify-sear-box {
-    height: 20%;
+    height: 20% !important;
   }
   .storeify-header-inner {
     width: 100%;
