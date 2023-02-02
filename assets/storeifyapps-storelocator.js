@@ -131,6 +131,20 @@ Shortcode.prototype.convertMatchesToNodes = function () {
       '"></span>';
     replacer(this.matches[i].regex, this.el, blackList, nodehtml);
   }
+  var header = document.getElementsByClassName("section-header");
+  for (let index = 0; index < header.length; index++) {
+    const Classlist = header[index].classList;
+    var IsElementHeader = false;
+    for (let index2 = 0; index2 < Classlist.length; index2++) {
+      if (Classlist[index2] == "shopify-section") {
+        IsElementHeader = true;
+      }
+    }
+    if (IsElementHeader == false) {
+      header[index].style.display = "none";
+      header[index].parentElement.style.display = "none";
+    }
+  }
 };
 Shortcode.prototype.replaceNodes = function () {
   var self = this,
@@ -513,6 +527,46 @@ if (window.jQuery) {
             jQuery("#" + randomID).html(html_list);
             jQuery("#results-slt").show();
             google.maps.event.removeListener(tilesloaded);
+
+            const LocationImages =
+              document.getElementsByClassName("item-thumb");
+
+            for (let i = 0; i < LocationImages.length; i++) {
+              LocationImages[i].style.display = "none";
+            }
+
+            var InnerItem = document.getElementsByClassName("inner-item");
+
+            for (let i = 0; i < InnerItem.length; i++) {
+              var ThreeDayCamp = document.createElement("button");
+              var TwoDayCamp = document.createElement("button");
+              ThreeDayCamp.setAttribute("class", "CampTypeButton");
+              TwoDayCamp.setAttribute("class", "CampTypeButton");
+              ThreeDayCamp.innerText = "3-day Creative Camps";
+              TwoDayCamp.innerText = "2-day Tech Camps";
+
+              locationdata = gmarkers[i];
+              var urls = locationdata.social;
+
+              if (urls != "") {
+                var expression =
+                  /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
+                var matches = urls.match(expression);
+
+                console.log(matches);
+
+                ThreeDayCamp.onclick = function () {
+                  window.open(matches[1].substring(0, matches[1].length - 1));
+                };
+
+                TwoDayCamp.onclick = function () {
+                  window.open(matches[0].substring(0, matches[0].length - 1));
+                };
+              }
+
+              InnerItem[i].appendChild(ThreeDayCamp);
+              InnerItem[i].appendChild(TwoDayCamp);
+            }
           }
         );
       }
