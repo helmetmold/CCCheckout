@@ -8762,6 +8762,9 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .results-slt #storeify-detail-store .vertical li.bicycle.active {
   background-position: center -180px;
 }
+.content-results-slt {
+  height: 100% !important;
+}
 #frm-storelocator-search {
   margin: 0;
   padding: 0;
