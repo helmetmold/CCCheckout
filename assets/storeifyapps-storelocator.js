@@ -484,6 +484,7 @@ if (window.jQuery) {
         });
         map.mapTypes.set("styled_map", styledMapType);
         map.setMapTypeId("styled_map");
+        map.style.height = "100%";
         infowindow = new google.maps.InfoWindow();
         bounds = new google.maps.LatLngBounds();
         var searchBox = new google.maps.places.SearchBox(input);
