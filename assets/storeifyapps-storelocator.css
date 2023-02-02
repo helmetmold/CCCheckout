@@ -9139,7 +9139,7 @@ a.linkdetailstore {
 }
 .list-item-3 {
   height: 100% !important;
-  overflow-wrap: normal;
+  overflow-y: hidden;
 }
 #storeify-contactForm {
   padding: 2px 2px 10px;
