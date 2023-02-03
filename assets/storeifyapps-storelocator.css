@@ -9054,9 +9054,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .inner-item .item-content .address,
 .inner-item .item-content .item-envelope,
 .inner-item .item-content .item-phone,
-.inner-item .item-content .item-link {
-  display: none;
-}
+.inner-item .item-content .item-link,
 .inner-item .item-content .item-road {
   margin: 0 0 10px;
 }
