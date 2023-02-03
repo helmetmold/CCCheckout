@@ -9072,7 +9072,7 @@ a.linkdetailstore {
   color: inherit;
   padding: 6px !important;
   text-align: center;
-  display: inline-block;
+  display: none;
   font-size: 12px;
   float: right;
   margin-top: 10px;
