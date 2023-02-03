@@ -9236,6 +9236,7 @@ button#submit-search {
   height: 80% !important;
   position: relative;
   overflow-y: scroll;
+  z-index: 10;
 }
 .map-tab-mobile-bnt {
   display: none;
