@@ -8,6 +8,9 @@
 #MainContent {
   height: 92vh !important;
 }
+.item-link {
+  display: none;
+}
 #location {
   height: 93% !important;
 }
