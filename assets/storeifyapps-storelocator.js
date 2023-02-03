@@ -2059,6 +2059,7 @@ if (window.jQuery) {
         jQuery(".storeify-sear-box").outerHeight() + 540 + "px"
       );
     }
+    jQuery("#map").height = "100%";
     if (list_mode == 2 || limit_store == 0) {
       jQuery("#results-slt h3.title").hide();
       jQuery("#main-slider-storelocator").addClass("storeify-first-alert");
