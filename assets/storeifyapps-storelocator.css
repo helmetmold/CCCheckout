@@ -9238,6 +9238,8 @@ button#submit-search {
 }
 .map-tab-mobile-bnt {
   display: none;
+  height: 0px !important;
+  padding: 0% !important;
 }
 #map {
   width: 100%;
