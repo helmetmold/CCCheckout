@@ -9234,6 +9234,7 @@ button#submit-search {
 .input-radius-choose-mobile,
 .map-tab-result {
   height: 80% !important;
+  width: 100%;
   position: relative;
   overflow-y: scroll;
   z-index: 10;
