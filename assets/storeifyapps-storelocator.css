@@ -11,6 +11,9 @@
 #location {
   height: 100% !important;
 }
+.storeify-sear-box {
+  height: 20% !important;
+}
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
   position: fixed;
