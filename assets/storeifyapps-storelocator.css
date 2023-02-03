@@ -17,6 +17,9 @@
 .storeify-sear-box {
   height: 20% !important;
 }
+.tag-item {
+  display: inline-block;
+}
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
   position: fixed;
