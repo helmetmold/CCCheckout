@@ -9371,6 +9371,7 @@ button#submit-search {
   width: 100%;
   overflow: hidden;
   margin-top: 10px;
+  display: none;
 }
 .storeify-storelocator-social-maker .material-icons-outlined {
   margin-top: 6px;
