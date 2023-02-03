@@ -9306,6 +9306,7 @@ button#submit-search {
   }
   #main-slider-storelocator {
     border: 1px solid #ddd;
+    height: 100% !important;
   }
   #main-slider-storelocator .item {
     border-top: 0;
