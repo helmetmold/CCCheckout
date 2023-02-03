@@ -1413,6 +1413,7 @@ if (window.jQuery) {
           jQuery("#main-slider-storelocator").removeClass(
             "storeify-first-alert"
           );
+          document.getElementById("intro").style.height = "100%";
           var html_list = "";
           var marker_count = 0;
           var marker_first;
@@ -2059,7 +2060,6 @@ if (window.jQuery) {
         jQuery(".storeify-sear-box").outerHeight() + 540 + "px"
       );
     }
-    jQuery("#map").height = "100%";
     if (list_mode == 2 || limit_store == 0) {
       jQuery("#results-slt h3.title").hide();
       jQuery("#main-slider-storelocator").addClass("storeify-first-alert");
