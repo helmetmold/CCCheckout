@@ -8812,7 +8812,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   padding: 15px;
 }
 .linkdetailstore {
-  display: block;
+  display: none;
   margin-top: 10px;
   margin-right: 3px;
 }
