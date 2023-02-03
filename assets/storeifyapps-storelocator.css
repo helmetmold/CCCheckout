@@ -9238,6 +9238,7 @@ button#submit-search {
   position: relative;
   overflow-y: scroll;
   z-index: 10;
+  box-sizing: unset !important;
 }
 .map-tab-mobile-bnt {
   display: none;
