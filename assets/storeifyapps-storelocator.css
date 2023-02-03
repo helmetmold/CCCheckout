@@ -9242,7 +9242,6 @@ button#submit-search {
   height: 80% !important;
   width: 100%;
   position: relative;
-  overflow-y: scroll;
   z-index: 10;
   box-sizing: unset !important;
 }
