@@ -18,8 +18,7 @@
   height: 20% !important;
 }
 .tag-item {
-  display: inline-block;
-  justify-self: right;
+  float: right;
 }
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
