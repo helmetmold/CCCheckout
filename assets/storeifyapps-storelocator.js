@@ -566,7 +566,6 @@ if (window.jQuery) {
 
               InnerItem[i].appendChild(ThreeDayCamp);
               InnerItem[i].appendChild(TwoDayCamp);
-              document.getElementById("map").style.height = "100%";
             }
           }
         );
