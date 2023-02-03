@@ -8766,6 +8766,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 }
 .content-results-slt {
   height: 100% !important;
+  box-sizing: unset !important;
 }
 #frm-storelocator-search {
   margin: 0;
