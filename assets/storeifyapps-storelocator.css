@@ -8770,9 +8770,6 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   padding: 0;
   height: 100% !important;
 }
-#map {
-  height: 100%;
-}
 .storelocator-search,
 #frm-storelocator-search,
 .header-search-stl,
