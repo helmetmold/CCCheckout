@@ -1413,7 +1413,7 @@ if (window.jQuery) {
           jQuery("#main-slider-storelocator").removeClass(
             "storeify-first-alert"
           );
-          document.getElementById("intro").style.height = "100%";
+          document.getElementById("intro").style.height = "100% !important";
           var html_list = "";
           var marker_count = 0;
           var marker_first;
