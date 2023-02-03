@@ -19,6 +19,7 @@
 }
 .tag-item {
   display: inline-block;
+  justify-self: right;
 }
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
