@@ -9354,7 +9354,7 @@ button#submit-search {
     display: block;
   }
   .map-tab-mobile {
-    display: none;
+    display: block;
     height: 100% !important;
   }
   .map-tab-mobile.active {
