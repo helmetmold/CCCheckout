@@ -9306,7 +9306,7 @@ button#submit-search {
     margin-bottom: 10px;
   }
   .storeify-sear-box {
-    height: 20% !important;
+    display: flex;
   }
   .storeify-header-inner {
     width: 100%;
