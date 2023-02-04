@@ -8385,6 +8385,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   border: 1px solid #eee;
   box-shadow: none;
   outline: none;
+  z-index: 40;
 }
 .bootstrap-storeifyapps label {
   margin-right: 5px;
