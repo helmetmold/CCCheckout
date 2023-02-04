@@ -8611,7 +8611,9 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   border: 0;
 }
 .search-address-box,
-.search-radius-box,
+.search-radius-box {
+  display: none;
+}
 .store-locator-search-left {
   float: left;
   width: 100%;
@@ -9313,7 +9315,7 @@ button#submit-search {
   }
   .search-radius-box {
     margin-bottom: 15px;
-    display: none !important;
+    display: none;
   }
   #main-slider-storelocator {
     border: 1px solid #ddd;
