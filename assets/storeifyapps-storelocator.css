@@ -16,6 +16,7 @@
 }
 .storeify-sear-box {
   height: 20% !important;
+  z-index: 20;
 }
 .tag-item {
 }
