@@ -9313,7 +9313,7 @@ button#submit-search {
   }
   .search-radius-box {
     margin-bottom: 15px;
-    display: none;
+    display: none !important;
   }
   #main-slider-storelocator {
     border: 1px solid #ddd;
