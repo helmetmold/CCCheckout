@@ -12,7 +12,7 @@
   display: none;
 }
 #location {
-  height: 93% !important;
+  display: flex;
 }
 .storeify-sear-box {
   height: 20% !important;
