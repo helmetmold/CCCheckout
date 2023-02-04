@@ -9443,6 +9443,9 @@ button#submit-search {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #666;
 }
+#btn-filter {
+  display: none;
+}
 #getbylocal {
   cursor: pointer;
   border: 0;
