@@ -8864,7 +8864,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   display: none;
 }
 .results-slt .title {
-  display: block;
+  display: none;
   width: 100%;
   background: #1979c3;
   padding: 14px 12px;
