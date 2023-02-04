@@ -18,8 +18,7 @@
   height: 20% !important;
   z-index: 20 !important;
 }
-.tag-item {
-}
+.tag-item,
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
   position: fixed;
