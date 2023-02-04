@@ -253,6 +253,7 @@
 {% include 'sm-red' %}</head>
 
   <body class="gradient">
+
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -267,7 +268,7 @@
           <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
             {{ content_for_layout }}
           </main>
-
+    {% include 'Progress-Bar' %}
     {% comment %}
       <div class="my-container">
       <div class="my-container__container">
@@ -278,7 +279,7 @@
       </div>
     </div>
     {% endcomment %}
-    {% include 'Progress-Bar' %}
+    
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
