@@ -9450,6 +9450,7 @@ button#submit-search {
   background: 0 0;
   float: right;
   outline: 0;
+  display: none;
 }
 #getbylocal .my_location {
   font-size: 16px;
