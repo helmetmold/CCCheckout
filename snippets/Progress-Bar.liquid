@@ -1,3 +1,47 @@
-<div>
-    Memes
+<style>
+  .step {
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-size: 0.875em;
+    margin-right: 1em;
+    opacity: 0.5;
+  }
+
+  .step.is-active {
+    background-color: #28B9EB;
+    opacity: 1;
+  }
+
+  .step.is-complete {
+    background-color: #28B9EB;
+    opacity: 0.25;
+  }
+</style>
+
+<div class="progress-tracker">
+  {% assign current_step = 1 %}
+
+  <div class="step is-active">{{ current_step }}</div>
+  {% assign current_step = current_step | plus: 1 %}
+
+  <div class="step">{{ current_step }}</div>
+  {% assign current_step = current_step | plus: 1 %}
+
+  <div class="step">{{ current_step }}</div>
+  {% assign current_step = current_step | plus: 1 %}
+
+  <div class="step">{{ current_step }}</div>
+</div>
+
+<div class="step-labels">
+  <div class="step-label">Select Location</div>
+  <div class="step-label">Add-ons</div>
+  <div class="step-label">Payment</div>
+  <div class="step-label">Student Info</div>
 </div>
