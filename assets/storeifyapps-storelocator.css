@@ -9263,7 +9263,7 @@ button#submit-search {
 }
 #map {
   width: 100%;
-  height: 100% !important;
+  flex: 0 1 auto;
   max-height: none !important;
 }
 .map-tab-mobile-bnt {
