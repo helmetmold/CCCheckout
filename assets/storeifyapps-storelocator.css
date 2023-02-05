@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: row;
 }
+.Campbox {
+  display: flex;
+  flex-direction: column;
+}
 #storeifyapps-storelocator-index {
   margin: 0 !important;
 }
