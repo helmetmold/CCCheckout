@@ -10,6 +10,9 @@
   background: #f2f2f2;
   padding: 15px;
 }
+.hide-camp-container {
+  display: none !important;
+}
 .Campbox {
   display: flex;
   flex-direction: column-reverse;
