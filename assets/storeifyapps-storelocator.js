@@ -537,10 +537,10 @@ if (window.jQuery) {
 
             var InnerItem = document.getElementsByClassName("inner-item");
 
-            var container = document.createElement("div");
-            container.setAttribute("camp-holder");
+            var container1 = document.createElement("div");
+            container1.setAttribute("camp-holder");
 
-            InnerItem.appendChild(container);
+            InnerItem.appendChild(container1);
 
             for (let i = 0; i < InnerItem.length; i++) {
               var CreativeCampBox = document.createElement("div");
