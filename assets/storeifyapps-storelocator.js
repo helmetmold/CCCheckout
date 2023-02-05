@@ -551,6 +551,7 @@ if (window.jQuery) {
                 CampBox.setAttribute("class", "Campbox");
                 var CampInfo = document.createElement("div");
                 var CampDays = document.createElement("div");
+                CampDays.innerText = locationdata.tags[index][j][2];
                 var CampTimes = document.createElement("div");
                 CampInfo.setAttribute("class", "CampInfo");
                 CampInfo.appendChild(CampDays);
