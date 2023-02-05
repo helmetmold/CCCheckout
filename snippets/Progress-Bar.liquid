@@ -1,6 +1,14 @@
 <style>
+  .progress-tracker {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2em 0;
+  }
+
   .step {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     text-align: center;
     color: #fff;
     background-color: #ddd;
@@ -22,26 +30,35 @@
     background-color: #28B9EB;
     opacity: 0.25;
   }
+
+  .step-label {
+    margin: 0 0.5em;
+  }
 </style>
 
 <div class="progress-tracker">
   {% assign current_step = 1 %}
 
-  <div class="step is-active">{{ current_step }}</div>
+  <div class="step is-active">
+    <div class="step-num">{{ current_step }}</div>
+    <div class="step-label">Select Location</div>
+  </div>
   {% assign current_step = current_step | plus: 1 %}
 
-  <div class="step">{{ current_step }}</div>
+  <div class="step">
+    <div class="step-num">{{ current_step }}</div>
+    <div class="step-label">Add-ons</div>
+  </div>
   {% assign current_step = current_step | plus: 1 %}
 
-  <div class="step">{{ current_step }}</div>
+  <div class="step">
+    <div class="step-num">{{ current_step }}</div>
+    <div class="step-label">Payment</div>
+  </div>
   {% assign current_step = current_step | plus: 1 %}
 
-  <div class="step">{{ current_step }}</div>
-</div>
-
-<div class="step-labels">
-  <div class="step-label">Select Location</div>
-  <div class="step-label">Add-ons</div>
-  <div class="step-label">Payment</div>
-  <div class="step-label">Student Info</div>
+  <div class="step">
+    <div class="step-num">{{ current_step }}</div>
+    <div class="step-label">Student Info</div>
+  </div>
 </div>
