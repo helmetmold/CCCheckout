@@ -16,7 +16,7 @@
   flex: 0 1 auto;
 }
 .storeify-sear-box {
-  height: 20% !important;
+  flex: 0 1 auto;
   z-index: 20 !important;
   position: relative !important;
   padding: 10px;
