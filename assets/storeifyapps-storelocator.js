@@ -538,7 +538,7 @@ if (window.jQuery) {
             var InnerItem = document.getElementsByClassName("inner-item");
 
             var container1 = document.createElement("div");
-            container1.setAttribute("camp-container");
+            container1.setAttribute("camp-container", container1);
 
             for (let i = 0; i < InnerItem.length; i++) {
               InnerItem[i].appendChild(container1);
