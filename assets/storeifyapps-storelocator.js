@@ -558,6 +558,7 @@ if (window.jQuery) {
                   Camp.onclick = function () {
                     window.open(locationdata.tags[index][j][1]);
                   };
+                  CampBox.appendChild(CampInfo);
                   CampBox.appendChild(Camp);
                 }
 
