@@ -8849,7 +8849,6 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 10px;
   cursor: pointer;
 }
 .inner-item h3 {
