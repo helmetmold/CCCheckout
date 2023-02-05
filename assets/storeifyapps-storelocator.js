@@ -2148,7 +2148,7 @@ if (window.jQuery) {
         "inner-item-active"
       );
       console.log("tap");
-      jQuery(".camp-container").hide();
+      jQuery(this).find(".camp-container").hide();
       jQuery(this).find(".camp-container").show();
       jQuery(this).addClass("inner-item-active");
       num = jQuery(this).parent().attr("datamarker");
