@@ -20,7 +20,36 @@ eqfeed_callback({
         phone: null,
         email: null,
         web: null,
-        tags: [],
+        tags: [
+          "CreativeCamps"[
+            ([
+              "Animation",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Filmmaking",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Youtube",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ])
+          ],
+          "TechCamps"[
+            ([
+              "AI",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Minecraft",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Roblox",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ])
+          ],
+        ],
         distance: null,
         lat: "30.0658996",
         lng: "-95.2255135",
