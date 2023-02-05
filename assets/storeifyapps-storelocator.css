@@ -13,6 +13,7 @@
 }
 #location {
   display: flex;
+  flex: 0 1 auto;
 }
 .storeify-sear-box {
   height: 20% !important;
