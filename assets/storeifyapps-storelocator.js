@@ -2147,7 +2147,6 @@ if (window.jQuery) {
       jQuery("#main-slider-storelocator .inner-item").removeClass(
         "inner-item-active"
       );
-      jQuery(".camp-container").css("display", "none");
       jQuery(this).find(".camp-container").css("display", "none");
       jQuery(this).addClass("inner-item-active");
       num = jQuery(this).parent().attr("datamarker");
