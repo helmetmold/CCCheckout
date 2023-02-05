@@ -552,9 +552,9 @@ if (window.jQuery) {
                 for (let j = 0; j < locationdata.tags[index].length; j++) {
                   var Camp = document.createElement("button");
                   Camp.setAttribute("class", "Camp");
-                  Camp.innerText = locationdata.tags[index][0][0];
+                  Camp.innerText = locationdata.tags[index][j][0];
                   Camp.onclick = function () {
-                    window.open(locationdata.tags[index][2]);
+                    window.open(locationdata.tags[index][j][1]);
                   };
                   CampBox.appendChild(Camp);
                 }
