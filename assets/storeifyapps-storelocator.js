@@ -539,7 +539,7 @@ if (window.jQuery) {
 
             for (let i = 0; i < InnerItem.length; i++) {
               var container1 = document.createElement("div");
-              var CampBox = document.createElement("div");
+
               container1.setAttribute("class", "camp-container");
 
               locationdata = gmarkers[i];
@@ -548,14 +548,8 @@ if (window.jQuery) {
 
               for (let index = 0; index < locationdata.tags.length; index++) {
                 console.log(locationdata.tags[index]);
+                var CampBox = document.createElement("div");
                 container1.appendChild(CampBox);
-                for (
-                  let index2 = 0;
-                  index2 < locationdata.tags[index];
-                  index2++
-                ) {
-                  console.log(locationdata.tags[index].CreativeCamps[index2]);
-                }
               }
               var ThreeDayCamp = document.createElement("button");
               var TwoDayCamp = document.createElement("button");
