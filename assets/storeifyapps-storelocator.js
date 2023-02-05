@@ -548,6 +548,7 @@ if (window.jQuery) {
               locationdata = gmarkers[i];
               var urls = locationdata.social;
 
+              console.log("camps: ");
               console.log(locationdata.camps);
 
               if (urls != "") {
