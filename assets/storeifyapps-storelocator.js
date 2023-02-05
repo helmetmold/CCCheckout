@@ -551,6 +551,8 @@ if (window.jQuery) {
                 CampBox.setAttribute("class", "Campbox");
                 for (let j = 0; j < locationdata.tags[index].length; j++) {
                   var Camp = document.createElement("button");
+                  var CampInfo = document.createElement("div");
+                  CampInfo.setAttribute("class", "CampInfo");
                   Camp.setAttribute("class", "Camp");
                   Camp.innerText = locationdata.tags[index][j][0];
                   Camp.onclick = function () {
