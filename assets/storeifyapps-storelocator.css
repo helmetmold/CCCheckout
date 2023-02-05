@@ -8594,9 +8594,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   float: right;
   color: inherit;
 }
-#storeify-detail-store #map {
-  height: 100%;
-}
+#storeify-detail-store #map,
 #street_view {
   height: 100%;
   display: none;
@@ -9300,7 +9298,6 @@ button#submit-search {
   }
   #map {
     width: 100%;
-    height: 400px !important;
   }
   .chose-search-slt.form-control-storeify {
     display: block;
