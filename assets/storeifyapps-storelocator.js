@@ -541,6 +541,8 @@ if (window.jQuery) {
             container.setAttribute("camp-holder");
 
             for (let i = 0; i < InnerItem.length; i++) {
+              var CreativeCampBox = document.createElement("button");
+              var TechCampBox = document.createElement("button");
               var ThreeDayCamp = document.createElement("button");
               var TwoDayCamp = document.createElement("button");
               ThreeDayCamp.setAttribute("class", "CampTypeButton");
