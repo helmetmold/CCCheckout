@@ -550,7 +550,7 @@ if (window.jQuery) {
                 var Camptainer = document.createElement("div");
                 Camptainer.setAttribute("camp-tainer");
                 for (let index2 = 0; index2 < array.length; index2++) {
-                  locationdata.tags[index].CreativeCamps[index2];
+                  console.log(locationdata.tags[index].CreativeCamps[index2]);
                 }
               }
               var ThreeDayCamp = document.createElement("button");
