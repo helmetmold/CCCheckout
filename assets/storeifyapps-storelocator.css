@@ -1730,6 +1730,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .bootstrap-storeifyapps .col-sm-4,
 .bootstrap-storeifyapps .col-md-4 {
   position: relative;
+  height: 100%;
 }
 .bootstrap-storeifyapps .col-lg-4,
 .bootstrap-storeifyapps .col-xs-5,
