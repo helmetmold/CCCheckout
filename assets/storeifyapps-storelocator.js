@@ -537,9 +537,6 @@ if (window.jQuery) {
 
             var InnerItem = document.getElementsByClassName("inner-item");
 
-            var Camptainer = document.createElement("div");
-            Camptainer.setAttribute("camp-type-box");
-
             for (let i = 0; i < InnerItem.length; i++) {
               var container1 = document.createElement("div");
               container1.setAttribute("camp-container");
