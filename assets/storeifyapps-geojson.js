@@ -302,7 +302,10 @@ eqfeed_callback({
         email: null,
         web: '<a class="storeify-storelocator-web" href="https://creator-camp.myshopify.com/products/katy-flagship-camps" target="_blank" rel="nofollow">https://creator-camp.myshopify.com/products/katy-flagship-camps</a>',
         tags: [
-          "Animation",
+          [
+            "Animation",
+            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+          ],
           "Filmmaking",
           "Youtube",
           "AI",
@@ -317,14 +320,6 @@ eqfeed_callback({
           '<a class="storeify-storelocator-link-social" href="https://creator-camp.myshopify.com/products/katy-flagship-tech-camps" target="_blank" rel="nofollow" target="_blank" style="background:#000000 !important;"><i style="color:#FFFFFF !important;" class="storeify-social-fa " aria-hidden="true"></i></a><a class="storeify-storelocator-link-social" href="https://creator-camp.myshopify.com/products/katy-flagship-camps" target="_blank" rel="nofollow" target="_blank" style="background:#000000 !important;"><i style="color:#FFFFFF !important;" class="storeify-social-fa empty" aria-hidden="true"></i></a>',
         country: "USA",
         city: "Katy",
-        camps: [
-          "Animation",
-          "Filmmaking",
-          "Youtuber",
-          "AI",
-          "Roblox",
-          "Minecraft",
-        ],
       },
     },
   ],
