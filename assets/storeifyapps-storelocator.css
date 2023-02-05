@@ -9140,7 +9140,6 @@ a.linkdetailstore {
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 .storelocator-layout-2 #main-slider-storelocator.storeify-first-alert {
   overflow-y: hidden;
