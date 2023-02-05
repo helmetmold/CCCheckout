@@ -553,6 +553,7 @@ if (window.jQuery) {
                 var CampDays = document.createElement("div");
                 CampDays.innerText = locationdata.tags[index][j][2];
                 var CampTimes = document.createElement("div");
+                CampDays.innerText = "8:30am - 3:30pm";
                 CampInfo.setAttribute("class", "CampInfo");
                 CampInfo.appendChild(CampDays);
                 CampInfo.appendChild(CampTimes);
