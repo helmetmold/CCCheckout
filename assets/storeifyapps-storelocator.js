@@ -556,8 +556,6 @@ if (window.jQuery) {
                   /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
                 var matches = urls.match(expression);
 
-                console.log(matches);
-
                 ThreeDayCamp.onclick = function () {
                   window.open(matches[1].substring(0, matches[1].length - 1));
                 };
