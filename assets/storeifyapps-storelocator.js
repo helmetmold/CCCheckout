@@ -545,6 +545,7 @@ if (window.jQuery) {
 
               locationdata = gmarkers[i];
               for (let index = 0; index < locationdata.tags.length; index++) {
+                CampBox.setAttribute("class", locationdata.tags[index]);
                 container1.appendChild(CampBox);
                 for (let index2 = 0; index2 < array.length; index2++) {
                   console.log(locationdata.tags[index].CreativeCamps[index2]);
