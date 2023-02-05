@@ -538,7 +538,6 @@ if (window.jQuery) {
             var InnerItem = document.getElementsByClassName("inner-item");
 
             var container1 = document.createElement("div");
-            container1.setAttribute("camp-holder");
 
             InnerItem.appendChild(container1);
 
