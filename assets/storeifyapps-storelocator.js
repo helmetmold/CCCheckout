@@ -548,6 +548,8 @@ if (window.jQuery) {
               locationdata = gmarkers[i];
               var urls = locationdata.social;
 
+              console.log(locationdata.camps);
+
               if (urls != "") {
                 var expression =
                   /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
