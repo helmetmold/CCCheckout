@@ -2147,6 +2147,7 @@ if (window.jQuery) {
       jQuery("#main-slider-storelocator .inner-item").removeClass(
         "inner-item-active"
       );
+      console.log("tap");
       jQuery(".camp-container").hide();
       jQuery(this).find(".camp-container").show();
       jQuery(this).addClass("inner-item-active");
