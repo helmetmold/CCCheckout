@@ -306,12 +306,26 @@ eqfeed_callback({
             "Animation",
             "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
           ],
-          "Filmmaking",
-          "Youtube",
-          "AI",
-          "Minecraft",
-          "Roblox",
-          "Cheese",
+          [
+            "Filmmaking",
+            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+          ],
+          [
+            "Youtube",
+            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+          ],
+          [
+            "AI",
+            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+          ],
+          [
+            "Minecraft",
+            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+          ],
+          [
+            "Roblox",
+            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+          ],
         ],
         distance: null,
         lat: "29.7881633",
