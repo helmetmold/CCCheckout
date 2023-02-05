@@ -8867,6 +8867,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .inner-item .item-content {
   float: left;
   width: 100%;
+  margin-top: 25px;
 }
 .store-marker h4 {
   margin: 0;
