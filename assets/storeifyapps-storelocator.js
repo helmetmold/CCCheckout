@@ -571,7 +571,7 @@ if (window.jQuery) {
                   window.open(matches[0].substring(0, matches[0].length - 1));
                 };
               }
-
+              InnerItem[i].appendChild(container1);
               InnerItem[i].appendChild(ThreeDayCamp);
               InnerItem[i].appendChild(TwoDayCamp);
             }
