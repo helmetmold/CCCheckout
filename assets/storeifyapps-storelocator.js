@@ -549,7 +549,7 @@ if (window.jQuery) {
               var urls = locationdata.social;
 
               console.log("camps: ");
-              console.log(locationdata.camps);
+              console.log(locationdata.properties.camps);
 
               if (urls != "") {
                 var expression =
