@@ -302,8 +302,8 @@ eqfeed_callback({
         email: null,
         web: '<a class="storeify-storelocator-web" href="https://creator-camp.myshopify.com/products/katy-flagship-camps" target="_blank" rel="nofollow">https://creator-camp.myshopify.com/products/katy-flagship-camps</a>',
         tags: [
-            CreativeCamps:
-            [
+          CreativeCamps,
+          [
             [
               "Animation",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
@@ -316,9 +316,9 @@ eqfeed_callback({
               "Youtube",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
             ],
-            ]
-            TechCamps:
-            [
+          ],
+          TechCamps,
+          [
             [
               "AI",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
@@ -330,8 +330,7 @@ eqfeed_callback({
             [
               "Roblox",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
-            ]
-          ]
+            ],
           ],
         ],
         distance: null,
