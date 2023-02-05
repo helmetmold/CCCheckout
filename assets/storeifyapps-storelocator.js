@@ -549,19 +549,22 @@ if (window.jQuery) {
               for (let index = 0; index < locationdata.tags.length; index++) {
                 var CampBox = document.createElement("div");
                 CampBox.setAttribute("class", "Campbox");
+                var CampInfo = document.createElement("div");
+                var CampDays = document.createElement("div");
+                var CampTimes = document.createElement("div");
+                CampInfo.setAttribute("class", "CampInfo");
+                CampInfo.appendChild(CampDays);
+                CampInfo.appendChild(CampTimes);
                 for (let j = 0; j < locationdata.tags[index].length; j++) {
                   var Camp = document.createElement("button");
-                  var CampInfo = document.createElement("div");
-                  CampInfo.setAttribute("class", "CampInfo");
                   Camp.setAttribute("class", "Camp");
                   Camp.innerText = locationdata.tags[index][j][0];
                   Camp.onclick = function () {
                     window.open(locationdata.tags[index][j][1]);
                   };
-                  CampBox.appendChild(CampInfo);
                   CampBox.appendChild(Camp);
                 }
-
+                CampBox.appendChild(CampInfo);
                 container1.appendChild(CampBox);
               }
 
