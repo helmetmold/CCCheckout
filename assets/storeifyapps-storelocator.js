@@ -548,6 +548,7 @@ if (window.jQuery) {
               console.log(locationdata.tags);
 
               for (let index = 0; index < locationdata.tags.length; index++) {
+                console.log(locationdata.tags[index]);
                 CampBox.setAttribute("class", locationdata.tags[index]);
                 container1.appendChild(CampBox);
                 for (
