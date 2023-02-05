@@ -25,6 +25,7 @@ eqfeed_callback({
             [
               "Animation",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+              "Mon-Wed",
             ],
             [
               "Filmmaking",
@@ -33,20 +34,24 @@ eqfeed_callback({
             [
               "Youtube",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+              "Mon-Wed",
             ],
           ],
           [
             [
               "AI",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+              "Thu-Fri",
             ],
             [
               "Minecraft",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+              "Thu-Fri",
             ],
             [
               "Roblox",
               "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+              "Thu-Fri",
             ],
           ],
         ],
