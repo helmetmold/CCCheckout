@@ -302,31 +302,34 @@ eqfeed_callback({
         email: null,
         web: '<a class="storeify-storelocator-web" href="https://creator-camp.myshopify.com/products/katy-flagship-camps" target="_blank" rel="nofollow">https://creator-camp.myshopify.com/products/katy-flagship-camps</a>',
         tags: [
-          ["CreativeCamps",[
-            "Animation",
-            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
-          ],
           [
-            "Filmmaking",
-            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
-          ],
-          [
-            "Youtube",
-            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
-          ],]
-          ["TechCamps",]
-          
-          [
-            "AI",
-            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
-          ],
-          [
-            "Minecraft",
-            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
-          ],
-          [
-            "Roblox",
-            "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            CreativeCamps,
+            [
+              "Animation",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Filmmaking",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Youtube",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+          ][
+            (TechCamps,
+            [
+              "AI",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Minecraft",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ],
+            [
+              "Roblox",
+              "https://creator-camp.myshopify.com/products/katy-flagship-camps?",
+            ])
           ],
         ],
         distance: null,
