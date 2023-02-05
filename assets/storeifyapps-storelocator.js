@@ -549,7 +549,7 @@ if (window.jQuery) {
               var urls = locationdata.social;
 
               console.log("camps: ");
-              console.log(locationdata.camps);
+              console.log(storelocator_tags_response);
 
               if (urls != "") {
                 var expression =
