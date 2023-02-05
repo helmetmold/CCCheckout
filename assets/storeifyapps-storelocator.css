@@ -9248,7 +9248,7 @@ button#submit-search {
 .input-radius-slt-mobile,
 .input-radius-choose-mobile,
 .map-tab-result {
-  height: 80% !important;
+  flex: 0 1 auto;
   width: 100%;
   position: relative;
   z-index: 10;
