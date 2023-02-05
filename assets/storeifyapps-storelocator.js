@@ -537,6 +537,10 @@ if (window.jQuery) {
 
             var InnerItem = document.getElementsByClassName("inner-item");
 
+            var container = document
+              .createElement("div")
+              .setAttribute("camp-holder");
+
             for (let i = 0; i < InnerItem.length; i++) {
               var ThreeDayCamp = document.createElement("button");
               var TwoDayCamp = document.createElement("button");
