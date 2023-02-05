@@ -537,6 +537,9 @@ if (window.jQuery) {
 
             var InnerItem = document.getElementsByClassName("inner-item");
 
+            var CampBox = document.createElement("div");
+            CampBox.setAttribute("class", "Campbox");
+
             for (let i = 0; i < InnerItem.length; i++) {
               var container1 = document.createElement("div");
 
@@ -548,8 +551,7 @@ if (window.jQuery) {
 
               for (let index = 0; index < locationdata.tags.length; index++) {
                 console.log(locationdata.tags[index]);
-                var CampBox = document.createElement("div");
-                CampBox.textContent = "Camp";
+
                 container1.appendChild(CampBox);
               }
               var ThreeDayCamp = document.createElement("button");
