@@ -561,31 +561,8 @@ if (window.jQuery) {
 
                 container1.appendChild(CampBox);
               }
-              var ThreeDayCamp = document.createElement("button");
-              var TwoDayCamp = document.createElement("button");
-              ThreeDayCamp.setAttribute("class", "CampTypeButton");
-              TwoDayCamp.setAttribute("class", "CampTypeButton");
-              ThreeDayCamp.innerText = "3-day Creative Camps";
-              TwoDayCamp.innerText = "2-day Tech Camps";
 
-              var urls = locationdata.social;
-
-              if (urls != "") {
-                var expression =
-                  /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
-                var matches = urls.match(expression);
-
-                ThreeDayCamp.onclick = function () {
-                  window.open(matches[1].substring(0, matches[1].length - 1));
-                };
-
-                TwoDayCamp.onclick = function () {
-                  window.open(matches[0].substring(0, matches[0].length - 1));
-                };
-              }
               InnerItem[i].appendChild(container1);
-              InnerItem[i].appendChild(ThreeDayCamp);
-              InnerItem[i].appendChild(TwoDayCamp);
             }
           }
         );
