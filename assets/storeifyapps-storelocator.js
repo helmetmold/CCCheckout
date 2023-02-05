@@ -545,7 +545,11 @@ if (window.jQuery) {
             for (let i = 0; i < InnerItem.length; i++) {
               var CreativeCampBox = document.createElement("div");
               var TechCampBox = document.createElement("div");
-
+              locationdata = gmarkers[i];
+              for (let index = 0; index < locationdata.tags.length; index++) {
+                var Camptainer = document.createElement("div");
+                Camptainer.setAttribute("camp-tainer");
+              }
               var ThreeDayCamp = document.createElement("button");
               var TwoDayCamp = document.createElement("button");
               ThreeDayCamp.setAttribute("class", "CampTypeButton");
@@ -553,12 +557,7 @@ if (window.jQuery) {
               ThreeDayCamp.innerText = "3-day Creative Camps";
               TwoDayCamp.innerText = "2-day Tech Camps";
 
-              locationdata = gmarkers[i];
               var urls = locationdata.social;
-
-              console.log("camps: ");
-              console.log(locationdata.tags);
-              console.log(locationdata.camps);
 
               if (urls != "") {
                 var expression =
