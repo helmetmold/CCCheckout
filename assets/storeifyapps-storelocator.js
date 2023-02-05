@@ -539,9 +539,8 @@ if (window.jQuery) {
 
             for (let i = 0; i < InnerItem.length; i++) {
               var container1 = document.createElement("div");
-              container1.setAttribute("class", "camp-container");
-
               var CampBox = document.createElement("div");
+              container1.setAttribute("class", "camp-container");
 
               locationdata = gmarkers[i];
 
@@ -549,7 +548,6 @@ if (window.jQuery) {
 
               for (let index = 0; index < locationdata.tags.length; index++) {
                 console.log(locationdata.tags[index]);
-                CampBox.setAttribute("class", locationdata.tags[index]);
                 container1.appendChild(CampBox);
                 for (
                   let index2 = 0;
