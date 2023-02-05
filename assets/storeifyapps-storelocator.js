@@ -549,6 +549,9 @@ if (window.jQuery) {
               for (let index = 0; index < locationdata.tags.length; index++) {
                 var Camptainer = document.createElement("div");
                 Camptainer.setAttribute("camp-tainer");
+                for (let index2 = 0; index2 < array.length; index2++) {
+                  locationdata.tags[index].CreativeCamps[index2];
+                }
               }
               var ThreeDayCamp = document.createElement("button");
               var TwoDayCamp = document.createElement("button");
