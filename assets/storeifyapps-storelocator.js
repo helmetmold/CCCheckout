@@ -2148,6 +2148,9 @@ if (window.jQuery) {
         "inner-item-active"
       );
       jQuery(this).find(".camp-container").css("display", "none");
+      if (jQuery(this).find(".camp-container").css("display") == "none") {
+        jQuery(this).find(".camp-container").css("display", "flex");
+      }
       jQuery(this).addClass("inner-item-active");
       num = jQuery(this).parent().attr("datamarker");
       google.maps.event.trigger(gmarkers[num], "click");
