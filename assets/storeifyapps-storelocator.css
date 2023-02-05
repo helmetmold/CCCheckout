@@ -9261,7 +9261,7 @@ button#submit-search {
 }
 #map {
   width: 100%;
-  flex: 0 1 auto;
+  flex: 0 1 auto !important;
   max-height: none !important;
 }
 .map-tab-mobile-bnt {
