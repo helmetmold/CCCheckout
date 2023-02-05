@@ -536,20 +536,24 @@ if (window.jQuery) {
             }
 
             var InnerItem = document.getElementsByClassName("inner-item");
-            var container1 = document.createElement("div");
-
-            container1.setAttribute("class", "camp-container");
-
-            var CampBox = document.createElement("div");
-            CampBox.setAttribute("class", "Campbox");
 
             for (let i = 0; i < InnerItem.length; i++) {
+              var container1 = document.createElement("div");
+
+              container1.setAttribute("class", "camp-container");
+
               locationdata = gmarkers[i];
 
               console.log(locationdata.tags);
 
               for (let index = 0; index < locationdata.tags.length; index++) {
-                console.log(locationdata.tags[index]);
+                var CampBox = document.createElement("div");
+                CampBox.setAttribute("class", "Campbox");
+                for (let j = 0; j < locationdata.tags[index].length; j++) {
+                  var Camp = document.createElement("button");
+                  Camp.setAttribute("class", "Camp");
+                  CampBox.appendChild(Camp);
+                }
 
                 container1.appendChild(CampBox);
               }
