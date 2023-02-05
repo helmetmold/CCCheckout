@@ -550,6 +550,7 @@ if (window.jQuery) {
 
               console.log("camps: ");
               console.log(locationdata.tags);
+              console.log(locationdata.camps);
 
               if (urls != "") {
                 var expression =
