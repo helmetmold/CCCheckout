@@ -538,11 +538,10 @@ if (window.jQuery) {
             var InnerItem = document.getElementsByClassName("inner-item");
 
             for (let i = 0; i < InnerItem.length; i++) {
-              var container1 = document.createElement("div");
-              container1.setAttribute("class", "camp-container");
               InnerItem[i].appendChild(container1);
               var CreativeCampBox = document.createElement("div");
               var TechCampBox = document.createElement("div");
+
               locationdata = gmarkers[i];
               for (let index = 0; index < locationdata.tags.length; index++) {
                 for (let index2 = 0; index2 < array.length; index2++) {
