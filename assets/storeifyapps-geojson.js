@@ -308,6 +308,7 @@ eqfeed_callback({
           "AI",
           "Minecraft",
           "Roblox",
+          "Cheese",
         ],
         distance: null,
         lat: "29.7881633",
