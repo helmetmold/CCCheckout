@@ -536,15 +536,14 @@ if (window.jQuery) {
             }
 
             var InnerItem = document.getElementsByClassName("inner-item");
+            var container1 = document.createElement("div");
+
+            container1.setAttribute("class", "camp-container");
 
             var CampBox = document.createElement("div");
             CampBox.setAttribute("class", "Campbox");
 
             for (let i = 0; i < InnerItem.length; i++) {
-              var container1 = document.createElement("div");
-
-              container1.setAttribute("class", "camp-container");
-
               locationdata = gmarkers[i];
 
               console.log(locationdata.tags);
