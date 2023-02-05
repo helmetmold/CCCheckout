@@ -2,7 +2,7 @@
 @import "//use.fontawesome.com/releases/v5.3.1/css/all.css";
 @import "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 
-.camp-container {
+.active-camp-container {
   display: flex;
   flex-direction: row;
   margin-top: 30px;
@@ -10,8 +10,13 @@
   background: #f2f2f2;
   padding: 15px;
 }
-.hide-camp-container {
-  display: none !important;
+.camp-container {
+  display: none;
+  flex-direction: row;
+  margin-top: 30px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #f2f2f2;
+  padding: 15px;
 }
 .Campbox {
   display: flex;
