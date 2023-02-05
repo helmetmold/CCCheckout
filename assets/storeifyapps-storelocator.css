@@ -8,7 +8,7 @@
 }
 .Campbox {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 50%;
 }
 .Camp {
