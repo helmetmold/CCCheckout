@@ -413,7 +413,6 @@ a.product__text {
 
 @media screen and (min-width: 750px) {
   .product__info-container {
-    max-width: 60rem;
     display: flex;
     flex-direction: row;
   }
