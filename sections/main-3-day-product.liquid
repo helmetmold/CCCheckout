@@ -59,10 +59,6 @@
   <div>
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       <h1>{{ product.title | escape }}</h1>
-              <a href="{{ product.url }}" class="product__title">
-                <h2 class="h1">
-                  {{ product.title | escape }}
-                </h2>
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
   </div>
