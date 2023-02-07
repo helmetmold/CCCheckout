@@ -280,7 +280,7 @@
                   {%- if block.settings.picker_type == 'button' -%}
                     <variant-radios
                       id="variant-radios-{{ section.id }}"
-                      class="no-js-hidden product-row"
+                      class="no-js-hidden"
                       data-section="{{ section.id }}"
                       data-url="{{ product.url }}"
                       {{ block.shopify_attributes }}
@@ -302,7 +302,7 @@
                   {%- else -%}
                     <variant-selects
                       id="variant-selects-{{ section.id }}"
-                      class="no-js-hidden"
+                      class="no-js-hidden product-row"
                       data-section="{{ section.id }}"
                       data-url="{{ product.url }}"
                       {{ block.shopify_attributes }}
