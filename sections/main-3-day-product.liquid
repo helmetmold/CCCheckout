@@ -63,39 +63,6 @@
     </div>
   </div>
     <div class="select-options">
-      <noscript class="product-form__noscript-wrapper-{{ section.id }}">
-                <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
-                  <label class="form__label" for="Variants-{{ section.id }}">
-                    {{- 'products.product.product_variants' | t -}}
-                  </label>
-                  <div class="select">
-                    <select
-                      name="id"
-                      id="Variants-{{ section.id }}"
-                      class="select__select"
-                      form="{{ product_form_id }}"
-                    >
-                      {%- for variant in product.variants -%}
-                        <option
-                          {% if variant == product.selected_or_first_available_variant %}
-                            selected="selected"
-                          {% endif %}
-                          {% if variant.available == false %}
-                            disabled
-                          {% endif %}
-                          value="{{ variant.id }}"
-                        >
-                          {{ variant.title }}
-                          - {{ variant.price | money | strip_html }}
-                          {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-                        </option>
-                      {%- endfor -%}
-                    </select>
-                    {% render 'icon-caret' %}
-                  </div>
-                </div>
-              </noscript>
-    </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div
         id="ProductInfo-{{ section.id }}"
@@ -821,6 +788,7 @@
           {% render 'icon-arrow' %}
         </a>
       </div>
+    </div>
     </div>
     {%- if section.settings.media_position == 'right' -%}
       {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
