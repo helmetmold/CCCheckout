@@ -19,6 +19,10 @@
   display: none !important;
 }
 
+#test {
+  display: none;
+}
+
 @media screen and (min-width: 750px) {
   .product--thumbnail .product__media-gallery,
   .product--thumbnail_slider .product__media-gallery,
