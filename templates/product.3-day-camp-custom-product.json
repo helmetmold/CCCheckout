@@ -52,11 +52,11 @@
         "vendor",
         "title",
         "product-rating",
-        "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description"
+        "description",
+        "price"
       ],
       "settings": {
         "enable_sticky_info": false,
