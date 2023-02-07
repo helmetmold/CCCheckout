@@ -377,7 +377,10 @@
                       data-url="{{ product.url }}"
                       {{ block.shopify_attributes }}
                     >
-                    Cheese
+                    <fieldset class="js product-form__input">
+                          <legend class="form__label">{{ option.name }}</legend>
+                          Cheese
+                    </fieldset>
                     </variant-radios>
                   {%- for tags in product.tags -%}
                     {% if tags == "Lunch" %}
