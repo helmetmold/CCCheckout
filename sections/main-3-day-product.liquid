@@ -373,7 +373,7 @@
                   {%- for tags in product.tags -%}
                     {% if tags == "Lunch" %}
                     <div class="product-form__input product-form__input--dropdown">
-                      <label class="product-form__input" for="3-day-lunch"> Lunch Options </label>
+                      <label class="form__label" for="3-day-lunch"> Lunch Options </label>
                         <select class="Extras" form="{{product_form_id}}" name="properties[Lunch]">
                           <option selected="selected" disabled>Pick a lunch option</option>  
                           <option value="Regular">Regular</option>
@@ -383,7 +383,7 @@
                     {% endif %}
                     {% if tags == "ipads" %}
                     <div>
-                      <label class="product-form__input" for="iPad-Rental"> iPad Rental </label>
+                      <label class="form__label" for="iPad-Rental"> iPad Rental </label>
                         <select class="Extras" form="{{product_form_id}}" name="properties[iPad Rental]">
                           <option selected="selected" disabled>Choose iPad Rental options</option>  
                           <option value="Standard iPad rental">Standard iPad rental</option>
@@ -393,7 +393,7 @@
                     {% endif %}
                     {% if tags == "Pickup" %}
                     <div>
-                      <label class="product-form__input" for="Pick-up-and-drop-off"> Pick-up/drop-off options </label>
+                      <label class="form__label" for="Pick-up-and-drop-off"> Pick-up/drop-off options </label>
                         <select class="Extras" form="{{product_form_id}}" name="properties[Pick-up/Drop-off options]">
                           <option  selected="selected" disabled>Choose Pick-up/drop-off option</option>  
                           <option value="Early Drop-Off">Early Drop-Off</option>
