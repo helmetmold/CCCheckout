@@ -372,9 +372,13 @@
                 <div class="camp-exttras">
                   {%- for tags in product.tags -%}
                     {% if tags == "Lunch" %}
-                    <button class="select" selected="selected" disabled>Pick a lunch option</button>  
-                    <button class="select" value="Regular">Regular</button>
-                    <button class="select" value="Vegetarian" >Vegetarian</button>
+                    <div class="product-form__input product-form__input--dropdown">
+                      <label class="form__label" for="3-day-lunch"> Lunch Options </label>
+                        <button class="select" selected="selected" disabled>Pick a lunch option</button>  
+                        <button class="select" value="Regular">Regular</button>
+                        <button class="select" value="Vegetarian" >Vegetarian</button>
+                      </select>
+                    </div>
                     <div class="product-form__input product-form__input--dropdown">
                       <label class="form__label" for="3-day-lunch"> Lunch Options </label>
                         <select class="select__select" form="{{product_form_id}}" name="properties[Lunch]">
