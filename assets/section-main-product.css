@@ -16,7 +16,7 @@
 }
 
 .hidden-camp-upsell {
-  display: none;
+  display: none !important;
 }
 
 @media screen and (min-width: 750px) {
