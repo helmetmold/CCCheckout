@@ -39,8 +39,8 @@
 }
 
 .product__info-container {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 @media screen and (min-width: 750px) {
