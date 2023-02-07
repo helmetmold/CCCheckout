@@ -77,43 +77,6 @@
                       price_class: 'price--large'
                     -%}
                   </div>
-                  {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-                    <div class="product__tax caption rte">
-                      {%- if shop.taxes_included -%}
-                        {{ 'products.product.include_taxes' | t }}
-                      {%- endif -%}
-                      {%- if shop.shipping_policy.body != blank -%}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-                  <div {{ block.shopify_attributes }}>
-                    {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                    {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                      {{ form | payment_terms }}
-                    {%- endform -%}
-                  </div>
-                  <p
-                    class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
-                    {{ block.shopify_attributes }}
-                    id="Inventory-{{ section.id }}"
-                    role="status"
-                  >
-                  </p>
-                  {%- if product.description != blank -%}
-                    <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                      {{ product.description }}
-                    </div>
-                  {%- endif -%}
-                  <p
-                    class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
-                    id="Sku-{{ section.id }}"
-                    role="status"
-                    {{ block.shopify_attributes }}
-                  >
-                    <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span> {{- product.selected_or_first_available_variant.sku -}}
-                  </p>
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                     <details id="Details-{{ block.id }}-{{ section.id }}">
                       <summary>
@@ -180,47 +143,6 @@
                   <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
                     {{- block.settings.text -}}
                   </a>
-                  <share-button
-                    id="Share-{{ section.id }}"
-                    class="share-button quick-add-hidden"
-                    {{ block.shopify_attributes }}
-                  >
-                    <button class="share-button__button hidden">
-                      {% render 'icon-share' %}
-                      {{ block.settings.share_label | escape }}
-                    </button>
-                    <details id="Details-{{ block.id }}-{{ section.id }}">
-                      <summary class="share-button__button">
-                        {% render 'icon-share' %}
-                        {{ block.settings.share_label | escape }}
-                      </summary>
-                      <div id="Product-share-{{ section.id }}" class="share-button__fallback motion-reduce">
-                        <div class="field">
-                          <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status">
-                          </span>
-                          <input
-                            type="text"
-                            class="field__input"
-                            id="url"
-                            value="{{ product.selected_variant.url | default: product.url | prepend: request.origin }}"
-                            placeholder="{{ 'general.share.share_url' | t }}"
-                            onclick="this.select();"
-                            readonly
-                          >
-                          <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
-                        </div>
-                        <button class="share-button__close hidden no-js-hidden">
-                          {% render 'icon-close' %}
-                          <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
-                        </button>
-                        <button class="share-button__copy no-js-hidden">
-                          {% render 'icon-clipboard' %}
-                          <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
-                        </button>
-                      </div>
-                    </details>
-                  </share-button>
-                  <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
                   {%- unless product.has_only_default_variant -%}
                     {%- if block.settings.picker_type == 'button' -%}
                       <variant-radios
