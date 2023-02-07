@@ -370,15 +370,6 @@
                   </div>
                 </noscript>
                 <div class="camp-exttras">
-                  <variant-radios
-                      id="variant-radios-{{ section.id }}"
-                      class="no-js-hidden"
-                      data-section="{{ section.id }}"
-                    >
-                    <fieldset class="js product-form__input">
-                          <legend class="form__label">{{ option.name }}</legend>
-                    </fieldset>
-                    </variant-radios>
                   {%- for tags in product.tags -%}
                     {% if tags == "Lunch" %}
                     <div class="product-form__input product-form__input--dropdown">
