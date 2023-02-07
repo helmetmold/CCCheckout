@@ -63,45 +63,38 @@
     </div>
   </div>
     <div class="select-options">
-      {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
-        {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
-          {%- if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold -%}
-            <svg width="15" height="15" aria-hidden="true">
-              <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(238,148,65, 0.3)"/>
-              <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
-            </svg>
-            {%- if block.settings.show_inventory_quantity -%}
-              {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
-            {%- else -%}
-              {{- 'products.product.inventory_low_stock' | t -}}
-            {%- endif -%}
-          {%- else -%}
-            <svg width="15" height="15" aria-hidden="true">
-              <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
-              <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
-            </svg>
-            {%- if block.settings.show_inventory_quantity -%}
-              {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
-            {%- else -%}
-                {{- 'products.product.inventory_in_stock' | t -}}
-            {%- endif -%}
-          {%- endif -%}
-        {%- else -%}
-          {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
-            <svg width="15" height="15" aria-hidden="true">
-              <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
-              <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
-            </svg>
-            {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
-          {%- else -%}
-            <svg width="15" height="15" aria-hidden="true">
-              <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(200,200,200, 0.3)"/>
-              <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)"/>
-            </svg>
-            {{- 'products.product.inventory_out_of_stock' | t -}}
-          {%- endif -%}
-        {%- endif -%}
-      {%- endif -%}
+      <noscript class="product-form__noscript-wrapper-{{ section.id }}">
+                <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+                  <label class="form__label" for="Variants-{{ section.id }}">
+                    {{- 'products.product.product_variants' | t -}}
+                  </label>
+                  <div class="select">
+                    <select
+                      name="id"
+                      id="Variants-{{ section.id }}"
+                      class="select__select"
+                      form="{{ product_form_id }}"
+                    >
+                      {%- for variant in product.variants -%}
+                        <option
+                          {% if variant == product.selected_or_first_available_variant %}
+                            selected="selected"
+                          {% endif %}
+                          {% if variant.available == false %}
+                            disabled
+                          {% endif %}
+                          value="{{ variant.id }}"
+                        >
+                          {{ variant.title }}
+                          - {{ variant.price | money | strip_html }}
+                          {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                    {% render 'icon-caret' %}
+                  </div>
+                </div>
+              </noscript>
     </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div
