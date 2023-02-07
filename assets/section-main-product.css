@@ -29,8 +29,8 @@
 }
 
 .product--stacked {
-  display: flex;
-  flex-direction: row;
+  display: flex !important;
+  flex-direction: row !important;
 }
 
 @media screen and (min-width: 750px) {
