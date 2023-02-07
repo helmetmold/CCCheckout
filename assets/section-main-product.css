@@ -697,8 +697,8 @@ a.product__text {
 
 @media screen and (min-width: 990px) {
   .product--stacked {
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
   }
 
   .product__media-item {
