@@ -189,32 +189,32 @@
                     </button>
                   </quantity-input>
                 </div>
-                {%- when 'price' -%}
-                  <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                    {%- render 'price',
-                      product: product,
-                      use_variant: true,
-                      show_badges: true,
-                      price_class: 'price--large'
-                    -%}
+              {%- when 'price' -%}
+                <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+                </div>
+                {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                  <div class="product__tax caption rte">
+                    {%- if shop.taxes_included -%}
+                      {{ 'products.product.include_taxes' | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
                   </div>
-                  {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-                    <div class="product__tax caption rte">
-                      {%- if shop.taxes_included -%}
-                        {{ 'products.product.include_taxes' | t }}
-                      {%- endif -%}
-                      {%- if shop.shipping_policy.body != blank -%}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-                  <div {{ block.shopify_attributes }}>
-                    {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                    {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                      {{ form | payment_terms }}
-                    {%- endform -%}
-                  </div>
+                {%- endif -%}
+                <div {{ block.shopify_attributes }}>
+                  {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                  {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    {{ form | payment_terms }}
+                  {%- endform -%}
+                </div>
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -275,6 +275,161 @@
                   </details>
                 </share-button>
                 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+                <div>
+                  {%- for tags in product.tags -%}
+                    {% if tags == "Lunch" %}
+                    <div>
+                      <label class="product-form__input" for="3-day-lunch"> Lunch Options </label>
+                        <select class="Extras" form="{{product_form_id}}" name="properties[Lunch]">
+                          <option selected="selected" disabled>Pick a lunch option</option>  
+                          <option value="Regular">Regular</option>
+                          <option value="Vegetarian" >Vegetarian</option>
+                        </select>
+                    </div>
+                    {% endif %}
+                    {% if tags == "ipads" %}
+                    <div>
+                      <label class="product-form__input" for="iPad-Rental"> iPad Rental </label>
+                        <select class="Extras" form="{{product_form_id}}" name="properties[iPad Rental]">
+                          <option selected="selected" disabled>Choose iPad Rental options</option>  
+                          <option value="Standard iPad rental">Standard iPad rental</option>
+                          <option value="iPad rental with insurance" >iPad rental with insurance</option>
+                        </select>
+                    </div>
+                    {% endif %}
+                    {% if tags == "Pickup" %}
+                    <div>
+                      <label class="product-form__input" for="Pick-up-and-drop-off"> Pick-up/drop-off options </label>
+                        <select class="Extras" form="{{product_form_id}}" name="properties[Pick-up/Drop-off options]">
+                          <option  selected="selected" disabled>Choose Pick-up/drop-off option</option>  
+                          <option value="Early Drop-Off">Early Drop-Off</option>
+                          <option value="Late Pick-up" >Late Pick-up</option>
+                          <option value="Early Drop-Off and Late Pick-up" >Early Drop-Off and Late Pick-up</option>
+                        </select>
+                    </div>
+                  {% endif %}
+                {%- endfor -%}
+                </div>
+                  <button id="abcd">Click me</button>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+
+                var arrayProductIds = [];
+                var x;
+                $(document).ready
+                  (
+                    function () 
+                    {
+                      $(document).on
+                      ('click','#abcd',function()
+                        {
+                          arrayProductIds = [];
+                          x = 0;
+                          AddExtras();
+                          makeAjaxRequest();
+                        }
+                      )
+                    }
+                  );    
+
+                function clickupsell()
+                {
+                  var quickAddButtons = document.getElementsByClassName("quick-add__submit");
+                  quickAddButtons[0].click();
+                }
+
+
+                function makeAjaxRequest() 
+                {             
+                  data = arrayProductIds[x];
+                  console.log(x);
+                  x++;
+
+                  jQuery.ajax
+                  (
+                    {
+                      type: 'POST',
+                      url: '/cart/add.js',
+                      data: data,
+                      dataType: 'json',
+                      success: function() 
+                      { 
+                        console.log(arrayProductIds.length);
+                        if(x < arrayProductIds.length)
+                        {
+                          makeAjaxRequest();
+                        }
+                        else
+                        {
+                          clickupsell();
+                        }
+                      }
+                    }
+                  );
+                }
+
+                function AddExtras() 
+                {
+                  var CampProduct = 
+                  {
+                  "id": "{{ product.selected_or_first_available_variant.id }}", 
+                  "quantity": 1, 
+                  "properties": {}
+                  };
+
+                  var extras = document.getElementsByClassName('Extras');
+                  
+                  for (let index = 0; index < extras.length; index++) 
+                  {
+                    if (extras[index].value == "Regular") 
+                    {
+                      var RegularLunch = {"id": 44404689371435, "quantity": 1};
+                      arrayProductIds.push(RegularLunch);
+                      CampProduct.properties["Lunch"] = "Regular";
+                    } 
+                    if (extras[index].value == "Vegetarian") 
+                    {
+                      var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
+                      arrayProductIds.push(VegetarianLunch);
+                      CampProduct.properties["Lunch"] = "Vegetarian";
+                    }
+                    if (extras[index].value == "Standard iPad rental") 
+                    {
+                      var StandardiPad = {"id": 44405919351083, "quantity": 1};
+                      arrayProductIds.push(StandardiPad);
+                      CampProduct.properties["iPad Rental"] = "Standard iPad rental";
+                    }
+                    if (extras[index].value == "iPad rental with insurance") 
+                    {
+                      var InsurediPad = {"id": 44405919383851, "quantity": 1};
+                      arrayProductIds.push(InsurediPad);
+                      CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance";
+                    }
+                    if (extras[index].value == "Early Drop-Off")  
+                    {
+                      var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
+                      arrayProductIds.push(EarlyDropOff);
+                      CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off";
+                    }
+                    if (extras[index].value == "Late Pick-up") 
+                    {
+                      var LatePickUp = {"id": 44405930393899, "quantity": 1};
+                      arrayProductIds.push(LatePickUp);
+                      CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up";
+                    }
+                    if (extras[index].value == "Early Drop-Off and Late Pick-up") 
+                    {
+                      var LateAndEarly = {"id": 44405930426667, "quantity": 1};
+                      arrayProductIds.push(LateAndEarly);
+                      CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up";
+                    }
+                    
+                  }
+                  arrayProductIds.push(CampProduct);
+                }
+                </script>
+            </div>
+                  
               {%- when 'variant_picker' -%}
                 {%- unless product.has_only_default_variant -%}
                   {%- if block.settings.picker_type == 'button' -%}
