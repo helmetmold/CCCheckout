@@ -195,7 +195,7 @@
 }
 
 .fit-to-text {
-  flex-basis: fit-content;
+  width: 20%;
 }
 
 .max-text-2 {
