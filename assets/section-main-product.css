@@ -244,13 +244,18 @@
 .ExtraTitle {
   margin: 0;
   display: flex;
-  align-content: left;
+  align-items: start;
+  justify-content: left;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .ExtraSubtext {
   margin: 0;
   display: flex;
-  align-content: left;
+  align-items: start;
+  justify-content: left;
+  font-size: 12px;
 }
 
 /* Form Elements */
