@@ -215,6 +215,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex-basis: max-content;
+  gap: 15px;
 }
 
 /* Form Elements */
