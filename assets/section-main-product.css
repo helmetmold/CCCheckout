@@ -228,6 +228,11 @@
   gap: 15px;
 }
 
+.titleAndExplanation {
+  display: flex;
+  justify-content: left;
+}
+
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
