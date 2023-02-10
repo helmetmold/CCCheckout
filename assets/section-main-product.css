@@ -269,6 +269,7 @@
 
 .Dropdown_Selector {
   padding: 1rem 2rem !important;
+  height: 100px;
   width: 80%;
   font-weight: 600;
   font-size: 16px;
