@@ -405,13 +405,18 @@
                     {% endif %}
                     {% if tags == "Pickup" %}
                     <div>
-                      <label class="form__label" for="Pick-up-and-drop-off"> Pick-up/drop-off options </label>
-                        <select class="select__select" form="{{product_form_id}}" name="properties[Pick-up/Drop-off options]">
-                          <option selected="selected" disabled>Choose Pick-up/drop-off option</option>  
-                          <option value="Early Drop-Off">Early Drop-Off</option>
-                          <option value="Late Pick-up" >Late Pick-up</option>
-                          <option value="Early Drop-Off and Late Pick-up" >Early Drop-Off and Late Pick-up</option>
-                        </select>
+                      <div class="pickup-dropoff-option">
+                        <input type="radio" name="pickup_dropoff" value="early_dropoff" id="early_dropoff">
+                        <label for="early_dropoff">Early Drop-Off</label>
+                      </div>
+                      <div class="pickup-dropoff-option">
+                        <input type="radio" name="pickup_dropoff" value="late_pickup" id="late_pickup">
+                        <label for="late_pickup">Late Pick-Up</label>
+                      </div>
+                      <div class="pickup-dropoff-option">
+                        <input type="radio" name="pickup_dropoff" value="late_pickup_early_dropoff" id="late_pickup_early_dropoff">
+                        <label for="late_pickup_early_dropoff">Late Pick-Up and Early Drop Off</label>
+                      </div>
                     </div>
                   {% endif %}
                 {%- endfor -%}
