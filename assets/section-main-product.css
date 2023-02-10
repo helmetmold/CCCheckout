@@ -270,18 +270,18 @@
 .VariantDropdown {
   width: 80%;
   padding-right: 15px;
-  flex: 0 0 100%;
-  padding: 0;
-  margin: 0 0 1.2rem 0;
-  max-width: 37rem;
-  min-width: fit-content;
-  border: none;
 }
 
 .Dropdown_Selector {
   width: 100%;
   font-weight: 600;
   font-size: 16px;
+  flex: 0 0 100%;
+  padding: 0;
+  margin: 0 0 1.2rem 0;
+  max-width: 37rem;
+  min-width: fit-content;
+  border: none;
 }
 
 /* Form Elements */
