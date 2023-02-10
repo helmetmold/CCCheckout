@@ -203,7 +203,9 @@
   justify-content: center;
 }
 
-.max-text-2 {
+.align-center {
+  align-content: center;
+  justify-content: center;
 }
 
 .max-width {
