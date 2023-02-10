@@ -553,6 +553,8 @@ blockquote {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   letter-spacing: 0.04rem;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .color-foreground {
