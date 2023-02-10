@@ -189,6 +189,14 @@
   margin-top: 0.5rem;
 }
 
+.max-text {
+  flex-basis: max-content;
+}
+
+.fit-to-text {
+  flex-basis: fit-content;
+}
+
 .max-width {
   width: 100% !important;
   max-width: 100% !important;
