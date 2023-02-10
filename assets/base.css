@@ -1684,11 +1684,7 @@ details[open] > .share-button__fallback {
 
 /* component-form */
 .field__input,
-.select__select {
-  font-weight: 600;
-  font-size: 16px;
-}
-.customer .field input,
+.select__select .customer .field input,
 .customer select {
   -webkit-appearance: none;
   appearance: none;
@@ -1748,8 +1744,8 @@ details[open] > .share-button__fallback {
 .select__select {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
-  font-weight: var(--font-body-weight);
-  font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 16px;
   color: rgba(var(--color-foreground), 0.75);
 }
 
