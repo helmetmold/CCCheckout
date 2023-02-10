@@ -228,6 +228,12 @@
   gap: 15px;
 }
 
+.ExtraButtonDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 .titleAndExplanation {
   display: flex;
   justify-content: left;
