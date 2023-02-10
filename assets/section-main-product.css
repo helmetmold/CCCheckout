@@ -236,6 +236,8 @@
 
 .ExtraTitle {
   margin: 0;
+  display: flex;
+  align-content: left;
 }
 
 .ExtraSubtext {
