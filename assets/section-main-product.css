@@ -234,6 +234,10 @@
   flex-direction: column;
 }
 
+.ExtraTitle {
+  margin: 0;
+}
+
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
