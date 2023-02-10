@@ -282,6 +282,8 @@ fieldset.product-form__input .form__label {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.25);
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-form__input input[type="radio"] + label:before {
