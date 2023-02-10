@@ -293,9 +293,9 @@
 }
 
 .Dropdown_Selector :focus-visible {
-  border: 1px solid #28b9eb;
-  box-shadow: 0px 0px 4px #43cbff;
-  outline-offset: none;
+  border: 1px solid #28b9eb !important;
+  box-shadow: 0px 0px 4px #43cbff !important;
+  outline-offset: none !important;
   outline: none !important;
 }
 
