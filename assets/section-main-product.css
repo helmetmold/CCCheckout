@@ -230,7 +230,7 @@
 
 .ExtraButtonDetails {
   display: flex !important;
-  justify-content: space-between;
+  justify-content: space-between !important;
   flex-direction: row;
   width: 100% !important;
 }
