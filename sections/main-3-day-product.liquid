@@ -404,7 +404,7 @@
                     </div>
                     {% endif %}
                     {% if tags == "Pickup" %}
-                    <div>
+                    <div class="product-form__input product-row">
                       <div class="pickup-dropoff-option">
                         <input type="radio" name="pickup_dropoff" value="early_dropoff" id="early_dropoff">
                         <label for="early_dropoff">Early Drop-Off</label>
@@ -486,7 +486,7 @@
                   "id": "{{ product.selected_or_first_available_variant.id }}", 
                   "quantity": 1, 
                   "properties": {}
-                  };
+                  }; 
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
