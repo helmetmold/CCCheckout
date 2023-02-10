@@ -283,6 +283,15 @@
   border-radius: var(--variant-pills-radius);
 }
 
+.Dropdown_Selector:hover {
+  border: 1px solid #28b9eb;
+}
+
+.Dropdown_Selector::selection {
+  border: 1px solid #28b9eb;
+  box-shadow: 0px 0px 4px #43cbff;
+}
+
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
