@@ -270,6 +270,10 @@
 .VariantDropdown {
 }
 
+.Dropdown_Selector {
+  width: 100%;
+}
+
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
