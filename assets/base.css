@@ -1684,7 +1684,10 @@ details[open] > .share-button__fallback {
 
 /* component-form */
 .field__input,
-.select__select,
+.select__select {
+  font-weight: 600;
+  font-size: 16px;
+}
 .customer .field input,
 .customer select {
   -webkit-appearance: none;
