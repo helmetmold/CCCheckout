@@ -489,6 +489,8 @@
                   };
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
+                  var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
+                  var ipadRentalOption = document.querySelector('input[name="ipad_rental"]:checked').value;
 
                   if (lunchOption === "Regular")  
                   {
@@ -503,54 +505,34 @@
                     CampProduct.properties["Lunch"] = "Vegetarian";
                   }
 
-                  var extras = document.getElementsByClassName('Extras');
-                  
+                  if (pickupDropoffOption === "early_dropoff") {
+                    var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
+                    arrayProductIds.push(EarlyDropOff);
+                    CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off";
+                  } 
+                  else if (pickupDropoffOption === "late_pickup") {
+                    var LatePickUp = {"id": 44405930393899, "quantity": 1};
+                    arrayProductIds.push(LatePickUp);
+                    CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up";
+                  } 
+                  else if (pickupDropoffOption === "late_pickup_early_dropoff") {
+                    var LateAndEarly = {"id": 44405930426667, "quantity": 1};
+                    arrayProductIds.push(LateAndEarly);
+                    CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up";
+                  }
 
-                  for (let index = 0; index < extras.length; index++) 
-                  {
-                    if (extras[index].value == "Regular") 
-                    {
-                      var RegularLunch = {"id": 44404689371435, "quantity": 1};
-                      arrayProductIds.push(RegularLunch);
-                      CampProduct.properties["Lunch"] = "Regular";
-                    } 
-                    if (extras[index].value == "Vegetarian") 
-                    {
-                      var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
-                      arrayProductIds.push(VegetarianLunch);
-                      CampProduct.properties["Lunch"] = "Vegetarian";
-                    }
-                    if (extras[index].value == "Standard iPad rental") 
-                    {
-                      var StandardiPad = {"id": 44405919351083, "quantity": 1};
-                      arrayProductIds.push(StandardiPad);
-                      CampProduct.properties["iPad Rental"] = "Standard iPad rental";
-                    }
-                    if (extras[index].value == "iPad rental with insurance") 
-                    {
-                      var InsurediPad = {"id": 44405919383851, "quantity": 1};
-                      arrayProductIds.push(InsurediPad);
-                      CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance";
-                    }
-                    if (extras[index].value == "Early Drop-Off")  
-                    {
-                      var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
-                      arrayProductIds.push(EarlyDropOff);
-                      CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off";
-                    }
-                    if (extras[index].value == "Late Pick-up") 
-                    {
-                      var LatePickUp = {"id": 44405930393899, "quantity": 1};
-                      arrayProductIds.push(LatePickUp);
-                      CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up";
-                    }
-                    if (extras[index].value == "Early Drop-Off and Late Pick-up") 
-                    {
-                      var LateAndEarly = {"id": 44405930426667, "quantity": 1};
-                      arrayProductIds.push(LateAndEarly);
-                      CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up";
-                    }
-                    
+                  if (ipadRentalOption === "standard_rental") {
+                    var StandardiPad = {"id": 44405919351083, "quantity": 1};
+                    arrayProductIds.push(StandardiPad);
+                    CampProduct.properties["iPad Rental"] = "Standard iPad rental";
+                  } 
+                  else if (ipadRentalOption === "rental_with_insurance") {
+                    var InsurediPad = {"id": 44405919383851, "quantity": 1};
+                    arrayProductIds.push(InsurediPad);
+                    CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance";
+                  } 
+                  else if (ipadRentalOption === "no_thanks") {
+                    // do not add ipad rental product
                   }
                   arrayProductIds.push(CampProduct);
                 }
