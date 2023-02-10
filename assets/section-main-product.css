@@ -23,10 +23,6 @@
   display: none;
 }
 
-.quantity {
-  display: none;
-}
-
 .select-options {
   display: flex;
   flex-direction: column;
@@ -596,7 +592,9 @@ a.product__text {
 }
 
 .product--no-media fieldset.product-form__input,
-.product--no-media .product-form__quantity,
+.product--no-media .product-form__quantity {
+  display: none;
+}
 .product--no-media .product-form__input--dropdown,
 .product--no-media .share-button,
 .product--no-media .product__view-details,
