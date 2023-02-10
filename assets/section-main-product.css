@@ -232,6 +232,7 @@
   display: flex;
   justify-content: left;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .ExtraTitle {
