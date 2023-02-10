@@ -193,12 +193,14 @@
   display: flex;
   align-content: center;
   width: 40%;
+  justify-content: center;
 }
 
 .fit-to-text {
   display: flex;
   align-content: center;
   width: 20%;
+  justify-content: center;
 }
 
 .max-text-2 {
