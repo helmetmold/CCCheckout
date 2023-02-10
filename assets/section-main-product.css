@@ -198,6 +198,9 @@
   flex-basis: fit-content;
 }
 
+.fit-to-text-2 {
+}
+
 .max-width {
   width: 100% !important;
   max-width: 100% !important;
