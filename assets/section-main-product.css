@@ -189,6 +189,10 @@
   margin-top: 0.5rem;
 }
 
+.max-width {
+  width: 100% !important;
+}
+
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
