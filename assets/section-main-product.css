@@ -593,7 +593,7 @@ a.product__text {
 
 .product--no-media fieldset.product-form__input,
 .product--no-media .product-form__quantity {
-  display: none;
+  display: none !important;
 }
 .product--no-media .product-form__input--dropdown,
 .product--no-media .share-button,
