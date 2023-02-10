@@ -175,7 +175,7 @@
 /* Product form */
 
 .product-form {
-  display: block;
+  display: none;
 }
 
 .product-form__error-message-wrapper:not([hidden]) {
