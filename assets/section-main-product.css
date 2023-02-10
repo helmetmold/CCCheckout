@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+.hiddenBlock {
+  display: none !important;
+}
+
 .product.grid {
   gap: 0;
 }
