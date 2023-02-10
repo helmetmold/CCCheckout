@@ -287,7 +287,11 @@
   border: 1px solid #28b9eb;
 }
 
-.Dropdown_Selector::selection {
+.Dropdown_Selector:hover {
+  border: 1px solid #28b9eb;
+}
+
+.Dropdown_Selector :visited {
   border: 1px solid #28b9eb;
   box-shadow: 0px 0px 4px #43cbff;
 }
