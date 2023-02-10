@@ -231,6 +231,7 @@
 .titleAndExplanation {
   display: flex;
   justify-content: left;
+  flex-direction: column;
 }
 
 /* Form Elements */
