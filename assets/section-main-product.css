@@ -275,7 +275,7 @@ fieldset.product-form__input .form__label {
   padding: 1rem 2rem;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
-  line-height: 1;
+  line-height: 2;
   text-align: center;
   transition: border var(--duration-short) ease;
   cursor: pointer;
