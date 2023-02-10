@@ -386,23 +386,21 @@
                         <label for="no_thanks">No Thanks</label>
                       </div>
                     </div>
-                    <div class="product-form__input product-form__input--dropdown">
-                      <label class="form__label" for="3-day-lunch"> Lunch Options </label>
-                        <select class="select__select" form="{{product_form_id}}" name="properties[Lunch]">
-                          <option class="select" selected="selected" disabled>Pick a lunch option</option>  
-                          <option class="select" value="Regular">Regular</option>
-                          <option class="select" value="Vegetarian" >Vegetarian</option>
-                        </select>
-                    </div>
                     {% endif %}
                     {% if tags == "ipads" %}
-                    <div>
-                      <label class="form__label" for="iPad-Rental"> iPad Rental </label>
-                        <select class="select__select" form="{{product_form_id}}" name="properties[iPad Rental]">
-                          <option selected="selected" disabled>Choose iPad Rental options</option>  
-                          <option value="Standard iPad rental">Standard iPad rental</option>
-                          <option value="iPad rental with insurance" >iPad rental with insurance</option>
-                        </select>
+                    <div class="product-form__input product-row">
+                      <div class="ipad-rental-option">
+                        <input type="radio" name="ipad_rental" value="standard_rental" id="standard_rental">
+                        <label for="standard_rental">Standard Rental</label>
+                      </div>
+                      <div class="ipad-rental-option">
+                        <input type="radio" name="ipad_rental" value="rental_with_insurance" id="rental_with_insurance">
+                        <label for="rental_with_insurance">Rental w/ Insurance</label>
+                      </div>
+                      <div class="ipad-rental-option">
+                        <input type="radio" name="ipad_rental" value="no_thanks" id="no_thanks">
+                        <label for="no_thanks">No Thanks</label>
+                      </div>
                     </div>
                     {% endif %}
                     {% if tags == "Pickup" %}
