@@ -190,11 +190,14 @@
 }
 
 .max-text {
-  flex-basis: max-content;
+  display: flex;
+  align-content: center;
   width: 40%;
 }
 
 .fit-to-text {
+  display: flex;
+  align-content: center;
   width: 20%;
 }
 
