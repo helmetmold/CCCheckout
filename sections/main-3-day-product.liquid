@@ -373,7 +373,7 @@
                 <div class="camp-exttras">
                   {%- for tags in product.tags -%}
                     {% if tags == "Lunch" %}
-                    <h3>Lunch</h3>
+                    <label>Lunch</label>
                     <div class="product-form__input product-row max-width">
                       <div class="lunch-option max-text">
                         <input class="selectButton" type="radio" name="lunch" value="Regular" id="regular">
@@ -406,7 +406,7 @@
                     </div>
                     {% endif %}
                     {% if tags == "ipads" %}
-                    <h3>iPad Rental</h3>
+                    <label>iPad Rental</label>
                     <div class="product-form__input product-row max-width">
                       <div class="ipad-rental-option max-text"> 
                         <input class="selectButton" type="radio" name="ipad_rental" value="standard_rental" id="standard_rental">
@@ -440,7 +440,7 @@
                     </div>
                     {% endif %}
                     {% if tags == "Pickup" %}
-                    <h3>Pick-Up/Drop-off Options</h3>
+                    <label>Pick-Up/Drop-off Options</label>
                     <div class="product-form__input product-row max-width">
                       <div class="pickup-dropoff-option max-text-2">
                         <input class="selectButton" type="radio" name="pickup_dropoff" value="early_dropoff" id="early_dropoff">
