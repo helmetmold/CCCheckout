@@ -60,7 +60,8 @@
     <div>
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {%- for tags in product.tags -%}
-        {% if tags == "Filmmaking" %}
+        <div class="campicons">
+          {% if tags == "Filmmaking" %}
         <div>Filmmaking</div>
         {% endif %}
         {% if tags == "Animation" %}
@@ -69,6 +70,7 @@
         {% if tags == "Youtube" %}
         <div>Youtube</div>
         {% endif %}
+        </div>
       {%- endfor -%}  
     <h1 class="product_title_heading">{{ product.title | escape }}</h1>
       {%- if product.description != blank -%}
