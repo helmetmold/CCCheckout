@@ -66,7 +66,7 @@
         "selectedDiscountFormat" : "SAVE {{selectedDiscountPercentage}}",
         "manageSubscriptionBtnFormat" : "<a href='apps\/memberships' class='appstle_manageSubBtn' ><button class='btn' style='padding: 2px 20px'>Manage Membership<\/button><a><br><br>",
         "manageSubscriptionUrl" : "apps\/memberships",
-        "appstlePlanId": -1,
+        "appstlePlanId": 1,
         "showCheckoutSubscriptionBtn": true,
         "disableLoadingJquery": false,
         "enableMessagingForNonMembers": "false",
