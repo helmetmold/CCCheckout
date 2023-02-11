@@ -2802,6 +2802,8 @@ details-disclosure > details {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
   background-attachment: fixed;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 @media screen and (forced-colors: active) {
