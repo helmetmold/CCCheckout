@@ -15,7 +15,7 @@
         };
         document.getElementsByTagName("head")[0].appendChild(script)
       };
-      appstleLoadScript("https://cdn.shopify.com/s/files/1/0688/5235/1275/t/8/assets/appstle-membership.js?v=1674972960");
+      appstleLoadScript("https://cdn.shopify.com/s/files/1/0688/5235/1275/t/8/assets/appstle-membership.js?v=1676101516");
 
       window.AM = Window.AM || {};
       AM.Config = {
@@ -37,17 +37,17 @@
         "sellingPlanSelectTitle": "DELIVERY FREQUENCY",
         "subscriptionPriceDisplayText": "",
         "tooltipTitle": "Membership detail",
-        "api_key": "kaMX8dFymcrS",
+        "api_key": "wE4e8QCwWxZn",
         "showTooltipOnClick": "false",
         "tooltipDesctiption": "<strong>Have complete control of your memberships<\/strong><br\/><br\/>Skip, reschedule, edit, cancel deliveries anytime matching your needs.",
-        "tooltipDescriptionOnPrepaidPlan": "<b>Prepaid Plan Details<\/b><\/br> Total price: {{totalPrice}} ( Price for every delivery: {{pricePerDelivery}})",
+        "tooltipDescriptionOnPrepaidPlan": "<b>Prepaid Plan Details<\/b><\/br> Total price: {{{totalPrice}}} ( Price for every delivery: {{{pricePerDelivery}}})",
         "tooltipDescriptionOnMultipleDiscount": "<b>Discount Details<\/b><\/br> Initial discount is {{discountOne}} and then {{discountTwo}}",
         "tooltipDescriptionCustomization": "{{{defaultTooltipDescription}}} <\/br>  {{{prepaidDetails}}} <\/br> {{{discountDetails}}}",
         "orderStatusManageSubscriptionTitle": "Membership",
         "orderStatusManageSubscriptionDescription": "Continue to your account to view and manage your memberships. Please use the same email address that you used to buy the membership.",
         "orderStatusManageSubscriptionButtonText": "Manage your membership",
         "subscriptionOptionSelectedByDefault" : false,
-        "totalPricePerDeliveryText" : "{{prepaidPerDeliveryPrice}}\/delivery",
+        "totalPricePerDeliveryText" : "{{{prepaidPerDeliveryPrice}}}\/delivery",
         "memberOnlySellingPlansJson": {},
         "fieldsBySellingPlanId": "{}",
         "rulesByCustomerTag": "{}",
@@ -59,10 +59,10 @@
         "showSubOptionBeforeOneTime": false,
         "showStaticTooltip": false,
         "showAppstleLink": false,
-        "sellingPlanTitleText" : "{{sellingPlanName}} ({{sellingPlanPrice}}\/delivery)",
-        "oneTimePriceText" : "{{price}}",
-        "selectedPayAsYouGoSellingPlanPriceText" : "{{price}}",
-        "selectedPrepaidSellingPlanPriceText" : "{{pricePerDelivery}}",
+        "sellingPlanTitleText" : "{{sellingPlanName}} ({{{sellingPlanPrice}}}\/delivery)",
+        "oneTimePriceText" : "{{{price}}}",
+        "selectedPayAsYouGoSellingPlanPriceText" : "{{{price}}}",
+        "selectedPrepaidSellingPlanPriceText" : "{{{pricePerDelivery}}}",
         "selectedDiscountFormat" : "SAVE {{selectedDiscountPercentage}}",
         "manageSubscriptionBtnFormat" : "<a href='apps\/memberships' class='appstle_manageSubBtn' ><button class='btn' style='padding: 2px 20px'>Manage Membership<\/button><a><br><br>",
         "manageSubscriptionUrl" : "apps\/memberships",
