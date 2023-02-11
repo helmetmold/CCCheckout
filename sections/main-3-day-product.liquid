@@ -62,14 +62,14 @@
       {%- for tags in product.tags -%}
         <div class="campicons_row">
           {% if tags == "Filmmaking" %}
-        <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Filmmaking.png" />
-        {% endif %}
-        {% if tags == "Animation" %}
-        <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Animation.png" />
-        {% endif %}
-        {% if tags == "Youtube" %}
-        <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Youtube.png" />
-        {% endif %}
+          <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Filmmaking.png" />
+          {% endif %}
+          {% if tags == "Animation" %}
+          <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Animation.png" />
+          {% endif %}
+          {% if tags == "Youtube" %}
+          <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Youtube.png" />
+          {% endif %}
         </div>
       {%- endfor -%}  
     <h1 class="product_title_heading">{{ product.title | escape }}</h1>
