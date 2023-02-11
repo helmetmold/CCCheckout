@@ -967,26 +967,6 @@
   <div class="hidden-camp-upsell">
     
   </div>
-  <div id="test">
-    {% for tag in product.tags %}
-      {% assign first_letter = tag | slice: 0 %}
-      {% if first_letter == "_" %}
-        {% assign first_underscore_tag = tag %}
-        {% break %}
-      {% endif %}
-      {% endfor %}
-    {% for productcamp in collections.all.products %}   
-      {% if productcamp.tags contains first_underscore_tag %} 
-        {% if productcamp.tags contains "Tech Camp" %}  
-        {% render 'card-product', 
-        card_product: productcamp,
-        show_quick_add: true,
-        %}
-      {% endif %}
-    {% endif %}
-    {% endfor %}
-
-  </div>
   
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
