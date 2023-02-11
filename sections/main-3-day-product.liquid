@@ -60,15 +60,15 @@
     <div>
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {%- for tags in product.tags -%}
-        <div class="campicons">
+        <div class="campicons_row">
           {% if tags == "Filmmaking" %}
-        <img src="https://educationstation.github.io/CCLocation/img/Filmmaking.png" />
+        <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Filmmaking.png" />
         {% endif %}
         {% if tags == "Animation" %}
-        <img src="https://educationstation.github.io/CCLocation/img/Animation.png" />
+        <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Animation.png" />
         {% endif %}
         {% if tags == "Youtube" %}
-        <img src="https://educationstation.github.io/CCLocation/img/Youtube.png" />
+        <img class="camp_icon" src="https://educationstation.github.io/CCLocation/img/Youtube.png" />
         {% endif %}
         </div>
       {%- endfor -%}  
