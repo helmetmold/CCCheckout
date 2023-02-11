@@ -174,7 +174,8 @@
 
 .campicons_row {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
+  justify-content: flex-start;
   flex-direction: row;
 }
 
