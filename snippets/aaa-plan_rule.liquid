@@ -1,0 +1,61 @@
+<!--Cart Rule-->
+{% assign aaa_cart_hide_item = false %}
+
+{% assign aaa_item_type = 'product'%}
+
+  {% for aaa_rule in shop.metafields.aaa_mem %}
+
+	{% assign key_wrd = aaa_rule.last | split: ',' %}
+	
+	{% if key_wrd.last == "show" %} <!--Means show anly when login-->
+		{% assign aaa_cart_hide_item = true %}	
+	{% endif %}
+     
+  {% endfor %}
+
+ {% for aaa_rule in shop.metafields.aaa_mem %}
+	{% assign key_wrd = aaa_rule.last | split: ',' %}
+    {% for customer_tag in customer.tags %}
+      {% if customer_tag == key_wrd.first %}
+         {% if key_wrd.last == 'hide' %}
+              {% assign aaa_cart_hide_item = true %}
+          {% endif %}
+          {% if key_wrd.last == 'show' %}
+              {% assign aaa_cart_hide_item = false %}
+          {% endif %}
+      {% endif %}
+    {% endfor %}
+{% endfor %}
+
+
+
+<!--Price Rule-->
+
+{% assign aaa_price_hide_item = false %}
+
+{% assign aaa_item_type = 'product'%}
+
+  {% for aaa_rule in shop.metafields.aaa_mem_price %}
+
+  {% assign key_wrd = aaa_rule.last | split: ',' %}
+  
+  {% if key_wrd.last == "show" %} <!--Means show anly when login-->
+    {% assign aaa_price_hide_item = true %} 
+  {% endif %}
+     
+  {% endfor %}
+
+ {% for aaa_rule in shop.metafields.aaa_mem_price %}
+  {% assign key_wrd = aaa_rule.last | split: ',' %}
+    {% for customer_tag in customer.tags %}
+      {% if customer_tag == key_wrd.first %}
+         {% if key_wrd.last == 'hide' %}
+              {% assign aaa_price_hide_item = true %}
+          {% endif %}
+          {% if key_wrd.last == 'show' %}
+              {% assign aaa_price_hide_item = false %}
+          {% endif %}
+      {% endif %}
+    {% endfor %}
+{% endfor %}
+
