@@ -178,6 +178,10 @@
   display: none;
 }
 
+.product_title {
+  margin: 0;
+}
+
 .product-form__error-message-wrapper:not([hidden]) {
   display: flex;
   align-items: flex-start;
