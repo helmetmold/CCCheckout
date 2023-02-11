@@ -373,6 +373,7 @@
                 <div class="camp-exttras">
                   {%- for tags in product.tags -%}
                     {% if tags == "Lunch" %}
+                    <h3>Lunch</h3>
                     <div class="product-form__input product-row max-width">
                       <div class="lunch-option max-text">
                         <input class="selectButton" type="radio" name="lunch" value="Regular" id="regular">
@@ -405,6 +406,7 @@
                     </div>
                     {% endif %}
                     {% if tags == "ipads" %}
+                    <h3>iPad Rental</h3>
                     <div class="product-form__input product-row max-width">
                       <div class="ipad-rental-option max-text"> 
                         <input class="selectButton" type="radio" name="ipad_rental" value="standard_rental" id="standard_rental">
@@ -438,6 +440,7 @@
                     </div>
                     {% endif %}
                     {% if tags == "Pickup" %}
+                    <h3>Pick-Up/Drop-off Options</h3>
                     <div class="product-form__input product-row max-width">
                       <div class="pickup-dropoff-option max-text-2">
                         <input class="selectButton" type="radio" name="pickup_dropoff" value="early_dropoff" id="early_dropoff">
@@ -974,22 +977,13 @@
       {% endfor %}
     {% for productcamp in collections.all.products %}   
       {% if productcamp.tags contains first_underscore_tag %} 
-        {% if productcamp.tags contains "Tech Camp" %} 
+        {% if productcamp.tags contains "Tech Camp" %}  
         {% render 'card-product', 
         card_product: productcamp,
         show_quick_add: true,
         %}
       {% endif %}
     {% endif %}
-    {% endfor %}
-
-    {% assign featured_and_sale_products = shop.products | where: "tags", first_underscore_tag %}
-    {{featured_and_sale_products}}
-    {% for campproduct in featured_and_sale_products %}
-      {% render 'card-product', 
-      card_product: campproduct,
-      show_quick_add: true,
-      %}
     {% endfor %}
 
   </div>
