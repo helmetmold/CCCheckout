@@ -172,6 +172,15 @@
   display: none;
 }
 
+.campicons_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.camp_icons {
+  width: 20px;
+}
+
 /* Product form */
 
 .product-form {
