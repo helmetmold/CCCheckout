@@ -71,9 +71,9 @@
                   {%- for item in cart.items -%}
                     {% for tags in item.product.tags%}
                       {% if tags == "AddOn" %}
-                      <div>Fuck Off</div> 
                       <div class="make-into-rows">
                         <td class="cart-item__media">
+                          <div>Fuck Off</div> 
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                             <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
