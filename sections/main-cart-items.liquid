@@ -71,134 +71,263 @@
                   {%- for item in cart.items -%}
                     {% for tags in item.product.tags%}
                       {% if tags == "AddOn" %}
-                      <td class="cart-item__media">
-                        {% if item.image %}
-                          {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                          <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
-                            <div class="cart-item__image-container gradient global-media-settings">
-                              <img src="{{ item.image | image_url: width: 300 }}"
-                                class="cart-item__image"
-                                alt="{{ item.image.alt | escape }}"
-                                loading="lazy"
-                                width="150"
-                                height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
-                              >
-                            </div>
-                        {% endif %}
-                      </td>
-                      <td class="cart-item__details">
-                        {%- if settings.show_vendor -%}
-                          <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
-                        {%- endif -%}
-
-                      <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
-                    
-                    {%- if item.original_price != item.final_price -%}
-                      <div class="cart-item__discounted-prices">
-                        <span class="visually-hidden">
-                          {{ 'products.product.price.regular_price' | t }}
-                        </span>
-                        <s class="cart-item__old-price product-option">
-                          <span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span>
-                        </s>
-                        <span class="visually-hidden">
-                          {{ 'products.product.price.sale_price' | t }}
-                        </span>
-                        <strong class="cart-item__final-price product-option">
-                          <span class="bcpo-cart-item-price" data-key="{{item.key}}">{{ item.final_price | money }}</span>
-                        </strong>
-                      </div>
-                    {%- else -%}
-                      <div class="product-option">
-                        <span class='upsellfunnel-cart-item-price' data-key='{{item.key}}'><span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span></span>
-                      </div>
-                    {%- endif -%}
-
-                    {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
-                      <dl>
-                        {%- if item.product.has_only_default_variant == false -%}
-                          {%- for option in item.options_with_values -%}
-                            <div class="product-option">
-                              <dt>{{ option.name }}: </dt>
-                              <dd>{{ option.value }}</dd>
-                            </div>
-                          {%- endfor -%}
-                        {%- endif -%}
-
-                        {%- for property in item.properties -%}
-                          {%- assign property_first_char = property.first | slice: 0 -%}
-                          {%- if property.last != blank and property_first_char != '_' -%}
-                            <div class="product-option">
-                              <dt>{{ property.first }}: </dt>
-                              <dd>
-                                {%- if property.last contains '/uploads/' -%}
-                                  <a href="{{ property.last }}" class="link" target="_blank">
-                                    
-{% assign file_type = property.last | split: '.' | last | downcase %}
-{% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
-{% if file_types contains file_type %}
-  <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
-{% else %}
-  <span class="bcpo-cart-file">Uploaded file</span>
-{% endif %}
-
-                                  </a>
-                                {%- else -%}
-                                  
-{% if property.last contains '/uploads/' %}
-	{% assign file_type = property.last | split: '.' | last | downcase %}
-	{% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
-	{% if file_types contains file_type %}
-		<div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
-	{% else %}
-		<span class="bcpo-cart-file">Uploaded file</span>
-	{% endif %}
-{% else %}
-	
-{% if property.last contains '/uploads/' %}
-	{% assign file_type = property.last | split: '.' | last | downcase %}
-	{% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
-	{% if file_types contains file_type %}
-		<div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
-	{% else %}
-		<span class="bcpo-cart-file">Uploaded file</span>
-	{% endif %}
-{% else %}
-	
-{% if property.last contains '/uploads/' %}
-	{% assign file_type = property.last | split: '.' | last | downcase %}
-	{% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
-	{% if file_types contains file_type %}
-		<div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
-	{% else %}
-		<span class="bcpo-cart-file">Uploaded file</span>
-	{% endif %}
-{% else %}
-	{{ property.last }}
-{% endif %}
-{% endif %}
-{% endif %}
-                                {%- endif -%}
-                              </dd>
-                            </div>
+                      <div>
+                        <td class="cart-item__media">
+                          {% if item.image %}
+                            {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
+                            <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
+                              <div class="cart-item__image-container gradient global-media-settings">
+                                <img src="{{ item.image | image_url: width: 300 }}"
+                                  class="cart-item__image"
+                                  alt="{{ item.image.alt | escape }}"
+                                  loading="lazy"
+                                  width="150"
+                                  height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                                >
+                              </div>
+                          {% endif %}
+                        </td>
+                        <td class="cart-item__details">
+                          {%- if settings.show_vendor -%}
+                            <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                           {%- endif -%}
+  
+                        <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+                      
+                      {%- if item.original_price != item.final_price -%}
+                        <div class="cart-item__discounted-prices">
+                          <span class="visually-hidden">
+                            {{ 'products.product.price.regular_price' | t }}
+                          </span>
+                          <s class="cart-item__old-price product-option">
+                            <span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span>
+                          </s>
+                          <span class="visually-hidden">
+                            {{ 'products.product.price.sale_price' | t }}
+                          </span>
+                          <strong class="cart-item__final-price product-option">
+                            <span class="bcpo-cart-item-price" data-key="{{item.key}}">{{ item.final_price | money }}</span>
+                          </strong>
+                        </div>
+                      {%- else -%}
+                        <div class="product-option">
+                          <span class='upsellfunnel-cart-item-price' data-key='{{item.key}}'><span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span></span>
+                        </div>
+                      {%- endif -%}
+  
+                      {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
+                        <dl>
+                          {%- if item.product.has_only_default_variant == false -%}
+                            {%- for option in item.options_with_values -%}
+                              <div class="product-option">
+                                <dt>{{ option.name }}: </dt>
+                                <dd>{{ option.value }}</dd>
+                              </div>
+                            {%- endfor -%}
+                          {%- endif -%}
+  
+                          {%- for property in item.properties -%}
+                            {%- assign property_first_char = property.first | slice: 0 -%}
+                            {%- if property.last != blank and property_first_char != '_' -%}
+                              <div class="product-option">
+                                <dt>{{ property.first }}: </dt>
+                                <dd>
+                                  {%- if property.last contains '/uploads/' -%}
+                                    <a href="{{ property.last }}" class="link" target="_blank">
+                                      
+  {% assign file_type = property.last | split: '.' | last | downcase %}
+  {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+  {% if file_types contains file_type %}
+    <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+  {% else %}
+    <span class="bcpo-cart-file">Uploaded file</span>
+  {% endif %}
+  
+                                    </a>
+                                  {%- else -%}
+                                    
+  {% if property.last contains '/uploads/' %}
+    {% assign file_type = property.last | split: '.' | last | downcase %}
+    {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+    {% if file_types contains file_type %}
+      <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+    {% else %}
+      <span class="bcpo-cart-file">Uploaded file</span>
+    {% endif %}
+  {% else %}
+    
+  {% if property.last contains '/uploads/' %}
+    {% assign file_type = property.last | split: '.' | last | downcase %}
+    {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+    {% if file_types contains file_type %}
+      <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+    {% else %}
+      <span class="bcpo-cart-file">Uploaded file</span>
+    {% endif %}
+  {% else %}
+    
+  {% if property.last contains '/uploads/' %}
+    {% assign file_type = property.last | split: '.' | last | downcase %}
+    {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+    {% if file_types contains file_type %}
+      <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+    {% else %}
+      <span class="bcpo-cart-file">Uploaded file</span>
+    {% endif %}
+  {% else %}
+    {{ property.last }}
+  {% endif %}
+  {% endif %}
+  {% endif %}
+                                  {%- endif -%}
+                                </dd>
+                              </div>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </dl>
+  
+                        <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                      {%- endif -%}
+  
+                      <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                        {%- for discount in item.discounts -%}
+                          <li class="discounts__discount">
+                            {%- render 'icon-discount' -%}
+                            {{ discount.title }}
+                          </li>
                         {%- endfor -%}
-                      </dl>
-
-                      <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
-                    {%- endif -%}
-
-                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                      {%- for discount in item.discounts -%}
-                        <li class="discounts__discount">
-                          {%- render 'icon-discount' -%}
-                          {{ discount.title }}
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  </td>
+                      </ul>
+                        </td>
+                      </div>
                       {% else %}
-                        <div></div>
+                          <div>
+                        <td class="cart-item__media">
+                          {% if item.image %}
+                            {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
+                            <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
+                              <div class="cart-item__image-container gradient global-media-settings">
+                                <img src="{{ item.image | image_url: width: 300 }}"
+                                  class="cart-item__image"
+                                  alt="{{ item.image.alt | escape }}"
+                                  loading="lazy"
+                                  width="150"
+                                  height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                                >
+                              </div>
+                          {% endif %}
+                        </td>
+                        <td class="cart-item__details">
+                          {%- if settings.show_vendor -%}
+                            <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
+                          {%- endif -%}
+  
+                        <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+                      
+                      {%- if item.original_price != item.final_price -%}
+                        <div class="cart-item__discounted-prices">
+                          <span class="visually-hidden">
+                            {{ 'products.product.price.regular_price' | t }}
+                          </span>
+                          <s class="cart-item__old-price product-option">
+                            <span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span>
+                          </s>
+                          <span class="visually-hidden">
+                            {{ 'products.product.price.sale_price' | t }}
+                          </span>
+                          <strong class="cart-item__final-price product-option">
+                            <span class="bcpo-cart-item-price" data-key="{{item.key}}">{{ item.final_price | money }}</span>
+                          </strong>
+                        </div>
+                      {%- else -%}
+                        <div class="product-option">
+                          <span class='upsellfunnel-cart-item-price' data-key='{{item.key}}'><span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span></span>
+                        </div>
+                      {%- endif -%}
+  
+                      {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
+                        <dl>
+                          {%- if item.product.has_only_default_variant == false -%}
+                            {%- for option in item.options_with_values -%}
+                              <div class="product-option">
+                                <dt>{{ option.name }}: </dt>
+                                <dd>{{ option.value }}</dd>
+                              </div>
+                            {%- endfor -%}
+                          {%- endif -%}
+  
+                          {%- for property in item.properties -%}
+                            {%- assign property_first_char = property.first | slice: 0 -%}
+                            {%- if property.last != blank and property_first_char != '_' -%}
+                              <div class="product-option">
+                                <dt>{{ property.first }}: </dt>
+                                <dd>
+                                  {%- if property.last contains '/uploads/' -%}
+                                    <a href="{{ property.last }}" class="link" target="_blank">
+                                      
+  {% assign file_type = property.last | split: '.' | last | downcase %}
+  {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+  {% if file_types contains file_type %}
+    <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+  {% else %}
+    <span class="bcpo-cart-file">Uploaded file</span>
+  {% endif %}
+  
+                                    </a>
+                                  {%- else -%}
+                                    
+  {% if property.last contains '/uploads/' %}
+    {% assign file_type = property.last | split: '.' | last | downcase %}
+    {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+    {% if file_types contains file_type %}
+      <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+    {% else %}
+      <span class="bcpo-cart-file">Uploaded file</span>
+    {% endif %}
+  {% else %}
+    
+  {% if property.last contains '/uploads/' %}
+    {% assign file_type = property.last | split: '.' | last | downcase %}
+    {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+    {% if file_types contains file_type %}
+      <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+    {% else %}
+      <span class="bcpo-cart-file">Uploaded file</span>
+    {% endif %}
+  {% else %}
+    
+  {% if property.last contains '/uploads/' %}
+    {% assign file_type = property.last | split: '.' | last | downcase %}
+    {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+    {% if file_types contains file_type %}
+      <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+    {% else %}
+      <span class="bcpo-cart-file">Uploaded file</span>
+    {% endif %}
+  {% else %}
+    {{ property.last }}
+  {% endif %}
+  {% endif %}
+  {% endif %}
+                                  {%- endif -%}
+                                </dd>
+                              </div>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </dl>
+  
+                        <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                      {%- endif -%}
+  
+                      <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                        {%- for discount in item.discounts -%}
+                          <li class="discounts__discount">
+                            {%- render 'icon-discount' -%}
+                            {{ discount.title }}
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                        </td>
+                          </div>
                       {% endif %}
                     {% endfor %}
                   <td class="cart-item__media">
