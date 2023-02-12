@@ -20,7 +20,7 @@
 }
 
 .hidden-camp-upsell {
-  display: none !important;
+  display: block;
 }
 
 #test {
