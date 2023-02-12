@@ -67,7 +67,8 @@
 
             <tbody>
               {%- for item in cart.items -%}
-                  {% if item.tags == "Filmmaking" %}
+                  {% if item.tags == "AddOn" %}
+                    <div>QUEEN SHIT</div>
                   {% endif %}
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
