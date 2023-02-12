@@ -3,6 +3,11 @@
   display: block;
 }
 
+.make-into-rows {
+  display: flex;
+  flex-direction: row;
+}
+
 .cart__empty-text,
 .is-empty .cart__contents,
 cart-items.is-empty .title-wrapper-with-link,
