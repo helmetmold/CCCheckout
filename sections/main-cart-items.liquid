@@ -60,6 +60,10 @@
 
             <tbody>
               {%- for item in cart.items -%}
+                {% for tag in item.product.tags %}
+                  {% if tag == "AddOn" %}
+                  {% endif %}
+                {% endfor %}
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
