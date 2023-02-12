@@ -65,9 +65,7 @@ cart-items {
   display: block;
 }
 
-.cart-item {
-  display: flex !important;
-  flex-direction: row !important;
+.make-short {
 }
 
 .cart__items {
