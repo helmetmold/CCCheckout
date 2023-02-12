@@ -351,11 +351,13 @@
                     </div>
                   {% endif %}
                 {% endfor %}
-                {% if tag != "AddOn" %}
-                  <div>
-                    Camp
-                  </div>
-                {% endif %}
+                {% for tag in item.product.tags %}
+                  {% if tag != "AddOn" %}
+                    <div>
+                      Camp
+                    </div>
+                  {% endif %}
+                {% endfor %}
               {%- endfor -%}
             </tbody>
           </table>
