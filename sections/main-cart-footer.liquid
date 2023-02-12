@@ -62,6 +62,9 @@
                 <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
+                <button type="submit" >
+                  Continue Shopping
+                </button>
               </div>
 
               {%- if additional_checkout_buttons -%}
