@@ -3,6 +3,10 @@
   display: block;
 }
 
+.cart-item {
+  color: aqua;
+}
+
 .make-into-rows {
   display: flex;
   flex-direction: row;
