@@ -994,10 +994,10 @@
           {% break %}
         {% endif %}
         {% endfor %}
-      {% for productcamp in collections.all.products %}   
+      {% for productcamp in collections.all.products %}  
         {% if productcamp.tags contains first_underscore_tag %} 
           {% if productcamp.tags contains "Tech Camp" %}
-          <div>{{productcamp}}</div>
+          <div>{{productcamp.title}}</div>
           {% render 'card-product', 
           card_product: productcamp,
           show_quick_add: true,
