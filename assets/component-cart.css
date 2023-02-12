@@ -61,7 +61,7 @@ cart-items.is-empty .title-wrapper-with-link,
   }
 }
 
-cart-items {
+.cart-items {
   display: block;
 }
 
