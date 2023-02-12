@@ -65,6 +65,11 @@ cart-items {
   display: block;
 }
 
+.cart-item {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
 .cart__items {
   position: relative;
   padding-bottom: 3rem;
