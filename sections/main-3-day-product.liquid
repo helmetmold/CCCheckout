@@ -985,9 +985,7 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
-    
-  </div>
-  <div id="test">
+    <div id="test">
       {% for tag in product.tags %}
         {% assign first_letter = tag | slice: 0 %}
         {% if first_letter == "_" %}
@@ -1007,6 +1005,8 @@
       {% endif %}
       {% endfor %}
     </div>
+  </div>
+  
   
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
