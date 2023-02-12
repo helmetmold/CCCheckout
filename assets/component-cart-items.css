@@ -4,16 +4,6 @@
   border: none;
 }
 
-.cart-item {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-bottom: 6px black;
-}
-
-.cart-item :last-child {
-  border-bottom: 0px;
-}
-
 .cart-items th {
   text-align: left;
   padding-bottom: 1.8rem;
