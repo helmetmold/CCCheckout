@@ -71,7 +71,7 @@
                   {%- for item in cart.items -%}
                     {% for tags in item.product.tags%}
                       {% if tags == "AddOn" %}
-                      <div>
+                      <div class="make-into-rows">
                         <td class="cart-item__media">
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -199,7 +199,8 @@
                       </ul>
                         </td>
                       </div>
-                      {% else %}
+                    {% endif %}
+                    {% endfor %}
                           <div>
                         <td class="cart-item__media">
                           {% if item.image %}
@@ -328,8 +329,6 @@
                       </ul>
                         </td>
                           </div>
-                      {% endif %}
-                    {% endfor %}
                   {%- endfor -%}
                 </tr>
               
