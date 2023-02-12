@@ -985,16 +985,12 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
-    {% assign someProduct = all_products.katy-flagship-tech-camps %}
-    {% render 'card-product', 
-    card_product: someProduct,
-    show_quick_add: true,
-    %}
     <div id="test">
       {% for tag in product.tags %}
         {% assign first_letter = tag | slice: 0 %}
         {% if first_letter == "_" %}
           {% assign first_underscore_tag = tag %}
+          <div>{{first_underscore_tag}}</div>
           {% break %}
         {% endif %}
         {% endfor %}
@@ -1005,7 +1001,6 @@
           card_product: productcamp,
           show_quick_add: true,
           %}
-          <h5>{{prodductcamp}}</h5>
         {% endif %}
       {% endif %}
       {% endfor %}
