@@ -52,6 +52,11 @@
                 </small>
               </div>
             {%- else -%}
+              <div>
+                <button type="submit" >
+                  Continue Shopping
+                </button>
+              </div>
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
                   <button type="submit" class="cart__update-button button button--secondary" form="cart">
@@ -61,9 +66,6 @@
 
                 <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
-                </button>
-                <button type="submit" >
-                  Continue Shopping
                 </button>
               </div>
 
