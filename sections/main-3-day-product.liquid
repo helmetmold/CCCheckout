@@ -990,13 +990,13 @@
         {% assign first_letter = tag | slice: 0 %}
         {% if first_letter == "_" %}
           {% assign first_underscore_tag = tag %}
-          <div>{{first_underscore_tag}}</div>
           {% break %}
         {% endif %}
         {% endfor %}
       {% for productcamp in collections.all.products %}   
         {% if productcamp.tags contains first_underscore_tag %} 
-          {% if productcamp.tags contains "Tech Camp" %}  
+          {% if productcamp.tags contains "Tech Camp" %}
+          <div>{{productcamp.tags}}</div>  
           {% render 'card-product', 
           card_product: productcamp,
           show_quick_add: true,
