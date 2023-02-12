@@ -67,7 +67,8 @@
 
             <tbody>
               
-                <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">  
+                  <div>Fuck Off</div> 
                   {%- for item in cart.items -%}
                     {% for tags in item.product.tags%}
                       {% if tags == "AddOn" %}
@@ -135,13 +136,13 @@
                                   {%- if property.last contains '/uploads/' -%}
                                     <a href="{{ property.last }}" class="link" target="_blank">
                                       
-  {% assign file_type = property.last | split: '.' | last | downcase %}
-  {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
-  {% if file_types contains file_type %}
-    <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
-  {% else %}
-    <span class="bcpo-cart-file">Uploaded file</span>
-  {% endif %}
+                                    {% assign file_type = property.last | split: '.' | last | downcase %}
+                                    {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+                                    {% if file_types contains file_type %}
+                                      <div class="bcpo-cart-file"><img src="{{ property.last }}" style="max-width: 50px; height: auto;"></div>
+                                    {% else %}
+                                      <span class="bcpo-cart-file">Uploaded file</span>
+                                    {% endif %}
   
                                     </a>
                                   {%- else -%}
