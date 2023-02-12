@@ -1,0 +1,25 @@
+{% comment %}This snippet is generated and updated by aaa Memberships.{% endcomment %}
+{% assign aaa_hide_item = false %}
+
+{% assign aaa_item_type = 'page'%}
+
+{% for aaa_rule in page.metafields.aaa_mem %}
+  {% if aaa_rule.last contains 'show' %}
+    {% assign aaa_hide_item = true %}
+    {% assign aaa_noaccess_snippet = 'aaa-memberships-noaccess' %}
+  {% endif %}
+{% endfor %}
+
+{% for aaa_rule in page.metafields.aaa_mem %}
+  {% for customer_tag in customer.tags %}
+    {% if customer_tag == aaa_rule.first %}
+      {% if aaa_rule.last == 'hide' %}
+        {% assign aaa_hide_item = true %}
+        {% assign aaa_noaccess_snippet = 'aaa-memberships-noaccess' %}
+      {% endif %}
+      {% if aaa_rule.last == 'show' %}
+        {% assign aaa_hide_item = false %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}

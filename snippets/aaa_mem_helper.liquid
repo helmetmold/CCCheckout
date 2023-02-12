@@ -1,0 +1,72 @@
+{% if aaa_mem_helper == 'product' %}
+  {%include 'aaa-memberships-template' %}
+  {% if aaa_membership_partial_redirect != true and aaa_membership_full_redirect != true %}
+      {%include 'aaa-memberships-product' %}
+    {% if aaa_hide_item == true %}
+      {%include 'aaa-memberships-noaccess' %}
+      {% break %}
+  {% endif %}
+  {% else %}
+    {% break %}
+  {% endif %}
+{%endif%}
+
+{% if aaa_mem_helper == 'collection' %}
+  {%include 'aaa-memberships-template' %}
+  {% if aaa_membership_partial_redirect != true and aaa_membership_full_redirect != true %}
+      {%include 'aaa-memberships-collection' %}
+    {% if aaa_hide_item == true %}
+      {%include 'aaa-memberships-noaccess' %}
+      {% break %}
+  {% endif %}
+  {% else %}
+    {% break %}
+  {% endif %}
+{%endif%}
+
+{% if aaa_mem_helper == 'page' %}
+  {%include 'aaa-memberships-template' %}
+  {% if aaa_membership_partial_redirect != true and aaa_membership_full_redirect != true %}
+      {%include 'aaa-memberships-page' %}
+    {% if aaa_hide_item == true %}
+      {%include 'aaa-memberships-noaccess' %}
+      {% break %}
+  {% endif %}
+  {% else %}
+    {% break %}
+  {% endif %}
+{%endif%}
+
+{% if aaa_mem_helper == 'article' %}
+  {%include 'aaa-memberships-template' %}
+  {% if aaa_membership_partial_redirect != true and aaa_membership_full_redirect != true %}
+      {%include 'aaa-memberships-article' %}
+    {% if aaa_hide_item == true %}
+      {%include 'aaa-memberships-noaccess' %}
+      {% break %}
+  {% endif %}
+  {% else %}
+    {% break %}
+  {% endif %}
+{%endif%}
+
+{% if aaa_mem_helper == 'blog' %}
+  {%include 'aaa-memberships-template' %}
+  {% if aaa_membership_partial_redirect != true and aaa_membership_full_redirect != true %}
+      {%include 'aaa-memberships-blog' %}
+    {% if aaa_hide_item == true %}
+      {%include 'aaa-memberships-noaccess' %}
+      {% break %}
+  {% endif %}
+  {% else %}
+    {% break %}
+  {% endif %}
+{%endif%}
+
+{% if aaa_mem_helper == 'search' %}
+  {% assign product = item %}
+  {%include 'aaa-memberships-product' %}
+  {% if aaa_hide_item == true %}
+    {% continue %}
+  {% endif %}
+{%endif%}
