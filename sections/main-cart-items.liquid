@@ -62,6 +62,7 @@
               {%- for item in cart.items -%}
                 {% for tag in item.product.tags %}
                   {% if tag == "AddOn" %}
+                    <div>This</div>
                   {% endif %}
                 {% endfor %}
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
