@@ -4,7 +4,7 @@
 }
 
 .cart-item {
-  color: aqua;
+  border-bottom: 1px black;
 }
 
 .make-into-rows {
