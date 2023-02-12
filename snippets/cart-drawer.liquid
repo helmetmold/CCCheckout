@@ -65,13 +65,9 @@
                   </thead>
 
                   <tbody role="rowgroup">
+                    {%- for item in cart.items -%}
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
-                        {%- for item in cart.items -%}
-                          {%- for tags in item.tags -%}
-                            {% if tags == "AddOn" %}
-                            <div>Suckmyass</div>
-                          {% endif %}
-                        {% endfor %}
+                        <div>MEMES</div>
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
