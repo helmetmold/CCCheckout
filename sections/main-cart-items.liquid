@@ -67,7 +67,7 @@
 
             <tbody>
               {%- for item in cart.items -%}
-                  {% for tags in item.tags%}
+                  {% for tags in item.product.tags%}
                   {% if tags == "AddOn" %}
                     <div>QUEEN SHIT</div>
                   {% endif %}
