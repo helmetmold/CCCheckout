@@ -1,11 +1,7 @@
 /* Color custom properties */
 
 :root,
-.oneHundredViewHieght {
-  height: 100vh !important;
-  position: relative;
-}
-.color-background-1 {
+.oneHundredViewHieght .color-background-1 {
   --color-foreground: var(--color-base-text);
   --color-background: var(--color-base-background-1);
   --gradient-background: var(--gradient-base-background-1);
@@ -557,6 +553,8 @@ blockquote {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   letter-spacing: 0.04rem;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .color-foreground {
@@ -830,10 +828,6 @@ summary::-webkit-details-marker {
 }
 
 *:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
@@ -1686,8 +1680,7 @@ details[open] > .share-button__fallback {
 
 /* component-form */
 .field__input,
-.select__select,
-.customer .field input,
+.select__select .customer .field input,
 .customer select {
   -webkit-appearance: none;
   appearance: none;
@@ -1747,8 +1740,8 @@ details[open] > .share-button__fallback {
 .select__select {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
-  font-weight: var(--font-body-weight);
-  font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 16px;
   color: rgba(var(--color-foreground), 0.75);
 }
 
@@ -2809,6 +2802,8 @@ details-disclosure > details {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
   background-attachment: fixed;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 @media screen and (forced-colors: active) {

@@ -131,6 +131,20 @@ Shortcode.prototype.convertMatchesToNodes = function () {
       '"></span>';
     replacer(this.matches[i].regex, this.el, blackList, nodehtml);
   }
+  var header = document.getElementsByClassName("section-header");
+  for (let index = 0; index < header.length; index++) {
+    const Classlist = header[index].classList;
+    var IsElementHeader = false;
+    for (let index2 = 0; index2 < Classlist.length; index2++) {
+      if (Classlist[index2] == "shopify-section") {
+        IsElementHeader = true;
+      }
+    }
+    if (IsElementHeader == false) {
+      header[index].style.display = "none";
+      header[index].parentElement.style.display = "none";
+    }
+  }
 };
 Shortcode.prototype.replaceNodes = function () {
   var self = this,
@@ -513,6 +527,51 @@ if (window.jQuery) {
             jQuery("#" + randomID).html(html_list);
             jQuery("#results-slt").show();
             google.maps.event.removeListener(tilesloaded);
+
+            const LocationImages =
+              document.getElementsByClassName("item-thumb");
+
+            for (let i = 0; i < LocationImages.length; i++) {
+              LocationImages[i].style.display = "none";
+            }
+
+            var InnerItem = document.getElementsByClassName("inner-item");
+
+            for (let i = 0; i < InnerItem.length; i++) {
+              var container1 = document.createElement("div");
+
+              container1.setAttribute("class", "camp-container");
+
+              locationdata = gmarkers[i];
+
+              console.log(locationdata.tags);
+
+              for (let index = 0; index < locationdata.tags.length; index++) {
+                var CampBox = document.createElement("div");
+                CampBox.setAttribute("class", "Campbox");
+                var CampInfo = document.createElement("div");
+                var CampDays = document.createElement("div");
+                CampDays.innerText = locationdata.tags[index][0][2];
+                var CampTimes = document.createElement("div");
+                CampDays.innerText = "8:30am - 3:30pm";
+                CampInfo.setAttribute("class", "CampInfo");
+                CampInfo.appendChild(CampDays);
+                CampInfo.appendChild(CampTimes);
+                for (let j = 0; j < locationdata.tags[index].length; j++) {
+                  var Camp = document.createElement("button");
+                  Camp.setAttribute("class", "Camp");
+                  Camp.innerText = locationdata.tags[index][j][0];
+                  Camp.onclick = function () {
+                    window.open(locationdata.tags[index][j][1]);
+                  };
+                  CampBox.appendChild(Camp);
+                }
+                CampBox.appendChild(CampInfo);
+                container1.appendChild(CampBox);
+              }
+
+              InnerItem[i].appendChild(container1);
+            }
           }
         );
       }
@@ -1359,6 +1418,7 @@ if (window.jQuery) {
           jQuery("#main-slider-storelocator").removeClass(
             "storeify-first-alert"
           );
+          document.getElementById("intro").style.height = "100% !important";
           var html_list = "";
           var marker_count = 0;
           var marker_first;
@@ -2087,6 +2147,10 @@ if (window.jQuery) {
       jQuery("#main-slider-storelocator .inner-item").removeClass(
         "inner-item-active"
       );
+      jQuery(this).find(".camp-container").css("display", "none");
+      if (jQuery(this).find(".camp-container").css("display") == "none") {
+        jQuery(this).find(".camp-container").css("display", "flex");
+      }
       jQuery(this).addClass("inner-item-active");
       num = jQuery(this).parent().attr("datamarker");
       google.maps.event.trigger(gmarkers[num], "click");

@@ -2,12 +2,52 @@
 @import "//use.fontawesome.com/releases/v5.3.1/css/all.css";
 @import "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 
+
+.camp-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #f2f2f2;
+  padding: 15px;
+}
+.Campbox {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 50%;
+}
+.Camp {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 21px 10px;
+  margin-top: 10px !important;
+}
 #storeifyapps-storelocator-index {
   margin: 0 !important;
 }
 #MainContent {
   height: 92vh !important;
 }
+.item-link {
+  display: none;
+}
+#location {
+  display: flex;
+  flex: 0 1 auto;
+}
+.storeify-sear-box {
+  flex: 0 1 auto;
+  z-index: 20 !important;
+  position: relative !important;
+  padding: 10px;
+}
+.tag-item,
 #storeify-sl-btn-trigger-popup {
   cursor: pointer;
   position: fixed;
@@ -1716,7 +1756,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .bootstrap-storeifyapps .col-sm-4,
 .bootstrap-storeifyapps .col-md-4 {
   position: relative;
-  height: 100% !important;
+  height: 100%;
 }
 .bootstrap-storeifyapps .col-lg-4,
 .bootstrap-storeifyapps .col-xs-5,
@@ -1733,7 +1773,9 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 .bootstrap-storeifyapps .col-lg-7,
 .bootstrap-storeifyapps .col-xs-8,
 .bootstrap-storeifyapps .col-sm-8,
-.bootstrap-storeifyapps .col-md-8,
+.bootstrap-storeifyapps .col-md-8 {
+  height: 100% !important;
+}
 .bootstrap-storeifyapps .col-lg-8,
 .bootstrap-storeifyapps .col-xs-9,
 .bootstrap-storeifyapps .col-sm-9,
@@ -8370,6 +8412,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   border: 1px solid #eee;
   box-shadow: none;
   outline: none;
+  z-index: 40;
 }
 .bootstrap-storeifyapps label {
   margin-right: 5px;
@@ -8519,6 +8562,8 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   float: left;
   width: 100%;
   height: 100% !important;
+  display: flex;
+  flex-flow: column;
 }
 .store_detail {
   word-wrap: normal;
@@ -8575,9 +8620,7 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
   float: right;
   color: inherit;
 }
-#storeify-detail-store #map {
-  height: 100%;
-}
+#storeify-detail-store #map,
 #street_view {
   height: 100%;
   display: none;
@@ -8759,16 +8802,17 @@ git+https://github.com/hunzaboy/Light-Modal.git*/
 #storeify-detail-store .vertical li.walk.active {
   background-position: center -139px;
 }
-results-slt #storeify-detail-store .vertical li.bicycle.active {
+.results-slt #storeify-detail-store .vertical li.bicycle.active {
   background-position: center -180px;
+}
+.content-results-slt {
+  height: 100% !important;
+  box-sizing: unset !important;
 }
 #frm-storelocator-search {
   margin: 0;
   padding: 0;
   height: 100% !important;
-}
-#map {
-  height: 100%;
 }
 .storelocator-search,
 #frm-storelocator-search,
@@ -8776,7 +8820,7 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
 .content-search-slt,
 .search-map,
 .results-slt {
-  display: block;
+  height: 100% !important;
   width: 100%;
   float: left;
 }
@@ -8800,14 +8844,14 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
   padding: 15px;
 }
 .linkdetailstore {
-  display: block;
+  display: none;
   margin-top: 10px;
   margin-right: 3px;
 }
 .inner-item {
   overflow: hidden;
-  display: block;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 .inner-item h3 {
@@ -8824,6 +8868,8 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
 .inner-item .item-content {
   float: left;
   width: 100%;
+  margin-top: 25px;
+  margin-left: 25px;
 }
 .store-marker h4 {
   margin: 0;
@@ -8844,9 +8890,10 @@ results-slt #storeify-detail-store .vertical li.bicycle.active {
   width: 100%;
   float: left;
   padding-top: 5px;
+  display: none;
 }
 .results-slt .title {
-  display: block;
+  display: none;
   width: 100%;
   background: #1979c3;
   padding: 14px 12px;
@@ -9060,7 +9107,7 @@ a.linkdetailstore {
   color: inherit;
   padding: 6px !important;
   text-align: center;
-  display: inline-block;
+  display: none;
   font-size: 12px;
   float: right;
   margin-top: 10px;
@@ -9113,14 +9160,13 @@ a.linkdetailstore {
   height: 100% !important;
 }
 .storelocator-layout-2 #main-slider-storelocator {
-  height: 72vh !important;
+  flex: 0 1 auto;
   overflow-y: auto;
   width: 100%;
   float: left;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 .storelocator-layout-2 #main-slider-storelocator.storeify-first-alert {
   overflow-y: hidden;
@@ -9131,14 +9177,15 @@ a.linkdetailstore {
   padding-left: 10px;
 }
 #results-slt.results-slt-layout-2 {
-  overflow-y: auto;
+  height: 100% !important;
 }
 .list-item-3:not(.owl-carousel) .item.thumbnail {
   width: 96%;
   float: left;
 }
 .list-item-3 {
-  height: 100% !important;
+  height: 90% !important;
+  overflow-y: hidden;
 }
 #storeify-contactForm {
   padding: 2px 2px 10px;
@@ -9228,12 +9275,23 @@ button#submit-search {
 .storeifystorelocator-seach-action-mobile,
 .input-radius-slt-mobile,
 .input-radius-choose-mobile,
+.map-tab-result {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  box-sizing: unset !important;
+}
 .map-tab-mobile-bnt {
   display: none;
+  height: 0px !important;
+  padding: 0% !important;
 }
 #map {
   width: 100%;
-  height: 100%;
+  flex: 0 1 auto !important;
+  height: 100% !important;
+  max-height: none !important;
 }
 .map-tab-mobile-bnt {
   width: 100%;
@@ -9269,7 +9327,6 @@ button#submit-search {
   }
   #map {
     width: 100%;
-    height: 400px !important;
   }
   .chose-search-slt.form-control-storeify {
     display: block;
@@ -9277,7 +9334,7 @@ button#submit-search {
     margin-bottom: 10px;
   }
   .storeify-sear-box {
-    height: 20%;
+    display: flex;
   }
   .storeify-header-inner {
     width: 100%;
@@ -9288,9 +9345,11 @@ button#submit-search {
   }
   .search-radius-box {
     margin-bottom: 15px;
+    display: none;
   }
   #main-slider-storelocator {
     border: 1px solid #ddd;
+    height: 100% !important;
   }
   #main-slider-storelocator .item {
     border-top: 0;
@@ -9335,7 +9394,8 @@ button#submit-search {
     display: block;
   }
   .map-tab-mobile {
-    display: none;
+    display: block;
+    height: 100% !important;
   }
   .map-tab-mobile.active {
     display: block;
@@ -9346,6 +9406,7 @@ button#submit-search {
   width: 100%;
   overflow: hidden;
   margin-top: 10px;
+  display: none;
 }
 .storeify-storelocator-social-maker .material-icons-outlined {
   margin-top: 6px;
@@ -9413,6 +9474,9 @@ button#submit-search {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #666;
 }
+#btn-filter {
+  display: none;
+}
 #getbylocal {
   cursor: pointer;
   border: 0;
@@ -9420,6 +9484,7 @@ button#submit-search {
   background: 0 0;
   float: right;
   outline: 0;
+  display: none;
 }
 #getbylocal .my_location {
   font-size: 16px;
