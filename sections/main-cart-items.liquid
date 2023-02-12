@@ -67,8 +67,9 @@
 
             <tbody>
               {%- for item in cart.items -%}
+                  {% if item.tags == "Filmmaking" %}
+                  {% endif %}
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
-                  <div>MEMES</div>
                   <td class="cart-item__media">
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -91,7 +92,7 @@
                     {%- endif -%}
 
                     <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
-
+                    
                     {%- if item.original_price != item.final_price -%}
                       <div class="cart-item__discounted-prices">
                         <span class="visually-hidden">
