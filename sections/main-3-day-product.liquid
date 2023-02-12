@@ -996,8 +996,8 @@
         {% endfor %}
       {% for productcamp in collections.all.products %}   
         {% if productcamp.tags contains first_underscore_tag %} 
-          <div>{{productcamp}}</div>
           {% if productcamp.tags contains "Tech Camp" %}
+          <div>{{productcamp.name}}</div>
           {% render 'card-product', 
           card_product: productcamp,
           show_quick_add: true,
