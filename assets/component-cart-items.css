@@ -4,6 +4,11 @@
   border: none;
 }
 
+.cart-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .cart-items th {
   text-align: left;
   padding-bottom: 1.8rem;
@@ -131,7 +136,7 @@ cart-remove-button .button {
 }
 
 cart-remove-button .button:before,
-cart-remove-button .button:after  {
+cart-remove-button .button:after {
   content: none;
 }
 
