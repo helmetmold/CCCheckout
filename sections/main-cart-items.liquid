@@ -62,10 +62,8 @@
               {%- for item in cart.items -%}
                 {% for tag in item.product.tags %}
                   {% if tag == "AddOn" %}
-                    <div>This</div>
-                  {% endif %}
-                {% endfor %}
-                <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                    <div>
+                      <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -350,6 +348,9 @@
                     </div>
                   </td>
                 </tr>
+                    </div>
+                  {% endif %}
+                {% endfor %}
               {%- endfor -%}
             </tbody>
           </table>
