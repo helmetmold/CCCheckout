@@ -65,6 +65,16 @@ cart-items {
   display: block;
 }
 
+.cart-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 6px black;
+}
+
+.cart-item :last-child {
+  border-bottom: 0px;
+}
+
 .make-short {
 }
 
