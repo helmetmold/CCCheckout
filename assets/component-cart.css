@@ -61,6 +61,10 @@ cart-items.is-empty .title-wrapper-with-link,
   }
 }
 
+.cart-items {
+  display: flex;
+}
+
 .cart__items {
   position: relative;
   padding-bottom: 3rem;
