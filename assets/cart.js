@@ -111,6 +111,7 @@ class CartItems extends HTMLElement {
         const lineItem =
           document.getElementById(`CartItem-${line}`) ||
           document.getElementById(`CartDrawer-Item-${line}`);
+        console.log(lineItem);
         if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
           cartDrawerWrapper
             ? trapFocus(
@@ -133,12 +134,35 @@ class CartItems extends HTMLElement {
 
         $.ajax({
           url: "/cart.js",
-          type: "GET",
           dataType: "json",
+          type: "GET",
           success: function (cart) {
-            console.log(cart.items);
+            // Find the product in the cart
+            var product = cart.items.find(function (item) {
+              return item.id == productId;
+            });
+
+            // Update the quantity
+            var newQuantity = product.quantity - 1;
+
+            $.ajax({
+              url: "/cart/change.js",
+              data: {
+                id: productId,
+                quantity: newQuantity,
+              },
+              dataType: "json",
+              type: "POST",
+              success: function (cart) {
+                console.log("One item removed from cart.");
+              },
+            });
           },
         });
+
+        //get line items of camp that trying to remove
+        //match the line items with the current cart
+        //remove one
 
         var itemsArray = [
           44404689371435, 44405930361131, 44405930393899, 44405930426667,
