@@ -588,7 +588,50 @@
                           }
                         }
                        
+                        console.log(ids); 
+
+                        var data2 = { updates: {} };
+                        var qty = 0;
+                        for (i = 0; i < ids.length; i++) {
+                          data2.updates[ids[i]] = qty;
+                        }
                         
+                        $.ajax({
+                          url: '/cart.js',
+                          dataType: 'json',
+                          type: 'GET',
+                          success: function(cart) 
+                            {
+                              var idstoremove = [];
+                              var newQuantity = [];
+                              // Find the product in the cart
+                              for (let i = 0; i < LineItems.length; i++) 
+                              {
+                                var product[i] = cart.items.find(function(ids[i]);
+                                idstoremove[i] = product[i].id;
+                                newQuantity = product[i].quantity - 1;
+                              }
+                              
+                              // Update the quantity
+                              
+                              var data3 = { updates: {} };
+                              var qty = 0;
+                              for (i = 0; i < idstoremove.length; i++) 
+                              {
+                                data3.updates[idstoremove[i]] = newQuantity[i];
+                              }
+
+                              $.ajax({
+                                url: '/cart/change.js',
+                                data: data3, 
+                                dataType: 'json',
+                                type: 'POST',
+                                success: function(cart) {
+                                  console.log('One item removed from cart.');
+                                }
+                              });
+                            }
+                          });
 
                         //if cart contains the product id's
                         //delete
