@@ -42,6 +42,7 @@ class CartItems extends HTMLElement {
       document.activeElement.getAttribute("name")
     );
 
+    console.log("change");
     fetch("/cart.js")
       .then(function (response) {
         return response.json();
