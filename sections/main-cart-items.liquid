@@ -63,7 +63,7 @@
                 {% for tag in item.product.tags %}
                   {% if tag == "AddOn" %}
                     <div class="make-short">
-                      <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                      <tr class="cart-item hide-extras" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
