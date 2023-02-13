@@ -35,7 +35,13 @@ class CartItems extends HTMLElement {
     this.addEventListener("change", this.debouncedOnChange.bind(this));
   }
 
-  RemoveProducts() {
+  onChange(event) {
+    this.updateQuantity(
+      event.target.dataset.index,
+      event.target.value,
+      document.activeElement.getAttribute("name")
+    );
+
     fetch("/cart.js")
       .then(function (response) {
         return response.json();
@@ -53,15 +59,6 @@ class CartItems extends HTMLElement {
           cart.updateLineItem(itemId, 0);
         }
       });
-  }
-
-  onChange(event) {
-    this.updateQuantity(
-      event.target.dataset.index,
-      event.target.value,
-      document.activeElement.getAttribute("name")
-    );
-    RemoveProducts();
   }
 
   getSectionsToRender() {
