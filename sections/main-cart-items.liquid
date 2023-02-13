@@ -302,6 +302,11 @@
                     </div>
                   {% elsif tag == "Camp" %}
                   <div>
+                    {% for line_item in item %}
+                      <div>
+                        Image
+                      </div>
+                    {% endfor %}
                     <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                 <td class="cart-item__media">
                   {% if item.image %}
@@ -597,23 +602,7 @@
       </div>
     </div>
 
-    {% capture additional_cost %}
-      {% for line_item in cart.line_items %}
-        {% assign product = line_item.product %}
-        {% assign additional_cost_per_item = 0 %}
-        <div class="suck it">
-          {{line_item}}
-        </div>
-        {% if line_item.variant == "iPad Rental" %}
-          {% assign additional_cost_per_item = additional_cost_per_item | plus: 10 %}
-        {% endif %}
     
-        {% assign additional_cost = additional_cost | plus: additional_cost_per_item %}
-    
-        {% assign line_price = line_item.line_price | plus: additional_cost_per_item %}
-        {{ line_item | change_line_price: line_price, message: "Additional Cost" }}
-      {% endfor %}
-    {% endcapture %}
     
     {% assign total_price = cart.total_price | plus: additional_cost %}
     {{ cart | update_total_price: total_price }}
