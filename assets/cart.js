@@ -10,10 +10,14 @@ class CartRemoveButton extends HTMLElement {
       console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
 
-      var itemId = 8062565220651;
-      jQuery.post(window.Shopify.routes.root + "cart/update.js", {
-        updates: {
-          8062565220651: 0,
+      var itemId = 44405919351083;
+      $.ajax({
+        type: "POST",
+        url: "/cart/change.js",
+        dataType: "json",
+        data: { id: itemId, quantity: 0 },
+        success: function (data) {
+          location.reload();
         },
       });
     });
