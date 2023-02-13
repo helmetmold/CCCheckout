@@ -10,7 +10,7 @@ class CartRemoveButton extends HTMLElement {
       console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
 
-      jQuery.post(window.Shopify.routes.root + "cart/update.js", {
+      $.post(window.Shopify.routes.root + "cart/update.js", {
         updates: {
           44404689371435: 0,
           44404689371435: 0,
