@@ -303,9 +303,10 @@
                   {% elsif tag == "Camp" %}
                   <div>
                     {% for line_item in item.properties %}
-                      <div>
-                        {{line_item}}
-                      </div>
+                      {% assign additional_cost_per_item = 0 %}
+                      {% if line_item.title == "Early Drop-Off" %}
+                      {% assign total_price = cart.total_price | plus: 3000 %}
+                      {% endif %}
                     {% endfor %}
                     <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                 <td class="cart-item__media">
