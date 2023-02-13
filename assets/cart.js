@@ -14,15 +14,17 @@ class CartRemoveButton extends HTMLElement {
         44404689371435, 44405930361131, 44405930393899, 44405930426667,
         44405919351083, 44405919383851,
       ];
+      var data2 = { updates: {} };
+
+      for (i = 0; i < itemsArray.length; i++) {
+        data2.updates[itemsArray[i]] = qty;
+      }
 
       $.ajax({
         type: "POST",
         url: "/cart/change.js",
         dataType: "json",
-        data: {
-          id: parseFloat(variantId),
-          quantity: 0,
-        },
+        data: data2,
       }).then((data) => {});
     });
   }
