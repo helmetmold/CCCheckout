@@ -7,9 +7,31 @@ class CartRemoveButton extends HTMLElement {
         this.closest("cart-items") || this.closest("cart-drawer-items");
       cartItems.updateQuantity(this.dataset.index, 0);
       const lineItemId = this.dataset.index;
-      console.log(this.dataset);
     });
   }
+}
+
+RemoveProducts();
+
+RemoveProducts();
+{
+  fetch("/cart.js")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (cart) {
+      var itemId = 123; // Replace with the id of the item you want to remove
+      var itemIndex = -1;
+      for (var i = 0; i < cart.items.length; i++) {
+        if (cart.items[i].id == itemId) {
+          itemIndex = i;
+          break;
+        }
+      }
+      if (itemIndex >= 0) {
+        cart.updateLineItem(itemId, 0);
+      }
+    });
 }
 
 customElements.define("cart-remove-button", CartRemoveButton);
