@@ -248,16 +248,11 @@
                       </button>
                     </quantity-input>
 
-                    <cart-remove-button onclick="myFunction()" id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
                       </a>
                     </cart-remove-button>
-                    <script>
-                      function myFunction() {
-                        console.log("remove");
-                      }
-                    </script>
 
                   </div>
                   <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
@@ -544,12 +539,25 @@
                         {% render 'icon-plus' %}
                       </button>
                     </quantity-input>
-
-                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                    {% assign line_item_string = "" %}
+                    {% for line_item in item.properties %}
+                      {% if line_item_string == "" %}
+                        {% assign line_item_string = line_item.last %}
+                      {% else %}
+                        {% assign line_item_string = line_item_string | append: "," | append: line_item.last %}
+                      {% endif %}
+                    {% endfor %}
+                    <cart-remove-button onclick="myFunction({{line_items}})" id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
                       </a>
                     </cart-remove-button>
+                    <script>
+                      function myFunction(line_items)
+                      {
+                        console.log(line_items); 
+                      }
+                    </script>
                   </div>
                   <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
                     <small class="cart-item__error-text"></small>
