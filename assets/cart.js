@@ -25,9 +25,7 @@ class CartRemoveButton extends HTMLElement {
         url: "/cart/update.js",
         data: data2,
         dataType: "json",
-        success: function () {
-          alert("success!");
-        },
+        success: function () {},
       });
     });
   }
