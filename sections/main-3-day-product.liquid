@@ -396,7 +396,7 @@
                     <label>Lunch</label>
                     <div class="product-form__input product-row max-width">
                       <div class="lunch-option max-text">
-                        <input class="selectButton" type="radio" name="lunch" value="Regular" id="regular">
+                        <input class="selectButton" type="radio" name="lunch" value="Regular +$34.99" id="regular">
                         <label class="ExtraButtonDetails" for="regular">
                           <div class="titleAndExplanation">
                             <div class="ExtraTitle">Lunch</div>
@@ -408,7 +408,7 @@
                         </label>
                       </div>
                       <div class="lunch-option max-text">
-                        <input class="selectButton" type="radio" name="lunch" value="Vegetarian" id="vegetarian">
+                        <input class="selectButton" type="radio" name="lunch" value="Vegetarian +$34.99" id="vegetarian">
                         <label class="ExtraButtonDetails" for="vegetarian">
                           <div class="titleAndExplanation">
                             <div class="ExtraTitle">Vegetarian Lunch</div>
@@ -576,13 +576,13 @@
                   var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
                   var ipadRentalOption = document.querySelector('input[name="ipad_rental"]:checked').value;
 
-                  if (lunchOption === "Regular")  
+                  if (lunchOption === "Regular +$34.99")  
                   {
                     var RegularLunch = {"id": 44404689371435, "quantity": 1};
                     arrayProductIds.push(RegularLunch);
                     CampProduct.properties["Lunch"] = "Regular";
                   } 
-                  if (lunchOption == "Vegetarian") 
+                  if (lunchOption == "Vegetarian +$34.99") 
                   {
                     var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
                     arrayProductIds.push(VegetarianLunch);
