@@ -163,7 +163,7 @@ class CartItems extends HTMLElement {
         //get line items of camp that trying to remove
         //match the line items with the current cart
         //remove one
-
+        /*
         var itemsArray = [
           44404689371435, 44405930361131, 44405930393899, 44405930426667,
           44405919351083, 44405919383851,
@@ -181,6 +181,7 @@ class CartItems extends HTMLElement {
           dataType: "json",
           success: function () {},
         });
+        */
       })
       .catch(() => {
         this.querySelectorAll(".loading-overlay").forEach((overlay) =>
