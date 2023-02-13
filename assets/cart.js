@@ -131,16 +131,11 @@ class CartItems extends HTMLElement {
         }
         this.disableLoading();
 
-        const lineItems = [];
+        const lineItems = parsedState.sections.reduce((acc, section) => {
+          return acc.concat(section.line_items);
+        }, []);
 
-        for (const section in parsedState.sections) {
-          if (parsedState.sections.hasOwnProperty(section)) {
-            parsedState.sections[section].line_items.forEach((lineItem) => {
-              lineItems.push(lineItem);
-              console.log(lineItem);
-            });
-          }
-        }
+        console.log(lineItems);
 
         $.ajax({
           url: "/cart.js",
