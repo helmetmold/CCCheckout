@@ -613,7 +613,7 @@
                       </div>
                     {%- endif -%}
                     {% for line_item in item.properties %}
-                      <h5>{{line_item.last}} {{line_item.last}}</h5>
+                      <h5>{{line_item.first}}: {{line_item.last}}</h5>
                       {% if line_item.last == "Early Drop-Off" %}
                       {% assign additional_charge = 30 %}
                     {% endif %}
