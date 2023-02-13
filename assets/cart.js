@@ -11,28 +11,7 @@ class CartRemoveButton extends HTMLElement {
   }
 }
 
-RemoveProducts();
 
-RemoveProducts();
-{
-  fetch("/cart.js")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (cart) {
-      var itemId = 8062565220651; // Replace with the id of the item you want to remove
-      var itemIndex = -1;
-      for (var i = 0; i < cart.items.length; i++) {
-        if (cart.items[i].id == itemId) {
-          itemIndex = i;
-          break;
-        }
-      }
-      if (itemIndex >= 0) {
-        cart.updateLineItem(itemId, 0);
-      }
-    });
-}
 
 customElements.define("cart-remove-button", CartRemoveButton);
 
@@ -56,6 +35,29 @@ class CartItems extends HTMLElement {
     }, 300);
 
     this.addEventListener("change", this.debouncedOnChange.bind(this));
+  }
+
+  RemoveProducts();
+
+  RemoveProducts()
+  {
+    fetch("/cart.js")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (cart) {
+        var itemId = 8062565220651; // Replace with the id of the item you want to remove
+        var itemIndex = -1;
+        for (var i = 0; i < cart.items.length; i++) {
+          if (cart.items[i].id == itemId) {
+            itemIndex = i;
+            break;
+          }
+        }
+        if (itemIndex >= 0) {
+          cart.updateLineItem(itemId, 0);
+        }
+      });
   }
 
   onChange(event) {
