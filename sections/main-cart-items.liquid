@@ -302,9 +302,9 @@
                     </div>
                   {% elsif tag == "Camp" %}
                   <div>
-                    {% for line_item in item %}
+                    {% for line_item in item.properties %}
                       <div>
-                        Image
+                        {{line_item}}
                       </div>
                     {% endfor %}
                     <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
