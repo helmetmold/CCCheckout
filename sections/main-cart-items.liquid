@@ -589,7 +589,7 @@
                       {% if line_item.last == "Early Drop-Off" %}
                       {% assign additional_charge = 30 %}
                       {% assign item.price = item.price | plus: additional_charge %}
-                      <h5>{{item.price}}</h5>
+                      <h5>{{item.final_line_price}}</h5>
                       {% endif %}
                     {% endfor %}
                   </div>
