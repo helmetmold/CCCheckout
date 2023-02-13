@@ -137,20 +137,7 @@ class CartItems extends HTMLElement {
           url: "/cart.js",
           dataType: "json",
           type: "GET",
-          success: function (cart) {
-            $.ajax({
-              url: "/cart/change.js",
-              data: {
-                id: productId,
-                quantity: newQuantity,
-              },
-              dataType: "json",
-              type: "POST",
-              success: function (cart) {
-                console.log("One item removed from cart.");
-              },
-            });
-          },
+          success: function (cart) {},
         });
 
         //get line items of camp that trying to remove
