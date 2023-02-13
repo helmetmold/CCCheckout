@@ -20,13 +20,7 @@ class CartRemoveButton extends HTMLElement {
         data2.updates[itemsArray[i]] = qty;
       }
 
-      $.ajax({
-        type: "POST",
-        url: "/cart/change.js",
-        dataType: "json",
-        data: data2,
-      }).then((data) => {});
-    });
+      
   }
 }
 
