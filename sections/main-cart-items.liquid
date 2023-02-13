@@ -589,16 +589,26 @@
                        
                         console.log(ids); 
 
+                        var data2 = { updates: {} };
+                        var qty = 0;
+                        for (i = 0; i < ids.length; i++) {
+                          data2.updates[ids[i]] = qty;
+                        }
+                        
                         $.ajax({
                         url: '/cart.js',
                         dataType: 'json',
                         type: 'GET',
                         success: function(cart) {
                           // Find the product in the cart
-                          var product = cart.items.find(function(item) {
+                          for (let i = 0; i < LineItems.length; i++) 
+                          {
+                            var product = cart.items.find(function(ids[i]) 
+                            {
                             return item.id == productId;
-                          });
-
+                            });
+                          }
+                          
                           // Update the quantity
                           var newQuantity = product.quantity - 1;
 
