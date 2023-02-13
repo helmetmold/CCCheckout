@@ -601,7 +601,9 @@
       {% for line_item in cart.line_items %}
         {% assign product = line_item.product %}
         {% assign additional_cost_per_item = 0 %}
-    
+        <div>
+          {{line_item}}
+        </div>
         {% if line_item.variant == "iPad Rental" %}
           {% assign additional_cost_per_item = additional_cost_per_item | plus: 10 %}
         {% endif %}
