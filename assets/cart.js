@@ -6,28 +6,6 @@ class CartRemoveButton extends HTMLElement {
       const cartItems =
         this.closest("cart-items") || this.closest("cart-drawer-items");
       cartItems.updateQuantity(this.dataset.index, 0);
-      const lineItemId = this.dataset.index;
-      const AllItems = this.getElementsByClassName("cart-items");
-
-      var itemsArray = [
-        44404689371435, 44405930361131, 44405930393899, 44405930426667,
-        44405919351083, 44405919383851,
-      ];
-      var data2 = { updates: {} };
-      var qty = 0;
-      for (i = 0; i < itemsArray.length; i++) {
-        data2.updates[itemsArray[i]] = qty;
-      }
-
-      jQuery.ajax({
-        type: "POST",
-        url: "/cart/update.js",
-        data: data2,
-        dataType: "json",
-        success: function () {
-          cartItems.updateQuantity(this.dataset.index, 0);
-        },
-      });
     });
   }
 }
