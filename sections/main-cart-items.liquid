@@ -60,7 +60,6 @@
 
             <tbody>
               {%- for item in cart.items -%}
-                {% for i in (1..item.quantity) %}
                 {% for tag in item.product.tags %}
                   {% if tag == "AddOn" %}
                     <div class="make-short">
@@ -624,7 +623,6 @@
               </tr>
                   </div>
                   {% endif %}
-                {% endfor %}
                 {% endfor %}
               {%- endfor -%}
             </tbody>
