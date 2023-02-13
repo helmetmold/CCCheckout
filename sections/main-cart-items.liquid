@@ -287,7 +287,7 @@
                       {%- if item.variant.available and item.unit_price_measurement -%}
                         <div class="unit-price caption">
                           <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-                          + {{ item.variant.unit_price | money }}
+                          {{ item.variant.unit_price | money }}
                           <span aria-hidden="true">/</span>
                           <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
                           {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
