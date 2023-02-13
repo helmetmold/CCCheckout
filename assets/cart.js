@@ -87,6 +87,8 @@ class CartItems extends HTMLElement {
         const cartDrawerWrapper = document.querySelector("cart-drawer");
         const cartFooter = document.getElementById("main-cart-footer");
 
+        console.log(parsedState.sections);
+
         if (cartFooter)
           cartFooter.classList.toggle("is-empty", parsedState.item_count === 0);
         if (cartDrawerWrapper)
@@ -136,15 +138,6 @@ class CartItems extends HTMLElement {
           dataType: "json",
           type: "GET",
           success: function (cart) {
-            // Find the product in the cart
-            //item is the productid
-            var product = cart.items.find(function (item) {
-              return item.id == productId;
-            });
-
-            // Update the quantity
-            var newQuantity = product.quantity - 1;
-
             $.ajax({
               url: "/cart/change.js",
               data: {
