@@ -20,7 +20,7 @@ RemoveProducts();
       return response.json();
     })
     .then(function (cart) {
-      var itemId = 123; // Replace with the id of the item you want to remove
+      var itemId = 8062565220651; // Replace with the id of the item you want to remove
       var itemIndex = -1;
       for (var i = 0; i < cart.items.length; i++) {
         if (cart.items[i].id == itemId) {
