@@ -9,18 +9,6 @@ class CartRemoveButton extends HTMLElement {
       const lineItemId = this.dataset.index;
       console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
-
-      $.post(window.Shopify.routes.root + "cart/update.js", {
-        updates: {
-          44404689371435: 0,
-          44404689371435: 0,
-          44405930361131: 0,
-          44405930393899: 0,
-          44405930426667: 0,
-          44405919351083: 0,
-          44405919383851: 0,
-        },
-      });
     });
   }
 }
