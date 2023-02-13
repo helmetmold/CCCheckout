@@ -10,6 +10,11 @@ class CartRemoveButton extends HTMLElement {
       console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
 
+      var itemsArray = [
+        44404689371435, 44405930361131, 44405930393899, 44405930426667,
+        44405919351083, 44405919383851,
+      ];
+
       $.ajax({
         type: "POST",
         url: "/cart/change.js",
@@ -18,10 +23,7 @@ class CartRemoveButton extends HTMLElement {
           id: parseFloat(variantId),
           quantity: 0,
         },
-      }).then((data) => {
-        cartBtn.textContent = "Add to cart";
-        cartBtn.removeAttribute("data-variant-id");
-      });
+      }).then((data) => {});
     });
   }
 }
