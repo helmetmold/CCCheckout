@@ -306,6 +306,7 @@
                       {% assign additional_cost_per_item = 0 %}
                       {% if line_item.title == "Early Drop-Off" %}
                       {% assign total_price = cart.total_price | plus: 3000 %}
+                      {{ cart | update_total_price: total_price }}
                       {% endif %}
                     {% endfor %}
                     <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
