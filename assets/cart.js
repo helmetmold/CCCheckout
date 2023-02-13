@@ -145,7 +145,9 @@ class CartItems extends HTMLElement {
           url: "/cart/update.js",
           data: data2,
           dataType: "json",
-          success: function () {},
+          success: function () {
+            location.reload();
+          },
         });
       })
       .catch(() => {
