@@ -111,7 +111,6 @@ class CartItems extends HTMLElement {
         const lineItem =
           document.getElementById(`CartItem-${line}`) ||
           document.getElementById(`CartDrawer-Item-${line}`);
-        console.log(lineItem);
         if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
           cartDrawerWrapper
             ? trapFocus(
@@ -137,8 +136,8 @@ class CartItems extends HTMLElement {
           dataType: "json",
           type: "GET",
           success: function (cart) {
-            var productId;
             // Find the product in the cart
+            //item is the productid
             var product = cart.items.find(function (item) {
               return item.id == productId;
             });
@@ -164,6 +163,7 @@ class CartItems extends HTMLElement {
         //get line items of camp that trying to remove
         //match the line items with the current cart
         //remove one
+
         /*
         var itemsArray = [
           44404689371435, 44405930361131, 44405930393899, 44405930426667,

@@ -630,6 +630,7 @@
         {%- endif -%}
       </div>
     </div>
+
     {% assign total_price = cart.total_price | plus: additional_cost %}
     {{ cart | update_total_price: total_price }}
 
