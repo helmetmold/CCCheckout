@@ -324,6 +324,9 @@
                     </div>
                   </td>
                 </tr>
+                {% if forloop.last == false %}
+                {% assign item = item | new %}
+                {% endif %}
                     </div>
                   {% elsif tag == "Camp" %}
                   <div>
