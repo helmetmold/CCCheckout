@@ -9,11 +9,16 @@ class CartRemoveButton extends HTMLElement {
       const lineItemId = this.dataset.index;
       console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
-      for (let index = 0; index < AllItems.length; index++) {
-        console.log("happens aswell");
-        AllItems[index].updateQuantity(this.dataset.index, 0);
-        console.log(AllItems[index]);
-      }
+      e.preventDefault();
+      var itemId = $(this).data("id");
+      $.ajax({
+        type: "POST",
+        url: "/cart/change.js",
+        data: "quantity=0&id=" + itemId,
+        success: function (data) {
+          location.reload();
+        },
+      });
     });
   }
 }
