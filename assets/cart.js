@@ -11,13 +11,9 @@ class CartRemoveButton extends HTMLElement {
       const AllItems = this.getElementsByClassName("cart-items");
 
       var itemId = 8062565220651;
-      $.ajax({
-        type: "POST",
-        url: "/cart/change.js",
-        dataType: "json",
-        data: { id: itemId, quantity: 0 },
-        success: function (data) {
-          location.reload();
+      jQuery.post(window.Shopify.routes.root + "cart/update.js", {
+        updates: {
+          8062565220651: 0,
         },
       });
     });
