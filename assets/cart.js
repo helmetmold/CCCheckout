@@ -8,6 +8,12 @@ class CartRemoveButton extends HTMLElement {
       cartItems.updateQuantity(this.dataset.index, 0);
       const lineItemId = this.dataset.index;
       console.log(lineItemId);
+      const otherItems = [...cartItems.children].filter(
+        (item) => item.dataset.index === lineItemId
+      );
+      [this, ...otherItems].forEach((item) => {
+        cartItems.updateQuantity(item.dataset.index, 0);
+      });
     });
   }
 }
