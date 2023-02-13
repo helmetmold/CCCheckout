@@ -10,6 +10,7 @@ class CartRemoveButton extends HTMLElement {
       console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
       for (let index = 0; index < AllItems.length; index++) {
+        console.log("happens aswell");
         AllItems[index].updateQuantity(this.dataset.index, 0);
         console.log(AllItems[index]);
       }
