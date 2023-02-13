@@ -137,6 +137,7 @@ class CartItems extends HTMLElement {
           dataType: "json",
           type: "GET",
           success: function (cart) {
+            var productId;
             // Find the product in the cart
             var product = cart.items.find(function (item) {
               return item.id == productId;
