@@ -621,12 +621,12 @@
                   </div>
                 </td>
               </tr>
-              {% if forloop.last == false %}
-                {% assign item = item | new %}
-              {% endif %}
                   </div>
                   {% endif %}
                 {% endfor %}
+                {% if forloop.last == false %}
+                {% assign item = item | new %}
+                {% endif %}
               {%- endfor -%}
             </tbody>
           </table>
