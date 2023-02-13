@@ -87,7 +87,16 @@ class CartItems extends HTMLElement {
         const cartDrawerWrapper = document.querySelector("cart-drawer");
         const cartFooter = document.getElementById("main-cart-footer");
 
-        console.log(parsedState.sections);
+        const lineItems = [];
+
+        for (const section in parsedState.sections) {
+          if (parsedState.sections.hasOwnProperty(section)) {
+            parsedState.sections[section].line_items.forEach((lineItem) => {
+              lineItems.push(lineItem);
+              console.log(lineItem);
+            });
+          }
+        }
 
         if (cartFooter)
           cartFooter.classList.toggle("is-empty", parsedState.item_count === 0);
