@@ -15,7 +15,7 @@ class CartRemoveButton extends HTMLElement {
         44405919351083, 44405919383851,
       ];
       var data2 = { updates: {} };
-
+      var qty = 0;
       for (i = 0; i < itemsArray.length; i++) {
         data2.updates[itemsArray[i]] = qty;
       }
