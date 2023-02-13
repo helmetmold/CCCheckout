@@ -582,16 +582,16 @@
                           {{- item.variant.unit_price_measurement.reference_value -}}
                         {%- endif -%}
                         {{ item.variant.unit_price_measurement.reference_unit }}
-                        {% for line_item in item.properties %}
-                          {% assign additional_cost_per_item = 0 %}
-                          <h5>{{line_item.last}}</h5>
-                          {% if line_item.last == "Early Drop-Off" %}
-                          {% assign additional_charge = 30 %}
-                          {% assign item.price = item.price | plus: additional_charge %}
-                          {% endif %}
-                        {% endfor %}
                       </div>
                     {%- endif -%}
+                    {% for line_item in item.properties %}
+                      {% assign additional_cost_per_item = 0 %}
+                      <h5>{{line_item.last}}</h5>
+                      {% if line_item.last == "Early Drop-Off" %}
+                      {% assign additional_charge = 30 %}
+                      {% assign item.price = item.price | plus: additional_charge %}
+                      {% endif %}
+                    {% endfor %}
                   </div>
                 </td>
               </tr>
