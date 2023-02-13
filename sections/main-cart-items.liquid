@@ -304,8 +304,7 @@
                   <div>
                     {% for line_item in item.properties %}
                       {% assign additional_cost_per_item = 0 %}
-                      {%- assign property_first_char = line_item.first | slice: 0 -%}
-                      <h5>{{property_first_char}}</h5>
+                      <h5>{{line_item.first}}</h5>
                       {% if line_item.title == "Early Drop-Off" %}
                       {% assign total_price = cart.total_price | plus: 3000 %}
                       {{ cart | update_total_price: total_price }}
