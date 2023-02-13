@@ -86,27 +86,6 @@
 
                     <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
 
-                    {%- if item.original_price != item.final_price -%}
-                      <div class="cart-item__discounted-prices">
-                        <span class="visually-hidden">
-                          {{ 'products.product.price.regular_price' | t }}
-                        </span>
-                        <s class="cart-item__old-price product-option">
-                          <span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span>
-                        </s>
-                        <span class="visually-hidden">
-                          {{ 'products.product.price.sale_price' | t }}
-                        </span>
-                        <strong class="cart-item__final-price product-option">
-                          <span class="bcpo-cart-item-price" data-key="{{item.key}}">{{ item.final_price | money }}</span>
-                        </strong>
-                      </div>
-                    {%- else -%}
-                      <div class="product-option">
-                        <span class='upsellfunnel-cart-item-price' data-key='{{item.key}}'><span class="bcpo-cart-item-original-price" data-key="{{item.key}}">{{ item.original_price | money }}</span></span>
-                      </div>
-                    {%- endif -%}
-
                     {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
                       <dl>
                         {%- if item.product.has_only_default_variant == false -%}
@@ -347,7 +326,6 @@
                     </div>
                   </td>
                 </tr>
-                <tr></tr>
                     </div>
                   {% elsif tag == "Camp" %}
                   <div>
