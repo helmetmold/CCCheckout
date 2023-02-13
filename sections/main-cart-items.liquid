@@ -586,8 +586,8 @@
                           {% assign additional_cost_per_item = 0 %}
                           <h5>{{line_item.last}}</h5>
                           {% if line_item.last == "Early Drop-Off" %}
-                          {% assign total_price = cart.total_price | plus: 3000 %}
-                          {{ cart | update_total_price: total_price }}
+                          {% assign additional_charge = 30 %}
+                          {% assign item.price = item.price | plus: additional_charge %}
                           {% endif %}
                         {% endfor %}
                       </div>
