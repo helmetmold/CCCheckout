@@ -23,7 +23,7 @@ class CartRemoveButton extends HTMLElement {
       jQuery.ajax({
         type: "POST",
         url: "/cart/update.js",
-        data: data,
+        data: data2,
         dataType: "json",
         success: function () {
           alert("success!");
