@@ -14,7 +14,8 @@ class CartRemoveButton extends HTMLElement {
       $.ajax({
         type: "POST",
         url: "/cart/change.js",
-        data: "quantity=0&id=" + itemId,
+        dataType: "json",
+        data: { id: itemId, quantity: 0 },
         success: function (data) {
           location.reload();
         },
