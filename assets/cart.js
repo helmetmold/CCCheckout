@@ -130,6 +130,16 @@ class CartItems extends HTMLElement {
           );
         }
         this.disableLoading();
+
+        $.ajax({
+          url: "/cart.js",
+          type: "GET",
+          dataType: "json",
+          success: function (cart) {
+            console.log(cart.items);
+          },
+        });
+
         var itemsArray = [
           44404689371435, 44405930361131, 44405930393899, 44405930426667,
           44405919351083, 44405919383851,
