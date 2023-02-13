@@ -11,7 +11,7 @@ class CartRemoveButton extends HTMLElement {
   }
 }
 
-
+RemoveProducts();
 
 customElements.define("cart-remove-button", CartRemoveButton);
 
@@ -37,10 +37,7 @@ class CartItems extends HTMLElement {
     this.addEventListener("change", this.debouncedOnChange.bind(this));
   }
 
-  RemoveProducts();
-
-  RemoveProducts()
-  {
+  RemoveProducts() {
     fetch("/cart.js")
       .then(function (response) {
         return response.json();
