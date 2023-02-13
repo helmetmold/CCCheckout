@@ -130,43 +130,6 @@ class CartItems extends HTMLElement {
           );
         }
         this.disableLoading();
-
-        const lineItems = parsedState.sections.reduce((acc, section) => {
-          return acc.concat(section.line_items);
-        }, []);
-
-        console.log(lineItems);
-
-        $.ajax({
-          url: "/cart.js",
-          dataType: "json",
-          type: "GET",
-          success: function (cart) {},
-        });
-
-        //get line items of camp that trying to remove
-        //match the line items with the current cart
-        //remove one
-
-        /*
-        var itemsArray = [
-          44404689371435, 44405930361131, 44405930393899, 44405930426667,
-          44405919351083, 44405919383851,
-        ];
-        var data2 = { updates: {} };
-        var qty = 0;
-        for (i = 0; i < itemsArray.length; i++) {
-          data2.updates[itemsArray[i]] = qty;
-        }
-
-        jQuery.ajax({
-          type: "POST",
-          url: "/cart/update.js",
-          data: data2,
-          dataType: "json",
-          success: function () {},
-        });
-        */
       })
       .catch(() => {
         this.querySelectorAll(".loading-overlay").forEach((overlay) =>
