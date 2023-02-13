@@ -7,7 +7,6 @@ class CartRemoveButton extends HTMLElement {
         this.closest("cart-items") || this.closest("cart-drawer-items");
       cartItems.updateQuantity(this.dataset.index, 0);
       const lineItemId = this.dataset.index;
-      console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
 
       var itemsArray = [
@@ -25,7 +24,9 @@ class CartRemoveButton extends HTMLElement {
         url: "/cart/update.js",
         data: data2,
         dataType: "json",
-        success: function () {},
+        success: function () {
+          cartItems.updateQuantity(this.dataset.index, 0);
+        },
       });
     });
   }
