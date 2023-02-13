@@ -13,7 +13,7 @@ class CartRemoveButton extends HTMLElement {
 
 RemoveProducts();
 
-function RemoveProducts();
+RemoveProducts();
 {
   fetch("/cart.js")
     .then(function (response) {
