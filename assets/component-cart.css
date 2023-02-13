@@ -9,7 +9,7 @@
 }
 
 .hide-extras {
-  display: none;
+  display: none !important;
 }
 
 .make-into-rows {
