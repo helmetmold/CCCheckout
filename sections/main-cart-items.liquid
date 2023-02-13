@@ -624,9 +624,6 @@
                   </div>
                   {% endif %}
                 {% endfor %}
-                {% if forloop.last == false %}
-                {% assign item = item | new %}
-                {% endif %}
               {%- endfor -%}
             </tbody>
           </table>
