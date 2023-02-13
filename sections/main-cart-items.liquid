@@ -556,83 +556,36 @@
                       function myFunction(line_items)
                       {
                         var LineItems = line_items.split(',');
+
+                        const ids = [];
+
                         //get cart
                         for (let i = 0; i < LineItems.length; i++) {
                           switch (LineItems[i]) {
                             case "Vegetarian +$34.99":
-                              day = "Sunday";
+                              ids.push(44404689404203);
                             break;
                             case "Regular +$34.99":
-                              day = "Monday";
+                              ids.push(44404689371435);
                               break;
                             case "Late Pick-up +$29.99":
-                              day = ;
+                              ids.push(44405930393899);
                               break;
                             case "Early Drop-Off +$29.99":
-                              day = ;
+                              ids.push(44405930361131);
                               break;
                             case "Early Drop-off and Late Pick-up +$59.99":
-                              day = "Early Drop-off and Late Pick-up +$59.99";
+                              ids.push(44405930426667);
                               break;
-                            case "Standard iPad rental +$59.99":
-                              day = "Friday";
+                            case "Standard iPad rental +$29.99":
+                              ids.push(44405919383851);
                               break;
-                            case "iPad rental w/ insurance +$29.99":
-                              day = "Saturday";
-                          }
-
-                          if (LineItems === "Regular")  
-                          {
-                            var RegularLunch = {"id": 44404689371435, "quantity": 1};
-                            arrayProductIds.push(RegularLunch);
-                            CampProduct.properties["Lunch"] = "Regular +$34.99";
+                            case "iPad rental w/ insurance +$59.99":
+                              ids.push(44405919351083);
                           }
                         }
-                        //make an array of product id's to delete
-                        if (lunchOption === "Regular")  
-                        {
-                          var RegularLunch = {"id": 44404689371435, "quantity": 1};
-                          arrayProductIds.push(RegularLunch);
-                          CampProduct.properties["Lunch"] = "Regular +$34.99";
-                        } 
-                        if (lunchOption == "Vegetarian") 
-                        {
-                          var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
-                          arrayProductIds.push(VegetarianLunch);
-                          CampProduct.properties["Lunch"] = "Vegetarian +$34.99";
-                        }
-                        if (pickupDropoffOption === "early_dropoff") {
-                          var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
-                          arrayProductIds.push(EarlyDropOff);
-                          CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off +$29.99";
-                        } 
-                        else if (pickupDropoffOption === "late_pickup") {
-                          var LatePickUp = {"id": 44405930393899, "quantity": 1};
-                          arrayProductIds.push(LatePickUp);
-                          CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up +$29.99";
-                        } 
-                        else if (pickupDropoffOption === "late_pickup_early_dropoff") {
-                          var LateAndEarly = {"id": 44405930426667, "quantity": 1};
-                          arrayProductIds.push(LateAndEarly);
-                          CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$59.99";
-                        }
-
-                        if (ipadRentalOption === "standard_rental") {
-                          var StandardiPad = {"id": 44405919383851, "quantity": 1};
-                          arrayProductIds.push(StandardiPad);
-                          CampProduct.properties["iPad Rental"] = "Standard iPad rental +$59.99";
-                        } 
-                        else if (ipadRentalOption === "rental_with_insurance") {
-                          var InsurediPad = {"id": 44405919351083, "quantity": 1};
-                          arrayProductIds.push(InsurediPad);
-                          CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance +$29.99";
-                        } 
-                        else if (ipadRentalOption === "no_thanks") {
-                          // do not add ipad rental product
-                        }
-                        arrayProductIds.push(CampProduct);
-                        console.log(arrayProductIds);
-                      }
+                       
+                        console.log(ids);
 
                         //if cart contains the product id's
                         //delete
