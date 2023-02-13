@@ -7,6 +7,10 @@ class CartRemoveButton extends HTMLElement {
         this.closest("cart-items") || this.closest("cart-drawer-items");
       cartItems.updateQuantity(this.dataset.index, 0);
       const lineItemId = this.dataset.index;
+      const AllItems = this.getElementsByClassName("cart-items");
+      for (let index = 0; index < AllItems.length; index++) {
+        AllItems[index].updateQuantity(this.dataset.index, 0);
+      }
     });
   }
 }
@@ -41,25 +45,6 @@ class CartItems extends HTMLElement {
       event.target.value,
       document.activeElement.getAttribute("name")
     );
-
-    console.log("change");
-    fetch("/cart.js")
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (cart) {
-        var itemId = 8062565220651; // Replace with the id of the item you want to remove
-        var itemIndex = -1;
-        for (var i = 0; i < cart.items.length; i++) {
-          if (cart.items[i].id == itemId) {
-            itemIndex = i;
-            break;
-          }
-        }
-        if (itemIndex >= 0) {
-          cart.updateLineItem(itemId, 0);
-        }
-      });
   }
 
   getSectionsToRender() {
