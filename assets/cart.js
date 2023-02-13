@@ -9,8 +9,8 @@ class CartRemoveButton extends HTMLElement {
       const lineItemId = this.dataset.index;
       console.log("happens");
       const AllItems = this.getElementsByClassName("cart-items");
-      e.preventDefault();
-      var itemId = $(this).data("id");
+
+      var itemId = 8062565220651;
       $.ajax({
         type: "POST",
         url: "/cart/change.js",
