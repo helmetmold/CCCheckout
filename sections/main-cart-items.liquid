@@ -617,9 +617,8 @@
                               
                               var data3 = { updates: {} };
                               var qty = 0;
-                              for (i = 0; i < idstoremove.length; i++) 
-                              {
-                                data3.updates[idstoremove[i]] = newQuantity[i];
+                              for (i = 0; i < idstoremove.length; i++) {
+                                data3.updates[idstoremove[i]] = qty;
                               }
 
                               $.ajax({
