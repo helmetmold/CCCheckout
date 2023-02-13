@@ -302,14 +302,6 @@
                     </div>
                   {% elsif tag == "Camp" %}
                   <div>
-                    {% for line_item in item.properties %}
-                      {% assign additional_cost_per_item = 0 %}
-                      <h5>{{line_item.last}}</h5>
-                      {% if line_item.last == "Early Drop-Off" %}
-                      {% assign total_price = cart.total_price | plus: 3000 %}
-                      {{ cart | update_total_price: total_price }}
-                      {% endif %}
-                    {% endfor %}
                     <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                 <td class="cart-item__media">
                   {% if item.image %}
@@ -590,6 +582,14 @@
                           {{- item.variant.unit_price_measurement.reference_value -}}
                         {%- endif -%}
                         {{ item.variant.unit_price_measurement.reference_unit }}
+                        {% for line_item in item.properties %}
+                          {% assign additional_cost_per_item = 0 %}
+                          <h5>{{line_item.last}}</h5>
+                          {% if line_item.last == "Early Drop-Off" %}
+                          {% assign total_price = cart.total_price | plus: 3000 %}
+                          {{ cart | update_total_price: total_price }}
+                          {% endif %}
+                        {% endfor %}
                       </div>
                     {%- endif -%}
                   </div>
