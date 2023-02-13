@@ -8,6 +8,10 @@
   margin-bottom: 20px;
 }
 
+.hide-extras {
+  display: none;
+}
+
 .make-into-rows {
   display: flex;
   flex-direction: row;
