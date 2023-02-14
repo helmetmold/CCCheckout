@@ -564,7 +564,7 @@
                   }]
                   };
 
-                  console.log(CampProduct);
+                  CampProduct.items[0].properties["id"] = Math.random(0,1);;
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
