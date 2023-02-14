@@ -608,7 +608,7 @@
                               
                               for (let i = 0; i < LineItems.length; i++) 
                               {
-                                product[i] = cart.items.find(ids[i]);
+                                product[i] = cart.items.find(element => element = ids[i]);
                                 idstoremove[i] = product[i].id;
                                 newQuantity[i] = product[i].quantity - 1;
                               }
