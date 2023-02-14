@@ -531,31 +531,28 @@
 
                 function makeAjaxRequest() 
                 {             
-                  data = arrayProductIds[x];
-                  console.log(x);
-                  x++;
+                  data = arrayProductIds;
+
+                  var data2 = { updates: {} };
+                  for (i = 0; i < data.length; i++)
+                  {
+                    data2.updates[data[i]] = 1;
+                  }
 
                   jQuery.ajax
                   (
                     {
                       type: 'POST',
                       url: '/cart/add.js',
-                      data: data,
+                      data: data2,
                       dataType: 'json',
                       success: function() 
                       { 
-                        console.log(arrayProductIds.length);
-                        if(x < arrayProductIds.length)
-                        {
-                          makeAjaxRequest();
-                        }
-                        else
-                        {
-                        }
+                        clickupsell();
                       }
                     }
                   );
-                }
+                } 
 
                 function clickupsell()
                 {
