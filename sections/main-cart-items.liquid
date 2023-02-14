@@ -608,10 +608,11 @@
                               
                               for (let i = 0; i < LineItems.length; i++) 
                               {
-                                console.log(cart.items);
+                                
                                 for (let k = 0; k < cart.items.length; k++) 
                                 {
-                                  if(cart.itemS[k].id == ids[i])
+                                  console.log(cart.items[k].id);
+                                  if(cart.items[k].id == ids[i])
                                   {
                                     product[i] = cart.items[k].id;
                                   }
