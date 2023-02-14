@@ -612,12 +612,14 @@
                   else if (pickupDropoffOption === "late_pickup_early_dropoff") {
                     var LateAndEarly = {"id": 44405930426667, "quantity": 1};
                     arrayProductIds.push(LateAndEarly);
+                    ProductsToAdd.push(LateAndEarly);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$59.99";
                   }
 
                   if (ipadRentalOption === "standard_rental") {
                     var StandardiPad = {"id": 44405919383851, "quantity": 1};
                     arrayProductIds.push(StandardiPad);
+                    ProductsToAdd.push(StandardiPad);
                     CampProduct.properties["iPad Rental"] = "Standard iPad rental +$29.99";
                   } 
                   else if (ipadRentalOption === "rental_with_insurance") {
