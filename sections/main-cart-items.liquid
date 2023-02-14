@@ -605,10 +605,13 @@
                               var idstoremove = [];
                               var newQuantity = [];
                               var product = [];
-                              // Find the product in the cart
                               
-                              
-                              // Update the quantity
+                              for (let i = 0; i < LineItems.length; i++) 
+                              {
+                                product[i] = cart.items.find(function(ids[i]);
+                                idstoremove[i] = product[i].id;
+                                newQuantity[i] = product[i].quantity - 1;
+                              }
                               
                               var data3 = { updates: {} };
                               var qty = 0;
