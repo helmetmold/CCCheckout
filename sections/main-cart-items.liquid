@@ -631,13 +631,10 @@
                               console.log(data3);
 
                               $.ajax({
-                                url: '/cart/change.js',
-                                data: {
-                                  id: 44405919351083,
-                                  quantity: 0,
-                                },
-                                dataType: 'json',
                                 type: 'POST',
+                                url: '/cart/update.js',
+                                data: data3,
+                                dataType: 'json',
                                 success: function(cart) 
                                 {
                                   console.log('One item removed from cart.');
