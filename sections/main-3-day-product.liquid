@@ -534,20 +534,21 @@
                 {
                   console.log(arrayProductIds);
                   
+                  
 
-                  jQuery.ajax
-                  (
-                    { 
-                      type: 'POST',
-                      url: '/cart/add.js',
-                      data: data, 
-                      dataType: 'json',
-                      success: function() 
-                      { 
-                        clickupsell();
-                      }
-                    }
-                  );
+                  fetch(window.Shopify.routes.root + 'cart/add.js', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                  })
+                  .then(response => {
+                    return response.json();
+                  })
+                  .catch((error) => {
+                    console.error('Error:', error);
+                  });
                 } 
 
                 function clickupsell()
@@ -558,13 +559,14 @@
 
                 function AddExtras() 
                 {
-                  var CampProduct = 
-                  {
-                  "id": "{{ product.selected_or_first_available_variant.id }}", 
-                  "quantity": 1,
-                  "properties": {}
-                  }; 
-
+                  let CampProduct = {
+                  'items': 
+                  [{
+                    'id': {{ product.selected_or_first_available_variant.id }},
+                    'quantity': 1,
+                    "properties": {}
+                  }]
+                  };
                   ProductsToAdd.push({{ product.selected_or_first_available_variant.id }});
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
@@ -574,45 +576,45 @@
                   if (lunchOption === "Regular")  
                   {
                     var RegularLunch = {"id": 44404689371435, "quantity": 1};
-                    arrayProductIds.push(RegularLunch);
+                    CampProduct.items.push(RegularLunch);
                     ProductsToAdd.push(44404689371435);
                     CampProduct.properties["Lunch"] = "Regular +$34.99";
                   } 
                   if (lunchOption == "Vegetarian") 
                   {
                     var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
-                    arrayProductIds.push(VegetarianLunch);
+                    CampProduct.items.push(VegetarianLunch);
                     ProductsToAdd.push(44404689404203);
                     CampProduct.properties["Lunch"] = "Vegetarian +$34.99";
                   }
                   if (pickupDropoffOption === "early_dropoff") {
                     var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
-                    arrayProductIds.push(EarlyDropOff);
+                    CampProduct.items.push(EarlyDropOff);
                     ProductsToAdd.push(44405930361131);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup") {
                     var LatePickUp = {"id": 44405930393899, "quantity": 1};
-                    arrayProductIds.push(LatePickUp);
+                    CampProduct.items.push(LatePickUp);
                     ProductsToAdd.push(44405930393899);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup_early_dropoff") {
                     var LateAndEarly = {"id": 44405930426667, "quantity": 1};
-                    arrayProductIds.push(LateAndEarly);
+                    CampProduct.items.push(LateAndEarly);
                     ProductsToAdd.push(44405930426667);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$59.99";
                   }
 
                   if (ipadRentalOption === "standard_rental") {
                     var StandardiPad = {"id": 44405919383851, "quantity": 1};
-                    arrayProductIds.push(StandardiPad);
+                    CampProduct.items.push(StandardiPad);
                     ProductsToAdd.push(44405919383851);
                     CampProduct.properties["iPad Rental"] = "Standard iPad rental +$29.99";
                   } 
                   else if (ipadRentalOption === "rental_with_insurance") {
                     var InsurediPad = {"id": 44405919351083, "quantity": 1};
-                    arrayProductIds.push(InsurediPad);
+                    CampProduct.items.push(InsurediPad);
                     ProductsToAdd.push(44405919351083); 
                     CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance +$59.99";
                   } 
