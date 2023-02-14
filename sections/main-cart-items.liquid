@@ -611,10 +611,12 @@
                                 console.log(cart.items);
                                 for (let k = 0; k < cart.items.length; k++) 
                                 {
-                                  if(cart.item[k].id == ids[i])
-                                  product[i] = cart.item[k].id;
+                                  if(cart.itemS[k].id == ids[i])
+                                  {
+                                    product[i] = cart.items[k].id;
+                                  }
+                                  
                                 }
-                                
                                 console.log(product[i]);
                                 idstoremove[i] = product[i].id; 
                                 newQuantity[i] = product[i].quantity - 1;
