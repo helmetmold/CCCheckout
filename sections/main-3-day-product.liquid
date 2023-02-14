@@ -521,9 +521,7 @@
                         {
                           arrayProductIds = [];
                           x = 0;
-                          console.log("wham");   
                           AddExtras();
-                          console.log("bam");   
                           makeAjaxRequest();
                         }
                       )
@@ -532,8 +530,7 @@
 
 
                 function makeAjaxRequest() 
-                {
-                            
+                {             
                   arrayProductIds;
 
                   console.log(arrayProductIds);
@@ -541,7 +538,7 @@
                   var data = { updates: {} };
                   for (i = 0; i < arrayProductIds.length; i++)
                   {
-                    data2.updates[arrayProductIds[i]] = 1;
+                    data2.updates[a[i]] = 1;
                   }
 
                   console.log(data2);
@@ -569,9 +566,11 @@
 
                 function AddExtras() 
                 {
-                  var CampProduct = [{{ product.selected_or_first_available_variant.id }}]
-
-                  console.log(CampProduct);
+                  var CampProduct = 
+                  {
+                  "id": "{{ product.selected_or_first_available_variant.id }}", 
+                  "quantity": 1
+                  }; 
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
@@ -579,39 +578,39 @@
 
                   if (lunchOption === "Regular")  
                   {
-                    var RegularLunch = 44404689371435;
+                    var RegularLunch = {"id": 44404689371435, "quantity": 1};
                     arrayProductIds.push(RegularLunch);
                     CampProduct.properties["Lunch"] = "Regular +$34.99";
                   } 
                   if (lunchOption == "Vegetarian") 
                   {
-                    var VegetarianLunch = 44404689404203;
+                    var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
                     arrayProductIds.push(VegetarianLunch);
                     CampProduct.properties["Lunch"] = "Vegetarian +$34.99";
                   }
                   if (pickupDropoffOption === "early_dropoff") {
-                    var EarlyDropOff = 44405930361131;
+                    var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
                     arrayProductIds.push(EarlyDropOff);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup") {
-                    var LatePickUp = 44405930393899;
+                    var LatePickUp = {"id": 44405930393899, "quantity": 1};
                     arrayProductIds.push(LatePickUp);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup_early_dropoff") {
-                    var LateAndEarly = 44405930426667;
+                    var LateAndEarly = {"id": 44405930426667, "quantity": 1};
                     arrayProductIds.push(LateAndEarly);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$59.99";
                   }
 
-                  else if (ipadRentalOption === "standard_rental") {
-                    var StandardiPad = 44405919383851;
+                  if (ipadRentalOption === "standard_rental") {
+                    var StandardiPad = {"id": 44405919383851, "quantity": 1};
                     arrayProductIds.push(StandardiPad);
                     CampProduct.properties["iPad Rental"] = "Standard iPad rental +$29.99";
                   } 
                   else if (ipadRentalOption === "rental_with_insurance") {
-                    var InsurediPad = 44405919351083;
+                    var InsurediPad = {"id": 44405919351083, "quantity": 1};
                     arrayProductIds.push(InsurediPad);
                     CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance +$59.99";
                   } 
@@ -619,6 +618,7 @@
                     // do not add ipad rental product
                   }
                   arrayProductIds.push(CampProduct);
+                  console.log(arrayProductIds);
                 }
                 </script>
               {%- when 'buy_buttons' -%}
