@@ -534,9 +534,11 @@
                   var data2 = { updates: {} };
                   for (i = 0; i < arrayProductIds.length; i++)
                   {
-                    console.log(arrayProductIds[i]);
+                    
                     data2.updates[arrayProductIds[i]] = 1; 
                   }
+
+                  console.log(data2.updates);
 
                   jQuery.ajax
                   (
