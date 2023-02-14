@@ -606,12 +606,7 @@
                               var newQuantity = [];
                               var product = [];
                               // Find the product in the cart
-                              for (let i = 0; i < LineItems.length; i++) 
-                              {
-                                product[i] = cart.items.find(function(ids[i]);
-                                idstoremove[i] = product[i].id;
-                                newQuantity[i] = product[i].quantity - 1;
-                              }
+                              
                               
                               // Update the quantity
                               
@@ -623,10 +618,11 @@
 
                               $.ajax({
                                 url: '/cart/change.js',
-                                data: data3, 
+                                data: data3,
                                 dataType: 'json',
                                 type: 'POST',
-                                success: function(cart) {
+                                success: function(cart) 
+                                {
                                   console.log('One item removed from cart.');
                                 }
                               });
