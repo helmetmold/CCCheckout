@@ -569,10 +569,7 @@
 
                 function AddExtras() 
                 {
-                  var CampProduct = 
-                  {
-                  {{ product.selected_or_first_available_variant.id }}
-                  }; 
+                  var CampProduct = [{{ product.selected_or_first_available_variant.id }}]
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
@@ -606,7 +603,7 @@
                     CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$59.99";
                   }
 
-                  if (ipadRentalOption === "standard_rental") {
+                  else if (ipadRentalOption === "standard_rental") {
                     var StandardiPad = 44405919383851;
                     arrayProductIds.push(StandardiPad);
                     CampProduct.properties["iPad Rental"] = "Standard iPad rental +$29.99";
