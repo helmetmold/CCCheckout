@@ -587,22 +587,26 @@
                   {
                     var RegularLunch = {"id": 44404689371435, "quantity": 1};
                     arrayProductIds.push(RegularLunch);
+                    ProductsToAdd.push(RegularLunch);
                     CampProduct.properties["Lunch"] = "Regular +$34.99";
                   } 
                   if (lunchOption == "Vegetarian") 
                   {
                     var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
                     arrayProductIds.push(VegetarianLunch);
+                    ProductsToAdd.push(VegetarianLunch);
                     CampProduct.properties["Lunch"] = "Vegetarian +$34.99";
                   }
                   if (pickupDropoffOption === "early_dropoff") {
                     var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
                     arrayProductIds.push(EarlyDropOff);
+                    ProductsToAdd.push(EarlyDropOff);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup") {
                     var LatePickUp = {"id": 44405930393899, "quantity": 1};
                     arrayProductIds.push(LatePickUp);
+                    ProductsToAdd.push(LatePickUp);
                     CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup_early_dropoff") {
