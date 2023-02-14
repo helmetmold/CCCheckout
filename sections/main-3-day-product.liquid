@@ -531,12 +531,10 @@
 
                 function makeAjaxRequest() 
                 {             
-                  arrayProductIds;
-
                   var data2 = { updates: {} };
                   for (i = 0; i < arrayProductIds.length; i++)
                   {
-                    data2.updates[a[i]] = 1;
+                    data2.updates[arrayProductIds[i]] = 1;
                   }
                   console.log("boom"); 
                   console.log(data2);
