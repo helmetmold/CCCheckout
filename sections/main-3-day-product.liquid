@@ -544,7 +544,7 @@
                     {
                       type: 'POST',
                       url: '/cart/add.js',
-                      data: arrayProductIds,
+                      data: arrayProductIds.CampProduct,
                       dataType: 'json',
                       success: function() 
                       { 
@@ -615,7 +615,6 @@
                     // do not add ipad rental product
                   }
                   arrayProductIds.push(CampProduct);
-                  console.log(arrayProductIds);
                 }
                 </script>
               {%- when 'buy_buttons' -%}
