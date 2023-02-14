@@ -532,14 +532,8 @@
 
                 function makeAjaxRequest() 
                 {
-                  var itemsArray = ProductsToAdd;
-                  console.log(itemsArray);
-                  var qty = 1;
-                  var data = { updates: {} };
-                
-                  for (i = 0; i < itemsArray.length; i++) {
-                    data.updates[itemsArray[i]] = qty;
-                  }
+                  console.log(arrayProductIds);
+                  
 
                   jQuery.ajax
                   (
