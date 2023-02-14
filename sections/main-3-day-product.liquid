@@ -567,7 +567,6 @@
                     "properties": {}
                   }]
                   };
-                  ProductsToAdd.push({{ product.selected_or_first_available_variant.id }});
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
@@ -621,7 +620,6 @@
                   else if (ipadRentalOption === "no_thanks") {
                     // do not add ipad rental product
                   }
-                  arrayProductIds.push(CampProduct);
                 }
                 </script>
               {%- when 'buy_buttons' -%}
