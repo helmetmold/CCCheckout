@@ -540,6 +540,7 @@
                     body: JSON.stringify(ProductsToAdd) 
                   })
                   .then(response => {
+                    clickupsell();
                     return response.json();
                   })
                   .catch((error) => {
