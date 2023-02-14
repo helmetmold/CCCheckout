@@ -535,18 +535,11 @@
                   
 
                   var itemsArray = ProductsToAdd;
-                  var qty = 0;
+                  var qty = 1;
                   var data = { updates: {} };
                 
                   for (i = 0; i < itemsArray.length; i++) {
                     data.updates[itemsArray[i]] = qty;
-                  }
-
-                  var data2 = { updates: {} };
-                  for (i = 0; i < arrayProductIds.length; i++)
-                  {
-                    
-                    data2.updates[arrayProductIds[i]] = 1; 
                   }
 
                   jQuery.ajax
@@ -554,7 +547,7 @@
                     { 
                       type: 'POST',
                       url: '/cart/add.js',
-                      data: data2, 
+                      data: data, 
                       dataType: 'json',
                       success: function() 
                       { 
