@@ -608,6 +608,7 @@
                               
                               for (let i = 0; i < LineItems.length; i++) 
                               {
+                                console.log(cart.items);
                                 product[i] = cart.items.find(element => element = ids[i]);
                                 console.log(product[i]);
                                 idstoremove[i] = product[i].id; 
