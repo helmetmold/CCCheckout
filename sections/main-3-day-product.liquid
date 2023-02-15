@@ -448,7 +448,7 @@
                             <div class="ExtraSubtext" >iPad provided for 3-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            $29.99
+                            $29.99 
                           </div>
                         </label>
                       </div>
@@ -506,18 +506,18 @@
                   {% endif %}
                 {%- endfor -%}
                 </div>
-                  <button class="product-form__submit button button--full-width button--primary">Add to cart</button>
+                  <button id="buy-camps" class="product-form__submit button button--full-width button--primary">Add to cart</button>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
 
-                var arrayProductIds = [];
+                var ProductsToAdd;
                 var x;
                 $(document).ready
                   (
                     function () 
                     {
                       $(document).on
-                      ('click','#abcd',function()
+                      ('click','#buy-camps',function()
                         {
                           arrayProductIds = [];
                           x = 0;
@@ -528,50 +528,44 @@
                     }
                   );    
 
+
+                function makeAjaxRequest() 
+                {
+
+                  fetch(window.Shopify.routes.root + 'cart/add.js', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(ProductsToAdd) 
+                  })
+                  .then(response => {
+                    clickupsell();
+                    return response.json();
+                  })
+                  .catch((error) => {
+                    console.error('Error:', error);
+                  });
+                } 
+
                 function clickupsell()
                 {
                   var quickAddButtons = document.getElementsByClassName("quick-add__submit");
-                  quickAddButtons[0].click();
-                }
-
-
-                function makeAjaxRequest() 
-                {             
-                  data = arrayProductIds[x];
-                  console.log(x);
-                  x++;
-
-                  jQuery.ajax
-                  (
-                    {
-                      type: 'POST',
-                      url: '/cart/add.js',
-                      data: data,
-                      dataType: 'json',
-                      success: function() 
-                      { 
-                        console.log(arrayProductIds.length);
-                        if(x < arrayProductIds.length)
-                        {
-                          makeAjaxRequest();
-                        }
-                        else
-                        {
-                          clickupsell();
-                        }
-                      }
-                    }
-                  );
+                  quickAddButtons[0].click(); 
                 }
 
                 function AddExtras() 
                 {
-                  var CampProduct = 
-                  {
-                  "id": "{{ product.selected_or_first_available_variant.id }}", 
-                  "quantity": 1, 
-                  "properties": {}
-                  }; 
+                  let CampProduct = {
+                  'items': 
+                  [{
+                    'id': {{ product.selected_or_first_available_variant.id }},
+                    'quantity': 1,
+                    "properties": {}
+                  }]
+                  };
+
+                  CampProduct.items[0].properties["id"] = Math.random(0,1);;
 
                   var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
@@ -580,46 +574,49 @@
                   if (lunchOption === "Regular")  
                   {
                     var RegularLunch = {"id": 44404689371435, "quantity": 1};
-                    arrayProductIds.push(RegularLunch);
-                    CampProduct.properties["Lunch"] = "Regular";
+                    CampProduct.items.push(RegularLunch);
+                    CampProduct.items[0].properties["Lunch"] = "Regular +$34.99";
                   } 
                   if (lunchOption == "Vegetarian") 
                   {
                     var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
-                    arrayProductIds.push(VegetarianLunch);
-                    CampProduct.properties["Lunch"] = "Vegetarian";
+                    CampProduct.items.push(VegetarianLunch);
+                    CampProduct.items[0].properties["Lunch"] = "Vegetarian +$34.99";
                   }
-
                   if (pickupDropoffOption === "early_dropoff") {
                     var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
-                    arrayProductIds.push(EarlyDropOff);
-                    CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-Off";
+                    CampProduct.items.push(EarlyDropOff);
+                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Early Drop-Off +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup") {
                     var LatePickUp = {"id": 44405930393899, "quantity": 1};
-                    arrayProductIds.push(LatePickUp);
-                    CampProduct.properties["Drop-off/Pick-up options"] = "Late Pick-up";
+                    CampProduct.items.push(LatePickUp);
+                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Late Pick-up +$29.99";
                   } 
                   else if (pickupDropoffOption === "late_pickup_early_dropoff") {
                     var LateAndEarly = {"id": 44405930426667, "quantity": 1};
-                    arrayProductIds.push(LateAndEarly);
-                    CampProduct.properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up";
+                    CampProduct.items.push(LateAndEarly);
+                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$59.99";
                   }
 
                   if (ipadRentalOption === "standard_rental") {
-                    var StandardiPad = {"id": 44405919351083, "quantity": 1};
-                    arrayProductIds.push(StandardiPad);
-                    CampProduct.properties["iPad Rental"] = "Standard iPad rental";
+                    var StandardiPad = {"id": 44405919383851, "quantity": 1};
+                    CampProduct.items.push(StandardiPad);
+                    CampProduct.items[0].properties["iPad Rental"] = "Standard iPad rental +$29.99";
                   } 
                   else if (ipadRentalOption === "rental_with_insurance") {
-                    var InsurediPad = {"id": 44405919383851, "quantity": 1};
-                    arrayProductIds.push(InsurediPad);
-                    CampProduct.properties["iPad Rental"] = "iPad rental w/ insurance";
+                    var InsurediPad = {"id": 44405919351083, "quantity": 1};
+                    CampProduct.items.push(InsurediPad);
+                    CampProduct.items[0].properties["iPad Rental"] = "iPad rental w/ insurance +$59.99";
                   } 
                   else if (ipadRentalOption === "no_thanks") {
                     // do not add ipad rental product
                   }
-                  arrayProductIds.push(CampProduct);
+
+                  ProductsToAdd = CampProduct;
+
+                  console.log(CampProduct);
+
                 }
                 </script>
               {%- when 'buy_buttons' -%}
@@ -985,28 +982,27 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
-    
-  </div>
-  <div id="test">
-    {% for tag in product.tags %}
-      {% assign first_letter = tag | slice: 0 %}
-      {% if first_letter == "_" %}
-        {% assign first_underscore_tag = tag %}
-        {% break %}
+    <div>
+      {% for tag in product.tags %}
+        {% assign first_letter = tag | slice: 0 %}
+        {% if first_letter == "_" %}
+          {% assign first_underscore_tag = tag %}
+          {% break %}
+        {% endif %}
+        {% endfor %}
+      {% for productcamp in collections.all.products %}  
+        {% if productcamp.tags contains first_underscore_tag %} 
+          {% if productcamp.tags contains "Tech Camp" %}
+          {% render 'card-product', 
+          card_product: productcamp,
+          show_quick_add: true,
+          %}
+        {% endif %}
       {% endif %}
       {% endfor %}
-    {% for productcamp in collections.all.products %}   
-      {% if productcamp.tags contains first_underscore_tag %} 
-        {% if productcamp.tags contains "Tech Camp" %}  
-        {% render 'card-product', 
-        card_product: productcamp,
-        show_quick_add: true,
-        %}
-      {% endif %}
-    {% endif %}
-    {% endfor %}
-
+    </div>
   </div>
+  
   
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
