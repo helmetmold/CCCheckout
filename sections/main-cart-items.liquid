@@ -61,7 +61,7 @@
             <tbody>
               {%- for item in cart.items -%}
                 {% for tag in item.product.tags %}
-                  {% if tag == "AddOn" %}
+                  {% if tag == "AddOn" or tag == "SummerPass" %}
                     <div class="make-short">
                       <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
