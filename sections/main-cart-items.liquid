@@ -597,7 +597,7 @@
                           data2.updates[ids[i]] = qty;
                         }
                         
-                        $.ajax({
+                        jQuery.ajax({
                           url: '/cart.js',
                           dataType: 'json',
                           type: 'GET',
@@ -631,7 +631,7 @@
 
                               console.log(data3);
 
-                              $.ajax({
+                              jQuery.ajax({
                                 type: 'POST',
                                 url: '/cart/update.js',
                                 data: data3,
