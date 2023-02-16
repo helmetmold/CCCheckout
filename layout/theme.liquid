@@ -250,7 +250,7 @@
     }
     </script>
   {% include 'storeifyapps-storelocator-header' %}
-{% include 'sm-red' %}{% render 'simplee' %}</head>
+{% include 'sm-red' %}</head>
 
   <body class="gradient">
 
@@ -267,12 +267,7 @@
     {% section 'header' %}
       {% include 'Progress-Bar' %}
           <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-             {% assign sm_show_content = true %} {% include 'simplee-memberships' %}
-                                              {% if sm_show_content %}
-                                                    {{ content_for_layout }}
-                                                {% else %}
-                                                    {%  echo shop.metafields.simplee.restricted %}
-                                                {% endif %}
+            {{ content_for_layout }}
           </main>
     {% comment %}
       <div class="my-container">
