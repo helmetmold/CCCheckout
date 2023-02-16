@@ -36,12 +36,6 @@
           "settings": {
           }
         },
-        "d92bd244-8147-4bc7-9162-ffb358a3241c": {
-          "type": "shopify:\/\/apps\/inflowkit\/blocks\/inflowkit-plan-selection\/3ded6358-a6d1-4e7e-99fa-2b2bd5dd9cec",
-          "settings": {
-            "stars_fill_color": "#000000"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -61,7 +55,6 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "d92bd244-8147-4bc7-9162-ffb358a3241c",
         "buy_buttons",
         "description"
       ],
