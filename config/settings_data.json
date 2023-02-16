@@ -233,6 +233,19 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "4937020141276920867": {
+        "type": "shopify:\/\/apps\/inflowkit\/blocks\/inflowkit\/3ded6358-a6d1-4e7e-99fa-2b2bd5dd9cec",
+        "disabled": false,
+        "settings": {
+          "fontsize": 14,
+          "hover_color": "#000000",
+          "food": "#000000",
+          "plan_select_bg": "#fff",
+          "cardbg": "#fff",
+          "discount_color": "#000",
+          "plan_name_color": "#000"
+        }
       }
     }
   },
