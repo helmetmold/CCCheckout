@@ -962,7 +962,20 @@
         class="product-popup-modal__content"
         tabindex="-1"
       >
-        {%- render 'Tech-Camp-Popup' -%}
+      {% for tag in product.tags %}
+        {% assign first_letter = tag | slice: 0 %}
+        {% if first_letter == "_" %}
+          {% assign first_underscore_tag = tag %}
+          {% break %}
+        {% endif %}
+        {% endfor %}
+      {% for productcamp in collections.all.products %}  
+        {% if productcamp.tags contains first_underscore_tag %} 
+          {% if productcamp.tags contains "Tech Camp" %}
+          {%- render 'Tech-Camp-Popup' with productcamp -%}
+        {% endif %}
+      {% endif %}
+      {% endfor %}
         <button
           id="ModalClose-{{ block.id }}"
           type="button"
