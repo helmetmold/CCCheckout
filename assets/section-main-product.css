@@ -211,6 +211,8 @@
 .horizontalStackPaymentTypes {
   display: flex;
   flex-direction: row;
+  gap: 10px;
+  justify-content: center;
 }
 
 .max-text {
