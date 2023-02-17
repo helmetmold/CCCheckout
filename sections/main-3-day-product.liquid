@@ -972,7 +972,7 @@
       {% for productcamp in collections.all.products %}  
         {% if productcamp.tags contains first_underscore_tag %} 
           {% if productcamp.tags contains "Tech Camp" %}
-          {%- render 'Tech-Camp-Popup' with productcamp -%}
+          {%- include 'Tech-Camp-Popup' with product: productcamp -%}
         {% endif %}
       {% endif %}
       {% endfor %}
