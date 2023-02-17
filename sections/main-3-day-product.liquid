@@ -95,7 +95,6 @@
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
-                  {{ block.shopify_attributes }}
                   id="Inventory-{{ section.id }}"
                   role="status"
                 >
@@ -510,7 +509,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
 
-                var ProductsToAdd;
+                var ProductsToAdd; 
                 var x;
                 $(document).ready
                   (
@@ -621,7 +620,7 @@
                 </script>
               {%- when 'buy_buttons' -%}
                 <div {{ block.shopify_attributes }}>
-                  {% render 'simplee-widget', simplee_id: section.id  %} <product-form class="product-form">
+                   <product-form class="product-form">
                     <div class="product-form__error-message-wrapper" role="alert" hidden>
                       <svg
                         aria-hidden="true"
@@ -978,11 +977,12 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
+
+  
   {% comment %}
     dont need below
-  {% endcomment %}
+  
   <div class="hidden-camp-upsell">
-    <div>
       {% for tag in product.tags %}
         {% assign first_letter = tag | slice: 0 %}
         {% if first_letter == "_" %}
@@ -1000,9 +1000,8 @@
         {% endif %}
       {% endif %}
       {% endfor %}
-    </div>
   </div>
-  
+  {% endcomment %}
   
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>

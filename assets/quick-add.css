@@ -90,7 +90,7 @@
   .quick-add-modal__content {
     bottom: 3.2rem;
   }
-  
+
   .quick-add-modal__content-info > * {
     max-height: 100%;
   }
@@ -167,10 +167,12 @@ quick-add-modal .product--columns .product__info-container--sticky {
   quick-add-modal .product:not(.product--no-media) .product__info-wrapper {
     padding-left: 4rem;
     max-width: 54%;
-    width: calc(54% - var(--grid-desktop-horizontal-spacing) / 2)
+    width: calc(54% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
-  quick-add-modal .product--columns .product__media-item:not(.product__media-item--single):not(:only-child) {
+  quick-add-modal
+    .product--columns
+    .product__media-item:not(.product__media-item--single):not(:only-child) {
     max-width: 100%;
     width: 100%;
   }
