@@ -19,6 +19,8 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
