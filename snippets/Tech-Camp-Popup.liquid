@@ -1,5 +1,4 @@
-{%- if card_product.variants.size == 1 -%}
-  <product-form>
+<product-form>
     {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
       <input
         type="hidden"
@@ -44,4 +43,3 @@
       </button>
     {%- endform -%}
   </product-form>
-{%- endif -%}
