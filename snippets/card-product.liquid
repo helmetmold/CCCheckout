@@ -19,6 +19,7 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -199,7 +200,7 @@
           </div>
         </div>
         {%- if show_quick_add -%}
-          <div class="quick-add no-js-hidden">
+          <div class="quick-add">
             {%- assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id -%}
             {%- if card_product.variants.size == 1 -%}
               <product-form>
