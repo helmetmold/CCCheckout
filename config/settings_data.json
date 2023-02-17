@@ -11,9 +11,9 @@
     "gradient_background_1": "",
     "colors_background_2": "#ffffff",
     "gradient_background_2": "",
-    "type_header_font": "raleway_n4",
+    "type_header_font": "dm_sans_n4",
     "heading_scale": 130,
-    "type_body_font": "raleway_n4",
+    "type_body_font": "dm_sans_n4",
     "body_scale": 100,
     "page_width": 1600,
     "spacing_sections": 0,
@@ -117,6 +117,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
+    "favicon": "shopify:\/\/shop_images\/Favicon.png",
     "currency_code_enabled": true,
     "cart_type": "page",
     "show_vendor": false,
@@ -226,15 +227,7 @@
     },
     "content_for_index": [
 
-    ],
-    "blocks": {
-      "4644077978495408606": {
-        "type": "shopify:\/\/apps\/appstle-memberships\/blocks\/appstle-membership-helper\/76528d70-5fbe-48f8-8e19-590d109aa2b7",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "presets": {
     "Default": {

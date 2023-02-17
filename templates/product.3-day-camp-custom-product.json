@@ -20,11 +20,6 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -44,6 +39,11 @@
         },
         "description": {
           "type": "description",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
           "settings": {
           }
         }
