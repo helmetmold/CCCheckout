@@ -977,9 +977,11 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
+
+  
   {% comment %}
     dont need below
-  {% endcomment %}
+  
   <div class="hidden-camp-upsell">
       {% for tag in product.tags %}
         {% assign first_letter = tag | slice: 0 %}
@@ -999,7 +1001,7 @@
       {% endif %}
       {% endfor %}
   </div>
-  
+  {% endcomment %}
   
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
