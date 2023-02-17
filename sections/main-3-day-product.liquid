@@ -981,7 +981,6 @@
     dont need below
   {% endcomment %}
   <div class="hidden-camp-upsell">
-    <div>
       {% for tag in product.tags %}
         {% assign first_letter = tag | slice: 0 %}
         {% if first_letter == "_" %}
@@ -999,7 +998,6 @@
         {% endif %}
       {% endif %}
       {% endfor %}
-    </div>
   </div>
   
   
