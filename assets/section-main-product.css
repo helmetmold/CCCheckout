@@ -215,6 +215,13 @@
   justify-content: center;
 }
 
+.center-align-payment-types {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .max-text {
   display: flex;
   align-content: center;
