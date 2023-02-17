@@ -36,8 +36,6 @@
   <script id="vopo-head">(function () {
 	if (((document.documentElement.innerHTML.includes('asyncLoad') && !document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240')) || (window.bcpo && bcpo.disabled)) && !window.location.href.match(/[&?]yesbcpo/)) return;
 	var script = document.createElement('script');
-	var reg = new RegExp('\\\\/\\\\/cdn\\.shopify\\.com\\\\/proxy\\\\/[a-z0-9]+\\\\/obscure-escarpment-2240\\.herokuapp\\.com\\\\/js\\\\/best_custom_product_options\\.js[^"]+');
-	var match = reg.exec(document.documentElement.innerHTML);
 	script.src = match[0].split('\\').join('').replace('%3f', '?').replace('u0026', '&');
 	var vopoHead = document.getElementById('vopo-head'); vopoHead.parentNode.insertBefore(script, vopoHead);
 })();
