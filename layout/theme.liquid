@@ -248,7 +248,7 @@
     }
     </script>
   {% include 'storeifyapps-storelocator-header' %}
-{% include 'sm-red' %}{% include 'kart_discount' %}</head>
+{% include 'sm-red' %}</head>
 
   <body class="gradient">
 
@@ -263,7 +263,9 @@
     {% section 'announcement-bar' %}
 
     {% section 'header' %}
-      {% include 'Progress-Bar' %}
+      <div>
+        {% include 'Progress-Bar' %}
+      </div>
           <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
             {{ content_for_layout }}
           </main>
