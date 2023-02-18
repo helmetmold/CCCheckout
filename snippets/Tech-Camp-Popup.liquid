@@ -110,6 +110,10 @@ div.camparrow {
       {% endif %}
     {% endfor %}
 {% endfor %}
+
+{% for option in myList %}
+  <p>{{ option }}</p>
+{% endfor %}
  
 {% comment %}
   {% for camp in product.variants %}
