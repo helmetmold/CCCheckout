@@ -105,13 +105,23 @@ div.camparrow {
         {% comment %} do nothing since the title is already in the list {% endcomment %}
         {% else %}
         {% assign camps = camps | append: ',' | append: option %}
+        <div>
+          <a class="camp-button" onclick='location.href={{product.url}}'>
+            <div class="leftBox">
+              <div class="campicon"></div>
+              <div class="NameandSpan">
+                <h2 class="campname">{{ option }}</h2>
+              </div>
+            </div>
+            <div class="priceArrow">
+              <h2 class="campprice">{{ product.price }}</h2>
+              <div class="camparrow"></div>
+            </div>
+          </a>
+        </div>
         {% endif %}
       {% endif %}
     {% endfor %}
-{% endfor %}
-
-{% for option in camps %}
-  <p>{{ option }}</p>
 {% endfor %}
  
 {% comment %}
