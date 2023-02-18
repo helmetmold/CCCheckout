@@ -2889,7 +2889,7 @@ a.product__text {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  position: sticky;
+  position: absolute;
   padding: 1.2rem;
   z-index: 2;
   top: 1.5rem;
