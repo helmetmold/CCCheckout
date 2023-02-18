@@ -79,6 +79,11 @@ h2.campprice {
   height: 15px;
 }
 
+.daysandtimes {
+  font-weight: 700;
+  font-size: 20px;
+}
+
 </style>
 
 {%  assign icons = '' %}
@@ -112,8 +117,10 @@ h2.campprice {
 {% assign camps = '' %}
 
 <div class="buttonholder">
-  <h5>Thursdays, Fridays</h5>
-  <h5>8:30am-3:30pm</h5>
+  <div class="daysandtimes">
+    <h5>Thursdays, Fridays</h5>
+    <h5>8:30am-3:30pm</h5>
+  </div>
   {% for variant in product.variants %}
     {% for option in variant.options %}
       {% if option == 'AI Camp' or option == 'Roblox Game Development Camp' or option == 'Minecraft Modding Camp' %}
