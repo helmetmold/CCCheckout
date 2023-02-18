@@ -96,9 +96,14 @@ div.camparrow {
 
 <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
 
-{% assign second_variant = product.variants %}
-{% for option in second_variant.options %}
-  <p>{{ option }}</p>
+{% for variant in product.variants %}
+  {% if variant.title == 'Ticket' %}
+    {% for option in variant.options %}
+      {% if option == 'AI' or option == 'Roblox' or option == 'Minecraft' %}
+        <p>{{ variant.title }} - {{ option }}</p>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 {% endfor %}
  
 {% comment %}
