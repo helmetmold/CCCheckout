@@ -106,7 +106,8 @@ h2.campprice {
 
 {% assign camps = '' %}
 
-{% for variant in product.variants %}
+<div>
+  {% for variant in product.variants %}
     {% for option in variant.options %}
       {% if option == 'AI Camp' or option == 'Roblox Game Development Camp' or option == 'Minecraft Modding Camp' %}
       {% if camps contains option %}
@@ -137,25 +138,7 @@ h2.campprice {
       {% endif %}
     {% endfor %}
 {% endfor %}
- 
-{% comment %}
-  {% for camp in product.variants %}
-  <div>
-  <a class="camp-button" onclick="location.href={{product.url}}">
-    <div class="leftBox">
-      <div class="campicon" style='background-image: url("{{camp}}")'></div>
-      <div class="NameandSpan">
-        <h2 class="campname">{{ camp }}</h2>
-      </div>
-    </div>
-    <div class="priceArrow">
-      <h2 class="campprice">{{ product.price }}</h2>
-      <div class="camparrow"></div>
-    </div>
-  </a>
 </div>
-{% endfor %}
-{% endcomment %}
 
 
 
