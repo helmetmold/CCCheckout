@@ -71,6 +71,20 @@ div.camparrow {
 
 </style>
 
+{%  assign icons = '' %}
+
+{%- for tags in product.tags -%}
+  {% if tags == "AI" %}
+  {% assign my_variable = my_variable | append: ',https://educationstation.github.io/CCLocation/img/Ai.png' %}
+  {% endif %}
+  {% if tags == "Minecraft" %}
+  {% assign my_variable = my_variable | append: ',https://educationstation.github.io/CCLocation/img/Minecraft.png' %}
+  {% endif %}
+  {% if tags == "Roblox" %}
+  {% assign my_variable = my_variable | append: ',https://educationstation.github.io/CCLocation/img/Roblox.png' %}
+  {% endif %}
+{%- endfor -%}  
+
 <div>
   <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
   <a class="camp-button" onclick="location.href={{product.url}}">
