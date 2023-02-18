@@ -20,6 +20,13 @@
   justify-content: center;
 }
 
+.buttonholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .leftBox {
   display: flex;
   flex-direction: row;
@@ -105,7 +112,7 @@ h2.campprice {
 
 {% assign camps = '' %}
 
-<div>
+<div class="buttonholder">
   {% for variant in product.variants %}
     {% for option in variant.options %}
       {% if option == 'AI Camp' or option == 'Roblox Game Development Camp' or option == 'Minecraft Modding Camp' %}
