@@ -105,7 +105,7 @@ div.camparrow {
         {% if myList contains option %}
         {% comment %} do nothing since the title is already in the list {% endcomment %}
         {% else %}
-        {% assign myList = myList | push:product.title %}
+        {% assign myList = myList | push:option %}
         {% endif %}
       {% endif %}
     {% endfor %}
