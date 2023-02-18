@@ -96,9 +96,9 @@ div.camparrow {
 
 <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
 
-{% for variant in product.variants %}
+{% for variant in product.variants.option2 %}
     <div>
-      {{variant.option2}}
+      {{variant.name}}
     </div>
 {% endfor %}
  
