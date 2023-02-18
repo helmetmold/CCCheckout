@@ -953,6 +953,13 @@
   {% render 'product-media-modal' variant_images: variant_images %}
 
   {% assign popups = section.blocks | where: 'type', 'popup' %}
+  {% for tag in product.tags %}
+    {% assign first_letter = tag | slice: 0 %}
+    {% if first_letter == "_" %}
+      {% assign first_underscore_tag = tag %}
+      {% break %}
+    {% endif %}
+    {% endfor %}
   {%- for block in popups -%}
     <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
       <div
@@ -973,6 +980,7 @@
         <div class="product-popup-modal__content-info">
           <h1 class="h2">{{ block.settings.page.title }}</h1>
           {{ block.settings.page.content }}
+
         </div>
       </div>
     </modal-dialog>
