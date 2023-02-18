@@ -97,12 +97,13 @@ div.camparrow {
 <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
 
 {% for variant in product.variants %}
-  {% if variant.option1 == 'Ticket' %}
+  {% if variant.option2 == 'Ticket' %}
     <p>{{ variant.title }} - {{ variant.price }}</p>
   {% endif %}
 {% endfor %}
 
-{% for camp in product.variants %}
+{% comment %}
+  {% for camp in product.variants %}
   <div>
   <a class="camp-button" onclick="location.href={{product.url}}">
     <div class="leftBox">
@@ -118,6 +119,8 @@ div.camparrow {
   </a>
 </div>
 {% endfor %}
+{% endcomment %}
+
 
 
 
