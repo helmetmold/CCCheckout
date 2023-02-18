@@ -46,6 +46,13 @@
           "type": "price",
           "settings": {
           }
+        },
+        "e98b3eb2-b7de-4145-9986-c28020c676f5": {
+          "type": "popup",
+          "settings": {
+            "text": "Pop-up link text",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -56,7 +63,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "price"
+        "price",
+        "e98b3eb2-b7de-4145-9986-c28020c676f5"
       ],
       "settings": {
         "enable_sticky_info": false,
