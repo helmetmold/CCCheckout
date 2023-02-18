@@ -91,13 +91,10 @@ h2.campprice {
 {% assign TechNames = campName | split: ", " %}
 {% assign TechColor = campColor | split: ", " %}
 
-
 <h1>Make it a full week!</h1>
 <h5>You have currently only selected a 3-day camp, add a 2-day camp within the same week to make it a full week of fun!</h5>
 <li></li>
 <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
-
-
 
 {% assign camps = '' %}
 
@@ -108,7 +105,7 @@ h2.campprice {
         {% comment %} do nothing since the title is already in the list {% endcomment %}
         {% else %}
         {% assign camps = camps | append: ',' | append: option %}
-        <div>
+        <div class="button-container">
           <a class="camp-button" href="{{product.url}}">
             <div class="leftBox">
               {% if option == "AI Camp" %}
