@@ -1,0 +1,46 @@
+{% assign liquid_date = 'now' | date: '%s' %}
+{% assign liquid_date = liquid_date | plus: 0 %}
+{% assign app_enabled = shop.metafields.appid_2922505.app_enabled %}
+{% assign is_dev_mode = shop.metafields.appid_2922505.is_dev_mode %}
+{% assign last_updated = shop.metafields.appid_2922505.time_updated %}{% assign threedays_later = last_updated| plus: 259200  %}
+{% if (liquid_date < threedays_later and app_enabled != 'N') and ((is_dev_mode == '0' or is_dev_mode == blank) or (is_dev_mode == '1' and theme.role != 'main')) %}
+{% assign af_cart_json = cart | json %}
+{% assign af_customer_id = customer.id %}
+<script>
+urlParam = function(name){
+	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	if (results == null){
+	   return null;
+	}
+	else {
+	   return decodeURI(results[1]) || 0;
+	}
+}
+window.af_custom_id = '{{ af_customer_id }}';
+window.af_cd_cart_obj = {{af_cart_json}};
+var sessionId = (localStorage.getItem('afkd_sessionId') != null && typeof localStorage.getItem('afkd_sessionId') != 'undefined' && localStorage.getItem('afkd_sessionId') != 'undefined') ? localStorage.getItem('afkd_sessionId') : '';
+var passkey = (localStorage.getItem('afkd_passkey') != null && typeof localStorage.getItem('afkd_passkey') != 'undefined' && localStorage.getItem('afkd_passkey') != 'undefined') ? localStorage.getItem('afkd_passkey') : '';
+if(urlParam('PHPSESSID') != null) {
+	sessionId = "&PHPSESSID="+urlParam("PHPSESSID");
+	localStorage.setItem('afkd_sessionId',sessionId);
+} 
+if(urlParam('passkey') != null) {
+	passkey = "&passkey="+urlParam("passkey");
+	localStorage.setItem('afkd_passkey',passkey);
+}
+</script>
+<script>
+  var script = document.createElement("script");
+  script.defer = true;
+  script.type = "text/javascript";
+  script.src = "https://cd.anglerfox.com/app/script/load_script.php?v={{last_updated}}&shop={{ shop.permanent_domain }}"  + sessionId + passkey;
+  document.head.appendChild(script);
+</script>
+{% endif %}
+<script>
+  function KDStrikeoutSubtotal(subtotalSelector){
+    var subTotalHtml = `{{cart.total_price|money}}`.replace('"', '\"');
+    var newTotalHtml = `{{cart.total_price|minus :10 |money}}`.replace('"', '\"');
+    document.querySelector(subtotalSelector).innerHTML = "<del class='af_del_overwrite'>"+ subTotalHtml + "</del> " + newTotalHtml;
+  }
+</script>
