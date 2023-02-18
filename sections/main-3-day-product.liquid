@@ -79,19 +79,7 @@
         </div>
       {%- endif -%}
       {% render 'product-media-gallery', variant_images: variant_images %}
-      <div>
-        <div class="center-align-payment-types">
-          <h5>Secure Payment, Trusted by thousands of parents</h5>
-          <div class="list list-payment horizontalStackPaymentTypes" role="list">
-            {%- for type in shop.enabled_payment_types -%}
-              <li class="list-payment__item">
-                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-              </li>
-            {%- endfor -%}
-          </div>
-        </div>
-      </div>
-      </div>
+    </div>
     </div>
       <div class="select-options">
       <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -974,28 +962,14 @@
         class="product-popup-modal__content"
         tabindex="-1"
       >
-      <button
-      id="ModalClose-{{ block.id }}"
-      type="button"
-      class="product-popup-modal__toggle"
-      aria-label="{{ 'accessibility.close' | t }}"
-    >
-      {% render 'icon-close' %}
-    </button>
-      {% for tag in product.tags %}
-        {% assign first_letter = tag | slice: 0 %}
-        {% if first_letter == "_" %}
-          {% assign first_underscore_tag = tag %}
-          {% break %}
-        {% endif %}
-        {% endfor %}
-      {% for productcamp in collections.all.products %}  
-        {% if productcamp.tags contains first_underscore_tag %} 
-          {% if productcamp.tags contains "Tech Camp" %}
-          {%- include 'Tech-Camp-Popup' with product: productcamp -%}
-        {% endif %}
-      {% endif %}
-      {% endfor %}
+        <button
+          id="ModalClose-{{ block.id }}"
+          type="button"
+          class="product-popup-modal__toggle"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          {% render 'icon-close' %}
+        </button>
         <div class="product-popup-modal__content-info">
           <h1 class="h2">{{ block.settings.page.title }}</h1>
           {{ block.settings.page.content }}
@@ -1004,7 +978,7 @@
     </modal-dialog>
   {%- endfor -%}
 
-
+  
   {% comment %}
     dont need below
   
