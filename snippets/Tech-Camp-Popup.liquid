@@ -72,20 +72,27 @@ div.camparrow {
 </style>
 
 {%  assign icons = '' %}
+{%  assign campName = '' %}
+{%  assign campColor = '' %}
 
 {%- for tags in product.tags -%}
   {% if tags == "AI" %}
   {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Ai.png' %}
+  {% assign campName = campName | append: ',Creative A.I.' %}
   {% endif %}
   {% if tags == "Minecraft" %}
   {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Minecraft.png' %}
+  {% assign campName = campName | append: ',Minecraft Modding' %}  
   {% endif %}
   {% if tags == "Roblox" %}
   {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Roblox.png' %}
+  {% assign campName = campName | append: ',Roblox Game Dev' %}
   {% endif %}
 {%- endfor -%}  
 
 {% assign TechIcons = icons | split: ", " %}
+{% assign TechNames = campName | split: ", " %}
+{% assign TechColor = campColor | split: ", " %}
 
 <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
 
@@ -93,14 +100,13 @@ div.camparrow {
   <div>
   <a class="camp-button" onclick="location.href={{product.url}}">
     <div class="leftBox">
-      <div class="campicon" style='background-image: url("{{icon}}")'></div>
+      <div class="campicon" style='background-image: url("{{camp}}")'></div>
       <div class="NameandSpan">
         <h2 class="campname">{{ camp }}</h2>
-        <h2 class="campspan">{{ span }}</h2>
       </div>
     </div>
     <div class="priceArrow">
-      <h2 class="campprice">{{ price }}</h2>
+      <h2 class="campprice">{{ product.price }}</h2>
       <div class="camparrow" style='background-image: url("{{arrow}}")'></div>
     </div>
   </a>
