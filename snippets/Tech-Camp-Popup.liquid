@@ -108,7 +108,9 @@ div.camparrow {
         <div>
           <a class="camp-button" onclick='location.href={{product.url}}'>
             <div class="leftBox">
-              <div class="campicon"></div>
+              {% if option = 'AI Camp' %}
+              <div class="campicon" style='background-image: url("{{https://educationstation.github.io/CCLocation/img/Ai.png}}")' ></div>
+              {% endif %}
               <div class="NameandSpan">
                 <h2 class="campname">{{ option }}</h2>
               </div>
