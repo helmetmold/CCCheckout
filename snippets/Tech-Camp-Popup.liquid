@@ -96,7 +96,7 @@ div.camparrow {
 
 <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
 
-{% assign myList = "" %}
+{% assign camps = '' | split: '' %}
 
 {% for variant in product.variants %}
     {% for option in variant.options %}
@@ -105,7 +105,7 @@ div.camparrow {
       {% if myList contains option %}
         {% comment %} do nothing since the title is already in the list {% endcomment %}
         {% else %}
-        {% assign myList = myList | push:option %}
+        {% assign camps = camps | append: ',' | append: option %}
         {% endif %}
       {% endif %}
     {% endfor %}
