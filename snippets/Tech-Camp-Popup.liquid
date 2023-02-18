@@ -104,7 +104,7 @@ div.camparrow {
         {% else %}
         {% assign camps = camps | append: ',' | append: option %}
         <div>
-          <a class="camp-button" onclick='location.href="{{product.url}}"'>
+          <a class="camp-button" onclick="window.location='{{product.url}}'">
             <div class="leftBox">
               {% if option == "AI Camp" %}
               <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Ai.png" ></img>
