@@ -2895,6 +2895,7 @@ a.product__text {
   top: 1.5rem;
   width: 4rem;
   margin: 0 0 0 auto;
+  right: 0px;
 }
 
 .product-popup-modal__toggle:hover {
