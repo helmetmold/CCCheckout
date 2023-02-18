@@ -977,13 +977,13 @@
         >
           {% render 'icon-close' %}
         </button>
-        <div class="product-popup-modal__content-info">
+        <div class="product-popup-modal__content-info centeredmodel">
           <h1 class="h2">{{ block.settings.page.title }}</h1>
           {{ block.settings.page.content }}
           {% for productcamp in collections.all.products %}  
             {% if productcamp.tags contains first_underscore_tag %} 
               {% if productcamp.tags contains "Tech Camp" %}
-              {%- include 'Tech-Camp-Popup' with product: productcamp -%}
+              {% include 'Tech-Camp-Popup' with product: productcamp %}
             {% endif %}
           {% endif %}
           {% endfor %}
