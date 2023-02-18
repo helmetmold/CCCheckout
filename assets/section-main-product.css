@@ -2875,7 +2875,7 @@ a.product__text {
 }
 
 .hidebutton {
-  display: none;
+  display: none !important;
 }
 
 @media screen and (max-width: 749px) {
