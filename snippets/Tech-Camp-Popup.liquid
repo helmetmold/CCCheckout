@@ -102,7 +102,7 @@ div.camparrow {
     {% for option in variant.options %}
       {% if option == 'AI Camp' or option == 'Roblox Game Development Camp' or option == 'Minecraft Modding Camp' %}
       <h3>{{option}}</h3>  
-      {% if myList contains option %}
+      {% if camps contains option %}
         {% comment %} do nothing since the title is already in the list {% endcomment %}
         {% else %}
         {% assign camps = camps | append: ',' | append: option %}
