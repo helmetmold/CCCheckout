@@ -222,6 +222,7 @@
   width: 800px !important;
   height: fit-content !important;
   padding: 60px !important;
+  position: relative;
 }
 
 .horizontalStackPaymentTypes {
