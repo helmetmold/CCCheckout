@@ -79,6 +79,18 @@
         </div>
       {%- endif -%}
       {% render 'product-media-gallery', variant_images: variant_images %}
+      <div>
+        <div class="center-align-payment-types">
+          <h5>Secure Payment, Trusted by thousands of parents</h5>
+          <div class="list list-payment horizontalStackPaymentTypes" role="list">
+            {%- for type in shop.enabled_payment_types -%}
+              <li class="list-payment__item">
+                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+              </li>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
     </div>
     </div>
       <div class="select-options">
