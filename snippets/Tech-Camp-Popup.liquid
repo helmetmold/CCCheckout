@@ -101,7 +101,6 @@ div.camparrow {
 {% for variant in product.variants %}
     {% for option in variant.options %}
       {% if option == 'AI Camp' or option == 'Roblox Game Development Camp' or option == 'Minecraft Modding Camp' %}
-      <h3>{{option}}</h3>  
       {% if camps contains option %}
         {% comment %} do nothing since the title is already in the list {% endcomment %}
         {% else %}
@@ -112,7 +111,6 @@ div.camparrow {
 {% endfor %}
 
 {% for option in camps %}
-  <p>BOOIIIII</p>
   <p>{{ option }}</p>
 {% endfor %}
  
