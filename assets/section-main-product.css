@@ -208,6 +208,13 @@
   margin-top: 0.5rem;
 }
 
+.centeredmodel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
 .horizontalStackPaymentTypes {
   display: flex;
   flex-direction: row;
