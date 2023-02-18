@@ -91,32 +91,13 @@ h2.campprice {
 
 </style>
 
-{%  assign icons = '' %}
-{%  assign campName = '' %}
-{%  assign campColor = '' %}
+<div>
+  <div>
+  <h1>Make it a full week!</h1>
+  <hr>
+  <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
+</div>
 
-{%- for tags in product.tags -%}
-  {% if tags == "AI" %}
-  {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Ai.png' %}
-  {% assign campName = campName | append: ',Creative A.I.' %}
-  {% endif %}
-  {% if tags == "Minecraft" %}
-  {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Minecraft.png' %}
-  {% assign campName = campName | append: ',Minecraft Modding' %}  
-  {% endif %}
-  {% if tags == "Roblox" %}
-  {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Roblox.png' %}
-  {% assign campName = campName | append: ',Roblox Game Dev' %}
-  {% endif %}
-{%- endfor -%}  
-
-{% assign TechIcons = icons | split: ", " %}
-{% assign TechNames = campName | split: ", " %}
-{% assign TechColor = campColor | split: ", " %}
-
-<h1>Make it a full week!</h1>
-<hr>
-<h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
 
 {% assign camps = '' %}
 
@@ -158,6 +139,12 @@ h2.campprice {
 {% endfor %}
 </div>
 
+<div>
+  No thanks
+</div>
 
 
+
+
+</div>
 
