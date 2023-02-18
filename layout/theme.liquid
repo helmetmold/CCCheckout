@@ -261,13 +261,10 @@
     {%- endif -%}
 
     {% section 'announcement-bar' %}
-
     {% section 'header' %}
-      <div>
-        {% include 'Progress-Bar' %}
-      </div>
           <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-            {{ content_for_layout }}
+          {% include 'Progress-Bar' %}  
+          {{ content_for_layout }}
           </main>
     {% comment %}
       <div class="my-container">
