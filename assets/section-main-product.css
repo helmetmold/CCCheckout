@@ -220,6 +220,7 @@
 
 .centeredmodel2 {
   width: 800px !important;
+  height: fit-content !important;
 }
 
 .horizontalStackPaymentTypes {
