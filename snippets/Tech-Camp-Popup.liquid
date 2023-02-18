@@ -96,14 +96,19 @@ div.camparrow {
 
 <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
 
+{% assign myList = [] %}
+
 {% for variant in product.variants %}
-  {% if variant.title == 'Ticket' %}
     {% for option in variant.options %}
-      {% if option == 'AI' or option == 'Roblox' or option == 'Minecraft' %}
-        <p>{{ variant.title }} - {{ option }}</p>
+      {% if option == 'AI Camp' or option == 'Roblox Game Development Camp' or option == 'Minecraft Modding Camp' %}
+        <p>{{ option }}</p>
+        {% if myList contains option %}
+        {% comment %} do nothing since the title is already in the list {% endcomment %}
+        {% else %}
+        {% assign myList = myList | push:product.title %}
+        {% endif %}
       {% endif %}
     {% endfor %}
-  {% endif %}
 {% endfor %}
  
 {% comment %}
