@@ -75,18 +75,22 @@ div.camparrow {
 
 {%- for tags in product.tags -%}
   {% if tags == "AI" %}
-  {% assign my_variable = my_variable | append: ',https://educationstation.github.io/CCLocation/img/Ai.png' %}
+  {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Ai.png' %}
   {% endif %}
   {% if tags == "Minecraft" %}
-  {% assign my_variable = my_variable | append: ',https://educationstation.github.io/CCLocation/img/Minecraft.png' %}
+  {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Minecraft.png' %}
   {% endif %}
   {% if tags == "Roblox" %}
-  {% assign my_variable = my_variable | append: ',https://educationstation.github.io/CCLocation/img/Roblox.png' %}
+  {% assign icons = icons | append: ',https://educationstation.github.io/CCLocation/img/Roblox.png' %}
   {% endif %}
 {%- endfor -%}  
 
-<div>
-  <h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
+{% assign TechIcons = icons | split: ", " %}
+
+<h3>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
+
+{% for camp in TechIcons %}
+  <div>
   <a class="camp-button" onclick="location.href={{product.url}}">
     <div class="leftBox">
       <div class="campicon" style='background-image: url("{{icon}}")'></div>
@@ -101,4 +105,7 @@ div.camparrow {
     </div>
   </a>
 </div>
+{% endfor %}
+
+
 
