@@ -522,7 +522,6 @@
                 <script>
 
                 var ProductsToAdd; 
-                var x;
                 $(document).ready
                   (
                     function () 
@@ -531,7 +530,6 @@
                       ('click','#buy-camps',function()
                         {
                           arrayProductIds = [];
-                          x = 0;
                           AddExtras();
                           makeAjaxRequest();
                         }
@@ -567,6 +565,8 @@
 
                 function AddExtras() 
                 {
+
+                console.log(document.querySelector('input[name="lunch"]:checked').value); 
                   let CampProduct = {
                   'items': 
                   [{
