@@ -576,20 +576,32 @@
 
                   CampProduct.items[0].properties["id"] = Math.random(0,1);
                   console.log("OK");
-                  if(document.querySelector('input[name="lunch"]') != null)
+
+                  var LunchBoi = document.querySelector('input[name="lunch"]:checked');
+                  var iPadBoi = document.querySelector('input[name="pickup_dropoff"]:checked');
+                  var PickBoi = document.querySelector('input[name="ipad_rental"]:checked');
+
+                  var lunchoption;
+                  var pickupDropoffOption;
+                  var ipadRentalOption;
+
+                  if(LunchBoi)
                   {
-                    console.log("YUHHH");
                     var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   } 
                   
-                  if(document.querySelector('input[name="pickup_dropoff"]') != null)
+                  if(iPadBoi)
                   {
                     var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
                   }
 
-                  if(document.querySelector('input[name="ipad_rental"]') != null)
+                  if(PickBoi)
                   {
                     var ipadRentalOption = document.querySelector('input[name="ipad_rental"]:checked').value;
+                  }
+                  else
+                  {
+                    lunchOption
                   }
                   
                   
