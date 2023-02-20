@@ -529,9 +529,7 @@
                       $(document).on
                       ('click','#buy-camps',function()
                         {
-                          console.log("YEET");
                           AddExtras();
-                          console.log("YEET");
                           makeAjaxRequest(); 
                         }
                       )
@@ -580,6 +578,7 @@
 
                   if(document.querySelector('input[name="lunch"]') != null)
                   {
+                    console.log("YUHHH");
                     var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
                   } 
                   
