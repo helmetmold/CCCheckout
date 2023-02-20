@@ -576,11 +576,24 @@
                   }]
                   };
 
-                  CampProduct.items[0].properties["id"] = Math.random(0,1);;
+                  CampProduct.items[0].properties["id"] = Math.random(0,1);
 
-                  var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
-                  var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
-                  var ipadRentalOption = document.querySelector('input[name="ipad_rental"]:checked').value;
+                  if(document.querySelector('input[name="lunch"]:checked').value != null)
+                  {
+                    var lunchOption = document.querySelector('input[name="lunch"]:checked').value;
+                  }
+                  
+                  if(document.querySelector('input[name="pickup_dropoff"]:checked').value != null)
+                  {
+                    var pickupDropoffOption = document.querySelector('input[name="pickup_dropoff"]:checked').value;
+                  }
+
+                  if(document.querySelector('input[name="ipad_rental"]:checked').value != null)
+                  {
+                    var ipadRentalOption = document.querySelector('input[name="ipad_rental"]:checked').value;
+                  }
+                  
+                  
 
                   if (lunchOption === "Regular")  
                   {
