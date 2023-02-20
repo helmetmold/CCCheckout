@@ -208,6 +208,23 @@
   margin-top: 0.5rem;
 }
 
+.centeredmodel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.centeredmodel2 {
+  width: 800px !important;
+  height: fit-content !important;
+  padding: 60px !important;
+  position: relative;
+}
+
 .horizontalStackPaymentTypes {
   display: flex;
   flex-direction: row;
@@ -1233,7 +1250,7 @@ a.product__text {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  position: sticky;
+  position: absolute;
   padding: 1.2rem;
   z-index: 2;
   top: 1.5rem;
@@ -2857,6 +2874,10 @@ a.product__text {
   width: 100%;
 }
 
+.hidebutton {
+  display: none !important;
+}
+
 @media screen and (max-width: 749px) {
   .product-popup-modal__content-info > * {
     max-height: 100%;
@@ -2872,12 +2893,13 @@ a.product__text {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  position: sticky;
+  position: absolute;
   padding: 1.2rem;
   z-index: 2;
   top: 1.5rem;
   width: 4rem;
   margin: 0 0 0 auto;
+  right: 1.5rem;
 }
 
 .product-popup-modal__toggle:hover {
