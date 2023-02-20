@@ -604,15 +604,15 @@
 
                   if (lunchOption === "Regular")  
                   {
-                    var RegularLunch = {"id": 44404689371435, "quantity": 1};
+                    var RegularLunch = {"id": 44317062627627, "quantity": 1};
                     CampProduct.items.push(RegularLunch);
-                    CampProduct.items[0].properties["Lunch"] = "Regular +$34.99";
+                    CampProduct.items[0].properties["Lunch"] = "Regular +$22.99";
                   } 
                   if (lunchOption == "Vegetarian") 
                   {
-                    var VegetarianLunch = {"id": 44404689404203, "quantity": 1};
+                    var VegetarianLunch = {"id": 44317062660395, "quantity": 1};
                     CampProduct.items.push(VegetarianLunch);
-                    CampProduct.items[0].properties["Lunch"] = "Vegetarian +$34.99";
+                    CampProduct.items[0].properties["Lunch"] = "Vegetarian +$22.99";
                   }
                   if (lunchOption == "no_thanks") 
                   {
@@ -623,19 +623,19 @@
                     //
                   }
                   if (pickupDropoffOption === "early_dropoff") {
-                    var EarlyDropOff = {"id": 44405930361131, "quantity": 1};
+                    var EarlyDropOff = {"id": 44317181182251, "quantity": 1};
                     CampProduct.items.push(EarlyDropOff);
-                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Early Drop-Off +$29.99";
+                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Early Drop-Off +$19.99";
                   } 
                   if (pickupDropoffOption === "late_pickup") {
-                    var LatePickUp = {"id": 44405930393899, "quantity": 1};
+                    var LatePickUp = {"id": 44317181215019, "quantity": 1};
                     CampProduct.items.push(LatePickUp);
-                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Late Pick-up +$29.99";
+                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Late Pick-up +$19.99";
                   } 
                   if (pickupDropoffOption === "late_pickup_early_dropoff") {
-                    var LateAndEarly = {"id": 44405930426667, "quantity": 1};
+                    var LateAndEarly = {"id": 44317181247787, "quantity": 1};
                     CampProduct.items.push(LateAndEarly);
-                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$59.99";
+                    CampProduct.items[0].properties["Drop-off/Pick-up options"] = "Early Drop-off and Late Pick-up +$19.99";
                   }
                   if (pickupDropoffOption === "no_thanks") {
                     //
@@ -644,12 +644,12 @@
                     //
                   }
                   if (ipadRentalOption === "standard_rental") {
-                    var StandardiPad = {"id": 44405919383851, "quantity": 1};
+                    var StandardiPad = {"id": 44317094314283, "quantity": 1};
                     CampProduct.items.push(StandardiPad);
                     CampProduct.items[0].properties["iPad Rental"] = "Standard iPad rental +$29.99";
                   } 
                   if (ipadRentalOption === "rental_with_insurance") {
-                    var InsurediPad = {"id": 44405919351083, "quantity": 1};
+                    var InsurediPad = {"id": 44317094347051, "quantity": 1};
                     CampProduct.items.push(InsurediPad);
                     CampProduct.items[0].properties["iPad Rental"] = "iPad rental w/ insurance +$59.99";
                   } 
@@ -1029,8 +1029,8 @@
           {{ block.settings.page.content }}
           {% for productcamp in collections.all.products %}  
             {% if productcamp.tags contains first_underscore_tag %} 
-              {% if productcamp.tags contains "Tech Camp" %}
-              {% include 'Tech-Camp-Popup' with product: productcamp %}
+              {% if productcamp.tags contains "Creative Camp" %}
+              {% include 'Creative-Camp-Popup' with product: productcamp %}
             {% endif %}
           {% endif %}
           {% endfor %}
