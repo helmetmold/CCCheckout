@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "main-2-day-product",
       "blocks": {
         "vendor": {
           "type": "text",
@@ -20,15 +20,10 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "dropdown"
           }
         },
         "quantity_selector": {
@@ -46,17 +41,30 @@
           "type": "description",
           "settings": {
           }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "e98b3eb2-b7de-4145-9986-c28020c676f5": {
+          "type": "popup",
+          "settings": {
+            "text": "Pop-up link text",
+            "page": ""
+          }
         }
       },
       "block_order": [
         "vendor",
         "title",
         "product-rating",
-        "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description"
+        "description",
+        "price",
+        "e98b3eb2-b7de-4145-9986-c28020c676f5"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -88,38 +96,10 @@
         "padding_top": 0,
         "padding_bottom": 44
       }
-    },
-    "76be2106-ca61-4205-84c9-32d04ec19f20": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "best-selling-products",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
-    "product-recommendations",
-    "76be2106-ca61-4205-84c9-32d04ec19f20"
+    "product-recommendations"
   ]
 }
