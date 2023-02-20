@@ -1,0 +1,337 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b239467a02a082dc76905dc2f08081a4e086b03c
+<style>
+  .camp-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px 15px 10px;
+  margin-bottom: 0.6em;
+  border-radius: 15px;
+  border: 1px solid black;
+  align-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  z-index: 5;
+  width: 400px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.campicon {
+  display: flex;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+
+.NameandSpan {
+  margin-left: 10px;
+}
+
+h2.campname {
+  display: flex;
+  font-size: 14px;
+  font-weight: 550;
+  margin: 0;
+}
+
+.campspan {
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.priceArrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h2.campprice {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 7px;
+}
+
+.camparrow {
+  display: flex;
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.daysandtimes {
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.spacerbox {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.centernothanks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marginzero{
+  margin: 10px;
+}
+</style>
+
+<div class="spacerbox">
+  <h2>Make it a full week!</h1>
+  <hr class="marginzero">
+  <h5>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
+</div>
+
+
+{% assign camps = '' %}
+
+<div class="buttonholder">
+  <div class="daysandtimes">
+    <h5>Thursdays, Fridays</h5>
+    <h5>8:30am-3:30pm</h5> 
+  </div>
+  {% for variant in product.variants %}
+    {% for option in variant.options %}
+      {% if option == 'Creative A.I. Camp' or option == 'Roblox Game Dev Camp' or option == 'Minecraft Modding Camp' %}
+      {% if camps contains option %}
+        {% comment %} do nothing since the title is already in the list {% endcomment %}
+        {% else %}
+        {% assign camps = camps | append: ',' | append: option %}
+        <div class="button-container">
+          <a class="camp-button" href="{{product.url}}">
+            <div class="leftBox">
+              {% if option == "Creative A.I. Camp" %}
+              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Ai.png" ></img>
+              {% elsif option == "Roblox Game Dev Camp" %}
+              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Roblox.png" ></img>
+              {% elsif option == "Minecraft Modding Camp" %}
+              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Minecraft.png" ></img>
+              {% endif %}
+              <div class="NameandSpan">
+                <h2 class="campname">{{ option }}</h2>
+              </div>
+            </div>
+            <div class="priceArrow">
+              <h2 class="campprice">{{ product.price }}</h2>
+              <img class="camparrow" src="https://educationstation.github.io/CCLocation/img/arrow-right.svg"></img>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+{% endfor %}
+</div>
+
+<a class="centernothanks" href="/cart">
+  No thanks
+</a>
+
+
+
+
+</div>
+
+<<<<<<< HEAD
+=======
+=======
+<style>
+  .camp-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px 15px 10px;
+  margin-bottom: 0.6em;
+  border-radius: 15px;
+  border: 1px solid black;
+  align-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  z-index: 5;
+  width: 400px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.campicon {
+  display: flex;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+
+.NameandSpan {
+  margin-left: 10px;
+}
+
+h2.campname {
+  display: flex;
+  font-size: 14px;
+  font-weight: 550;
+  margin: 0;
+}
+
+.campspan {
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.priceArrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h2.campprice {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 7px;
+}
+
+.camparrow {
+  display: flex;
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.daysandtimes {
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.spacerbox {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.centernothanks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marginzero{
+  margin: 10px;
+}
+</style>
+
+<div class="spacerbox">
+  <h2>Make it a full week!</h1>
+  <hr class="marginzero">
+  <h5>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
+</div>
+
+
+{% assign camps = '' %}
+
+<div class="buttonholder">
+  <div class="daysandtimes">
+    <h5>Thursdays, Fridays</h5>
+    <h5>8:30am-3:30pm</h5> 
+  </div>
+  {% for variant in product.variants %}
+    {% for option in variant.options %}
+      {% if option == 'Creative A.I. Camp' or option == 'Roblox Game Dev Camp' or option == 'Minecraft Modding Camp' %}
+      {% if camps contains option %}
+        {% comment %} do nothing since the title is already in the list {% endcomment %}
+        {% else %}
+        {% assign camps = camps | append: ',' | append: option %}
+        <div class="button-container">
+          <a class="camp-button" href="{{product.url}}">
+            <div class="leftBox">
+              {% if option == "Creative A.I. Camp" %}
+              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Ai.png" ></img>
+              {% elsif option == "Roblox Game Dev Camp" %}
+              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Roblox.png" ></img>
+              {% elsif option == "Minecraft Modding Camp" %}
+              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Minecraft.png" ></img>
+              {% endif %}
+              <div class="NameandSpan">
+                <h2 class="campname">{{ option }}</h2>
+              </div>
+            </div>
+            <div class="priceArrow">
+              <h2 class="campprice">{{ product.price }}</h2>
+              <img class="camparrow" src="https://educationstation.github.io/CCLocation/img/arrow-right.svg"></img>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+{% endfor %}
+</div>
+
+<a class="centernothanks" href="/cart">
+  No thanks
+</a>
+
+
+
+
+</div>
+
+>>>>>>> d0c9d455511763e077ba1aedce6ad541a19f16e4
+>>>>>>> b239467a02a082dc76905dc2f08081a4e086b03c
