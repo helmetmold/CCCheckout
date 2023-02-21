@@ -1030,6 +1030,7 @@
           {% for productcamp in collections.all.products %}  
             {% if productcamp.tags contains first_underscore_tag %} 
               {% if productcamp.tags contains "Creative Camp" %}
+              <h2>productcamp</h2>
               {% include 'Creative-Camp-Popup' with product: productcamp %}
             {% endif %}
           {% endif %}
