@@ -2874,6 +2874,10 @@ a.product__text {
   width: 100%;
 }
 
+.leftsideproduct {
+  width: 30%;
+}
+
 .hidebutton {
   display: none !important;
 }
