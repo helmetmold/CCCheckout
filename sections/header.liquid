@@ -531,7 +531,9 @@
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 {%- endif -%}
-<h1>{{template}}</h1>
+{% if template == 'product.3-day-camp-custom-product' %}
+  <h1>BOOIII</h1> 
+{% endif %}
 <div class="section-26">
       <div class="container">
         <div class="step">
