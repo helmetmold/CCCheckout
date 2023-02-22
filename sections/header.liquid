@@ -531,9 +531,7 @@
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 {%- endif -%}
-{% if template == 'product.3-day-camp-custom-product' or template == 'product.2-day-camp-custom-product'  %}
-<h1>Test</h1>
-{% endif %}
+
 <div class="section-26">
       <div class="container">
         <div class="step">
@@ -542,12 +540,14 @@
           </div>
           <div class="text-block-42">Select Location</div>
         </div>
-        <div class="step notunlocked">
+        {% if template == 'product.3-day-camp-custom-product' or template == 'product.2-day-camp-custom-product'  %}
+        <div class="step unlocked">
           <div class="div-block-201">
             <div class="text-block-44">2</div>
           </div>
           <div class="text-block-42">Select Camp</div>
         </div>
+        {% endif %}
         <div class="step notunlocked">
           <div class="div-block-201">
             <div class="text-block-44">3</div>
