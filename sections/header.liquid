@@ -562,13 +562,18 @@
     </div>
 
     <script>
-      if(template == 'product.3-day-camp-custom-product')
-      var step = document.getElementById("ProductTemplate");
-      if(step)
-      step.classList.add("unlocked");
-      var step = document.getElementById("CartTemplate");
-      if(step)
-      step.classList.add("unlocked");
+      if({{template}} == 'product.3-day-camp-custom-product' or {{template}} == 'product.2-day-camp-custom-product' )
+      {
+        var step = document.getElementById("ProductTemplate");
+        if(step)
+        step.classList.add("unlocked");
+      }
+      if({{template}})
+      {
+        var step = document.getElementById("CartTemplate");
+        if(step)
+        step.classList.add("unlocked");
+      }
     </script>
 {% javascript %}
   class StickyHeader extends HTMLElement {
