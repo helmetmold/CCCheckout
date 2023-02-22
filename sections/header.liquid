@@ -561,6 +561,20 @@
       </div>
     </div>
 
+    {% if template == 'product.3-day-camp-custom-product' or template == 'product.2-day-camp-custom-product'  %}
+    <script>
+      var step = document.getElementById("ProductTemplate");
+      if(step)
+      step.classList.add("unlocked");
+    </script>
+    {% endif %}
+    {% if template == 'cart' %}
+    <script>
+      var step = document.getElementById("CartTemplate");
+      if(step)
+      step.classList.add("unlocked");
+    </script>
+    {% endif %}
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
