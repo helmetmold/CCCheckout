@@ -142,3 +142,7 @@
   font-size: 14px;
   font-weight: 700;
 }
+
+.unlocked {
+  opacity: 100%;
+}
