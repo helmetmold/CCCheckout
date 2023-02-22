@@ -532,13 +532,14 @@
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 {%- endif -%}
 {% if template == 'product.3-day-camp-custom-product' or template == 'product.2-day-camp-custom-product'  %}
-
+<script>
+  document.getElementById();
+</script>
 {% endif %}
-{% if template == 'product.3-day-camp-custom-product' or template == 'product.2-day-camp-custom-product'  %}
+{% if template == 'cart' %}
+<script>
 
-{% endif %}
-{% if template == 'product.3-day-camp-custom-product' or template == 'product.2-day-camp-custom-product'  %}
-
+</script>
 {% endif %}
 <h2>{{template}}</h2>
 <div class="section-26">
@@ -549,13 +550,13 @@
           </div>
           <div class="text-block-42">Select Location</div>
         </div>
-        <div class="step unlocked">
+        <div id="productTemplate" class="step unlocked">
           <div class="div-block-201">
             <div class="text-block-44">2</div>
           </div>
           <div class="text-block-42">Select Camp</div>
         </div> 
-        <div class="step">
+        <div id="CartTemplate" class="step">
           <div class="div-block-201">
             <div class="text-block-44">3</div>
           </div>
