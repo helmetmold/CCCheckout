@@ -53,6 +53,7 @@
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
+  padding-top: 10px;
   align-items: center;
   margin: 0px !important;
 }
