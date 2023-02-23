@@ -62,7 +62,7 @@
 
 .add-ons {
   display: flex;
-  align-content: end;
+  align-items: end;
   font-size: 14px;
   font-weight: 600;
 }
