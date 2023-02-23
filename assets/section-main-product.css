@@ -65,7 +65,7 @@
   outline: 0px;
 }
 
-.buybuttonbox {
+#buy-camps {
   display: flex;
   flex-direction: row;
   justify-content: right;
