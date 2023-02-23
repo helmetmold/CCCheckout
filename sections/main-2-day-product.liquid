@@ -491,6 +491,9 @@
                   {% endif %}
                 {%- endfor -%}
                 </div>
+                <div>
+                  <p>*By choosing not to purchase insurance for the iPad rental, the customer agrees to accept full financial responsibility for any damages to the device during the rental period.</p>
+                </div>
                 {%- when 'price' -%}
                   <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                     {%- render 'price',
@@ -510,9 +513,6 @@
                       {%- endif -%}
                     </div>
                   {%- endif -%}
-                <div>
-                  <p>*By choosing not to purchase insurance for the iPad rental, the customer agrees to accept full financial responsibility for any damages to the device during the rental period.</p>
-                </div>
                 <div>
                   <button class="backbutton">Back</button>
                   <button id="buy-camps" class="product-form__submit button button--primary make_pill">Add to cart</button>
