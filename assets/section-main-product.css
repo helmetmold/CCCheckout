@@ -61,6 +61,7 @@
 }
 
 .add-ons {
+  display: flex;
   align-content: end;
   font-size: 14px;
   font-weight: 600;
