@@ -259,6 +259,7 @@
 
 .product_title_heading {
   margin: 0 !important;
+  font-weight: 700;
 }
 
 .product-form__error-message-wrapper:not([hidden]) {
