@@ -62,6 +62,8 @@
 
 .add-ons {
   align-content: end;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 750px) {
