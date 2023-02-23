@@ -74,7 +74,8 @@
   display: flex;
   flex-direction: row;
   justify-content: right;
-  outline: none;
+  outline: none !important;
+  stroke: none !important;
 }
 
 .campwording {
