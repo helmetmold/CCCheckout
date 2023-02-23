@@ -257,6 +257,10 @@
   display: none;
 }
 
+.switchcamps {
+  flex-direction: row-reverse;
+}
+
 .product_title_heading {
   margin: 0 !important;
   font-size: 30px;
