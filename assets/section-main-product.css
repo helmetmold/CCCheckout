@@ -64,6 +64,12 @@
   border-radius: 34px;
 }
 
+.buybuttonbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
 .campwording {
   font-size: 12px;
   font-weight: 400;
