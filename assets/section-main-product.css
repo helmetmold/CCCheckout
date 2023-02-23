@@ -79,7 +79,6 @@
   color: white;
   font-weight: 500;
   font-size: 20px;
-  --border-opacity: 0% !important;
 }
 
 .make_pill ::before {
