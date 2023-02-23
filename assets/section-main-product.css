@@ -279,7 +279,7 @@
 .fit-to-text {
   display: flex;
   align-content: center;
-  width: 20%;
+  width: 10%;
   justify-content: center;
   text-align: center;
 }
