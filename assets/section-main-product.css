@@ -259,6 +259,7 @@
 
 .switchcamps {
   flex-direction: row-reverse !important;
+  margin: 0px !important;
 }
 
 .product_title_heading {
