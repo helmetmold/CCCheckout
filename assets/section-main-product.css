@@ -1891,22 +1891,6 @@ a.product__text {
   margin-top: 0.5rem;
 }
 
-.max-text {
-  display: flex;
-  align-content: center;
-  width: 40%;
-  justify-content: center;
-  text-align: center;
-}
-
-.max-text-2 {
-  display: flex;
-  align-content: center;
-  width: 26.6%;
-  justify-content: center;
-  text-align: center;
-}
-
 .fit-to-text {
   display: flex;
   align-content: center;
