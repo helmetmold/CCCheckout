@@ -258,7 +258,7 @@
 }
 
 .switchcamps {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse !important;
 }
 
 .product_title_heading {
