@@ -62,7 +62,7 @@
   background: #39c023;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 34px;
-  outline: 0px;
+  outline-style: none;
   padding-right: 50px;
   padding-left: 50px;
   padding-top: 15px;
