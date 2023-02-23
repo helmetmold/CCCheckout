@@ -276,14 +276,6 @@
   text-align: center;
 }
 
-.fit-to-text {
-  display: flex;
-  align-content: center;
-  width: 10%;
-  justify-content: center;
-  text-align: center;
-}
-
 .align-center {
   align-content: center;
   justify-content: center;
@@ -1918,7 +1910,7 @@ a.product__text {
 .fit-to-text {
   display: flex;
   align-content: center;
-  width: 20%;
+  width: 10%;
   justify-content: center;
   text-align: center;
 }
