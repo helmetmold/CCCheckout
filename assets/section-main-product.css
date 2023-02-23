@@ -58,6 +58,12 @@
   margin: 0px !important;
 }
 
+.make_pill {
+  background: #39c023;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 34px;
+}
+
 .campwording {
   font-size: 12px;
   font-weight: 400;
