@@ -70,14 +70,6 @@
   justify-content: right;
 }
 
-#buy-camps {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  outline: none !important;
-  stroke: none !important;
-}
-
 .campwording {
   font-size: 12px;
   font-weight: 400;
