@@ -3153,6 +3153,11 @@ a.product__text {
     display: flex;
   }
 }
+
+.widthbearer {
+  width: 100% !important;
+}
+
 @media screen and (min-width: 900px) {
   .product--small
     .thumbnail-list.slider--tablet-up
