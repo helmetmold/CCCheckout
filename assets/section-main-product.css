@@ -1850,6 +1850,10 @@ a.product__text {
   .max-text {
     width: 100% !important;
   }
+
+  .Dropdown_Selector {
+    width: 100%;
+  }
 }
 
 .product__info-container {
