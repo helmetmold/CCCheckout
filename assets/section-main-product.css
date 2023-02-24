@@ -1785,6 +1785,10 @@ a.product__text {
   .fit-to-text {
     width: 100% !important;
   }
+
+  .max-text {
+    width: 47% !important;
+  }
 }
 
 @media screen and (max-width: 950px) {
