@@ -1770,6 +1770,12 @@ a.product__text {
   flex-direction: row;
 }
 
+@media screen and (max-width: 950px) {
+  .product-row {
+    flex-direction: column;
+  }
+}
+
 .product__info-container {
   display: flex !important;
   flex-direction: column !important;
