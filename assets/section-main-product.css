@@ -1778,6 +1778,10 @@ a.product__text {
   .leftsideproduct {
     width: 100% !important;
   }
+
+  .grid__item {
+    width: 100% !important;
+  }
 }
 
 .product__info-container {
