@@ -1811,6 +1811,10 @@ a.product__text {
   .select-options {
     width: 100%;
   }
+
+  .max-width {
+    flex-wrap: unset;
+  }
 }
 
 .product__info-container {
