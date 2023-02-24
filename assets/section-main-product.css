@@ -1774,6 +1774,10 @@ a.product__text {
   .product-row {
     flex-direction: column;
   }
+
+  .leftsideproduct {
+    width: 100%;
+  }
 }
 
 .product__info-container {
