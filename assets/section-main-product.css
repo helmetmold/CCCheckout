@@ -1777,6 +1777,10 @@ a.product__text {
   .grid--2-col-tablet {
     width: fit-content;
   }
+
+  .max-width {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 950px) {
