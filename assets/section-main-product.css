@@ -1807,6 +1807,10 @@ a.product__text {
   .changeflex {
     flex-direction: row;
   }
+
+  .select-options {
+    width: 100%;
+  }
 }
 
 .product__info-container {
