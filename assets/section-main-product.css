@@ -1826,6 +1826,9 @@ a.product__text {
 }
 
 @media screen and (max-width: 850px) {
+  .changeflex {
+    flex-direction: column;
+  }
 }
 
 .product__info-container {
