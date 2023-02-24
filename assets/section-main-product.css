@@ -1860,7 +1860,7 @@ a.product__text {
   }
 
   .product-form__input {
-    max-width: unset;
+    max-width: unset !important;
   }
 }
 
