@@ -1852,7 +1852,7 @@ a.product__text {
   }
 
   .Dropdown_Selector {
-    width: 100%;
+    width: 100% !important;
   }
 
   .VariantDropdown {
