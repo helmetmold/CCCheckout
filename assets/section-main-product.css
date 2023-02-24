@@ -1784,7 +1784,7 @@ a.product__text {
   }
 
   .fit-to-text {
-    width: 90% + 15px !important;
+    width: calc(90% - 15px) !important;
   }
 
   .max-text {
