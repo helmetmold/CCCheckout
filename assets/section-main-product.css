@@ -1869,6 +1869,10 @@ a.product__text {
   .grid--2-col-tablet {
     width: 100%;
   }
+
+  .horizontalStackPaymentTypes {
+    flex-wrap: wrap;
+  }
 }
 
 .product__info-container {
