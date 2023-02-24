@@ -1780,7 +1780,7 @@ a.product__text {
 
   .max-width {
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: left !important;
   }
 
   .fit-to-text {
