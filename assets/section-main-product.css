@@ -1815,6 +1815,10 @@ a.product__text {
   .max-width {
     flex-wrap: unset;
   }
+
+  .fit-to-text {
+    width: 10%;
+  }
 }
 
 .product__info-container {
