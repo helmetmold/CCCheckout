@@ -1774,8 +1774,8 @@ a.product__text {
     width: 70%;
   }
 
-  .max-width {
-    flex-direction: column !important;
+  .grid--2-col-tablet {
+    width: fit-content;
   }
 }
 
