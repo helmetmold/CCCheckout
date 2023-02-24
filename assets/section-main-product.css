@@ -2571,10 +2571,6 @@ a.product__text {
   .product__modal-opener:focus .product__media-icon {
     opacity: 1;
   }
-
-  .product-row {
-    flex-direction: column;
-  }
 }
 
 .product__media-item > * {
@@ -2774,6 +2770,10 @@ a.product__text {
 
   .product-media-modal__toggle {
     right: 5rem;
+  }
+
+  .product-row {
+    flex-direction: column;
   }
 }
 
