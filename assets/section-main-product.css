@@ -1835,7 +1835,7 @@ a.product__text {
   }
 
   .max-width {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 }
 
