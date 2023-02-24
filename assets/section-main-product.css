@@ -1854,6 +1854,10 @@ a.product__text {
   .Dropdown_Selector {
     width: 100%;
   }
+
+  .VariantDropdown {
+    width: 100%;
+  }
 }
 
 .product__info-container {
