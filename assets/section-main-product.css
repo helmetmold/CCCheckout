@@ -1838,6 +1838,10 @@ a.product__text {
     flex-direction: column !important;
     width: 100% !important;
   }
+
+  .fit-to-text {
+    width: 100% !important;
+  }
 }
 
 .product__info-container {
