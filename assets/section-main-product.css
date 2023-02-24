@@ -1829,6 +1829,10 @@ a.product__text {
   .changeflex {
     flex-direction: column;
   }
+
+  .product-row {
+    flex-direction: column;
+  }
 }
 
 .product__info-container {
