@@ -1791,6 +1791,11 @@ a.product__text {
     width: 45% !important;
   }
 }
+@media screen and (max-width: 1175px) {
+  .product-row {
+    flex-direction: column;
+  }
+}
 
 @media screen and (max-width: 950px) {
   .product-row {
