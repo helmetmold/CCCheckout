@@ -1799,7 +1799,7 @@ a.product__text {
 
 .product__info-container {
   display: flex !important;
-  flex-wrap: wrap;
+  flex-direction: column !important;
 }
 
 @media screen and (min-width: 750px) {
