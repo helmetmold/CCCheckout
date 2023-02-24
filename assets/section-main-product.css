@@ -1755,11 +1755,6 @@ a.product__text {
   display: none;
 }
 
-.select-options {
-  display: flex;
-  flex-direction: column;
-}
-
 .product--stacked {
   display: flex !important;
   flex-direction: row !important;
