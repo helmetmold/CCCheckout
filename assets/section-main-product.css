@@ -1836,7 +1836,7 @@ a.product__text {
 
   .max-width {
     flex-direction: column !important;
-    width: 100%;
+    width: 100% !important;
   }
 }
 
