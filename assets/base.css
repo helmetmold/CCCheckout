@@ -1167,6 +1167,7 @@ summary::-webkit-details-marker {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     max-width: unset !important;
+    width: 100% !important;
   }
 
   /* Fix to show some space at the end of our sliders in all browsers */
