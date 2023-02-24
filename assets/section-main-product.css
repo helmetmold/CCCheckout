@@ -1776,7 +1776,7 @@ a.product__text {
   }
 
   .leftsideproduct {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
