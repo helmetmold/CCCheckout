@@ -1782,6 +1782,10 @@ a.product__text {
   .grid__item {
     width: 100% !important;
   }
+
+  .changeflex {
+    flex-direction: row;
+  }
 }
 
 .product__info-container {
