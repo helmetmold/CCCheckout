@@ -37,11 +37,6 @@
   flex-direction: row !important;
 }
 
-.product-row {
-  display: flex;
-  flex-direction: row;
-}
-
 .product__info-container {
   display: flex !important;
   flex-direction: column !important;
@@ -2581,6 +2576,10 @@ a.product__text {
   .product__modal-opener:hover .product__media-icon,
   .product__modal-opener:focus .product__media-icon {
     opacity: 1;
+  }
+
+  .product-row {
+    flex-direction: column;
   }
 }
 
