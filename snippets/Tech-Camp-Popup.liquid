@@ -106,58 +106,59 @@ h2.campprice {
 }
 </style>
 
-<div class="spacerbox">
-  <h2>Make it a full week!</h1>
-  <hr class="marginzero">
-  <h5>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
-</div>
-
-
-{% assign camps = '' %}
-
-<div class="buttonholder">
-  <div class="daysandtimes">
-    <h5>Thursdays, Fridays</h5>
-    <h5>8:30am-3:30pm</h5> 
+<div class="fullbox">
+  <div class="spacerbox">
+    <h2>Make it a full week!</h1>
+    <hr class="marginzero">
+    <h5>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
   </div>
-  {% for variant in product.variants %}
-    {% for option in variant.options %}
-      {% if option == 'Creative A.I. Camp' or option == 'Roblox Game Dev Camp' or option == 'Minecraft Modding Camp' %}
-      {% if camps contains option %}
-        {% comment %} do nothing since the title is already in the list {% endcomment %}
-        {% else %}
-        {% assign camps = camps | append: ',' | append: option %}
-        <div class="button-container">
-          <a class="camp-button" href="{{product.url}}">
-            <div class="leftBox">
-              {% if option == "Creative A.I. Camp" %}
-              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Ai.png" ></img>
-              {% elsif option == "Roblox Game Dev Camp" %}
-              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Roblox.png" ></img>
-              {% elsif option == "Minecraft Modding Camp" %}
-              <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Minecraft.png" ></img>
-              {% endif %}
-              <div class="NameandSpan">
-                <h2 class="campname">{{ option }}</h2>
+  
+  
+  {% assign camps = '' %}
+  
+  <div class="buttonholder">
+    <div class="daysandtimes">
+      <h5>Thursdays, Fridays</h5>
+      <h5>8:30am-3:30pm</h5> 
+    </div>
+    {% for variant in product.variants %}
+      {% for option in variant.options %}
+        {% if option == 'Creative A.I. Camp' or option == 'Roblox Game Dev Camp' or option == 'Minecraft Modding Camp' %}
+        {% if camps contains option %}
+          {% comment %} do nothing since the title is already in the list {% endcomment %}
+          {% else %}
+          {% assign camps = camps | append: ',' | append: option %}
+          <div class="button-container">
+            <a class="camp-button" href="{{product.url}}">
+              <div class="leftBox">
+                {% if option == "Creative A.I. Camp" %}
+                <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Ai.png" ></img>
+                {% elsif option == "Roblox Game Dev Camp" %}
+                <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Roblox.png" ></img>
+                {% elsif option == "Minecraft Modding Camp" %}
+                <img class="campicon" src="https://educationstation.github.io/CCLocation/img/Minecraft.png" ></img>
+                {% endif %}
+                <div class="NameandSpan">
+                  <h2 class="campname">{{ option }}</h2>
+                </div>
               </div>
-            </div>
-            <div class="priceArrow">
-              <h2 class="campprice">3-days</h2>
-              <img class="camparrow" src="https://educationstation.github.io/CCLocation/img/arrow-right.svg"></img>
-            </div>
-          </a>
-        </div>
+              <div class="priceArrow">
+                <h2 class="campprice">3-days</h2>
+                <img class="camparrow" src="https://educationstation.github.io/CCLocation/img/arrow-right.svg"></img>
+              </div>
+            </a>
+          </div>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-{% endfor %}
+      {% endfor %}
+  {% endfor %}
+  </div>
+  
+  <a class="centernothanks" href="/cart">
+    No thanks
+  </a>
+  
+  </div>
+  
 </div>
 
-<a class="centernothanks" href="/cart">
-  No thanks
-</a>
-
-
-
-
-</div>
