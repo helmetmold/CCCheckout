@@ -1783,7 +1783,7 @@ a.product__text {
   }
 
   .fit-to-text {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
