@@ -1774,6 +1774,10 @@ a.product__text {
   .leftsideproduct {
     width: 30% !important;
   }
+
+  .select-options {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 950px) {
