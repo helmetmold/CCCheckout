@@ -1978,7 +1978,6 @@ a.product__text {
 
 .max-width {
   width: 100% !important;
-  max-width: 100% !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
