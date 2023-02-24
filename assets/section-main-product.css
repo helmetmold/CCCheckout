@@ -1864,6 +1864,10 @@ a.product__text {
     max-width: 100% !important;
     width: 100%;
   }
+
+  .grid--2-col-tablet {
+    width: 100%;
+  }
 }
 
 .product__info-container {
