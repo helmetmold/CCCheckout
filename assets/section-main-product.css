@@ -1773,6 +1773,10 @@ a.product__text {
   .select-options {
     width: 70%;
   }
+
+  .max-width {
+    flex-direction: row;
+  }
 }
 
 @media screen and (max-width: 950px) {
