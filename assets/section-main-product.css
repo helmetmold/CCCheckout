@@ -1821,7 +1821,7 @@ a.product__text {
   }
 
   .MediaGallery-template--18074828374315__main {
-    width: 20%;
+    width: 20% !important;
   }
 }
 
