@@ -1842,6 +1842,10 @@ a.product__text {
   .fit-to-text {
     width: 100% !important;
   }
+
+  .max-text {
+    width: 100% !important;
+  }
 }
 
 .product__info-container {
