@@ -1819,6 +1819,10 @@ a.product__text {
   .fit-to-text {
     width: 10% !important;
   }
+
+  .imagewidth {
+    width: 50% !important;
+  }
 }
 
 .product__info-container {
