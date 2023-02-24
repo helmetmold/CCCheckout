@@ -1781,6 +1781,10 @@ a.product__text {
   .max-width {
     flex-wrap: wrap;
   }
+
+  .fit-to-text {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 950px) {
