@@ -78,7 +78,9 @@
           {{ product.description }}
         </div>
       {%- endif -%}
-      {% render 'product-media-gallery', variant_images: variant_images %}
+      <div class="widthbearer">
+        {% render 'product-media-gallery', variant_images: variant_images %}
+      </div>
       <div>
         <div class="center-align-payment-types">
           <h5>Secure Payment, Trusted by thousands of parents</h5>
