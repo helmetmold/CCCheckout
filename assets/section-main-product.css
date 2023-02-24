@@ -1833,6 +1833,10 @@ a.product__text {
   .product-row {
     flex-direction: column;
   }
+
+  .max-width {
+    flex-direction: column;
+  }
 }
 
 .product__info-container {
