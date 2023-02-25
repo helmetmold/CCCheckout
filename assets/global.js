@@ -548,7 +548,10 @@ class ModalDialog extends HTMLElement {
       });
     } else {
       this.addEventListener("click", (event) => {
-        if (event.target === this) this.hide();
+        if (event.target === this) {
+          this.hide();
+          alert("click");
+        }
       });
     }
   }
