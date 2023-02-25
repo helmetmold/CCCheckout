@@ -2097,40 +2097,6 @@ a.product__text {
   font-size: 16px;
 }
 
-.Dropdown_Selector {
-  padding: 1rem 2rem !important;
-  height: 50px;
-  width: 80%;
-  font-weight: 600;
-  font-size: 16px;
-  flex: 0 0 100%;
-  padding: 0;
-  margin: 0 0 1.2rem 0;
-  max-width: 37rem;
-  min-width: fit-content;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  margin-right: 15px;
-  border-radius: var(--variant-pills-radius);
-  border: 1px solid #28b9eb !important;
-  box-shadow: 0px 0px 4px #43cbff !important;
-}
-
-.Dropdown_Selector:hover {
-  border: 1px solid #28b9eb;
-}
-
-.Dropdown_Selector :visited {
-  border: 1px solid #28b9eb !important;
-  box-shadow: 0px 0px 4px #43cbff !important;
-}
-
-.Dropdown_Selector :focus-visible {
-  border: 1px solid #28b9eb !important;
-  box-shadow: 0px 0px 4px #43cbff !important;
-  outline-offset: none !important;
-  outline: none !important;
-}
-
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
