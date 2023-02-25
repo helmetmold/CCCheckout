@@ -20,11 +20,13 @@
 
 .price .price-item {
   display: inline-block;
-  margin: 0 1rem 0 0;
+  white-space: nowrap;
 }
 
 .price__regular .price-item--regular {
   margin-right: 0;
+  font-weight: bold;
+  font-size: 26px;
 }
 
 .price:not(.price--show-badge) .price-item--last:last-of-type {
