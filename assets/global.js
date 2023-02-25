@@ -544,12 +544,12 @@ class ModalDialog extends HTMLElement {
           event.pointerType === "mouse" &&
           !event.target.closest("deferred-media, product-model")
         )
-          //this.hide();
+          this.hide();
       });
     } else {
       this.addEventListener("click", (event) => {
         if (event.target === this) {
-          //this.hide();
+          this.hide();
         }
       });
     }
