@@ -4,7 +4,12 @@
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
-<meta http-equiv="refresh" content="0;url=http://locations.creatorcamp.org/" />
+<script>
+  window.onload = function() {
+    // similar behavior as an HTTP redirect
+    window.location.replace("https://locations.creatorcamp.org/");
+}
+</script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
