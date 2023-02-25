@@ -227,7 +227,21 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "4644077978495408606": {
+        "type": "shopify:\/\/apps\/appstle-memberships\/blocks\/appstle-membership-helper\/76528d70-5fbe-48f8-8e19-590d109aa2b7",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "5918445685253060206": {
+        "type": "shopify:\/\/apps\/bundler-product-bundles\/blocks\/bundler-script-append\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
