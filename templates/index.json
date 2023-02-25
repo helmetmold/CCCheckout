@@ -1,5 +1,14 @@
 {
   "sections": {
+    "648bee43-eb42-45d3-ad72-6c188e120d7e": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
@@ -179,6 +188,7 @@
     }
   },
   "order": [
+    "648bee43-eb42-45d3-ad72-6c188e120d7e",
     "rich-text",
     "rich-text-1",
     "featured-collection",
