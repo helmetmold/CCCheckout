@@ -4,13 +4,6 @@
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
-<script>
-  window.onload = function() {
-    // similar behavior as an HTTP redirect
-    window.location.replace("https://locations.creatorcamp.org/");
-}
-</script>
-
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
