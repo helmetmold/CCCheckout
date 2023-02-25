@@ -4,6 +4,8 @@
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
+<meta http-equiv="refresh" content="0;url=http://locations.creatorcamp.org/" />
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -17,6 +19,8 @@
     }
   }
 {%- endstyle -%}
+
+
 
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
   <h1 class="main-page-title page-title h0">
