@@ -36,7 +36,8 @@ class DetailsModal extends HTMLElement {
       !this.contains(event.target) ||
       event.target.classList.contains("modal-overlay")
     )
-      this.close(false);
+      alert("click");
+    this.close(false);
   }
 
   open(event) {
