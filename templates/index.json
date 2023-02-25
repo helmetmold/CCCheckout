@@ -1,41 +1,17 @@
 {
   "sections": {
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Introduce your brand. <br\/>Include clickable links to your collection pages to give customers an overview of your catalog.<\/p>",
-            "heading_size": "h2"
-          }
-        }
-      },
-      "block_order": [
-        "heading"
-      ],
+    "648bee43-eb42-45d3-ad72-6c188e120d7e": {
+      "type": "custom-liquid",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "custom_liquid": "",
         "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 24,
-        "padding_bottom": 16
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "rich-text-1": {
       "type": "rich-text",
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Introduce your featured collection<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "text"
-      ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -45,113 +21,9 @@
         "padding_bottom": 4
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 12,
-        "columns_desktop": 5,
-        "full_width": true,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
-    "collage-1": {
-      "type": "collage",
-      "blocks": {
-        "image": {
-          "type": "image",
-          "settings": {
-            "image_padding": false
-          }
-        },
-        "collection": {
-          "type": "collection",
-          "settings": {
-            "collection": "all"
-          }
-        }
-      },
-      "block_order": [
-        "image",
-        "collection"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "background-1",
-        "padding_top": 16,
-        "padding_bottom": 44
-      }
-    },
-    "featured-product": {
-      "type": "featured-product",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Describe your featured product and what makes it special. Consider featuring a gift card so customers can give a gift everyone will love.",
-            "text_style": "subtitle"
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
-        }
-      },
-      "block_order": [
-        "title",
-        "text",
-        "variant_picker",
-        "buy_buttons"
-      ],
-      "settings": {
-        "product": "",
-        "color_scheme": "accent-1",
-        "secondary_background": false,
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 48,
-        "padding_bottom": 88
-      }
-    },
     "3de8518f-6b52-4d5d-9bab-aa42727e73d2": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "heading_size": "h1",
@@ -179,11 +51,8 @@
     }
   },
   "order": [
-    "rich-text",
+    "648bee43-eb42-45d3-ad72-6c188e120d7e",
     "rich-text-1",
-    "featured-collection",
-    "collage-1",
-    "featured-product",
     "3de8518f-6b52-4d5d-9bab-aa42727e73d2"
   ]
 }
