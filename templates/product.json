@@ -61,7 +61,7 @@
       "settings": {
         "enable_sticky_info": false,
         "media_position": "left",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_size": "medium",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
