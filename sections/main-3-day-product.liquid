@@ -27,6 +27,10 @@
   {%- endstyle -%}
   <script src="{{ 'add-2-day-popup.js' | asset_url }}" defer="defer"></script>
   <script>(function () { if ((!document.documentElement.innerHTML.match(/asyncLoad/) || (document.documentElement.innerHTML.includes && document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240'))) && (!window.bcpo || !bcpo.disabled) && window.bcpo_data && bcpo_data.virtual_options && bcpo_data.virtual_options.length) { return; } var script = document.createElement('script'); script.defer = true; script.src = "{{ 'product-form.js' | asset_url }}"; document.head.appendChild(script); })();</script>
+  <script>
+    document.querySelectorAll('.product-single__header .product-form__input label').forEach(x=>{x.addEventListener('click',function(){JSON.parse(document.querySelectorAll('.product-single__header script')[0].innerHTML).map(y=>{if(y.option1 == x.innerHTML.trim()){document.querySelector('.product-form form input[name="id"]').setAttribute('value',y.id)}})})});
+  </script>
+  
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
   {% endif %}
