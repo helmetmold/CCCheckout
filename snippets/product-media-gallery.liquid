@@ -26,7 +26,7 @@
   endif
 
   if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
-    assign hide_mobile_slider = false
+    assign hide_mobile_slider = true
   endif
 
   if section.settings.media_size == 'large'
