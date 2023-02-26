@@ -582,8 +582,6 @@
 
                 function AddExtras() 
                 {
-                  
-                  console.log({{product.selected_or_first_available_variant}});
 
                   let CampProduct = {
                   'items': 
@@ -595,7 +593,6 @@
                   };
 
                   CampProduct.items[0].properties["id"] = Math.random(0,1);
-                  console.log("OK");
 
                   var LunchBoi = document.querySelector('input[name="lunch"]:checked');
                   var iPadBoi = document.querySelector('input[name="pickup_dropoff"]:checked');
