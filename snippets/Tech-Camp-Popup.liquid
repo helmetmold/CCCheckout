@@ -11,12 +11,14 @@
   cursor: pointer;
   z-index: 5;
   width: 400px;
+  text-decoration: none;
 }
 
 .button-container {
   width: 100%;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
 .buttonholder {
@@ -52,6 +54,25 @@ h2.campname {
   margin: 0;
 }
 
+.desctext {
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.UpgradeText {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.redBold {
+  font-weight: 700;
+  font-style: italic;
+  color: red;
+}
+
 .campspan {
   display: flex;
   font-size: 12px;
@@ -80,6 +101,15 @@ h2.campprice {
   height: 15px;
 }
 
+.centeredslashedprice {
+  margin-left: 10px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0.6em;
+}
+
 .daysandtimes {
   font-weight: 700;
   font-size: 20px;
@@ -104,6 +134,10 @@ h2.campprice {
 .marginzero{
   margin: 10px;
 }
+
+.slashed {
+  text-decoration: line-through;  
+  }
 
 @media only screen and (max-width: 750px) {
 
@@ -130,9 +164,9 @@ h2.campprice {
 
 <div class="fullbox">
   <div class="spacerbox">
-    <h2>Make it a full week!</h1>
+    <h2 class="UpgradeText" >Upgrade to a full week?</h1>
+    <h5 class="desctext" >You have currently only selected a 3-day camp, add a 2-day camp within the same week to make it a full week of fun and <span class="redBold">GET $50 OFF your entire purchase!</span></h3>
     <hr class="marginzero">
-    <h5>Add a 2-day Tech Camp and get recieve $30 Off your entire order</h3>
   </div>
   
   
@@ -165,10 +199,13 @@ h2.campprice {
                 </div>
               </div>
               <div class="priceArrow">
-                <h2 class="campprice">3-days</h2>
+                <h2 class="campprice">$99.99</h2>
                 <img class="camparrow" src="https://educationstation.github.io/CCLocation/img/arrow-right.svg"></img>
               </div>
             </a>
+            <div class="centeredslashedprice">
+            <h2 class="campprice redBold slashed">$149.99</h2>
+          </div>
           </div>
           {% endif %}
         {% endif %}
