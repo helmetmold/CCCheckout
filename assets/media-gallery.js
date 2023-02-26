@@ -42,6 +42,7 @@ if (!customElements.get("media-gallery")) {
           `[data-target="${event.detail.currentElement.dataset.mediaId}"]`
         );
         this.setActiveThumbnail(thumbnail);
+        console.log("happens");
       }
 
       setActiveMedia(mediaId, prepend) {
