@@ -135,7 +135,7 @@
       {{ 'products.product.xr_button' | t }}
     </button>
   {%- endif -%}
-  {%- if media_count > 1 and section.settings.gallery_layout contains 'thumbnail' -%}
+  {%- if media_count > 1 -%}
     <slider-component
       id="GalleryThumbnails-{{ section.id }}{{ id_append }}"
       class="thumbnail-slider slider-mobile-gutter quick-add-hidden{% unless section.settings.gallery_layout contains 'thumbnail' %} medium-hide large-up-hide{% endunless %}{% if section.settings.mobile_thumbnails != 'show' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}"
