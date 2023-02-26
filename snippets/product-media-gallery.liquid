@@ -25,10 +25,6 @@
     assign single_media_visible_mobile = true
   endif
 
-  if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
-    assign hide_mobile_slider = true
-  endif
-
   if section.settings.media_size == 'large'
     assign media_width = 0.65
   elsif section.settings.media_size == 'medium'
@@ -193,7 +189,7 @@
                   {{ featured_media.preview_image | image_url }} {{ media.preview_image.width }}w
                 "
                 src="{{ featured_media | image_url: width: 416 }}"
-                sizes="(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4), (min-width: 990px) calc(({{ media_width | times: 100 }}vw - 4rem) / 4), calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
+                sizes="(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4), (min-width: 990px) calc(({{ media_width | times: 100 }}vw - 4rem) / 4), (min-width: 750px) calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
                 alt="{{ featured_media.alt | escape }}"
                 height="208"
                 width="208"
