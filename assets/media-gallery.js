@@ -1,4 +1,5 @@
 if (!customElements.get("media-gallery")) {
+  console.log("mediagallery");
   customElements.define(
     "media-gallery",
     class MediaGallery extends HTMLElement {
