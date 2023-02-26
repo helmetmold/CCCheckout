@@ -325,7 +325,6 @@
                             {{ option.name }}
                             {% endif %}
                           </label>
-                          {%  %}
                           <div class="VariantDropdown">
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"
@@ -583,6 +582,8 @@
 
                 function AddExtras() 
                 {
+                  
+                  console.log(product.selected_or_first_available_variant);
 
                   let CampProduct = {
                   'items': 
