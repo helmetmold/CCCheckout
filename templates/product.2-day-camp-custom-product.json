@@ -71,7 +71,7 @@
         "media_position": "left",
         "gallery_layout": "thumbnail_slider",
         "media_size": "medium",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
