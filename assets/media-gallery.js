@@ -30,6 +30,8 @@ if (!customElements.get("media-gallery")) {
                 )
               );
           });
+
+        this.removeListSemantic();
       }
 
       onSlideChanged(event) {
