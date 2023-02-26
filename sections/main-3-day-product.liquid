@@ -1175,9 +1175,6 @@
       ]
     }
   </script>
-  <script>
-    document.querySelectorAll('.product-single__header .product-form__input label').forEach(x=>{x.addEventListener('click',function(){JSON.parse(document.querySelectorAll('.product-single__header script')[0].innerHTML).map(y=>{if(y.option1 == x.innerHTML.trim()){document.querySelector('.product-form form input[name="id"]').setAttribute('value',y.id)}})})});
-  </script>
 </section>
 
 {% schema %}
