@@ -9,7 +9,6 @@ if (!customElements.get("media-gallery")) {
           viewer: this.querySelector('[id^="GalleryViewer"]'),
           thumbnails: this.querySelector('[id^="GalleryThumbnails"]'),
         };
-        this.mql = window.matchMedia("(min-width: 750px)");
         if (!this.elements.thumbnails) return;
 
         this.elements.viewer.addEventListener(
@@ -30,8 +29,11 @@ if (!customElements.get("media-gallery")) {
                 )
               );
           });
-
-        this.removeListSemantic();
+        if (
+          this.dataset.desktopLayout.includes("thumbnail") &&
+          this.mql.matches
+        )
+          this.removeListSemantic();
       }
 
       onSlideChanged(event) {
