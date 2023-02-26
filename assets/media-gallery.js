@@ -30,11 +30,6 @@ if (!customElements.get("media-gallery")) {
                 )
               );
           });
-        if (
-          this.dataset.desktopLayout.includes("thumbnail") &&
-          this.mql.matches
-        )
-          this.removeListSemantic();
       }
 
       onSlideChanged(event) {
