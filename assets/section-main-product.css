@@ -1558,7 +1558,6 @@ a.product__text {
 
 .thumbnail-list__item {
   position: relative;
-  object-fit: cover !important;
 }
 
 .thumbnail-list__item::before {
