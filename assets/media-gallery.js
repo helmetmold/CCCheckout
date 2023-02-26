@@ -1,5 +1,4 @@
 if (!customElements.get("media-gallery")) {
-  console.log("mediagallery");
   customElements.define(
     "media-gallery",
     class MediaGallery extends HTMLElement {
@@ -10,6 +9,7 @@ if (!customElements.get("media-gallery")) {
           viewer: this.querySelector('[id^="GalleryViewer"]'),
           thumbnails: this.querySelector('[id^="GalleryThumbnails"]'),
         };
+        this.mql = window.matchMedia("(min-width: 750px)");
         if (!this.elements.thumbnails) return;
 
         this.elements.viewer.addEventListener(
