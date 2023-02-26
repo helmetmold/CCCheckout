@@ -1280,6 +1280,11 @@ a.product__text {
   width: 100%;
 }
 
+.slider-mobile-gutter {
+  width: 530px;
+  height: 400px;
+}
+
 @media screen and (max-width: 749px) {
   .product-popup-modal__content-info > * {
     max-height: 100%;
