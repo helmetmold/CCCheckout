@@ -3,7 +3,7 @@
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
-  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'section-main-product.css' | asset_url | stylesheet_tag }} 
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-rte.css' | asset_url | stylesheet_tag }}
@@ -27,7 +27,6 @@
   {%- endstyle -%}
   <script src="{{ 'add-2-day-popup.js' | asset_url }}" defer="defer"></script>
   <script>(function () { if ((!document.documentElement.innerHTML.match(/asyncLoad/) || (document.documentElement.innerHTML.includes && document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240'))) && (!window.bcpo || !bcpo.disabled) && window.bcpo_data && bcpo_data.virtual_options && bcpo_data.virtual_options.length) { return; } var script = document.createElement('script'); script.defer = true; script.src = "{{ 'product-form.js' | asset_url }}"; document.head.appendChild(script); })();</script>
-  
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
   {% endif %}
@@ -57,8 +56,8 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-  <div class="product-row"> 
-    <div class="leftsideproduct">
+  <div class="product-row">
+    <div>
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
         <div class="campicons_row">
           {%- for tags in product.tags -%}
@@ -79,9 +78,7 @@
           {{ product.description }}
         </div>
       {%- endif -%}
-      <div class="widthbearer">
-        {% render 'product-media-gallery', variant_images: variant_images %}
-      </div>
+      {% render 'product-media-gallery', variant_images: variant_images %}
       <div>
         <div class="center-align-payment-types">
           <h5>Secure Payment, Trusted by thousands of parents</h5>
@@ -225,6 +222,32 @@
                   </quantity-input>
                 </div>
                 </div>
+              {%- when 'price' -%}
+                <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+                </div>
+                {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                  <div class="product__tax caption rte">
+                    {%- if shop.taxes_included -%}
+                      {{ 'products.product.include_taxes' | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                <div {{ block.shopify_attributes }}>
+                  {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                  {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    {{ form | payment_terms }}
+                  {%- endform -%}
+                </div>
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener no-js-hidden quick-add-hidden hidebutton"
@@ -312,19 +335,15 @@
                   {%- else -%}
                     <variant-selects
                       id="variant-selects-{{ section.id }}"
-                      class="no-js-hidden product-row changeflex"
-                      data-section="{{ section.id }}" 
+                      class="no-js-hidden product-row"
+                      data-section="{{ section.id }}"
                       data-url="{{ product.url }}"
                       {{ block.shopify_attributes }}
                     >
                       {%- for option in product.options_with_values -%}
                         <div class="product-form__input product-form__input--dropdown">
                           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                            {% if option.name == "Ticket"%}
-                              Camp
-                            {%  else %}
                             {{ option.name }}
-                            {% endif %}
                           </label>
                           <div class="VariantDropdown">
                             <select
@@ -395,7 +414,7 @@
                             <div class="ExtraSubtext" >Lunch provided for 3-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            +$34.99
+                            $34.99
                           </div>
                         </label>
                       </div>
@@ -407,7 +426,7 @@
                             <div class="ExtraSubtext" >Lunch provided for 3-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            +$34.99
+                            $34.99
                           </div>
                         </label>
                       </div>
@@ -418,7 +437,7 @@
                     </div>
                     {% endif %}
                     {% if tags == "ipads" %}
-                    <label>iPad Rental (an iPad is required)</label>
+                    <label>iPad Rental</label>
                     <div class="product-form__input product-row max-width">
                       <div class="ipad-rental-option max-text"> 
                         <input class="selectButton" type="radio" name="ipad_rental" value="standard_rental" id="standard_rental">
@@ -428,7 +447,7 @@
                             <div class="ExtraSubtext" >iPad provided for 3-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            +$59.99
+                            $59.99
                           </div>
                         </label>
                       </div>
@@ -440,7 +459,7 @@
                             <div class="ExtraSubtext" >iPad provided for 3-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            +$29.99 
+                            $29.99 
                           </div>
                         </label>
                       </div>
@@ -462,7 +481,7 @@
                             <div class="ExtraSubtext" >Drop-off up to 1 hour early</div>
                           </div>
                           <div class="ExtraPrice">
-                            +$29.99
+                            $29.99
                           </div>
                         </label>
                       </div>
@@ -474,7 +493,7 @@
                             <div class="ExtraSubtext" >Pick-Up up to 1 hour late</div>
                           </div>
                           <div class="ExtraPrice">
-                            +$29.99
+                            $29.99
                           </div>
                         </label>
                       </div> 
@@ -483,10 +502,10 @@
                         <label class="ExtraButtonDetails" for="late_pickup_early_dropoff">
                           <div class="titleAndExplanation">
                             <div class="ExtraTitle">Early Drop-Off & Late Pick-Up</div>
-                            <div class="ExtraSubtext" ></div>
+                            <div class="ExtraSubtext" >Lunch provided for 3-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            +$59.99
+                            $34.99
                           </div>
                         </label>
                       </div>
@@ -498,45 +517,7 @@
                   {% endif %}
                 {%- endfor -%}
                 </div>
-                <div class="additionalinfobox">
-                  <div class="campwording" >*By choosing not to purchase insurance for the iPad rental, the customer agrees to accept full financial responsibility for any damages to the device during the rental period.</div>
-                </div>
-                <div class="additionalinfobox">
-                  <div class="campwording" >Refund policy: If you’re not satisfied by the second day of camp, receive a full refund!</div>
-                  <div>
-                    {%- when 'price' -%}
-                      <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                        {%- render 'price',
-                          product: product,
-                          use_variant: true,
-                          show_badges: true,
-                          price_class: 'price--large'
-                        -%}
-                        <div class="add-ons">+ Add-ons</div>
-                      </div>
-                      {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-                        <div class="product__tax caption rte">
-                          {%- if shop.taxes_included -%}
-                            {{ 'products.product.include_taxes' | t }}
-                          {%- endif -%}
-                          {%- if shop.shipping_policy.body != blank -%}
-                            {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                          {%- endif -%}
-                        </div>
-                      {%- endif -%}
-                  </div>
-                </div>
-                <div class="buybuttonbox">
-                  <a href="https://locations.creatorcamp.org/" class="backbutton">Back</a>
-                  <button id="buy-camps" class="product-form__submit button make_pill">Add to cart</button>
-                </div>
-                <div {{ block.shopify_attributes }}>
-                    {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                    {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                      {{ form | payment_terms }}
-                    {%- endform -%} 
-                </div>
+                  <button id="buy-camps" class="product-form__submit button button--full-width button--primary">Add to cart</button>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
 
@@ -591,9 +572,10 @@
                     'quantity': 1,
                     "properties": {}
                   }]
-                  }; 
+                  };
 
                   CampProduct.items[0].properties["id"] = Math.random(0,1);
+                  console.log("OK");
 
                   var LunchBoi = document.querySelector('input[name="lunch"]:checked');
                   var iPadBoi = document.querySelector('input[name="pickup_dropoff"]:checked');
@@ -679,8 +661,6 @@
                   }
 
                   ProductsToAdd = CampProduct;
-
-                  console.log(CampProduct.items[0].id);
 
                 }
                 </script>
@@ -1034,13 +1014,13 @@
         aria-modal="true"
         class="product-popup-modal__content centeredmodel2"
         tabindex="-1"
+        onclick="location.href = '/cart'" 
       >
         <button
           id="ModalClose-{{ block.id }}"
           type="button"
           class="product-popup-modal__toggle"
           aria-label="{{ 'accessibility.close' | t }}"
-          onclick="location.href='/cart'"
         >
           {% render 'icon-close' %}
         </button>
