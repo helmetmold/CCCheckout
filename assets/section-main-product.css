@@ -3429,3 +3429,9 @@ a.product__text {
 .product-media-container .media {
   padding-top: var(--ratio-percent);
 }
+
+@media screen and (max-width: 535) {
+  .centeredmodel2 {
+    width: 450px !important;
+  }
+}
