@@ -392,6 +392,7 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   margin-right: 15px;
   border-radius: var(--variant-pills-radius);
+  gap: 10px !important;
 }
 
 .blueGlow {
@@ -1852,7 +1853,6 @@ a.product__text {
   .Dropdown_Selector {
     width: 100% !important;
     max-width: unset !important;
-    gap: 10px !important;
   }
 
   .VariantDropdown {
