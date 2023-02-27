@@ -32,6 +32,7 @@
   <script>
     function clearcart(){ 
       jQuery.post(window.Shopify.routes.root + 'cart/clear.js').serialize());
+      location.reload();
     }
   </script>
   <div class="cart__warnings">
