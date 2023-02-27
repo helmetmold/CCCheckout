@@ -62,7 +62,6 @@
               {%- for item in cart.items -%}
                 {% for tag in item.product.tags %}
                   {% if tag == "AddOn" %} 
-                  <h1>BOIII</h1>
                     <div class="make-short">
                       <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                       <td class="cart-item__media">
