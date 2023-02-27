@@ -584,7 +584,7 @@
                 {
                   var urlvariant = window.location.href;
                   const regex = /=([0-9]+)/;
-                  const match = url.match(regex);
+                  const match = urlvariant.match(regex);
 
                   if (match) {
                     const numbers = match[1];
