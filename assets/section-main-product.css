@@ -3436,4 +3436,8 @@ a.product__text {
     padding-top: 40px !important;
     padding: 10px !important;
   }
+
+  .daysandtimes {
+    width: 100%;
+  }
 }
