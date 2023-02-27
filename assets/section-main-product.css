@@ -1852,6 +1852,7 @@ a.product__text {
   .Dropdown_Selector {
     width: 100% !important;
     max-width: unset !important;
+    gap: 10px !important;
   }
 
   .VariantDropdown {
