@@ -75,6 +75,7 @@ cart-items {
 }
 
 .make-short {
+  display: none;
 }
 
 .cart__items {
