@@ -343,6 +343,7 @@
                               class="Dropdown_Selector"
                               name="options[{{ option.name | escape }}]"
                               form="{{ product_form_id }}"
+                              onclick="clickedoption(this)"
                             >
                               {% render 'product-variant-options',
                                 product: product,
