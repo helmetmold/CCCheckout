@@ -1870,6 +1870,10 @@ a.product__text {
   .horizontalStackPaymentTypes {
     flex-wrap: wrap;
   }
+
+  .centeredmodel2 {
+    width: 500px;
+  }
 }
 
 .product__info-container {
