@@ -49,7 +49,7 @@
       rel="stylesheet"
       href="{{ 'component-model-viewer-ui.css' | asset_url }}"
       media="print"
-      onload="this.media='all'" 
+      onload="this.media='all'"
     >
   {%- endif -%}
 
@@ -325,10 +325,10 @@
                             {{ option.name }}
                             {% endif %}
                           </label>
-                          <div class="select">
+                          <div class="VariantDropdown">
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                              class="select__select"
+                              class="Dropdown_Selector"
                               name="options[{{ option.name | escape }}]"
                               form="{{ product_form_id }}"
                             >
