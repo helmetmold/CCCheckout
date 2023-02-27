@@ -21,6 +21,10 @@
   margin-right: 15px;
 }
 
+#Remove-4 {
+  margin-left: 0px;
+}
+
 .cart__empty-text,
 .is-empty .cart__contents,
 cart-items.is-empty .title-wrapper-with-link,
