@@ -345,6 +345,7 @@
                               class="Dropdown_Selector"
                               name="options[{{ option.name | escape }}]"
                               form="{{ product_form_id }}"
+                              onclick="clickedoption(this)"
                             >
                               {% render 'product-variant-options',
                                 product: product,
@@ -1197,6 +1198,11 @@
         {%- endfor -%}
       ]
     }
+  </script>
+  <script>
+    function clickedoption(elem) {
+      elem.classList.add('blueGlow');
+  }
   </script>
 </section>
 
