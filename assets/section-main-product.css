@@ -3440,4 +3440,8 @@ a.product__text {
   .daysandtimes {
     width: 100%;
   }
+
+  .redBold {
+    white-space: nowrap;
+  }
 }
