@@ -30,9 +30,9 @@
   </div>
   <script>
     function clearcart(){
-      var my_button=$('input.addToCart');
+      var my_button=jQuery('input.addToCart');
       my_button.on('click',function(){
-        $.ajax({
+        jQuery.ajax({
           type: "POST",
           url: '/cart/clear.js',
           data: '',
