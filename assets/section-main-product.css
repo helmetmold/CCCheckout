@@ -3444,4 +3444,8 @@ a.product__text {
   .redBold {
     white-space: nowrap;
   }
+
+  .UpgradeText {
+    font-size: 16px;
+  }
 }
