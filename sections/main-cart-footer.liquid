@@ -42,8 +42,7 @@
             {%- else -%}
               <div>
                 <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
-              </div>
-              <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
                   <button type="submit" class="cart__update-button button button--secondary" form="cart">
                     {{ 'sections.cart.update' | t }}
@@ -54,12 +53,7 @@
                   {{ 'sections.cart.checkout' | t }}
                 </button>
               </div>
-
-              {%- if additional_checkout_buttons -%}
-                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
-                  {{ content_for_additional_checkout_buttons }}
-                </div>
-              {%- endif -%}
+              </div>
           {%- endcase -%}
         {% endfor %}
 
