@@ -3430,7 +3430,7 @@ a.product__text {
   padding-top: var(--ratio-percent);
 }
 
-@media screen and (max-width: 535) {
+@media screen and (max-width: 535px) {
   .centeredmodel2 {
     width: 450px !important;
   }
