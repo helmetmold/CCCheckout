@@ -257,7 +257,7 @@
                     </label>
                     <cart-remove-button onclick="myFunction('{{line_item_string}}')" id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                      <h5>Remove </h5>  
+                      <h5>Remove</h5>  
                       {% render 'icon-remove' %}
                       </a>
                     </cart-remove-button>
