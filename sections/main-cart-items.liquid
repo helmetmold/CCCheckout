@@ -255,9 +255,28 @@
                     <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                       {{ 'products.product.quantity.label' | t }}
                     </label>
+                    <quantity-input class="quantity">
+                      <input class="quantity__input"
+                        type="number"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        min="0"
+                        aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                        id="Quantity-{{ item.index | plus: 1 }}"
+                        data-index="{{ item.index | plus: 1 }}"
+                      >
+                    </quantity-input>
+                    {% assign line_item_string = "" %}
+                    {% for line_item in item.properties %}
+                      {% if line_item_string == "" %}
+                        {% assign line_item_string = line_item.last %}
+                      {% else %}
+                        {% assign line_item_string = line_item_string | append: "," | append: line_item.last %}
+                      {% endif %}
+                    {% endfor %}
                     <cart-remove-button onclick="myFunction('{{line_item_string}}')" id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                        {% render 'icon-remove' %}
+                        Remove {% render 'icon-remove' %}
                       </a>
                     </cart-remove-button>
                     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
