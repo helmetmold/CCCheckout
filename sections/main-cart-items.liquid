@@ -27,14 +27,14 @@
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">Your Order Summary</h1>
     <button type="submit" name="add" value="Clear Cart" class="addToCart" onclick="clearcart()">Clear Cart</button>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+      function clearcart(){ 
+        jQuery.post(window.Shopify.routes.root + 'cart/clear.js').serialize());
+        location.reload();
+      }
+    </script>
   </div>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script>
-    function clearcart(){ 
-      jQuery.post(window.Shopify.routes.root + 'cart/clear.js').serialize());
-      location.reload();
-    }
-  </script>
   <div class="cart__warnings">
     <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
     <a href="https://locations.creatorcamp.org/" class="button">
