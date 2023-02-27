@@ -324,6 +324,20 @@
                             {% endif %}
                           </label>
                           <div class="VariantDropdown">
+                            {% if option.name == "Ticket" %}
+                            <select
+                              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                              class="Dropdown_Selector blueGlow"
+                              name="options[{{ option.name | escape }}]"
+                              form="{{ product_form_id }}"
+                            >
+                              {% render 'product-variant-options',
+                                product: product,
+                                option: option,
+                                block: block
+                              %}
+                            </select>
+                            {%  else %}
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"
                               class="Dropdown_Selector"
@@ -336,6 +350,7 @@
                                 block: block
                               %}
                             </select>
+                          {% endif %}
                           </div>
                         </div>
                       {%- endfor -%}
