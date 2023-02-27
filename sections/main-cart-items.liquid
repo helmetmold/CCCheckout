@@ -26,9 +26,28 @@
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">Your Order Summary</h1>
-    <a href="https://locations.creatorcamp.org/" class="underlined-link">Clear Cart</a>
+    <a onclick="clearcart();" class="underlined-link">Clear Cart</a>
   </div>
-
+  <script>
+    function clearcart(){
+      var my_button=$('input.addToCart');
+      my_button.on('click',function(){
+        $.ajax({
+          type: "POST",
+          url: '/cart/clear.js',
+          data: '',
+          dataType: 'json',
+          success: function() {
+            Shopify.clear();
+          },
+          error: function(XMLHttpRequest, textStatus) {
+            /* error code */
+          }
+        });
+        return false;
+      });
+    }
+  </script>
   <div class="cart__warnings">
     <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
     <a href="https://locations.creatorcamp.org/" class="button">
