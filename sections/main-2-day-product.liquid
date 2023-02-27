@@ -580,11 +580,22 @@
 
                 function AddExtras() 
                 {
+                  var urlvariant = window.location.href;
+                  const regex = /=([0-9]+)/;
+                  const match = urlvariant.match(regex);
+                  var numbers;
+
+                  if (match) {
+                    numbers = match[1];
+                    console.log(numbers);
+                  } else {
+                    console.log('No numbers found after the equal sign.');
+                  }
 
                   let CampProduct = {
                   'items': 
                   [{
-                    'id': {{ product.selected_or_first_available_variant.id }},
+                    'id': numbers,
                     'quantity': 1,
                     "properties": {}
                   }]
