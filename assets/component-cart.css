@@ -245,6 +245,8 @@ cart-items {
 .cartbuttonnext {
   display: flex;
   flex-direction: row;
+  gap: 15px;
+  align-items: center;
 }
 
 .cart__dynamic-checkout-buttons div[role="button"] {
