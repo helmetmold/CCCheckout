@@ -3447,6 +3447,10 @@ a.product__text {
   }
 
   .UpgradeText {
-    font-size: 16px;
+    font-size: 16px !important;
+  }
+
+  .desctext {
+    font-size: 12px;
   }
 }
