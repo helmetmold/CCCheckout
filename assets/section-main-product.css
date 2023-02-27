@@ -1874,6 +1874,10 @@ a.product__text {
   .centeredmodel2 {
     width: 500px !important;
   }
+
+  .daysandtimes {
+    width: 100%;
+  }
 }
 
 .product__info-container {
