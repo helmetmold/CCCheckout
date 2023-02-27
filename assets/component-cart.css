@@ -17,6 +17,10 @@
   flex-direction: row;
 }
 
+.Remove {
+  margin-right: 15px;
+}
+
 .cart__empty-text,
 .is-empty .cart__contents,
 cart-items.is-empty .title-wrapper-with-link,
