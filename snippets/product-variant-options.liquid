@@ -66,6 +66,7 @@
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
+      class="paddingondropdown"
       {% if option.selected_value == value %}
         selected="selected"
       {% endif %}
