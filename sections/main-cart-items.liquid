@@ -31,14 +31,13 @@
     <script>
       function clearcart(){ 
         $.ajax({
-      type: "POST",
-      url: '/cart/clear.js',
-      success: function(){
-        location.reload();
-      },
-      dataType: 'json'
-      });
-      })
+          type: "POST",
+          url: '/cart/clear.js',
+          success: function(){
+            location.reload();
+          },
+          dataType: 'json'
+        });
       }
     </script>
   </div>
