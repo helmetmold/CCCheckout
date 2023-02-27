@@ -135,6 +135,7 @@ cart-items {
 
 .cart__footer {
   padding: 4rem 0 0;
+  padding-top: 0px !important;
 }
 
 .cart__footer-wrapper:last-child .cart__footer {
