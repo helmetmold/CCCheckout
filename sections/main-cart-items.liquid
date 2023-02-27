@@ -740,7 +740,7 @@
                     {%- endif -%}
                     {% for line_item in item.properties %}
                       <div class="product-option">
-                        {% if option.value contains "Week" or option.value contains "Camp" or option.value contains "id" %}
+                        {% if line_item contains "Week" or line_item contains "Camp" or line_item contains "id" %}
                         {% else %}
                         <h6>{{line_item.last}}</h6>   
                         {% endif %}
