@@ -743,9 +743,9 @@
                         {% if line_item contains "Week" or line_item contains "Camp" or line_item contains "id" %}
                         {% else %}
                         {% if line_item contains "Lunch"%}
-                          <h5>{{line_item.first}}: {{line_item.last}}</h5>   
+                          <h6>{{line_item.first}}: {{line_item.last}}</h6>   
                           {% else %}
-                          <h5>{{line_item.last}}</h5>
+                          <h6>{{line_item.last}}</h6>
                         {% endif %}  
                       {% endif %}
                       </div>
