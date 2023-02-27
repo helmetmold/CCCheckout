@@ -241,6 +241,8 @@ cart-items {
 
 .cart__blocks > * + * {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .cart__dynamic-checkout-buttons div[role="button"] {
