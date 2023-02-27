@@ -1074,7 +1074,15 @@
           {% for productcamp in collections.all.products %}  
             {% if productcamp.tags contains first_underscore_tag %} 
               {% if productcamp.tags contains "Tech Camp" %}
-              {% include 'Tech-Camp-Popup' with product: productcamp %}
+              <script>
+              if(document.referrer.includes("products"))
+              {
+                {% include 'Tech-Camp-Popup' with product: productcamp %}
+              }
+              else (
+                {% include 'Redirect-Camp-Popup' %}
+              )
+               </script>
             {% endif %}
           {% endif %}
           {% endfor %}
@@ -1082,14 +1090,7 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
-  <script>
-
-    if(document.referrer.includes("products"))
-    {
-      console.log(document.referrer);
-    }
-    
-  </script>
+ 
 
   
   {% comment %}
