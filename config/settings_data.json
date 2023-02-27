@@ -117,7 +117,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "favicon": "shopify:\/\/shop_images\/Favicon.png",
+    "favicon": "shopify://shop_images/Favicon.png",
     "currency_code_enabled": true,
     "cart_type": "page",
     "show_vendor": false,
@@ -137,17 +137,14 @@
             }
           }
         },
-        "block_order": [
-          "announcement"
-        ],
-        "settings": {
-        }
+        "block_order": ["announcement"],
+        "settings": {}
       },
       "header": {
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/Creator_Camp_Logo.png",
+          "logo": "shopify://shop_images/Creator_Camp_Logo.png",
           "logo_width": 250,
           "logo_position": "top-center",
           "menu": "main-menu",
@@ -181,7 +178,7 @@
             "type": "text",
             "settings": {
               "heading": "📍 Visit us",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
             }
           },
           "image": {
@@ -192,12 +189,7 @@
             }
           }
         },
-        "block_order": [
-          "footer-0",
-          "footer-1",
-          "footer-2",
-          "image"
-        ],
+        "block_order": ["footer-0", "footer-1", "footer-2", "image"],
         "settings": {
           "color_scheme": "accent-1",
           "newsletter_enable": true,
@@ -225,21 +217,17 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "4644077978495408606": {
-        "type": "shopify:\/\/apps\/appstle-memberships\/blocks\/appstle-membership-helper\/76528d70-5fbe-48f8-8e19-590d109aa2b7",
-        "disabled": false,
-        "settings": {
-        }
+        "type": "shopify://apps/appstle-memberships/blocks/appstle-membership-helper/76528d70-5fbe-48f8-8e19-590d109aa2b7",
+        "disabled": true,
+        "settings": {}
       },
       "5918445685253060206": {
-        "type": "shopify:\/\/apps\/bundler-product-bundles\/blocks\/bundler-script-append\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
-        "disabled": false,
-        "settings": {
-        }
+        "type": "shopify://apps/bundler-product-bundles/blocks/bundler-script-append/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+        "disabled": true,
+        "settings": {}
       }
     }
   },
@@ -381,11 +369,8 @@
               }
             }
           },
-          "block_order": [
-            "announcement"
-          ],
-          "settings": {
-          }
+          "block_order": ["announcement"],
+          "settings": {}
         },
         "header": {
           "type": "header",
@@ -424,7 +409,7 @@
               "type": "text",
               "settings": {
                 "heading": "📍 Visit us",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
               }
             },
             "image": {
@@ -435,12 +420,7 @@
               }
             }
           },
-          "block_order": [
-            "footer-0",
-            "footer-1",
-            "footer-2",
-            "image"
-          ],
+          "block_order": ["footer-0", "footer-1", "footer-2", "image"],
           "settings": {
             "color_scheme": "accent-1",
             "newsletter_enable": true,
