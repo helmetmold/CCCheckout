@@ -243,6 +243,11 @@ cart-items {
   margin-top: 1rem;
 }
 
+.cartbuttonnext {
+  display: flex;
+  flex-direction: row;
+}
+
 .cart__dynamic-checkout-buttons div[role="button"] {
   border-radius: var(--buttons-radius-outset) !important;
 }
