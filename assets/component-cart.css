@@ -131,6 +131,7 @@ cart-items {
 
 .totals {
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 .cart__items--disabled {
