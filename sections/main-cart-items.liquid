@@ -28,11 +28,12 @@
     <h1 class="title title--primary">Your Order Summary</h1>
     <a onclick="clearcart();" class="underlined-link">Clear Cart</a>
   </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script>
     function clearcart(){
-      var my_button=jQuery('input.addToCart');
+      var my_button=$('input.addToCart');
       my_button.on('click',function(){
-        jQuery.ajax({
+        $.ajax({
           type: "POST",
           url: '/cart/clear.js',
           data: '',
