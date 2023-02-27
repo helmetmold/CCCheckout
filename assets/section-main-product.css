@@ -3434,7 +3434,8 @@ a.product__text {
   .centeredmodel2 {
     width: 90vw !important;
     padding-top: 40px !important;
-    padding: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
   .daysandtimes {
