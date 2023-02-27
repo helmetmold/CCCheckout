@@ -129,6 +129,10 @@ cart-items {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
+.totals {
+  margin-bottom: 20px;
+}
+
 .cart__items--disabled {
   pointer-events: none;
 }
