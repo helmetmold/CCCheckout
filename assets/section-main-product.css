@@ -2040,7 +2040,7 @@ a.product__text {
 .fit-to-text {
   display: flex;
   align-content: center;
-  width: 10%;
+  width: 30%;
   justify-content: center;
   text-align: center;
 }
