@@ -3433,6 +3433,6 @@ a.product__text {
 @media screen and (max-width: 535px) {
   .centeredmodel2 {
     width: 90vw !important;
-    padding: 10px;
+    padding: 10px !important;
   }
 }
