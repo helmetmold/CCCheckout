@@ -473,7 +473,6 @@
     </div>
 
     {% assign total_price = cart.total_price | plus: additional_cost %}
-    {{ cart | update_total_price: total_price }}
 
     <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
     <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
