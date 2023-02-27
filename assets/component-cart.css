@@ -21,6 +21,10 @@
   margin-right: 15px;
 }
 
+.Remove :hover {
+  text-decoration: underline;
+}
+
 #Remove-4 {
   margin-left: 0px;
 }
