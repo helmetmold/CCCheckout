@@ -255,14 +255,6 @@
                     <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                       {{ 'products.product.quantity.label' | t }}
                     </label>
-                    {% assign line_item_string = "" %}
-                    {% for line_item in item.properties %}
-                      {% if line_item_string == "" %}
-                        {% assign line_item_string = line_item.last %}
-                      {% else %}
-                        {% assign line_item_string = line_item_string | append: "," | append: line_item.last %}
-                      {% endif %}
-                    {% endfor %}
                     <cart-remove-button onclick="myFunction('{{line_item_string}}')" id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
