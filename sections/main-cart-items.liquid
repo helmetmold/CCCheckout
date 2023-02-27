@@ -31,22 +31,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
     function clearcart(){ 
-      var my_button=$('input.addToCart');
-      my_button.on('click',function(){
-        $.ajax({
-          type: "POST",
-          url: '/cart/clear.js',
-          data: '',
-          dataType: 'json',
-          success: function() {
-            Shopify.clear();
-          },
-          error: function(XMLHttpRequest, textStatus) {
-            /* error code */
-          }
-        });
-        return false;
-      });
+      jQuery.post(window.Shopify.routes.root + 'cart/clear.js').serialize());
     }
   </script>
   <div class="cart__warnings">
