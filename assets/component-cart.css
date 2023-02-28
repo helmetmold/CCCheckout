@@ -262,7 +262,7 @@ cart-items {
 
 .justifyRight {
   text-align: right;
-  line-height: 20px;
+  line-height: 40px;
 }
 
 .cart__dynamic-checkout-buttons div[role="button"] {
