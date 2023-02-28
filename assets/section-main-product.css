@@ -3472,4 +3472,8 @@ a.product__text {
   .notsobigchamp {
     margin: 3px;
   }
+
+  .campprice {
+    white-space: nowrap;
+  }
 }
