@@ -66,6 +66,7 @@
 .flexcenter {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .make_pill {
