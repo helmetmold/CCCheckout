@@ -82,6 +82,7 @@
 }
 
 .cart-item__name:hover {
+  text-decoration: none !important;
 }
 
 .cart-item__price-wrapper > * {
