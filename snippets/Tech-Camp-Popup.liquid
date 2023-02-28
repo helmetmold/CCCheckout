@@ -167,7 +167,11 @@ h2.campprice {
   var referer = document.referrer;
   if(referer.includes("products"))
   {
-    window.location.href = '/cart';
+    document.getElementById('buy-camps').onclick = function() 
+    {
+      window.location.href = '/cart';
+    }​;​
+    
   }
 </script>
 
