@@ -260,7 +260,16 @@
                     {%- endif -%}
                   </div>
                 </td>
-
+                
+                {% assign line_item_string = "" %}
+                    {% for line_item in item.properties %}
+                      {% if line_item_string == "" %}
+                        {% assign line_item_string = line_item.last %}
+                      {% else %}
+                        {% assign line_item_string = line_item_string | append: "," | append: line_item.last %}
+                      {% endif %}
+                    {% endfor %}
+                  
                 <td class="cart-item__quantity">
                   <div class="cart-item__quantity-wrapper">
                     <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
@@ -270,7 +279,7 @@
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                       <h5 class="Remove" >Remove</h5>  
                       {% render 'icon-remove' %}
-                      {{line_item_string}} Hi
+                      {{line_item_string}}
                       </a>
                     </cart-remove-button>
                     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
