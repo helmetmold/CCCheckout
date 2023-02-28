@@ -3430,10 +3430,6 @@ a.product__text {
     .product__modal-opener:not(.product__modal-opener--image) {
     display: none;
   }
-
-  .buttonholder {
-    height: unset;
-  }
 }
 
 .product-media-container .media {
@@ -3465,5 +3461,9 @@ a.product__text {
 
   .desctext {
     font-size: 12px;
+  }
+
+  .buttonholder {
+    height: unset;
   }
 }
