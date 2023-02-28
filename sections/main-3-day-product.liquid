@@ -565,10 +565,6 @@
                         {
                           AddExtras();
                           makeAjaxRequest(); 
-                          if(document.getElementById('buy-camps').classList.contains("solid"))
-                          {
-                            window.location.href = '/cart';
-                          }
                         }
                       )
                     }
@@ -586,7 +582,14 @@
                     body: JSON.stringify(ProductsToAdd) 
                   })
                   .then(response => {
-                    clickupsell();
+                    if(document.getElementById('buy-camps').classList.contains("solid"))
+                          {
+                            window.location.href = '/cart';
+                          }
+                          else
+                          {
+                            clickupsell();
+                          }
                     return response.json();
                   })
                   .catch((error) => {
