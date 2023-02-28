@@ -3442,6 +3442,7 @@ a.product__text {
     padding-top: 40px !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
+    height: 90vh !important;
   }
 
   .daysandtimes {
