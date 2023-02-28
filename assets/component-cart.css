@@ -19,7 +19,7 @@
 }
 
 .ClearCart {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .make_pill ::before {
