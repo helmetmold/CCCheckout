@@ -383,7 +383,7 @@
               </noscript>
             {%- when 'buy_buttons' -%}
               <div {{ block.shopify_attributes }}>
-                <product-form class="product-form2">
+                <product-form class="product-form2 flexcenter">
                   <div class="product-form__error-message-wrapper" role="alert" hidden>
                     <svg
                       aria-hidden="true"
@@ -412,7 +412,7 @@
                       value="{{ product.selected_or_first_available_variant.id }}"
                       disabled
                     >
-                    <div class="product-form__buttons">
+                    <div class="product-form__buttons flexcenter">
                       <button
                         type="submit"
                         name="add"

@@ -324,9 +324,10 @@
                             {% endif %}
                           </label>
                           <div class="VariantDropdown">
+                            {% if option.name == "Ticket" %}
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                              class="Dropdown_Selector"
+                              class="Dropdown_Selector blueGlow"
                               name="options[{{ option.name | escape }}]"
                               form="{{ product_form_id }}"
                             >
@@ -336,6 +337,21 @@
                                 block: block
                               %}
                             </select>
+                            {%  else %}
+                            <select
+                              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                              class="Dropdown_Selector"
+                              name="options[{{ option.name | escape }}]"
+                              form="{{ product_form_id }}"
+                              onclick="clickedoption(this)"
+                            >
+                              {% render 'product-variant-options',
+                                product: product,
+                                option: option,
+                                block: block
+                              %}
+                            </select>
+                          {% endif %}
                           </div>
                         </div>
                       {%- endfor -%}
@@ -392,7 +408,7 @@
                             <div class="ExtraSubtext" >Lunch provided for 2-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            $23.99
+                            +$23.99
                           </div>
                         </label>
                       </div>
@@ -404,13 +420,13 @@
                             <div class="ExtraSubtext" >Lunch provided for 2-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            $23.99
+                            +$23.99
                           </div>
                         </label>
                       </div>
                       <div class="lunch-option fit-to-text">
                         <input class="selectButton" type="radio" name="lunch" value="no_thanks" id="no_thanks">
-                        <label for="no_thanks">No Thanks</label>
+                        <label for="no_thanks">No Thanks, I’ll Bring My Own</label>
                       </div>
                     </div>
                     {% endif %}
@@ -425,7 +441,7 @@
                             <div class="ExtraSubtext" >iPad provided for 2-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            $39.99
+                            +$39.99
                           </div>
                         </label>
                       </div>
@@ -437,13 +453,13 @@
                             <div class="ExtraSubtext" >iPad provided for 2-days</div>
                           </div>
                           <div class="ExtraPrice">
-                            $19.99 
+                            +$19.99 
                           </div>
                         </label>
                       </div>
                       <div class="ipad-rental-option fit-to-text">
                         <input class="selectButton" class="selectButton" type="radio" name="ipad_rental" value="no_thanks2" id="no_thanks2">
-                        <label for="no_thanks2">No Thanks</label>
+                        <label for="no_thanks2">No Thanks, I’ll Bring My Own</label>
                         
                       </div>
                     </div>
@@ -459,7 +475,7 @@
                             <div class="ExtraSubtext" >Drop-off up to 1 hour early</div>
                           </div>
                           <div class="ExtraPrice">
-                            $19.99
+                            +$19.99
                           </div>
                         </label>
                       </div>
@@ -471,7 +487,7 @@
                             <div class="ExtraSubtext" >Pick-Up up to 1 hour late</div>
                           </div>
                           <div class="ExtraPrice">
-                            $19.99
+                            +$19.99
                           </div>
                         </label>
                       </div> 
@@ -483,7 +499,7 @@
                             <div class="ExtraSubtext" >Pick-Up and Drop-Off up to 1 hour late</div>
                           </div>
                           <div class="ExtraPrice">
-                            $39.99
+                            +$39.99
                           </div>
                         </label>
                       </div>
@@ -580,11 +596,22 @@
 
                 function AddExtras() 
                 {
+                  var urlvariant = window.location.href;
+                  const regex = /=([0-9]+)/;
+                  const match = urlvariant.match(regex);
+                  var numbers;
+
+                  if (match) {
+                    numbers = match[1];
+                    console.log(numbers);
+                  } else {
+                    console.log('No numbers found after the equal sign.');
+                  }
 
                   let CampProduct = {
                   'items': 
                   [{
-                    'id': {{ product.selected_or_first_available_variant.id }},
+                    'id': numbers,
                     'quantity': 1,
                     "properties": {}
                   }]
@@ -1171,7 +1198,11 @@
     }
   </script>
 </section>
-
+<script>
+    function clickedoption(elem) {
+      elem.classList.add('blueGlow');
+  }
+  </script>
 {% schema %}
 {
   "name": "t:sections.main-product.name",

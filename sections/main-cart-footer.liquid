@@ -38,45 +38,21 @@
                     </ul>
                   {%- endif -%}
                 </div>
-
-                <small class="tax-note caption-large rte">
-                  {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                    {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                  {%- elsif cart.taxes_included -%}
-                    {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
-                  {%- elsif shop.shipping_policy.body != blank -%}
-                    {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
-                  {%- else -%}
-                    {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
-                  {%- endif -%}
-                </small>
               </div>
             {%- else -%}
-              <div>
-                <div>
-                  Pr-Tip
-                </div>
-                <button type="submit" >
-                  Continue Shopping
-                </button>
-              </div>
-              <div class="cart__ctas" {{ block.shopify_attributes }}>
+              <div class="cartbuttonnext">
+                <a href="https://locations.creatorcamp.org/" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
+                <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
                   <button type="submit" class="cart__update-button button button--secondary" form="cart">
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
-
-                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+                <button type="submit" id="checkout" class="cart__checkout-button button make_pill" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
               </div>
-
-              {%- if additional_checkout_buttons -%}
-                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
-                  {{ content_for_additional_checkout_buttons }}
-                </div>
-              {%- endif -%}
+              </div>
           {%- endcase -%}
         {% endfor %}
 

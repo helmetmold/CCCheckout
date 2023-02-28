@@ -63,6 +63,12 @@
   color: black;
 }
 
+.flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .make_pill {
   background: #39c023;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -311,7 +317,7 @@
 .max-text {
   display: flex;
   align-content: center;
-  width: 45%;
+  width: 43%;
   justify-content: center;
   text-align: center;
 }
@@ -394,6 +400,11 @@
   border-radius: var(--variant-pills-radius);
 }
 
+.blueGlow {
+  border: 1px solid #28b9eb !important;
+  box-shadow: 0px 0px 4px #43cbff !important;
+}
+
 .Dropdown_Selector:hover {
   border: 1px solid #28b9eb !important;
 }
@@ -401,6 +412,11 @@
 .Dropdown_Selector:checked {
   border: 1px solid #28b9eb !important;
   box-shadow: 0px 0px 4px #43cbff !important;
+}
+
+.paddingondropdown {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Form Elements */
@@ -1860,6 +1876,14 @@ a.product__text {
   .horizontalStackPaymentTypes {
     flex-wrap: wrap;
   }
+
+  .centeredmodel2 {
+    width: 500px !important;
+  }
+
+  .daysandtimes {
+    width: 100%;
+  }
 }
 
 .product__info-container {
@@ -2030,7 +2054,7 @@ a.product__text {
 .fit-to-text {
   display: flex;
   align-content: center;
-  width: 10%;
+  width: 15%;
   justify-content: center;
   text-align: center;
 }
@@ -3410,4 +3434,29 @@ a.product__text {
 
 .product-media-container .media {
   padding-top: var(--ratio-percent);
+}
+
+@media screen and (max-width: 535px) {
+  .centeredmodel2 {
+    width: 90vw !important;
+    padding-top: 40px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .daysandtimes {
+    width: 100%;
+  }
+
+  .redBold {
+    white-space: nowrap;
+  }
+
+  .UpgradeText {
+    font-size: 16px !important;
+  }
+
+  .desctext {
+    font-size: 12px;
+  }
 }

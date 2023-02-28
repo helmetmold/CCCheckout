@@ -286,7 +286,7 @@
                 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
               {%- when 'variant_picker' -%}
                 {%- unless product.has_only_default_variant -%}
-                  {%- if block.settings.picker_type == 'button' -%}
+                  {%- if block.settings.picker_type == 'button' -%} 
                     <variant-radios
                       id="variant-radios-{{ section.id }}"
                       class="no-js-hidden"
@@ -326,9 +326,10 @@
                             {% endif %}
                           </label>
                           <div class="VariantDropdown">
+                            {% if option.name == "Ticket" %}
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                              class="Dropdown_Selector"
+                              class="Dropdown_Selector blueGlow"
                               name="options[{{ option.name | escape }}]"
                               form="{{ product_form_id }}"
                             >
@@ -338,6 +339,21 @@
                                 block: block
                               %}
                             </select>
+                            {% else %}
+                            <select
+                              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                              class="Dropdown_Selector"
+                              name="options[{{ option.name | escape }}]"
+                              form="{{ product_form_id }}"
+                              onclick="clickedoption(this)"
+                            >
+                              {% render 'product-variant-options',
+                                product: product,
+                                option: option,
+                                block: block
+                              %}
+                            </select>
+                          {% endif %}
                           </div>
                         </div>
                       {%- endfor -%}
@@ -412,7 +428,7 @@
                       </div>
                       <div class="lunch-option fit-to-text">
                         <input class="selectButton" type="radio" name="lunch" value="no_thanks" id="no_thanks">
-                        <label for="no_thanks">No Thanks</label>
+                        <label for="no_thanks">No Thanks, I’ll Bring My Own</label>
                       </div>
                     </div>
                     {% endif %}
@@ -420,8 +436,8 @@
                     <label>iPad Rental (an iPad is required)</label>
                     <div class="product-form__input product-row max-width">
                       <div class="ipad-rental-option max-text"> 
-                        <input class="selectButton" type="radio" name="ipad_rental" value="standard_rental" id="standard_rental">
-                        <label class="ExtraButtonDetails" for="standard_rental">
+                        <input class="selectButton" type="radio" name="ipad_rental" value="rental_with_insurance" id="rental_with_insurance" >
+                        <label class="ExtraButtonDetails" for="rental_with_insurance" >
                           <div class="titleAndExplanation">
                             <div class="ExtraTitle">iPad Rental</div>
                             <div class="ExtraSubtext" >iPad provided for 3-days</div>
@@ -432,8 +448,8 @@
                         </label>
                       </div>
                       <div class="ipad-rental-option max-text">
-                        <input class="selectButton" type="radio" name="ipad_rental" value="rental_with_insurance" id="rental_with_insurance">
-                        <label class="ExtraButtonDetails" for="rental_with_insurance">
+                        <input class="selectButton" type="radio" name="ipad_rental" value="standard_rental" id="standard_rental">
+                        <label class="ExtraButtonDetails" for="standard_rental">
                           <div class="titleAndExplanation">
                             <div class="ExtraTitle">iPad Rental (Uninsured*)</div>
                             <div class="ExtraSubtext" >iPad provided for 3-days</div>
@@ -445,7 +461,7 @@
                       </div>
                       <div class="ipad-rental-option fit-to-text">
                         <input class="selectButton" class="selectButton" type="radio" name="ipad_rental" value="no_thanks2" id="no_thanks2">
-                        <label for="no_thanks2">No Thanks</label>
+                        <label for="no_thanks2">No Thanks, I’ll Bring My Own</label>
                         
                       </div>
                     </div>
@@ -582,17 +598,26 @@
 
                 function AddExtras() 
                 {
+                  var urlvariant = window.location.href;
+                  const regex = /=([0-9]+)/;
+                  const match = urlvariant.match(regex);
+                  var numbers;
+
+                  if (match) {
+                    numbers = match[1];
+                    console.log(numbers);
+                  } else {
+                    console.log('No numbers found after the equal sign.');
+                  }
 
                   let CampProduct = {
                   'items': 
                   [{
-                    'id': {{ product.selected_or_first_available_variant.id }},
+                    'id': numbers,
                     'quantity': 1,
                     "properties": {}
                   }]
                   };
-
-                  console.log({{ product.selected_or_first_available_variant.id }});
 
                   CampProduct.items[0].properties["id"] = Math.random(0,1);
 
@@ -663,13 +688,13 @@
                     //
                   }
                   if (ipadRentalOption === "standard_rental") {
-                    var StandardiPad = {"id": 44405919383851, "quantity": 1};
-                    CampProduct.items.push(StandardiPad);
+                    var InsurediPad = {"id": 44405919351083, "quantity": 1};
+                    CampProduct.items.push(InsurediPad);
                     CampProduct.items[0].properties["iPad Rental"] = "Standard iPad rental +$29.99";
                   } 
                   if (ipadRentalOption === "rental_with_insurance") {
-                    var InsurediPad = {"id": 44405919351083, "quantity": 1};
-                    CampProduct.items.push(InsurediPad);
+                    var StandardiPad = {"id": 44405919383851, "quantity": 1}; 
+                    CampProduct.items.push(StandardiPad);
                     CampProduct.items[0].properties["iPad Rental"] = "iPad rental w/ insurance +$59.99";
                   } 
                   if (ipadRentalOption === "no_thanks") {
@@ -1049,7 +1074,7 @@
           {% for productcamp in collections.all.products %}  
             {% if productcamp.tags contains first_underscore_tag %} 
               {% if productcamp.tags contains "Tech Camp" %}
-              {% include 'Tech-Camp-Popup' with product: productcamp %}
+                {% include 'Tech-Camp-Popup' with product: productcamp %}
             {% endif %}
           {% endif %}
           {% endfor %}
@@ -1057,31 +1082,6 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
-
-  
-  {% comment %}
-    dont need below
-  
-  <div class="hidden-camp-upsell">
-      {% for tag in product.tags %}
-        {% assign first_letter = tag | slice: 0 %}
-        {% if first_letter == "_" %}
-          {% assign first_underscore_tag = tag %}
-          {% break %}
-        {% endif %}
-        {% endfor %}
-      {% for productcamp in collections.all.products %}  
-        {% if productcamp.tags contains first_underscore_tag %} 
-          {% if productcamp.tags contains "Tech Camp" %}
-          {% render 'card-product', 
-          card_product: productcamp,
-          show_quick_add: true,
-          %}
-        {% endif %}
-      {% endif %}
-      {% endfor %}
-  </div>
-  {% endcomment %}
   
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
@@ -1173,6 +1173,11 @@
         {%- endfor -%}
       ]
     }
+  </script>
+  <script>
+    function clickedoption(elem) {
+      elem.classList.add('blueGlow');
+  }
   </script>
 </section>
 
