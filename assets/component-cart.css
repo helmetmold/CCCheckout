@@ -257,6 +257,7 @@ cart-items {
   flex-direction: row;
   gap: 15px;
   align-items: center;
+  justify-content: end;
 }
 
 .cart__dynamic-checkout-buttons div[role="button"] {
