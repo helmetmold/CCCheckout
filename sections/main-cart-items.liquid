@@ -270,6 +270,7 @@
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                       <h5 class="Remove" >Remove</h5>  
                       {% render 'icon-remove' %}
+                      {{line_item_string}}
                       </a>
                     </cart-remove-button>
                     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
