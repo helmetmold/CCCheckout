@@ -565,6 +565,10 @@
                         {
                           AddExtras();
                           makeAjaxRequest(); 
+                          if(document.getElementById('buy-camps').classList.contains("solid"))
+                          {
+                            window.location.href = '/cart';
+                          }
                         }
                       )
                     }
