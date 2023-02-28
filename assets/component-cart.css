@@ -262,7 +262,10 @@ cart-items {
 
 .justifyRight {
   text-align: right;
-  line-height: 40px;
+}
+
+.Signupsbetter {
+  line-height: 20px;
 }
 
 .cart__dynamic-checkout-buttons div[role="button"] {
