@@ -3447,6 +3447,8 @@ a.product__text {
 
   .daysandtimes {
     width: 100%;
+    display: flex;
+    flex-direction: row;
   }
 
   .redBold {
