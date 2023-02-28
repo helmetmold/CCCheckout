@@ -260,6 +260,10 @@ cart-items {
   justify-content: end;
 }
 
+.justifyRight {
+  text-align: right;
+}
+
 .cart__dynamic-checkout-buttons div[role="button"] {
   border-radius: var(--buttons-radius-outset) !important;
 }
