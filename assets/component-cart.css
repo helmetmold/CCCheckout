@@ -136,7 +136,7 @@ cart-items {
 .totals {
   margin-bottom: 20px;
   margin-right: 10px;
-  justify-content: end;
+  justify-content: end !important;
 }
 
 .cart__items--disabled {
