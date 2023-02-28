@@ -3449,6 +3449,8 @@ a.product__text {
     width: 100%;
     display: flex !important;
     flex-direction: column !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .redBold {
@@ -3465,6 +3467,7 @@ a.product__text {
 
   .buttonholder {
     height: unset !important;
+    ma
   }
 
   .notsobigchamp {
