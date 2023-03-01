@@ -570,6 +570,10 @@ fieldset.product-form__input .form__label {
   opacity: 0.5;
 }
 
+.notbig {
+  max-width: 600px;
+}
+
 @media screen and (forced-colors: active) {
   .product-form__submit[aria-disabled="true"] {
     color: Window;
