@@ -573,6 +573,10 @@ fieldset.product-form__input .form__label {
   max-width: 200px;
 }
 
+.centerthis {
+  text-align: center;
+}
+
 .centereverything {
   display: flex;
   align-items: center !important;
