@@ -305,6 +305,7 @@
   flex-direction: row;
   gap: 10px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .center-align-payment-types {
