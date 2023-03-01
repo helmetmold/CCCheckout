@@ -574,6 +574,7 @@ fieldset.product-form__input .form__label {
 }
 
 .centereverything {
+  display: flex;
   align-items: center !important;
   flex-direction: column !important;
   width: 100% !important;
