@@ -317,3 +317,9 @@ cart-items {
     gap: 1rem;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .addonright {
+    font-size: 10px;
+  }
+}
