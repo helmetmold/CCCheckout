@@ -40,6 +40,55 @@
 	var vopoHead = document.getElementById('vopo-head'); vopoHead.parentNode.insertBefore(script, vopoHead);
 })();
 </script>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "346401373216193");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v13.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+window.addEventListener('load', function() {
+
+if (window.location.href.indexOf('/order-confirmation') != -1) {
+  var totalValue = jQuery('.w-commerce-commercecheckoutsummarytotal').text().trim().replace(/[^0-9.]/g, '');
+  var orderID = window.location.href.split('&')[0].split('?')[1].split('=')[1].trim();
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-959547504/p5MUCNm547YDEPCQxskD',
+    'value': parseFloat(totalValue),
+    'currency': 'USD',
+    'transaction_id': orderID
+  });
+
+}
+});
+</script>
+
 <script type="application/json" data-ajax-cart-initial-state >
   {{ cart | json }}
 </script>
