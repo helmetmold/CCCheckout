@@ -26,7 +26,7 @@
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">Your Order Summary</h1>
-    <button type="submit" name="add" value="Clear Cart" class="addToCart" onclick="clearcart()">Clear Cart</button>
+    <a type="submit" name="add" value="Clear Cart" class="ClearCart" onclick="clearcart()">Clear Cart</a>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
       function clearcart(){ 
@@ -98,7 +98,7 @@
                     <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                   {%- endif -%}
 
-                  <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+                  <div class="cart-item__name h4 break">{{ item.product.title | escape }}</div>
 
                   {%- if item.original_price != item.final_price -%}
                     <div class="cart-item__discounted-prices">
@@ -258,6 +258,18 @@
                         {{ item.variant.unit_price_measurement.reference_unit }}
                       </div>
                     {%- endif -%}
+                    {% for line_item in item.properties %}
+                      <div class="product-option">
+                        {% if line_item contains "Week" or line_item contains "Camp" or line_item contains "id" %}
+                        {% else %}
+                        {% if line_item contains "Lunch"%}
+                          <h6 class="addonright">{{line_item.first}}: {{line_item.last}}</h6>   
+                          {% else %}
+                          <h6 class="addonright" >{{line_item.last}}</h6>
+                        {% endif %}  
+                      {% endif %}
+                      </div>
+                    {% endfor %}
                   </div>
                 </td>
                 

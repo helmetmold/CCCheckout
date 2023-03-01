@@ -305,6 +305,7 @@
   flex-direction: row;
   gap: 10px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .center-align-payment-types {
@@ -598,6 +599,8 @@ fieldset.product-form__input .form__label {
 .product__info-container .product-form,
 .product__info-container .product__description {
   margin: 2.5rem 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .product__text {
@@ -3442,10 +3445,15 @@ a.product__text {
     padding-top: 40px !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
+    height: 90vh !important;
   }
 
   .daysandtimes {
     width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .redBold {
@@ -3458,5 +3466,18 @@ a.product__text {
 
   .desctext {
     font-size: 12px;
+  }
+
+  .buttonholder {
+    height: unset !important;
+  }
+
+  .notsobigchamp {
+    margin: 3px;
+    font-size: 12px;
+  }
+
+  .campprice {
+    white-space: nowrap;
   }
 }

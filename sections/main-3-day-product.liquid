@@ -582,7 +582,14 @@
                     body: JSON.stringify(ProductsToAdd) 
                   })
                   .then(response => {
-                    clickupsell();
+                    if(document.getElementById('buy-camps').classList.contains("solid"))
+                          {
+                            window.location.href = '/cart';
+                          }
+                          else
+                          {
+                            clickupsell();
+                          }
                     return response.json();
                   })
                   .catch((error) => {
@@ -1074,7 +1081,7 @@
           {% for productcamp in collections.all.products %}  
             {% if productcamp.tags contains first_underscore_tag %} 
               {% if productcamp.tags contains "Tech Camp" %}
-                {% include 'Tech-Camp-Popup' with product: productcamp %}
+                  {% include 'Tech-Camp-Popup' with product: productcamp %}
             {% endif %}
           {% endif %}
           {% endfor %}

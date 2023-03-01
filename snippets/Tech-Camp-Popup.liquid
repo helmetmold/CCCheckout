@@ -116,7 +116,7 @@ h2.campprice {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 400px;
+  width: 100%;
 }
 
 .spacerbox {
@@ -161,6 +161,20 @@ h2.campprice {
   }
 }
 </style>
+
+
+<script>
+  
+  console.log(document.referrer);
+  var referer = document.referrer;
+  if(referer.includes("products"))
+  {
+    document.getElementById('buy-camps').addEventListener("click", function() 
+    {
+      document.getElementById('buy-camps').classList.add("solid");
+    })
+  }
+</script>
 
 <div class="fullbox">
   <div class="spacerbox">
