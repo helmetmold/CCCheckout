@@ -417,6 +417,7 @@
                       <button
                         type="submit"
                         name="add"
+                        onclick="delayedRedirect()"
                         class="product-form__submit button button--full-width 
                         {% if block.settings.show_dynamic_checkout %}
                           button--secondary
@@ -452,9 +453,15 @@
                     </div>
                   {%- endform -%}
                 </product-form>
-
+                <script>
+                  function delayedRedirect() {
+                    setTimeout(function(){
+                      window.location.href = "/cart";
+                    }, 2000); // 2000 milliseconds = 2 seconds
+                  }
+                </script>
                 {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
-
+                
                 {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
                   | where: 'pick_up_enabled', true
                 -%}
