@@ -572,7 +572,7 @@ fieldset.product-form__input .form__label {
 
 .notbig {
   width: 100%;
-  max-width: 400px;
+  max-width: 200px;
 }
 
 @media screen and (forced-colors: active) {
