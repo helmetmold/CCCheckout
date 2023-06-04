@@ -150,7 +150,7 @@
       },
       "share": "Share this product",
       "sold_out": "Sold out",
-      "unavailable": "Sold Out!",
+      "unavailable": "Class Full!",
       "vendor": "Vendor",
       "value_unavailable": "{{ option_value }} - Unavailable",
       "variant_sold_out_or_unavailable": "Variant sold out or unavailable",
