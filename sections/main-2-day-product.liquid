@@ -1045,7 +1045,7 @@
           {% for productcamp in collections.all.products %}  
             {% if productcamp.tags contains first_underscore_tag %} 
               {% if productcamp.tags contains "Creative Camp" %}
-              {% include 'Creative-Camp-Popup' with product: productcamp %}
+              {% include 'Creative-Camp-Popup' with product, product: productcamp %}
             {% endif %}
           {% endif %}
           {% endfor %}
@@ -2649,4 +2649,13 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'Creative-Camp-Popup' with product: productcamp %}"
+  to: "{% include 'Creative-Camp-Popup' with product, product: productcamp %}"
+  position: 58001..58071
+{%- endcomment -%}

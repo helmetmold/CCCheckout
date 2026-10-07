@@ -3,7 +3,7 @@
 {% assign app_enabled = shop.metafields.appid_2922505.app_enabled %}
 {% assign is_dev_mode = shop.metafields.appid_2922505.is_dev_mode %}
 {% assign last_updated = shop.metafields.appid_2922505.time_updated %}{% assign threedays_later = last_updated| plus: 259200  %}
-{% if (liquid_date < threedays_later and app_enabled != 'N') and ((is_dev_mode == '0' or is_dev_mode == blank) or (is_dev_mode == '1' and theme.role != 'main')) %}
+{% if liquid_date < threedays_later and app_enabled != 'N' and is_dev_mode == '0' or is_dev_mode == blank or is_dev_mode == '1' and theme.role != 'main' %}
 {% assign af_cart_json = cart | json %}
 {% assign af_customer_id = customer.id %}
 <script>
@@ -43,4 +43,17 @@ if(urlParam('passkey') != null) {
     var newTotalHtml = `{{cart.total_price|minus :10 |money}}`.replace('"', '\"');
     document.querySelector(subtotalSelector).innerHTML = "<del class='af_del_overwrite'>"+ subTotalHtml + "</del> " + newTotalHtml;
   }
-</script>
+</script>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if (liquid_date < threedays_later and app_enabled != 'N') and ((is_dev_mode
+    == '0' or is_dev_mode == blank) or (is_dev_mode == '1' and theme.role != 'main'))
+    %}"
+  to: "{% if liquid_date < threedays_later and app_enabled != 'N' and is_dev_mode
+    == '0' or is_dev_mode == blank or is_dev_mode == '1' and theme.role != 'main'
+    %}"
+  position: 367..522
+{%- endcomment -%}
