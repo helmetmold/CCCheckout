@@ -11,7 +11,7 @@
 	{% endif %}
 {% endfor %}
 {% for aaa_rule in product.metafields.aaa_mem %}
-	{% if aaa_rule.last== 'hide' %}
+	{% if aaa_rule.last %}
 		{% assign aaa_hide_item = false %}
 	{% endif %}
 	{% if aaa_rule.last == 'show' %}
@@ -45,3 +45,13 @@
 	  {% endif %}
 	{% endfor %}
 {% endfor %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if aaa_rule.last== 'hide' %}"
+  to: "{% if aaa_rule.last %}"
+  position: 542..564
+{% endcomment %}

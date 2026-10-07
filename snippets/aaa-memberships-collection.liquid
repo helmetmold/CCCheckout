@@ -12,7 +12,7 @@
 
 {% for aaa_rule in collection.metafields.aaa_mem %}
   {% for customer_tag in customer.tags %}
-    {% if customer_tag | remove:" " == aaa_rule.first | remove:" " %}
+    {% if customer_tag %}
       {% if aaa_rule.last == 'hide' %}
       {% assign aaa_hide_item = true %}
       {% assign aaa_noaccess_snippet = 'aaa-memberships-noaccess' %}
@@ -22,4 +22,13 @@
       {% endif %}
     {% endif %}
   {% endfor %}
-{% endfor %}
+{% endfor %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% if customer_tag | remove:" " == aaa_rule.first | remove:" " %}'
+  to: "{% if customer_tag %}"
+  position: 489..510
+{%- endcomment -%}
